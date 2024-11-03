@@ -1,2 +1,3 @@
-# lameduse-tools-frontend-storybook
-@LaMeDuSe frontend storybook 
+# LaMeDuSe Libs UI React
+
+Contains the React components for the LaMeDuSe Libs UI.
