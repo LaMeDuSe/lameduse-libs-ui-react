@@ -23,6 +23,22 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
+  build-and-push-npm-package-hosted-on-lameduse:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v4s
+        with:
+          node-version: '20.x'
+          registry-url: 'https://npm.lameduse.fr'
+      - run: npm ci
+      - run: npm publish --provenance --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.LAMEDUSE_NPM_HOSTED_REGISTRY_PASSWORD }}
   build-and-push-image:
     runs-on: ubuntu-20.04
     permissions:
