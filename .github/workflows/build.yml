@@ -31,7 +31,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v4s
+      - uses: actions/setup-node@v4
         with:
           node-version: '20.x'
           registry-url: 'https://npm.lameduse.fr'
