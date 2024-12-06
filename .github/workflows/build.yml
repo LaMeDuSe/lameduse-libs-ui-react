@@ -43,6 +43,7 @@ jobs:
             echo "valid=false" >> $GITHUB_ENV
           else
             echo "valid=true" >> $GITHUB_ENV
+          fi
       - name: Skip steps if version is invalid
         if: env.valid == 'false'
         run: echo "Skipping publish because version ${{ env.version }} is invalid."
