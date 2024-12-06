@@ -40,7 +40,6 @@ jobs:
         with:
           token: ${{ secrets.LAMEDUSE_NPM_HOSTED_REGISTRY_PASSWORD }}
           registry: 'https://npm.lameduse.fr'
-          provenance: true
           tag: ${{ github.ref_name }}
   build-and-push-image:
     runs-on: ubuntu-20.04
