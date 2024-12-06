@@ -36,11 +36,24 @@ jobs:
           node-version: '20.x'
           registry-url: 'https://npm.lameduse.fr'
       - run: npm ci
+      - name: Validate version format
+        id: validate-version
+        run: |
+          if [[ ! "${{ env.version }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+            echo "valid=false" >> $GITHUB_ENV
+          else
+            echo "valid=true" >> $GITHUB_ENV
+      - name: Skip steps if version is invalid
+        if: env.valid == 'false'
+        run: echo "Skipping publish because version ${{ env.version }} is invalid."
+    
       - name: Update version in package.json
+        if: env.valid == 'true'
         run: |
           npm version ${{ github.ref_name }} --no-git-tag-version
           cat package.json
       - uses: JS-DevTools/npm-publish@v3
+        if: env.valid == 'true'
         with:
           token: ${{ secrets.LAMEDUSE_NPM_HOSTED_REGISTRY_PASSWORD }}
           registry: 'https://npm.lameduse.fr'
