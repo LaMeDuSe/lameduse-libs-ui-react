@@ -1,5 +1,5 @@
 {
-  "name": "lameduse-tools-frontend-storybook",
+  "name": "@lameduse/lameduse-tools-frontend-storybook",
   "version": "1.0.0",
   "description": "@LaMeDuSe frontend storybook",
   "scripts": {

@@ -36,9 +36,12 @@ jobs:
           node-version: '20.x'
           registry-url: 'https://npm.lameduse.fr'
       - run: npm ci
-      - run: npm publish --provenance --access public
-        env:
+      - uses: JS-DevTools/npm-publish@v3
+        with:
           NODE_AUTH_TOKEN: ${{ secrets.LAMEDUSE_NPM_HOSTED_REGISTRY_PASSWORD }}
+          registry: 'https://npm.lameduse.fr'
+          provenance: true
+          tag: ${{ github.ref_name }}
   build-and-push-image:
     runs-on: ubuntu-20.04
     permissions:
