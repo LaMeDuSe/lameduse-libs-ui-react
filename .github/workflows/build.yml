@@ -38,7 +38,7 @@ jobs:
       - run: npm ci
       - uses: JS-DevTools/npm-publish@v3
         with:
-          NODE_AUTH_TOKEN: ${{ secrets.LAMEDUSE_NPM_HOSTED_REGISTRY_PASSWORD }}
+          token: ${{ secrets.LAMEDUSE_NPM_HOSTED_REGISTRY_PASSWORD }}
           registry: 'https://npm.lameduse.fr'
           provenance: true
           tag: ${{ github.ref_name }}
