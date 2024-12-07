@@ -23,41 +23,38 @@ env:
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
-  build-and-push-npm-package-hosted-on-lameduse:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      id-token: write
+  publish-npm-package:
+    runs-on: ubuntu-22.04
+    strategy:
+      matrix:
+        registry:
+          - url: "https://npm.lameduse.fr"
+            auth-token-secret: LAMEDUSE_NPM_HOSTED_REGISTRY_PASSWORD
     steps:
-      - uses: actions/checkout@v4
-      # Setup .npmrc file to publish to npm
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-          registry-url: 'https://npm.lameduse.fr'
-      - run: npm ci
-      - name: Validate version format
-        id: validate-version
-        run: |
-          if [[ ! "${{ github.ref_namen }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
-            echo "valid=false" >> $GITHUB_ENV
-          else
-            echo "valid=true" >> $GITHUB_ENV
-          fi
-      - name: Skip steps if version is invalid
-        if: env.valid == 'false'
-        run: echo "Skipping publish because version ${{ github.ref_name }} is invalid."
+      - name: Check out repository
+        uses: actions/checkout@v3
 
-      - name: Update version in package.json
-        if: env.valid == 'true'
-        run: |
-          npm version ${{ github.ref_name }} --no-git-tag-version
-          cat package.json
-      - uses: JS-DevTools/npm-publish@v3
-        if: env.valid == 'true'
+      - name: Setup node environment (for publishing)
+        uses: actions/setup-node@v3
         with:
-          token: ${{ secrets.LAMEDUSE_NPM_HOSTED_REGISTRY_PASSWORD }}
-          registry: 'https://npm.lameduse.fr'
+          node-version: 16.14.0
+          registry-url: ${{ matrix.registry.url }}
+          scope: "@okp4"
+
+      - name: Publish package
+        run: |
+          yarn && yarn build
+          DATE=$(date +%Y%m%d%H%M%S)
+          publish=(yarn publish --access=public --no-git-tag-version --non-interactive)
+          if [[ $GITHUB_REF == refs/tags/v* ]]; then
+            publish+=(--tag latest)
+          else
+            publish+=(--prerelease --preid next.$DATE --tag next)
+          fi
+          echo "🚀 Publishing npm package with following command line: ${publish[@]}"
+          "${publish[@]}"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets[matrix.registry.auth-token-secret] }}
 
   build-and-push-image:
     runs-on: ubuntu-20.04
