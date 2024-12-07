@@ -47,7 +47,7 @@ jobs:
       - name: Skip steps if version is invalid
         if: env.valid == 'false'
         run: echo "Skipping publish because version ${{ env.version }} is invalid."
-    
+
       - name: Update version in package.json
         if: env.valid == 'true'
         run: |
