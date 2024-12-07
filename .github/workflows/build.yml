@@ -39,14 +39,14 @@ jobs:
       - name: Validate version format
         id: validate-version
         run: |
-          if [[ ! "${{ env.version }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+          if [[ ! "${{ github.ref_namen }}" =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
             echo "valid=false" >> $GITHUB_ENV
           else
             echo "valid=true" >> $GITHUB_ENV
           fi
       - name: Skip steps if version is invalid
         if: env.valid == 'false'
-        run: echo "Skipping publish because version ${{ env.version }} is invalid."
+        run: echo "Skipping publish because version ${{ github.ref_name }} is invalid."
 
       - name: Update version in package.json
         if: env.valid == 'true'
