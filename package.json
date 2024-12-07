@@ -1,6 +1,7 @@
 {
   "name": "@lameduse/lameduse-tools-frontend-storybook",
   "version": "1.0.0",
+  "author": "LaMeDuSe",
   "description": "@LaMeDuSe frontend storybook",
   "scripts": {
     "rollup": "rollup -c",
@@ -8,8 +9,7 @@
     "storybook": "storybook dev -p 6006 --loglevel verbose",
     "build-storybook": "storybook build"
   },
-  "author": "",
-  "license": "ISC",
+  "license": "Copyright LaMeDuSe",
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.4",
