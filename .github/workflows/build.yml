@@ -39,7 +39,7 @@ jobs:
         with:
           node-version: 16.14.0
           registry-url: ${{ matrix.registry.url }}
-          scope: "@okp4"
+          scope: "@lameduse"
 
       - name: Publish package
         run: |
