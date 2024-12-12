@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+# [1.2.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v1.1.0...v1.2.0) (2024-12-12)
+
+
+### Features
+
+* removed unused line ([cba630b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/cba630b5e2a40fb97c452389883d5d6dd1b03230))
+
 # [1.1.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v1.0.0...v1.1.0) (2024-12-12)
 
 
