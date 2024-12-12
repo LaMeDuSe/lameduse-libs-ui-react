@@ -47,7 +47,7 @@ jobs:
           DATE=$(date +%Y%m%d%H%M%S)
           publish=(yarn publish --access=public --no-git-tag-version --non-interactive)
           if [[ $GITHUB_REF == refs/tags/v* ]]; then
-            publish+=(--tag latest --new-version ${GITHUB_REF#refs/tags/v})
+            publish+=(--tag latest)
           else
             publish+=(--prerelease --preid next.$DATE --tag next)
           fi
