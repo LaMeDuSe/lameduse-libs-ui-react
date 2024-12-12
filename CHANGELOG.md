@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+# [1.1.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v1.0.0...v1.1.0) (2024-12-12)
+
+
+### Features
+
+* added a way for yarn to know new version ([eeb2a99](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/eeb2a99012fdac390dc299af18bd7c4342b070bc))
+
 # 1.0.0 (2024-12-08)
 
 
