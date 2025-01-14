@@ -43,7 +43,7 @@ export default [
   },
   {
     input: "src/styles/main.css",
-    output: [{ file: "dist/index.css", format: "es" }],
+    output: [{ file: "dist/styles/index.css", format: "es" }],
     plugins: [
         postcss({
             extract: true,
