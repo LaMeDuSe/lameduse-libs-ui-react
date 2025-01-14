@@ -1,5 +1,19 @@
 # LaMeDuSe Change Log
 
+# [1.3.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v1.2.0...v1.3.0) (2025-01-14)
+
+
+### Bug Fixes
+
+* pinned the node image to 22-alpine to prevent build issue ([b6b35fb](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b6b35fb0de1c0518884f3e8f3a7cd9f08bf433ae))
+
+
+### Features
+
+* added button component ([8208083](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/82080836692f316a341548f9f89efd0c76ccb37b))
+* added example button component ([b2c2251](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b2c22515930189c655a7fff2287558e560216767))
+* removed this story format as it was not clean ([cb50ffd](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/cb50ffda52daae5c817fb196098cc4e129180314))
+
 # [1.2.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v1.1.0...v1.2.0) (2024-12-12)
 
 
