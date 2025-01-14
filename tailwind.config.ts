@@ -15,6 +15,7 @@ const config: Config = {
         "lameduse-primary": "#1B1464",
         "lameduse-secondary": "#0080E2",
         "lameduse-tertiary": "#01B4B6",
+        "lameduse-red": "#FF0000",
         "lameduse-white": "#FFFFFF",
         "lameduse-black": "#000000",
       },
