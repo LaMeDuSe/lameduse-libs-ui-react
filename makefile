@@ -13,6 +13,10 @@ build_storybook:
 install_deps:
 	@npm ci
 
+test:
+	@echo "Running tests..."
+	@npm run test
+
 run: story
 story:
 	@echo "Building storybook..."
