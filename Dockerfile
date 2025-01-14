@@ -1,5 +1,5 @@
 # Stage 1: Build the Storybook static files
-FROM node:alpine AS builder
+FROM node:22-alpine AS builder
 
 # Set the working directory
 WORKDIR /app
@@ -7,7 +7,7 @@ WORKDIR /app
 # Install dependencies
 COPY package*.json ./
 
-# Copy the rest of the app source codwe
+# Copy the rest of the app source code
 COPY . .
 
 RUN apk add --no-cache make
