@@ -3,6 +3,7 @@ import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
+import copy from "rollup-plugin-copy";
 import packageJson from "./package.json" with { type: "json" };
 
 export default [
@@ -28,6 +29,12 @@ export default [
       }),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
+      copy({
+        targets: [
+            // Need to copy the files over for usage
+            { src: "src/assets/fonts", dest: "dist/assets" },
+        ],
+      }),
       postcss({
         extract: true, 
         minimize: true,

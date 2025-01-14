@@ -2,19 +2,19 @@
 
 @font-face {
     font-family: "Avant Garde Gothic";
-    src: url("../fonts/ITC Avant Garde Gothic Std/ITCAvantGardeStd-Md.otf");
+    src: url("../assets/fonts/ITC Avant Garde Gothic Std/ITCAvantGardeStd-Md.otf");
     font-weight: 500;
 }
 
 @font-face {
     font-family: "Montserrat";
-    src: url("../fonts/Montserrat/Montserrat-Bold.ttf");
+    src: url("../assets/fonts/Montserrat/Montserrat-Bold.ttf");
     font-weight: bold;
 }
 
 @font-face {
     font-family: "Montserrat";
-    src: url("../fonts/Montserrat/Montserrat-Regular.ttf");
+    src: url("../assets/fonts/Montserrat/Montserrat-Regular.ttf");
     font-weight: normal;
 }
 
