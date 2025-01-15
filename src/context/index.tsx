@@ -27,4 +27,4 @@ const LameduseUIProvider: React.FC<{ children: React.ReactNode, props: Partial<L
   );
 };
 
-export { LameduseUIContext, LameduseUIProvider};
+export { LameduseUIContext, LameduseUIProvider, LameduseUIContextProps};

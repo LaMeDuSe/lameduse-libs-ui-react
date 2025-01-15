@@ -1,4 +1,11 @@
 export * from './components';
+export * from './context';
 
-import * as LameduseUI from './components';
+import * as components from './components';
+import * as context from './context';
+
+const LameduseUI = {
+  ...components,
+  ...context
+};
 export default LameduseUI;
