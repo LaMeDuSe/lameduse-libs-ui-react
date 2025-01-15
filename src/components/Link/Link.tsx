@@ -7,8 +7,9 @@ export interface LinkProps {
   label: string;
   type?: "primary" | "secondary" | "tertiary" | "danger";
   style?: "solid" | "outline" | "text";
-  form?: "rounded" | "pill" | "underline" | "none";
+  form?: "rounded" | "pill" | "underline" | "underline-hover" | "none";
   size?: "small" | "medium" | "large";
+  text_style?: "normal" | "bold";
   color_class?: string;
   onClick?: () => void;
 }
@@ -22,6 +23,7 @@ const Link = (props: LinkProps) => {
   props.form = props.form || "underline";
   props.form = props.form || "rounded";
   props.size = props.size || "medium";
+  props.text_style = props.text_style || "normal";
 
   // classes
   let color_class = props.color_class || {
@@ -50,6 +52,7 @@ const Link = (props: LinkProps) => {
     "rounded": "rounded-md",
     "pill": "rounded-full",
     "underline": "underline",
+    "underline-hover": "hover:underline",
     "none": "",
   }[props.form];
   let size_class = {
@@ -57,6 +60,10 @@ const Link = (props: LinkProps) => {
     "medium": "px-4 py-2 text-base",
     "large": "px-5 py-3 text-lg",
   }[props.size];
+  let text_style_class = {
+    "normal": "",
+    "bold": "font-bold",
+  }[props.text_style];
 
   return (
     <LameduseUICtx.LowLinkComponent
@@ -64,6 +71,7 @@ const Link = (props: LinkProps) => {
         ${color_class}
         ${form_class}
         ${size_class}
+        ${text_style_class}
       `}
       onClick={props.onClick}
     >
