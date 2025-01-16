@@ -1,5 +1,25 @@
 # LaMeDuSe Change Log
 
+# [1.4.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v1.3.0...v1.4.0) (2025-01-16)
+
+
+### Bug Fixes
+
+* bump version to node 22 ([c3da837](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/c3da83759ef0df294afb512c90f262fcfe9b4381))
+* fixed build workflow to return 1 on error ([ef56144](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/ef56144b74d3a543c2b6aa067f48e7c2e0506bb7))
+* fixed build workflow to use the rollup utility ([efa4447](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/efa4447ed792e0ce4686ac4a23a8c9f82951c6ca))
+* rollup css emit location ([502a9a3](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/502a9a3f933e6cdbedb79a3789b822a73819f682))
+
+
+### Features
+
+* add underline-hover style ([cc1aaa7](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/cc1aaa7279001808e33afeb4f6cb5d244d4ff074))
+* added link component ([9e755b5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/9e755b582d2b28a94292f3702512d463a85b8293))
+* export context ([2a2ca52](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/2a2ca52bb8b6f130c1c56d957e7a6cc0513ceadd))
+* testing default export ([6ea6419](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6ea641931f7524b5664ce30812bdda73eaa3af7f))
+* trying global default export ([37e974c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/37e974c61e99effc88e5e087f1faff076ae87d19))
+* worked on rollup to handle copy ([a384c28](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a384c28f1295cd083339c3af6b9c40572195c02a))
+
 # [1.3.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v1.2.0...v1.3.0) (2025-01-14)
 
 
