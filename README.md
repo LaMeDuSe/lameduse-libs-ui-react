@@ -43,7 +43,9 @@ import LameduseUI from 'lameduse-libs-ui-react';
 
 const App = () => {
   return (
-    <LameduseUI.Button>Click me</LameduseUI.Button>
+    <LameduseUI.LameduseUIProvider>
+      <LameduseUI.Button>Click me</LameduseUI.Button>
+    </LameduseUI.LameduseUIProvider>
   );
 };
 ```

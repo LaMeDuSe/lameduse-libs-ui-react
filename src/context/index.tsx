@@ -1,8 +1,8 @@
 import React, { createContext } from 'react';
 
 // default low level components
-const DefaultLink: React.FC<{className?: string, href?: string, children?: React.ReactNode, onClick?: () => void}> = 
-  ({className, href, children, onClick}) => <a className={className} href={href} onClick={onClick}>{children}</a>;
+const DefaultLink: React.FC<{className?: string, href?: string, children?: React.ReactNode, onClick?: () => void, target: string}> = 
+  ({className, href, children, onClick, target}) => <a className={className} href={href} onClick={onClick} target={target}> {children}</a>;
 
 
 const LameduseUIContext = createContext<LameduseUIContextProps>({
@@ -11,7 +11,7 @@ const LameduseUIContext = createContext<LameduseUIContextProps>({
 
 // Allows you to change the low level components used by LameduseUI.
 interface LameduseUIContextProps {
-  LowLinkComponent: React.FC<{className?: string, href?: string, children?: React.ReactNode, onClick?: () => void}>;
+  LowLinkComponent: React.FC<{className?: string, href?: string, children?: React.ReactNode, onClick?: () => void, target: string}>;
 }
 
 

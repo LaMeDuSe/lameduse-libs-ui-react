@@ -3,11 +3,12 @@ import React from "react";
 
 export interface ButtonProps {
   label: string;
-  type?: "primary" | "secondary" | "tertiary" | "danger";
+  type?: "primary" | "secondary" | "tertiary" | "danger" | "white";
   style?: "solid" | "outline";
   form?: "rounded" | "pill";
   size?: "small" | "medium" | "large";
   color_class?: string;
+  className?: string;
   onClick?: () => void;
 }
 
@@ -18,6 +19,7 @@ const Button = (props: ButtonProps) => {
   props.style = props.style || "solid";
   props.form = props.form || "rounded";
   props.size = props.size || "medium";
+  props.className = props.className || "";
 
   // classes
   let color_class = props.color_class || {
@@ -37,6 +39,10 @@ const Button = (props: ButtonProps) => {
       "solid": "bg-lameduse-red text-white",
       "outline": "text-lameduse-red border border-lameduse-red",
     },
+    "white": {
+      "solid": "bg-white text-lameduse-primary",
+      "outline": "text-white border border-white",
+    },
   }[props.type][props.style];
   let form_class = {
     "rounded": "rounded-md",
@@ -47,13 +53,13 @@ const Button = (props: ButtonProps) => {
     "medium": "px-4 py-2 text-base",
     "large": "px-5 py-3 text-lg",
   }[props.size];
-
   return (
     <button
       className={`
         ${color_class}
         ${form_class}
         ${size_class}
+        ${props.className}
       `}
       onClick={props.onClick}
     >
