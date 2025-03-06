@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+# [1.5.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v1.4.0...v1.5.0) (2025-03-06)
+
+
+### Features
+
+* add title component ([0a9f952](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/0a9f952be1be95c05973f7485def6efc204da065))
+
 # [1.4.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v1.3.0...v1.4.0) (2025-01-16)
 
 
