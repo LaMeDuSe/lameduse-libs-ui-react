@@ -18,7 +18,8 @@ const meta = {
   //   backgroundColor: { control: 'color' },
   // },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
+  args: {
+  },
 } satisfies Meta<typeof Navbar>;
 
 export default meta;
@@ -26,36 +27,77 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
+  
   args: {
     type: 'primary',
-    label: 'Our Services',
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    type: 'secondary',
-    label: 'My title',
-  },
-};
-
-export const Tertiary: Story = {
-  args: {
-    type: 'tertiary',
-    label: 'Title 3',
-  },
-};
-
-export const Danger: Story = {
-  args: {
-    type: 'danger',
-    label: 'Danger',
-  },
-};
-
-export const White: Story = {
-  args: {
-    type: 'white',
-    label: 'White',
+    NavItems: [
+      {
+        type: "logo",
+        position: "left",
+        src: "https://lamedusegroup.com/images/logos/lameduse_logo_grad_text_primary_bg_white.webp",
+        label: "LaMeDuSe",
+      },
+      {
+        type: "link",
+        position: "center",
+        label: "Home",
+        href: "#",
+      },
+      {
+        type: "link",
+        position: "center",
+        label: "About",
+        href: "#",
+      },
+      {
+        type: "link",
+        position: "center",
+        label: "Services",
+        href: "#",
+      },
+      {
+        type: "link",
+        position: "center",
+        label: "Contact",
+        href: "#",
+      },
+      {
+        type: "dropdown",
+        position: "right",
+        label: "Dropdown",
+        items: [
+          {
+            type: "link",
+            position: "right",
+            label: "Item 1",
+            href: "#",
+          },
+          {
+            type: "link",
+            position: "right",
+            label: "Item 2",
+            href: "#",
+          },
+          {
+            type: "link",
+            position: "right",
+            label: "Item 3",
+            href: "#",
+          },
+        ]
+      },
+      {
+        type: "link",
+        position: "right",
+        label: "Login",
+        href: "#",
+      },
+      {
+        type: "link",
+        position: "right",
+        label: "Sign Up",
+        href: "#",
+      },
+    ]
   },
 };

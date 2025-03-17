@@ -5,6 +5,6 @@ import Link from "./Link";
 
 describe("Button", () => {
   test("renders the Button component", () => {
-    render(<Link label="Hello world!" />);
+    render(<Link> Link </Link>);
   });
 });

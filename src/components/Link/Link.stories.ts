@@ -28,20 +28,20 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     type: 'primary',
-    label: 'Link',
+    children: 'Link',
   },
 };
 
 export const Secondary: Story = {
   args: {
     type: 'secondary',
-    label: 'Link',
+    children: 'Link',
   },
 };
 
 export const Tertiary: Story = {
   args: {
     type: 'tertiary',
-    label: 'Link',
+    children: 'Link',
   },
 };
