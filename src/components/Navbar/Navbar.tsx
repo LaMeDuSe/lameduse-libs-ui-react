@@ -29,6 +29,11 @@ export interface NavItemLogo extends NavItemBase {
     type: "logo";
     src: string;
     href?: string;
+    allowed_display: ["mobile" | "mobile-outside" | "desktop"];
+    // @default 100
+    height?: number;
+    // @default 300
+    width?: number;
 }
 
 export interface NavItemCustom extends NavItemBase {
@@ -41,25 +46,29 @@ export type NavItemType = NavItemLink | NavItemDropdown | NavItemLogo | NavItemC
 export interface NavLinkProps {
     config: NavItemLink;
     className?: string;
+    wrapClassName?: string;
 }
 
 const NavLink = (props: NavLinkProps) => {
     return (
-        <Link style="text" text_style="bold" form="underline-hover" href={props.config.href}> {props.config.label}</Link>
+        <div className={`${(props.wrapClassName || "")}`}>
+            <Link style="text" text_style="bold" size="medium" form="underline-hover" href={props.config.href}> {props.config.label}</Link>
+        </div>
     );
 }
 
 export interface NavDropdownProps {
     config: NavItemDropdown;
     className?: string;
+    wrapClassName?: string;
 }
 
 const NavItemDropdown = (props: NavDropdownProps) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     return (
-        <div className={`relative ${(props.className || "")}`}>
-            <Link style="text" text_style="bold" form="underline-hover" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>{props.config.label}</Link>
-            <div className="relative">
+        <div className={`${(props.wrapClassName || "")}`}>
+            <Link style="text" text_style="bold" size="medium" form="underline-hover" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>{props.config.label}</Link>
+            <div className="relative center">
                 <ul className={(isDropdownOpen ? "block" : "hidden") + " absolute z-10 bg-white shadow-lameduse-primary rounded-lg shadow-sm"}>
                     <div className="py-3 px-3 space-y-2 justify-center items-center">
                         {props.config.items.map((item) => {
@@ -75,23 +84,31 @@ const NavItemDropdown = (props: NavDropdownProps) => {
 export interface NavLogoProps {
     config: NavItemLogo;
     className?: string;
+    wrapClassName?: string;
 }
 
 const NavItemLogo = (props: NavLogoProps) => {
+    let height = props.config.height ?? 100;
+    let width = props.config.width ?? 300;
     return (
-        <NextLink href={props.config.href ?? "#"}>
-            <Image src={props.config.src} alt={props.config.label} className="w-[300px] h-[100px]" height={100} width={300} />
-        </NextLink>
+        <div className={`${(props.wrapClassName || "")}`}>
+            <NextLink href={props.config.href ?? "#"}>
+                <Image src={props.config.src} alt={props.config.label} className={`w-[${width}px] h-[${height}px]`} height={height} width={width} />
+            </NextLink>
+        </div>
     );
 }
 
 export interface NavCustomProps {
     config: NavItemCustom;
+    wrapClassName?: string;
 }
 
 const NavItemCustom = (props: NavCustomProps) => {
     return (
-        <props.config.component />
+        <div className={`${(props.wrapClassName || "")}`}>
+            <props.config.component />
+        </div>
     );
 }
 
@@ -117,27 +134,45 @@ const Navbar = (props: NavbarProps) => {
         "white": "bg-white"
     }[props.type];
 
-
+    let wrapClassName = "lg:px-0 p-2";
 
     // Is the navbar open
     const [isNavOpen, setIsNavOpen] = useState(false);
     return (
         <div className="w-full bg-white grid grid-flow-col lg:grid-cols-3 grid-cols-2">
-            <div className="justify-self-start flex flex-row items-center space-x-6 p-3 ml-6">
+            {/* Desktop start Navbar */}
+            <div className="justify-self-start hidden lg:flex flex-row items-center space-x-6 p-3 ml-6">
                 {props.NavItems.filter((v) => v.position == "left").map((item) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink config={item} />;
+                            return <NavLink config={item} wrapClassName={wrapClassName}/>;
                         case "dropdown":
-                            return <NavItemDropdown config={item} />;
+                            return <NavItemDropdown config={item} wrapClassName={wrapClassName}/>;
                         case "logo":
-                            return <NavItemLogo config={item} />;
+                            return item.allowed_display.includes("desktop") && <NavItemLogo config={item} wrapClassName={wrapClassName} />;
                         case "custom":
-                            return <NavItemCustom config={item} />;
+                            return <NavItemCustom config={item} wrapClassName={wrapClassName} />;
                     }
                 })
                 }
             </div>
+            {/* Mobile start Navbar */}
+            <div className="justify-self-start flex lg:hidden flex-row items-center space-x-6 p-3 ml-6">
+                {props.NavItems.filter((v) => v.position == "left").map((item) => {
+                    switch (item.type) {
+                        case "link":
+                            return <NavLink config={item} wrapClassName={wrapClassName} />;
+                        case "dropdown":
+                            return <NavItemDropdown config={item} wrapClassName={wrapClassName} />;
+                        case "logo":
+                            return item.allowed_display.includes("mobile-outside") && <NavItemLogo config={item} wrapClassName={wrapClassName} />;
+                        case "custom":
+                            return <NavItemCustom config={item} wrapClassName={wrapClassName} />;
+                    }
+                })
+                }
+            </div>
+            {/* Mobile menu Navbar */}
             <section className="flex lg:hidden p-3 ml-auto justify-center items-center mr-6">
                 <div
                     className="space-y-2"
@@ -154,7 +189,7 @@ const Navbar = (props: NavbarProps) => {
                         onClick={() => setIsNavOpen(false)}
                     >
                         <svg
-                            className="h-8 w-8 text-gray-600"
+                            className="h-8 w-8 text-lameduse-primary"
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
@@ -166,49 +201,51 @@ const Navbar = (props: NavbarProps) => {
                             <line x1="6" y1="6" x2="18" y2="18" />
                         </svg>
                     </div>
-                    <ul className="flex flex-col items-center justify-between min-h-[250px]">
+                    <ul className="flex flex-col items-center justify-between space-y-3 min-h-[250px]">
                         {props.NavItems.map((item) => {
                             switch (item.type) {
                                 case "link":
-                                    return <NavLink config={item} />;
+                                    return <NavLink config={item} wrapClassName={wrapClassName} />;
                                 case "dropdown":
-                                    return <NavItemDropdown config={item} />;
+                                    return <NavItemDropdown config={item} wrapClassName={wrapClassName} />;
                                 case "logo":
-                                    return <NavItemLogo config={item} />;
+                                    return item.allowed_display.includes("mobile") && <NavItemLogo config={item} wrapClassName={wrapClassName} />;
                                 case "custom":
-                                    return <NavItemCustom config={item} />;
+                                    return <NavItemCustom config={item} wrapClassName={wrapClassName} />;
                             }
                         })
                         }
                     </ul>
                 </div>
             </section>
+            {/* Desktop center Navbar */}
             <div className="justify-self-center hidden lg:flex flex-row items-center space-x-9">
                 {props.NavItems.filter((v) => v.position == "center").map((item) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink config={item} />;
+                            return <NavLink config={item} wrapClassName={wrapClassName} />;
                         case "dropdown":
-                            return <NavItemDropdown config={item} />;
+                            return <NavItemDropdown config={item} wrapClassName={wrapClassName} />;
                         case "logo":
-                            return <NavItemLogo config={item} />;
+                            return item.allowed_display.includes("desktop") && <NavItemLogo config={item} wrapClassName={wrapClassName} />;
                         case "custom":
-                            return <NavItemCustom config={item} />;
+                            return <NavItemCustom config={item} wrapClassName={wrapClassName} />;
                     }
                 })
                 }
             </div>
+            {/* Desktop end Navbar */}
             <div className="justify-self-end hidden lg:flex flex-row items-center space-x-9 pr-9">
                 {props.NavItems.filter((v) => v.position == "right").map((item) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink config={item} />;
+                            return <NavLink config={item} wrapClassName={wrapClassName} />;
                         case "dropdown":
-                            return <NavItemDropdown config={item} />;
+                            return <NavItemDropdown config={item} wrapClassName={wrapClassName} />;
                         case "logo":
-                            return <NavItemLogo config={item} />;
+                            return item.allowed_display.includes("desktop") && <NavItemLogo config={item} wrapClassName={wrapClassName} />;
                         case "custom":
-                            return <NavItemCustom config={item} />;
+                            return <NavItemCustom config={item} wrapClassName={wrapClassName} />;
                     }
                 })
                 }
