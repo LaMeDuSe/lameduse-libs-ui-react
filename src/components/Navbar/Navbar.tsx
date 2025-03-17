@@ -51,8 +51,8 @@ export interface NavLinkProps {
 
 const NavLink = (props: NavLinkProps) => {
     return (
-        <div className={`${(props.wrapClassName || "")}`}>
-            <Link style="text" text_style="bold" size="medium" form="underline-hover" href={props.config.href}> {props.config.label}</Link>
+        <div className={`${(props.wrapClassName || "")} ${props.className || ""}`}>
+            <Link nowrap style="text" text_style="bold" size="medium" form="underline-hover" href={props.config.href}> {props.config.label}</Link>
         </div>
     );
 }
@@ -70,9 +70,9 @@ const NavItemDropdown = (props: NavDropdownProps) => {
             <Link style="text" text_style="bold" size="medium" form="underline-hover" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>{props.config.label}</Link>
             <div className="relative center">
                 <ul className={(isDropdownOpen ? "block" : "hidden") + " absolute z-10 bg-white shadow-lameduse-primary rounded-lg shadow-sm"}>
-                    <div className="py-3 px-3 space-y-2 justify-center items-center">
+                    <div className="p-4 space-y-2 justify-center items-center">
                         {props.config.items.map((item) => {
-                            return <NavLink config={item} />
+                            return <NavLink config={item} className="p-2 w-full" />
                         })}
                     </div>
                 </ul>

@@ -27,9 +27,7 @@ type Story = StoryObj<typeof meta>;
 
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
-  
   args: {
-    type: 'primary',
     NavItems: [
       {
         type: "logo",
@@ -126,7 +124,6 @@ export const Primary: Story = {
 export const Enddropdown: Story = {
   
   args: {
-    type: 'primary',
     NavItems: [
       {
         type: "logo",
