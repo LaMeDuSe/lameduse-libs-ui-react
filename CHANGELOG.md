@@ -1,5 +1,27 @@
 # LaMeDuSe Change Log
 
+# [2.0.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v1.5.0...v2.0.0) (2025-03-18)
+
+
+### Bug Fixes
+
+* use yarn and remove npm ([278485f](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/278485f1bb29296c845da7742a494bb5c8ff932c))
+
+
+* feat!: added navbar item wrapper + removed context ([ea043b1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/ea043b1662a679bb5aaf83c22c1b3f0f432487fe))
+
+
+### Features
+
+* add navboard ([b232597](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b2325974c166623eb79b87e8ea45dd9baa859ff3))
+* added existing navbar as template ([93e60a0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/93e60a04e04c254c2126ead7aff32d9240a179a3))
+* reworked style for dropdown ([08e6e4e](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/08e6e4e32aae9a8e4c359311e122823d15a58804))
+
+
+### BREAKING CHANGES
+
+* context is now fully removed from exports
+
 # [1.5.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v1.4.0...v1.5.0) (2025-03-06)
 
 
