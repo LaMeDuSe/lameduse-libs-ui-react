@@ -4,20 +4,20 @@ all: build
 build: build_library build_storybook
 build_library:
 	@echo "Building..."
-	@npm run rollup
+	@yarn run rollup
 
 build_storybook:
 	@echo "Building story..."
-	@npm run build-storybook
+	@yarn run build-storybook
 
 install_deps:
-	@npm ci
+	@yarn install --frozen-lockfile
 
 test:
 	@echo "Running tests..."
-	@npm run test
+	@yarn run test
 
 run: story
 story:
 	@echo "Building storybook..."
-	@npm run storybook
+	@yarn run storybook
