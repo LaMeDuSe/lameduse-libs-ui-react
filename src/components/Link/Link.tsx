@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import { LameduseUIContext } from "../../context";
+import NextLink from "next/link";
 
 
 
 export interface LinkProps {
-  label: string;
+  children?: React.ReactNode;
   type?: "primary" | "secondary" | "tertiary" | "danger" | "white";
   style?: "solid" | "outline" | "text";
   form?: "rounded" | "pill" | "underline" | "underline-hover" | "none";
@@ -19,7 +19,6 @@ export interface LinkProps {
 }
 
 const Link = (props: LinkProps) => {
-  const LameduseUICtx = useContext(LameduseUIContext);
   // default values
   props = {...props}; // copy to avoid modifying the original object
   props.type = props.type || "primary";
@@ -30,6 +29,7 @@ const Link = (props: LinkProps) => {
   props.text_style = props.text_style || "normal";
   props.target = props.target || "_self";
   props.className = props.className || "";
+  props.href = props.href || "#";
 
   // classes
   let color_class = props.color_class || {
@@ -76,7 +76,7 @@ const Link = (props: LinkProps) => {
     "bold": "font-bold",
   }[props.text_style];
   return (
-    <LameduseUICtx.LowLinkComponent
+    <NextLink
       className={`
         ${color_class}
         ${form_class}
@@ -89,8 +89,8 @@ const Link = (props: LinkProps) => {
       href={props.href}
       target={props.target}
     >
-      {props.label}
-    </LameduseUICtx.LowLinkComponent>
+      {props.children}
+    </NextLink>
   )
 };
 
