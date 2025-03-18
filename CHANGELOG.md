@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.0.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.0.0...v2.0.1) (2025-03-18)
+
+
+### Bug Fixes
+
+* hotfix for missing export ([8a1e44b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8a1e44b87b5de3ee999b503b36d6cf2775fc9800))
+
 # [2.0.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v1.5.0...v2.0.0) (2025-03-18)
 
 
