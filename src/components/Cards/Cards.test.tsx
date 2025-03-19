@@ -5,6 +5,13 @@ import Cards from "./Cards";
 
 describe("Button", () => {
   test("renders the Button component", () => {
-    render(<Cards label="Hello world!" type="primary" />);
+    render(<Cards
+      type='primary'
+      image='https://lamedusegroup.com/images/logo/Icon 2.png'
+      description='This is a description'
+      title='This is a title'
+      link_url='/'
+      link_text='Link'
+    />);
   });
 });

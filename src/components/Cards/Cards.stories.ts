@@ -28,34 +28,10 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     type: 'primary',
-    label: 'Our Services',
-  },
-};
-
-export const Secondary: Story = {
-  args: {
-    type: 'secondary',
-    label: 'My title',
-  },
-};
-
-export const Tertiary: Story = {
-  args: {
-    type: 'tertiary',
-    label: 'Title 3',
-  },
-};
-
-export const Danger: Story = {
-  args: {
-    type: 'danger',
-    label: 'Danger',
-  },
-};
-
-export const White: Story = {
-  args: {
-    type: 'white',
-    label: 'White',
+    image: 'https://lamedusegroup.com/images/code_2.png',
+    description: 'This is a description',
+    title: 'This is a title',
+    link_url: '/',
+    link_text: 'Link',
   },
 };

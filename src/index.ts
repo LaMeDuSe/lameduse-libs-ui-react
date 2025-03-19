@@ -3,6 +3,6 @@ export * from './components';
 import * as components from './components';
 
 const LameduseUI = {
-  ...components,
+  ...components
 };
 export default LameduseUI;
