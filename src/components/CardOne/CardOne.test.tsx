@@ -1,11 +1,11 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import CardOne from "./CardOne";
+import Cards from "./CardOne";
 
 describe("Button", () => {
   test("renders the Button component", () => {
-    render(<CardOne
+    render(<Cards
       type='primary'
       image='https://lamedusegroup.com/images/logo/Icon 2.png'
       description='This is a description'
