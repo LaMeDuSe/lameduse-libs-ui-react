@@ -1,4 +1,4 @@
-import { StorybookConfig } from "@storybook/nextjs/dist";
+import { StorybookConfig } from "@storybook/nextjs";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -32,8 +32,7 @@ const config: StorybookConfig = {
       }
     },
     "@storybook/addon-themes",
-    "@storybook/addon-viewport",
-    "@chromatic-com/storybook"
+    "@storybook/addon-viewport"
   ],
 
   framework: {
