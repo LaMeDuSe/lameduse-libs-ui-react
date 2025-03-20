@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Link from "next/link";
+import Link from "../Link/Link";
 
 
 export interface CardTwoProps {
@@ -46,7 +46,9 @@ const CardTwo = (props: CardTwoProps) => {
         </div>
         <h2 className="text-2xl font-medium text-gray-900 mt-6 mb-3">{props.title}</h2>
         <p className="leading-relaxed text-base">{props.description}</p>
-        <Link href={props.link_url} className={`flex mx-auto mt-6 w-fit border-0 py-2 px-5 focus:outline-none rounded ${elements_colored}`}>{props.link_text}</Link>
+        <div className=" w-fit flex mx-auto mt-6">
+          <Link href={props.link_url} type={"primary"} form="rounded" style="solid" size="medium" className="border-0 py-2 px-5 focus:outline-none">{props.link_text}</Link>
+        </div>
       </div>
   )
 };
