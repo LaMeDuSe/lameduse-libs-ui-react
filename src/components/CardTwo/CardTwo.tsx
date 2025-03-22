@@ -1,0 +1,42 @@
+import React from "react";
+import Image from "next/image";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import NextLink from "next/link";
+
+
+export interface CardTwoProps {
+  type?: "primary";
+  className?: string;
+  onClick?: () => void;
+  image: string | StaticImport;
+  description: string;
+  title: string;
+  label: string
+  link_url: string;
+}
+
+const CardTwo = (props: CardTwoProps) => {
+  // default values
+  props = { ...props }; // copy to avoid modifying the original object
+  props.type = props.type ?? "primary";
+
+  props.className = props.className ?? "";
+
+  let color_classname = {
+    "primary": "text-lameduse-primary",
+  }[props.type]
+  return (
+    <div>
+      <NextLink href={props.link_url} target="_blank">
+        <div className="bg-gray-100 p-6 rounded-lg">
+          <Image width={238} height={160} className="h-40 rounded w-full object-contain object-center mb-6" src={props.image} alt="content" />
+          <h3 className={`tracking-widest text-xs font-medium title-font ${color_classname}`}>{props.label}</h3>
+          <h2 className={`text-lg text-black font-bold title-font mb-4`}>{props.title}</h2>
+          <p className="leading-relaxed text-base">{props.description}</p>
+        </div>
+      </NextLink>
+    </div>
+  )
+};
+
+export default CardTwo;

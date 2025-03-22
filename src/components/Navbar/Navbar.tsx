@@ -71,8 +71,8 @@ const NavItemDropdown = (props: NavDropdownProps) => {
             <div className="relative center">
                 <ul className={(isDropdownOpen ? "block" : "hidden") + " absolute z-10 bg-white shadow-lameduse-primary rounded-lg shadow-sm"}>
                     <div className="p-4 space-y-2 justify-center items-center">
-                        {props.config.items.map((item) => {
-                            return <NavLink config={item} className="p-2 w-full" />
+                        {props.config.items.map((item, index) => {
+                            return <NavLink key={index} config={item} className="p-2 w-full" />
                         })}
                     </div>
                 </ul>

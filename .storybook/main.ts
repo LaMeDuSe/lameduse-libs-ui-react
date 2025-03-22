@@ -1,11 +1,13 @@
-import type { StorybookConfig } from '@storybook/nextjs';
+import { StorybookConfig } from "@storybook/nextjs";
 
 const config: StorybookConfig = {
   stories: ["../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+
   addons: [
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
+    "@storybook/addon-controls",
     {
       name: '@storybook/addon-styling-webpack',
       options: {
@@ -30,8 +32,23 @@ const config: StorybookConfig = {
       }
     },
     "@storybook/addon-themes",
-    "@storybook/addon-viewport",
+    "@storybook/addon-viewport"
   ],
-  framework: '@storybook/nextjs',
+
+  framework: {
+    // This value is the same as the `framework` value in the `package.json` file
+    name: "@storybook/nextjs",
+    options: {}
+    // More on framework configuration: https://storybook.js.org/docs/react/configure/frameworks
+    // More on using the `framework` parameter: https://storybook.js.org/docs/react/configure/story-rendering
+  },
+
+  docs: {
+    autodocs: true
+  },
+
+  typescript: {
+    reactDocgen: "react-docgen-typescript"
+  }
 };
 export default config;
