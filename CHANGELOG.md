@@ -1,5 +1,22 @@
 # LaMeDuSe Change Log
 
+# [2.1.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.0.1...v2.1.0) (2025-03-22)
+
+
+### Bug Fixes
+
+* changed the tests option to match new component params ([fc3dd1f](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/fc3dd1f80cb8bb40a87b3861a5be066f71209141))
+
+
+### Features
+
+* add product cards ([fc6f3fd](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/fc6f3fd012adec96d5ddb8f49e90200c99db5090))
+* added 2nd theme card ([4410f5f](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4410f5fcba658dc00e21b5288bceeafe205f3caa))
+* changed the link handler to use the definded component ([cdcf3d7](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/cdcf3d7c9a78a156190824cf143ff10c88cd4bc1))
+* created files for cards items ([5b3d6f1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5b3d6f161b3788d937d9bb498c6af5fa495792a5))
+* removed unused addon chromatic ([abf8b70](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/abf8b703d790d82c358203f9c6c3036daa16bf2b))
+* renamed as cardone for support of multiple card type ([cd37c6c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/cd37c6c5cdb73f04bba948d694e28a263cc33139))
+
 ## [2.0.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.0.0...v2.0.1) (2025-03-18)
 
 
