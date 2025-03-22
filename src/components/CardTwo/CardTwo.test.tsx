@@ -11,7 +11,7 @@ describe("Button", () => {
       description='This is a description'
       title='This is a title'
       link_url='/'
-      link_text='Link'
+      label="AWS"
     />);
   });
 });
