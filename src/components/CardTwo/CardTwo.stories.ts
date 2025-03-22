@@ -33,5 +33,5 @@ export const Primary: Story = {
     title: 'This is a title',
     link_url: '/',
     label: 'AWS',
-  },
+  }
 };
