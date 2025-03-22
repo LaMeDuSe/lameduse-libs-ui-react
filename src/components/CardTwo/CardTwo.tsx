@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Link from "../Link/Link";
+import NextLink from "next/link";
 
 
 export interface CardTwoProps {
@@ -11,45 +11,31 @@ export interface CardTwoProps {
   image: string | StaticImport;
   description: string;
   title: string;
+  label: string
   link_url: string;
-  link_text: string;
-  border?: "normal" | "no-border";
-  rounded?: boolean;
 }
 
 const CardTwo = (props: CardTwoProps) => {
   // default values
   props = { ...props }; // copy to avoid modifying the original object
-  props.border = props.border ?? "normal";
-  props.rounded = props.rounded ?? true;
   props.type = props.type ?? "primary";
 
   props.className = props.className ?? "";
-  let standard_class = "p-6";
-  let container_color_class = {
-    "primary": "bg-white border-lameduse-primary",
-  }[props.type]
 
-  let elements_colored = {
-    "primary": "bg-lameduse-primary hover:bg-lameduse-primary/90 text-white",
+  let color_classname = {
+    "primary": "text-lameduse-primary",
   }[props.type]
-
-  let border = {
-    "normal": "border-2",
-    "no-border": "",
-  }[props.border];
-  let rounded = props.rounded ? "rounded-lg" : "";
   return (
-      <div className={`px-4 ${container_color_class} ${props.className} ${rounded} ${standard_class} ${border}`}>
-        <div className="rounded-lg h-64 overflow-hidden">
-          <Image height={500} width={500} alt="content" className="object-cover object-center h-full w-full" src={props.image} />
+    <div>
+      <NextLink href={props.link_url} target="_blank">
+        <div className="bg-gray-100 p-6 rounded-lg">
+          <Image width={238} height={160} className="h-40 rounded w-full object-contain object-center mb-6" src={props.image} alt="content" />
+          <h3 className={`tracking-widest text-xs font-medium title-font ${color_classname}`}>{props.label}</h3>
+          <h2 className={`text-lg text-black font-bold title-font mb-4`}>{props.title}</h2>
+          <p className="leading-relaxed text-base">{props.description}</p>
         </div>
-        <h2 className="text-2xl font-medium text-gray-900 mt-6 mb-3">{props.title}</h2>
-        <p className="leading-relaxed text-base">{props.description}</p>
-        <div className=" w-fit flex mx-auto mt-6">
-          <Link href={props.link_url} type={"primary"} form="rounded" style="solid" size="medium" className="border-0 py-2 px-5 focus:outline-none">{props.link_text}</Link>
-        </div>
-      </div>
+      </NextLink>
+    </div>
   )
 };
 

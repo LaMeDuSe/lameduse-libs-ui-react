@@ -32,18 +32,6 @@ export const Primary: Story = {
     description: 'This is a description',
     title: 'This is a title',
     link_url: '/',
-    link_text: 'Link',
-  },
-};
-
-export const NoBorder: Story = {
-  args: {
-    type: 'primary',
-    image: 'https://lamedusegroup.com/images/code_2.png',
-    description: 'This is a description',
-    title: 'This is a title',
-    link_url: '/',
-    link_text: 'Link',
-    border: 'no-border',
+    label: 'AWS',
   },
 };
