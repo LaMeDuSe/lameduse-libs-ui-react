@@ -42,7 +42,9 @@ const config: StorybookConfig = {
     // More on framework configuration: https://storybook.js.org/docs/react/configure/frameworks
     // More on using the `framework` parameter: https://storybook.js.org/docs/react/configure/story-rendering
   },
-
+  features: {
+    viewportStoryGlobals: true,
+  },
   docs: {
     autodocs: true
   },

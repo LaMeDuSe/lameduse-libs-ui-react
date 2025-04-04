@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import NextLink from "next/link";
 import Image from "next/image";
-import Link from "../Link/Link";
+import Link from "../../components/Link";
 
 export interface NavbarProps {
     type?: "primary" | "secondary" | "tertiary" | "danger" | "white";
