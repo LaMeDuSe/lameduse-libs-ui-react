@@ -19,7 +19,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  REGISTRY: registry.lameduse.fr
+  REGISTRY: ${{ vars.LAMEDUSE_REGISTRY }}
   IMAGE_NAME: ${{ github.repository }}
 
 jobs:
