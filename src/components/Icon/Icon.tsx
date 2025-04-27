@@ -6,6 +6,8 @@ import NextLink from "next/link";
 export interface ButtonProps {
   icon: "LINKEDIN" | "TWITTER";
   href?: string;
+  size?: "small" | "medium" | "large";
+  color?: "primary" | "secondary" | "tertiary" | "darkgrey";
   onClick?: () => void;
 }
 
@@ -18,12 +20,31 @@ const Icon = (props: ButtonProps) => {
   // default values
   props = { ...props }; // copy to avoid modifying the original object
 
+  // default size
+  props.size = props.size || "small";
+  // default color
+  props.color = props.color || "primary";
+
   const IconObj = IconMap[props.icon];
 
+  const sizeClass = {
+    "small": "w-6 h-6",
+    "medium": "w-8 h-8",
+    "large": "w-10 h-10",
+  }[props.size];
+
+  const colorClass = {
+    "primary": "text-lameduse-primary/80 hover:text-lameduse-primary",
+    "secondary": "text-lameduse-secondary/80 hover:text-lameduse-secondary",
+    "tertiary": "text-lameduse-tertiary/80 hover:text-lameduse-tertiary",
+    "darkgrey": "text-gray-500/80 hover:text-gray-500",
+  }[props.color];
   return (
-    <NextLink href={props.href || "#"}>
-      <IconObj/>
-    </NextLink>
+    <div className={`${sizeClass} ${colorClass} text-nowrap`}>
+      <NextLink href={props.href || "#"} onClick={props.onClick}>
+        <IconObj />
+      </NextLink>
+    </div>
   )
 };
 

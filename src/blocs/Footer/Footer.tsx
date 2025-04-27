@@ -3,6 +3,7 @@ import Image from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import NextLink from "next/link";
 import Link from "../../components/Link"
+import Icon from "../../components/Icon";
 
 /*
 FIXME: Year is static should not be hardcoded
@@ -21,6 +22,10 @@ export interface FooterCompanyInfosProps {
   logo_size?: {
     width: number;
     height: number;
+  }
+  icons?: {
+    twitter?: string;
+    linkedin?: string;
   }
 }
 
@@ -83,18 +88,15 @@ const Footer = (props: FooterProps) => {
           <p className="text-gray-500 text-sm text-center sm:text-left">
             {`© 2025 - ${props.companyInfos.name} — ${props.companyInfos.address} — SIREN : ${props.companyInfos.id_number}`}
           </p>
-          <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start">
-            <NextLink href="https://twitter.com/lamedusegroup" className="ml-3 text-gray-500 hover:text-lameduse-primary">
-              <svg fill="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-5 h-5" viewBox="0 0 24 24">
-                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
-              </svg>
-            </NextLink>
-            <NextLink href="https://www.linkedin.com/company/lameduse" className="ml-3 text-gray-500 hover:text-lameduse-primary">
-              <svg fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="0" className="w-5 h-5" viewBox="0 0 24 24">
-                <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
-                <circle cx="4" cy="4" r="2" stroke="none"></circle>
-              </svg>
-            </NextLink>
+          <span className="inline-flex sm:ml-auto sm:mt-0 mt-2 justify-center sm:justify-start gap-2">
+            {props.companyInfos.icons?.twitter && (
+                <Icon icon="TWITTER" href={props.companyInfos.icons.twitter}/>
+              )
+            }
+            {props.companyInfos.icons?.linkedin && (
+                <Icon icon="LINKEDIN" href={props.companyInfos.icons.linkedin}/>
+              )
+            }
           </span>
         </div>
       </div>

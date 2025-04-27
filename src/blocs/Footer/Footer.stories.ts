@@ -60,7 +60,7 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {
     companyInfos: {
-      logo: "https://assets.lameduse.net/logo/lameduse_group_logo_grad_text_primary_bg_white.png",
+      logo: "https://assets.lameduse.net/logo/lameduse_group_logo_grad_text_primary_bg_none.png",
       logo_size: { width: 192, height: 64 },
       description: "At LaMeDuSe Group we believe in innovation and creativity. We are a team of passionate who are dedicated to pushing the boundaries of technology and design.",
       name: "LaMeDuSe Group",
@@ -68,6 +68,10 @@ export const Primary: Story = {
       email: "contact@lamedusegroup.com",
       phone: "+33 (0)9 72 17 39 01",
       id_number: "915248579",
+      icons: {
+        twitter: "https://twitter.com/lamedusegroup",
+        linkedin: "https://www.linkedin.com/company/lameduse",
+      }
     },
     links: [
       {

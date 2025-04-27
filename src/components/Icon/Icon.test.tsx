@@ -5,6 +5,6 @@ import Icon from "./Icon";
 
 describe("Icon", () => {
   test("renders the Button component", () => {
-    render(<Icon icon="TWITTER"/>);
+    render(<Icon icon="TWITTER" />);
   });
 });
