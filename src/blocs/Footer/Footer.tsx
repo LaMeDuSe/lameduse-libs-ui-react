@@ -74,8 +74,8 @@ const Footer = (props: FooterProps) => {
               <h2 className="text-lameduse-primary tracking-widest text-lg mb-3">{linkGroup.title}</h2>
               <nav className="list-none mb-10">
                 {linkGroup.links.map((link, index) => (
-                  <li>
-                    <NextLink key={index} className="text-gray-600 hover:text-lameduse-primary text-base" href={link.href}>{link.label}</NextLink>
+                  <li key={index}>
+                    <NextLink className="text-gray-600 hover:text-lameduse-primary text-base" href={link.href}>{link.label}</NextLink>
                   </li>
                 ))}
               </nav>
