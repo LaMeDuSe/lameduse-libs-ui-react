@@ -9,7 +9,7 @@ const meta = {
   component: GhostPost,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
-    layout: 'centered', // 'fullscreen' | 'padded' | 'centered'
+    layout: 'fullscreen', // 'fullscreen' | 'padded' | 'centered'
   },
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/writing-docs/autodocs
   tags: ['autodocs'],
@@ -18,7 +18,13 @@ const meta = {
   //   backgroundColor: { control: 'color' },
   // },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-  args: { onClick: fn() },
+  args: {
+    GhostContentAPIOptions: {
+      url: 'https://blog.lamedusegroup.com',
+      key: '525230ac593cf1cd6ce27e9ec8',
+      version: "v5.0"
+    }
+  },
 } satisfies Meta<typeof GhostPost>;
 
 export default meta;
@@ -27,6 +33,10 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    yesno: 'YES',
+    GhostContentAPIOptions: {
+      url: 'https://blog.lamedusegroup.com',
+      key: '525230ac593cf1cd6ce27e9ec8',
+      version: "v5.0"
+    }
   },
 };
