@@ -4,7 +4,7 @@ import { render } from "@testing-library/react";
 import Icon from "./Icon";
 
 describe("Icon", () => {
-  test("renders the Button component", () => {
+  test("renders the Icon component", () => {
     render(<Icon icon="TWITTER" />);
   });
 });

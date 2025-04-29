@@ -4,6 +4,7 @@
   "author": "LaMeDuSe",
   "description": "@LaMeDuSe frontend storybook",
   "scripts": {
+    "build-lib": "yarn run test && yarn run rollup",
     "rollup": "rollup -c",
     "test": "jest",
     "storybook": "storybook dev -p 6006 --loglevel verbose",

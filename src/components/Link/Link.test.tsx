@@ -3,8 +3,8 @@ import { render } from "@testing-library/react";
 
 import Link from "./Link";
 
-describe("Button", () => {
-  test("renders the Button component", () => {
+describe("Link", () => {
+  test("renders the Link component", () => {
     render(<Link> Link </Link>);
   });
 });
