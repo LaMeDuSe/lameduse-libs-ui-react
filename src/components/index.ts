@@ -3,6 +3,7 @@
 export { default as Button } from "./Button";
 export { default as CardOne } from "./CardOne";
 export { default as CardTwo } from "./CardTwo";
+export { default as ContactCard } from "./ContactCard";
 export { default as CTA } from "./CTA";
 export { default as Icon } from "./Icon";
 export { default as Link } from "./Link";
