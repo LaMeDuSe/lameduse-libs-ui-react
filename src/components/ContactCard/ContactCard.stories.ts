@@ -2,7 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
 import ContactCard from './ContactCard';
-import { CalendarDaysIcon, PhoneIcon } from '@heroicons/react/24/solid';
+import { AtSymbolIcon, CalendarDaysIcon, PhoneIcon } from '@heroicons/react/24/solid';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
@@ -66,6 +66,6 @@ export const Email: Story = {
     third_line: "9h - 20h (Paris Time)",
     link_url: "https://contactus.lamedusegroup.com/",
     link_text: "Be contacted by Email",
-    Icon: PhoneIcon
+    Icon: AtSymbolIcon
   },
 };
