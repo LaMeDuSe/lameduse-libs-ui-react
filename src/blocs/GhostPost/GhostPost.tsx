@@ -50,7 +50,9 @@ const GhostPost = (props: GhostPostProps) => {
 
     props = { ...props }; // copy to avoid modifying the original object
 
-    props.CardHeight = props.CardHeight || 550; // default value
+    props.CardHeight = props.CardHeight || 600; // default value
+
+    let height_class = `height: ${props.CardHeight}px;`;
 
     const [posts, setposts] = useState<React.JSX.Element[]>([])
 
@@ -64,8 +66,15 @@ const GhostPost = (props: GhostPostProps) => {
                 console.log(post.title);
             });
             let elements = posts.map((post, id) =>
-                <div key={id} className={`max-w-md h-[${props.CardHeight}px] mb-4 md:ml-16 rounded overflow-hidden shadow-lg select-none flex flex-col`}>
-                    <Image width={448} height={250} className="w-full pointer-events-none h-[250px] object-cover" src={post.feature_image ?? "/images/logos/Icon 2.png"} alt={post.feature_image_alt ?? "no image"} />
+                <div key={id}
+                    style={
+                      {
+                        height: props.CardHeight
+                      }
+                    } 
+                    className={`max-w-md mb-4 md:ml-16 rounded overflow-hidden shadow-lg select-none flex flex-col`}
+                  >
+                    <Image width={448} height={250} className="w-full pointer-events-none h-[250px] object-cover" src={post.feature_image ?? "https://assets.lameduse.net/logo/lameduse_logo_grad.webp"} alt={post.feature_image_alt ?? "no image"} />
                     <div className="px-6 py-4">
                         <div className="font-bold text-xl mb-2">{post.title}</div>
                         <p className="text-gray-700 text-base">
@@ -79,10 +88,9 @@ const GhostPost = (props: GhostPostProps) => {
                             )}
                         </div>
                         <div className="flex flex-row items-center">
-                        <Image width={40} height={40} className="w-10 h-10 rounded-full" src={post.primary_author?.profile_image ?? "/images/logos/Icon 2.png"} alt={post.primary_author?.name ?? "no image"} />
+                        <Image width={40} height={40} className="w-10 h-10 rounded-full" src={post.primary_author?.profile_image ?? "https://assets.lameduse.net/logo/lameduse_logo_grad.webp"} alt={post.primary_author?.name ?? "no image"} />
                             <a className="inline-block text-lameduse-primary hover:underline hover:underline-offset-2 rounded-full px-3 py-1 text-sm  mr-2 " href={post.primary_author?.url ?? ""}>{post.primary_author?.name ?? "no name"}</a>
                             <a className="inline-block text-lameduse-primary hover:underline hover:underline-offset-2 rounded-full px-3 py-1 text-sm ml-auto mr-2" href={post.url}>Read More <ArrowRightIcon className="h-6 w-6 inline-block"/></a>
-                            
                         </div>
                     </div>
                 </div>
