@@ -29,6 +29,5 @@ export const Primary: Story = {
   args: {
     annee: 2025,
     mois: 4,
-    yesno: 'YES',
   },
 };

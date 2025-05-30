@@ -12,14 +12,39 @@ const allYears = Array.from({ length: 200 }, (_, i) => 1900 + i);
 
 const an=[2015,2016,2017 ,2018 ,2019 ,2020 ,2021, 2022 ,2023, 2024, 2025];
 
+type localsType = {
+  [key: string]: {
+    months: string[];
+    days: string[];
+  };
+};
+
+const locals_default : localsType= {
+  "fr-FR": {
+    months: [
+      "Janvier", "Février", "Mars", "Avril", "Mai", "Juin",
+      "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"
+    ],
+    days: ["Lun", "Mar", "Mer", "Jeu", "Ven", "Sam", "Dim"]
+  }
+}
+
 export interface CalendarProps {
+  local?: string;
+  locals?: localsType;
+
   annee: number;
   mois: number;
   onClick?: (date:string)=>void;
-  yesno?: "YES" | "NO";
 }
 
-const Calendrier: React.FC<CalendarProps> = ({ onClick, yesno }) => {
+const Calendrier: React.FC<CalendarProps> = (props) => {
+  // locals
+  props.local = props.local || "fr-FR";
+  props.locals = props.locals || locals_default;
+
+  props.locals[props.local] = props.locals[props.local] || locals_default["fr-FR"];
+
   const [date,setDate]=useState<string | null>(null);
   const [mois,setMois]=useState(new Date().getMonth());
   const [annee,setAnnee]=useState(new Date().getFullYear());
