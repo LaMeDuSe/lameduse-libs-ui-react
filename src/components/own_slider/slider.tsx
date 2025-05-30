@@ -6,12 +6,13 @@ import { useContext } from 'react';
 import { SliderProvider, SliderContext, SliderState } from './slideProvider.tsx'; 
 
 
-export function HeroSlider({
+export default function HeroSlider({
   slides,
   className,
   width = '100%',
   height = '100vh'
 }: HeroSliderProps) {
+
     const context=useContext(SliderContext);
     if (!context) {
         throw new Error("HeroSlider must be used within a SliderProvider");
@@ -44,6 +45,11 @@ export function HeroSlider({
     </div>
   );
 }
+
+
+
+
+
 
 
 
