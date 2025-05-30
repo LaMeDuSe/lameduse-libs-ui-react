@@ -60,9 +60,20 @@ const CardCaroussel=({ Cards}: CardCarousselProps) => {
   //création du composznt CardCaroussel
   const [currentIndex, setCurrentIndex] = useState(0);
   const [cardsPerPage, setCardsPerPage] = useState(3);
-// currentIndex :Page de cartes affichée
-// setCurrentIndex : fonction pour mettre à jour l'index
+  // currentIndex :Page de cartes affichée
+  // setCurrentIndex : fonction pour mettre à jour l'index
   const maxIndex = Cards.length - cardsPerPage;
+  const start = currentIndex * cardsPerPage; // cacul de l'index de départ
+  const visibleCards = Cards.slice(currentIndex, currentIndex + cardsPerPage);
+
+  const next = () => {
+    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
+  };
+
+  const prev = () => {
+    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
+  };
+
   useEffect(() => {
     const keys = Object.keys(responsive)
       .filter((value) => parseInt(value) <= width)
@@ -73,16 +84,6 @@ const CardCaroussel=({ Cards}: CardCarousselProps) => {
       setCardsPerPage(responsive[matchedKey].items);
     }
   }, [width]);
-  const next = () => {
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-  };
-
-  const prev = () => {
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
-  };
-
-  const start = currentIndex * cardsPerPage; // cacul de l'index de départ
-  const visibleCards = Cards.slice(currentIndex, currentIndex + cardsPerPage);
 
   return (
     <div className="w-full max-w-7xl mx-auto p-4">
@@ -108,9 +109,9 @@ const CardCaroussel=({ Cards}: CardCarousselProps) => {
 
           // Si c’est le dernier dot et la page est incomplète,
           // on ajuste pour ne pas avoir une page vide
-          const last=totalCards-cardsPerPage;
-          if (i===CompletePage-1 && targetIndex>last) {
-            targetIndex=last;
+          const last = totalCards - cardsPerPage;
+          if ((i === (CompletePage - 1)) && (targetIndex > last)) {
+            targetIndex = last;
           }
 
             return (
