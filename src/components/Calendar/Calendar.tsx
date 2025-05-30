@@ -39,11 +39,13 @@ export interface CalendarProps {
 }
 
 const Calendrier: React.FC<CalendarProps> = (props) => {
-  // locals
-  props.local = props.local || "fr-FR";
-  props.locals = props.locals || locals_default;
+  // copy object for immutability
+  props = { ...props}
 
-  props.locals[props.local] = props.locals[props.local] || locals_default["fr-FR"];
+  // locals
+  props.local = props.local ?? "fr-FR";
+  props.locals = props.locals ?? locals_default;
+  props.locals[props.local] = props.locals[props.local] ?? locals_default["fr-FR"];
 
   const [date,setDate]=useState<string | null>(null);
   const [mois,setMois]=useState(new Date().getMonth());
