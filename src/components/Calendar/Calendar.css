@@ -20,7 +20,7 @@
 }
 
 .j_calendar_selected {
-  background-color: rgba(27, 207, 220, 0.669); /* couleur du jour sélectionné forme carré*/
+  background-color: rgba(27, 207, 220, 0.669); /* couleur du jour sélectionné forme square*/
   color: white;
   text-align: center;
 }
@@ -31,29 +31,29 @@
   text-align: center;
 }
 
-.j_calendar_selected_rond{
-  background-color: rgba(27, 207, 220, 0.669); /* couleur du jour sélectionné forme rond*/
+.j_calendar_selected_circle{
+  background-color: rgba(27, 207, 220, 0.669); /* couleur du jour sélectionné forme circle*/
   color: white;
   text-align: center;
   border-radius: 10px;
 }
 
-.other-month-carré{
+.other-month-square{
   color: #929292a4;
   text-align: center;
 }
 
-.other-month-rond{
+.other-month-circle{
   color: #929292a4;
   text-align: center;
   border-radius: 10px;
 }
 
-.other-month-rond:hover{
+.other-month-circle:hover{
  background-color: rgba(94, 95, 95, 0.155);   
 }
 
-.other-month-carré:hover{
+.other-month-square:hover{
  background-color: rgba(94, 95, 95, 0.317);   
 }
 
