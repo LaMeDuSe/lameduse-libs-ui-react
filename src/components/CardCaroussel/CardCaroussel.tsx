@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useResizeObserver } from "./hooks/useResizeObserver";
+import { useResponsiveCardsPerPage } from "./hooks/useResponsiveCardsPerPage";
 
 const GAP = 24;
 
@@ -33,32 +35,10 @@ const CardCaroussel = ({ Cards }: CardCarousselProps) => {
   const startX = useRef(0);
   const currentOffset = useRef(0);
 
-  useEffect(() => {
-    const resizeObserver = new ResizeObserver((entries) => {
-      for (let entry of entries) {
-        if (entry.contentRect) {
-          setContainerWidth(entry.contentRect.width);
-        }
-      }
-    });
+ 
+  useResizeObserver(containerRef, setContainerWidth);
 
-    if (containerRef.current) {
-      resizeObserver.observe(containerRef.current);
-    }
-
-    return () => resizeObserver.disconnect();
-  }, []);
-
-  useEffect(() => {
-    const keys = Object.keys(responsive)
-      .filter((value) => parseInt(value) <= containerWidth)
-      .sort((a, b) => parseInt(b) - parseInt(a));
-
-    const matchedKey = parseInt(keys[0]);
-    if (matchedKey) {
-      setCardsPerPage(responsive[matchedKey].items);
-    }
-  }, [containerWidth]);
+  useResponsiveCardsPerPage(containerWidth, responsive, setCardsPerPage);
 
   const totalPages = Math.ceil(Cards.length / cardsPerPage);
 
