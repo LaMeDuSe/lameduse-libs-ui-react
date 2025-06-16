@@ -1,159 +1,155 @@
-import { SYSTEM_ENTRYPOINTS } from "next/dist/shared/lib/constants";
 import React from "react";
 import {useState} from "react";
-import Button from "react";
 import { useEffect} from "react";
 import "./Calendar.css"
 
-const jour=['Lu','Ma','Me','Je','Ve','Sa','Di'];
-const jour_EN=['Mo','Tu','We','Th','Fr','Sa','Su']
+const day=['Lu','Ma','Me','Je','Ve','Sa','Di'];
+const day_EN=['Mo','Tu','We','Th','Fr','Sa','Su']
 
 const month=['Janvier ','Février ','Mars ','Avril ','Mai ','Juin ','Juillet ','Aout ','Septembre ','Octobre ','Novembre ','Décembre '];
 const month_EN=['January','February','March','April', 'May','June','July', 'August','September','October','November','December'];
 
 const allYears = Array.from({ length: 200 }, (_, i) => 1900 + i);
 
-/*const an=[2015,2016,2017 ,2018 ,2019 ,2020 ,2021, 2022 ,2023, 2024, 2025];
-*/
 export interface CalendarProps {
-  annee: number;
-  mois: number;
+  year: number;
+  Month: number;
   onClick?: (date:string)=>void;
   yesno?: "YES" | "NO";
-  afficherDate?: boolean;
-  forme?: "carré" | "rond";
-  theme_couleur?: "dark" | "light";
-  traduction?: "fr" | "en";
+  vueDate?: boolean;
+  shape?: "carré" | "rond";
+  color_style?: "dark" | "light";
+  translation?: "fr" | "en";
 }
 
-const Calendrier: React.FC<CalendarProps> = ({ onClick, yesno,afficherDate, forme, theme_couleur, traduction}) => {
+const Calendrier: React.FC<CalendarProps> = ({ onClick, yesno,vueDate, shape, color_style, translation}) => {
   const [date,setDate]=useState<string | null>(null);
-  const [mois,setMois]=useState(new Date().getMonth());
-  const [annee,setAnnee]=useState(new Date().getFullYear());
-  const [mode, setMode] = useState<"calendrier" | "annee" >("calendrier");
+  const [Month,setMonth]=useState(new Date().getMonth());
+  const [year,setyear]=useState(new Date().getFullYear());
+  const [mode, setMode] = useState<"calendrier" | "year" >("calendrier");
   const [selectedDay, setSelectedDay] = useState<number | null>(null);
   const [selectedDate, setSelectedDate] = useState<{
-  jour: number;
-  mois: number;
-  annee: number;
+  day: number;
+  Month: number;
+  year: number;
   } | null>(null);
 
 
-  const j1 = (new Date(annee, mois, 1).getDay() + 6) % 7;
-  const nbr_j_ds_mois=new Date(annee,mois+1,0).getDate();
-  const nbr_j_ds_mois_precedent=new Date(annee,mois,0).getDate();
+  const j1 = (new Date(year, Month, 1).getDay() + 6) % 7;
+  const nbr_j_ds_Month=new Date(year,Month+1,0).getDate();
+  const nbr_j_ds_Month_previous=new Date(year,Month,0).getDate();
 
-  let semaine: (number | null )[] = [];
-  let semaines: (number | null )[][]=[];
+  let week: (number | null )[] = [];
+  let week_array: (number | null )[][]=[];
 
   for(let i=j1-1; i>=0;i--){
-    semaine.push(nbr_j_ds_mois_precedent-i);
+    week.push(nbr_j_ds_Month_previous-i);
   }
 
-  for(let i=1;i<=nbr_j_ds_mois;i++){
-    semaine.push(i);
-    if(semaine.length===7){
-      semaines.push(semaine);
-      semaine=[];
+  for(let i=1;i<=nbr_j_ds_Month;i++){
+    week.push(i);
+    if(week.length===7){
+      week_array.push(week);
+      week=[];
     }
   }
 
-  let j_suivant=1;
-  while(semaine.length<7){
-    semaine.push(j_suivant++);
+  let j_next=1;
+  while(week.length<7){
+    week.push(j_next++);
   }
-  semaines.push(semaine);
+  week_array.push(week);
 
-  while (semaines.length < 6) {
-    let ligne: (number | null)[] = [];
+  while (week_array.length < 6) {
+    let line: (number | null)[] = [];
     for (let i = 0; i < 7; i++) {
-      ligne.push(j_suivant++);
+      line.push(j_next++);
     }
-    semaines.push(ligne);
+    week_array.push(line);
 }
 
 
-  const handleClick = (jour: number, moisCible: number = mois, anneeCible: number = annee) => {
-    setMois(moisCible);
-    setAnnee(anneeCible);
-    setSelectedDate({ jour, mois: moisCible, annee: anneeCible });
+  const handleClick = (day: number, MonthTarget: number = Month, yearTarget: number = year) => {
+    setMonth(MonthTarget);
+    setyear(yearTarget);
+    setSelectedDate({ day, Month: MonthTarget, year: yearTarget });
   };
 
-  const moisSuivant=()=>{
-    if(mois===11){
-      setMois(0);
-      setAnnee(annee+1);
+  const Monthnext=()=>{
+    if(Month===11){
+      setMonth(0);
+      setyear(year+1);
     }
     else{
-      setMois(mois+1);
+      setMonth(Month+1);
     }
   };
 
-  const moisPrecedent=()=>{
-    if(mois===0){
-      setMois(11);
-      setAnnee(annee-1);
+  const Monthprevious=()=>{
+    if(Month===0){
+      setMonth(11);
+      setyear(year-1);
     }
     else{
-      setMois(mois-1);
+      setMonth(Month-1);
     }
   };
 
-  const anneeSuivante=()=>{
-    setAnnee(annee+1);
+  const yearnext=()=>{
+    setyear(year+1);
   };
 
-  const anneePrecedente=()=>{
-    setAnnee(annee-1);
+  const yearpreviouse=()=>{
+    setyear(year-1);
   };
 
-  const moisCorrespondant=(c: number,traduction:"fr" | "en"): string | undefined=>{
+  const MonthCorrespondant=(c: number,translation:"fr" | "en"): string | undefined=>{
     if(c>=1 && c<=12){
-      return trad_month[traduction][c-1];
+      return transl_month[translation][c-1];
     }
     return undefined;
   };
 
-  const trad = traduction ?? "fr";
+  const transl = translation ?? "fr";
 
   const back=()=>{
     if(selectedDate){
-      setMois(selectedDate.mois);
-      setAnnee(selectedDate.annee);
+      setMonth(selectedDate.Month);
+      setyear(selectedDate.year);
       setMode("calendrier");
     }
   };
 
-  const trad_jour={
-    fr:jour,
-    en:jour_EN,
+  const transl_day={
+    fr:day,
+    en:day_EN,
   }
 
-  const trad_month={
+  const transl_month={
     fr: month,
     en:month_EN,
   }
 
-  const trad_back={
+  const transl_back={
     fr:{back:"Retour",},en:{back:"Back",},
   };
 
   useEffect(() => {
   setSelectedDay(null);
   setDate(null);
-  }, [mois, annee]);
+  }, [Month, year]);
 
 
   return (
-    <div className={`global ${theme_couleur === "dark" ? "dark" : theme_couleur === "light" ? "light" : ""}`}>
+    <div className={`global ${color_style === "dark" ? "dark" : color_style === "light" ? "light" : ""}`}>
   
-      {mode === "annee" && (
+      {mode === "year" && (
         <div className="scroll_an">
           {allYears.map((a) => (
             <button
               key={a}
               onClick={() => {
-                setAnnee(a);
+                setyear(a);
                 setMode("calendrier");
               }}
             >
@@ -168,51 +164,51 @@ const Calendrier: React.FC<CalendarProps> = ({ onClick, yesno,afficherDate, form
       {mode === "calendrier" && (
         <>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-            <button onClick={anneePrecedente}>{"<<"}</button>
-            <button style={{color: "rgb(110, 172, 172)",fontWeight: "bold"}}  onClick={() => setMode(mode === "annee" ? "calendrier" : "annee")}>{annee}</button>
-            <button onClick={anneeSuivante}>{">>"}</button>
+            <button onClick={yearpreviouse}>{"<<"}</button>
+            <button style={{color: "rgb(110, 172, 172)",fontWeight: "bold"}}  onClick={() => setMode(mode === "year" ? "calendrier" : "year")}>{year}</button>
+            <button onClick={yearnext}>{">>"}</button>
           </div>
   
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-            <button onClick={moisPrecedent}>{"<"}</button>
-            <h2 style={{color: "rgb(110, 172, 172)"}}>{moisCorrespondant(mois+1,trad)}</h2>
-            <button onClick={moisSuivant}>{">"}</button>
+            <button onClick={Monthprevious}>{"<"}</button>
+            <h2 style={{color: "rgb(110, 172, 172)"}}>{MonthCorrespondant(Month+1,transl)}</h2>
+            <button onClick={Monthnext}>{">"}</button>
           </div>
   
-          {afficherDate && selectedDate && (
+          {vueDate && selectedDate && (
             <p style={{ color: "rgb(110, 172, 172)", fontWeight: "bold" }} onClick={back}>
-              {selectedDate.jour}/{selectedDate.mois + 1}/{selectedDate.annee}
+              {selectedDate.day}/{selectedDate.Month + 1}/{selectedDate.year}
             </p>
           )}
 
-          {!afficherDate &&(
+          {!vueDate &&(
           <div>
-            <button className="back" onClick={back}>{trad_back[trad].back}</button>
+            <button className="back" onClick={back}>{transl_back[transl].back}</button>
           </div>
           )}
   
-          <table style={{ border: "1px solid", borderCollapse: "separate", borderSpacing:0, width: "100%", borderRadius: forme==="rond" ? "10px" :"0px", overflow: "hidden" }}>
+          <table style={{ border: "1px solid", borderCollapse: "separate", borderSpacing:0, width: "100%", borderRadius: shape==="rond" ? "10px" :"0px", overflow: "hidden" }}>
             <thead>
               <tr>
-                {trad_jour[trad].map((j) => (
+                {transl_day[transl].map((j) => (
                   <th key={j}>{j}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {semaines.map((s, i) => (
+              {week_array.map((s, i) => (
                 <tr key={i}>
                   {s.map((j, idx) => {
                   const isSelected =
                   j !== null &&
                   selectedDate &&
-                  selectedDate.jour === j &&
-                  selectedDate.mois === mois &&
-                  selectedDate.annee === annee;
+                  selectedDate.day === j &&
+                  selectedDate.Month === Month &&
+                  selectedDate.year === year;
 
                   const isOtherMonth = j !== null && (
-                  (i === 0 && j > 20) ||            // début du calendrier = jours du mois précédent
-                  (i >= 4 && j < 15)                // fin du calendrier = jours du mois suivant
+                  (i === 0 && j > 20) ||
+                  (i >= 4 && j < 15)
               );
 
               return (
@@ -225,13 +221,13 @@ const Calendrier: React.FC<CalendarProps> = ({ onClick, yesno,afficherDate, form
                     const isNextMonth = i >= 4 && j < 15;
 
                     if (isPrevMonth) {
-                      const prevMois = mois === 0 ? 11 : mois - 1;
-                      const prevAnnee = mois === 0 ? annee - 1 : annee;
-                      handleClick(j, prevMois, prevAnnee);
+                      const prevMonth = Month === 0 ? 11 : Month - 1;
+                      const prevyear = Month === 0 ? year - 1 : year;
+                      handleClick(j, prevMonth, prevyear);
                     } else if (isNextMonth) {
-                      const nextMois = mois === 11 ? 0 : mois + 1;
-                      const nextAnnee = mois === 11 ? annee + 1 : annee;
-                      handleClick(j, nextMois, nextAnnee);
+                      const nextMonth = Month === 11 ? 0 : Month + 1;
+                      const nextyear = Month === 11 ? year + 1 : year;
+                      handleClick(j, nextMonth, nextyear);
                     } else {
                       handleClick(j);
                     }
@@ -240,14 +236,14 @@ const Calendrier: React.FC<CalendarProps> = ({ onClick, yesno,afficherDate, form
                     j === null
                       ? ""
                       : isOtherMonth
-                      ? forme === "rond"
+                      ? shape === "rond"
                         ? "other-month-rond"
                         : "other-month-carré"
                       : isSelected
-                      ? forme === "rond"
+                      ? shape === "rond"
                         ? "j_calendar_selected_rond"
                         : "j_calendar_selected"
-                      : forme === "rond"
+                      : shape === "rond"
                       ? "j_calendar td-rounded-hover"
                       : "j_calendar"
                   }
