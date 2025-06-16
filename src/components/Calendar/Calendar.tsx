@@ -1,3 +1,4 @@
+
 import React from "react";
 import {useState} from "react";
 import { useEffect} from "react";
@@ -10,6 +11,7 @@ const month=['Janvier ','Février ','Mars ','Avril ','Mai ','Juin ','Juillet ','
 const month_EN=['January','February','March','April', 'May','June','July', 'August','September','October','November','December'];
 
 const allYears = Array.from({ length: 200 }, (_, i) => 1900 + i);
+
 
 export interface CalendarProps {
   year: number;
@@ -120,6 +122,7 @@ const Calendrier: React.FC<CalendarProps> = ({ onClick, yesno,vueDate, shape, co
     }
   };
 
+
   const transl_day={
     fr:day,
     en:day_EN,
@@ -129,6 +132,7 @@ const Calendrier: React.FC<CalendarProps> = ({ onClick, yesno,vueDate, shape, co
     fr: month,
     en:month_EN,
   }
+
 
   const transl_back={
     fr:{back:"Retour",},en:{back:"Back",},

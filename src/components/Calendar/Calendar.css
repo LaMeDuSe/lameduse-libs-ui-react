@@ -31,12 +31,14 @@
   text-align: center;
 }
 
+
 .j_calendar_selected_circle{
   background-color: rgba(27, 207, 220, 0.669); /* couleur du jour sélectionné forme circle*/
   color: white;
   text-align: center;
   border-radius: 10px;
 }
+
 
 .other-month-square{
   color: #929292a4;
@@ -48,6 +50,7 @@
   text-align: center;
   border-radius: 10px;
 }
+
 
 .other-month-circle:hover{
  background-color: rgba(94, 95, 95, 0.155);   
@@ -92,3 +95,4 @@
   width: 250px;
   font-size: 12px;
 }
+

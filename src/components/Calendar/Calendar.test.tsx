@@ -5,6 +5,6 @@ import Calendar from "./Calendar";
 
 describe("Calendar", () => {
   test("renders the Calendar component", () => {
-    render(<Calendar />);
+    render(<Calendar yesno="YES" />);
   });
 });
