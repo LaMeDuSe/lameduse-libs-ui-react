@@ -17,7 +17,7 @@ export interface CalendarProps {
   onClick?: (date:string)=>void;
   yesno?: "YES" | "NO";
   vueDate?: boolean;
-  shape?: "carré" | "rond";
+  shape?: "square" | "circle";
   color_style?: "dark" | "light";
   translation?: "fr" | "en";
 }
@@ -187,7 +187,7 @@ const Calendrier: React.FC<CalendarProps> = ({ onClick, yesno,vueDate, shape, co
           </div>
           )}
   
-          <table style={{ border: "1px solid", borderCollapse: "separate", borderSpacing:0, width: "100%", borderRadius: shape==="rond" ? "10px" :"0px", overflow: "hidden" }}>
+          <table style={{ border: "1px solid", borderCollapse: "separate", borderSpacing:0, width: "100%", borderRadius: shape==="circle" ? "10px" :"0px", overflow: "hidden" }}>
             <thead>
               <tr>
                 {transl_day[transl].map((j) => (
@@ -236,14 +236,14 @@ const Calendrier: React.FC<CalendarProps> = ({ onClick, yesno,vueDate, shape, co
                     j === null
                       ? ""
                       : isOtherMonth
-                      ? shape === "rond"
-                        ? "other-month-rond"
-                        : "other-month-carré"
+                      ? shape === "circle"
+                        ? "other-month-circle"
+                        : "other-month-square"
                       : isSelected
-                      ? shape === "rond"
-                        ? "j_calendar_selected_rond"
+                      ? shape === "circle"
+                        ? "j_calendar_selected_circle"
                         : "j_calendar_selected"
-                      : shape === "rond"
+                      : shape === "circle"
                       ? "j_calendar td-rounded-hover"
                       : "j_calendar"
                   }
