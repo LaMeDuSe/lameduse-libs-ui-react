@@ -34,7 +34,6 @@ export const Primary: Story = {
     shape: 'circle',
     color_style: 'dark',
     translation:'fr',
-
   },
 };
 
