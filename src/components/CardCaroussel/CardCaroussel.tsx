@@ -1,136 +1,203 @@
-import React, { useState, useEffect } from "react";
-// useState hook qui permet de créer un état local
+import React, { useState, useEffect, useRef } from "react";
 
-const useWindowDimensions = () => {
-  const [windowDimensions, setWindowDimensions] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowDimensions({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return windowDimensions;
-};
+const GAP = 24;
 
 type responsiveType = { 
   [key: number]: {
     items: number
   } 
 }
+
 const responsive: responsiveType = {
-    0: {
-        items: 1
-    },
-    500: {
-        items: 2
-    },
-    900: {
-        items: 3,
-    },
-    1400: {
-        items: 4
-    },
-    1900 : {
-        items: 5
-    },
-    3000: {
-        items: 5
-    }
+  0: { items: 1 },
+  500: { items: 2 },
+  900: { items: 3 },
+  1400: { items: 4 },
+  1900: { items: 5 },
 };
-
-
 
 export interface CardCarousselProps {
   Cards: React.ReactNode[];
   onClick?: () => void;
 }
-//definition d'un type pour les props
 
-const CardCaroussel=({ Cards}: CardCarousselProps) => {
-  const { width } = useWindowDimensions();
-  //création du composznt CardCaroussel
-  const [currentIndex, setCurrentIndex] = useState(0);
+const CardCaroussel = ({ Cards }: CardCarousselProps) => {
+  const containerRef = useRef<HTMLDivElement>(null);
   const [cardsPerPage, setCardsPerPage] = useState(3);
-  // currentIndex :Page de cartes affichée
-  // setCurrentIndex : fonction pour mettre à jour l'index
-  const maxIndex = Cards.length - cardsPerPage;
-  const start = currentIndex * cardsPerPage; // cacul de l'index de départ
-  const visibleCards = Cards.slice(currentIndex, currentIndex + cardsPerPage);
+  const [currentIndex, setCurrentIndex] = useState(0); // position par carte
+  const [containerWidth, setContainerWidth] = useState(0);
+  const [translateX, setTranslateX] = useState(0);
+  const [currentPage, setCurrentPage] = useState(0); // pour les dots
 
-  const next = () => {
-    setCurrentIndex((prev) => (prev >= maxIndex ? 0 : prev + 1));
-  };
+  const isDragging = useRef(false);
+  const startX = useRef(0);
+  const currentOffset = useRef(0);
 
-  const prev = () => {
-    setCurrentIndex((prev) => (prev <= 0 ? maxIndex : prev - 1));
-  };
+  useEffect(() => {
+    const resizeObserver = new ResizeObserver((entries) => {
+      for (let entry of entries) {
+        if (entry.contentRect) {
+          setContainerWidth(entry.contentRect.width);
+        }
+      }
+    });
+
+    if (containerRef.current) {
+      resizeObserver.observe(containerRef.current);
+    }
+
+    return () => resizeObserver.disconnect();
+  }, []);
 
   useEffect(() => {
     const keys = Object.keys(responsive)
-      .filter((value) => parseInt(value) <= width)
+      .filter((value) => parseInt(value) <= containerWidth)
       .sort((a, b) => parseInt(b) - parseInt(a));
 
     const matchedKey = parseInt(keys[0]);
     if (matchedKey) {
       setCardsPerPage(responsive[matchedKey].items);
     }
-  }, [width]);
+  }, [containerWidth]);
+
+  const totalPages = Math.ceil(Cards.length / cardsPerPage);
+
+  const cardWidth =
+    cardsPerPage > 0
+      ? (containerWidth - GAP * (cardsPerPage - 1)) / cardsPerPage
+      : 300;
+
+  const maxTranslateX = 0;
+  const minTranslateX = -(
+    (Cards.length - cardsPerPage) * (cardWidth + GAP)
+  );
+
+  useEffect(() => {
+    const clampedIndex = Math.min(currentIndex, Cards.length - cardsPerPage);
+    setTranslateX(-(clampedIndex * (cardWidth + GAP)));
+  }, [currentIndex, cardWidth]);
+
+  // Drag logic
+  const handleMouseDown = (e: React.MouseEvent) => {
+    isDragging.current = true;
+    startX.current = e.clientX;
+    currentOffset.current = translateX;
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging.current) return;
+    const delta = e.clientX - startX.current;
+    let nextX = currentOffset.current + delta;
+    nextX = Math.max(minTranslateX, Math.min(maxTranslateX, nextX));
+    setTranslateX(nextX);
+
+    const page = Math.round(-nextX / ((cardWidth + GAP) * cardsPerPage));
+    setCurrentPage(Math.max(0, Math.min(totalPages - 1, page)));
+  };
+
+  const handleMouseUp = () => {
+    isDragging.current = false;
+
+    const indexAfterDrag = Math.round(-translateX / (cardWidth + GAP));
+    setCurrentIndex(indexAfterDrag);
+  };
+
+  const next = () => {
+    setCurrentIndex((prev) => {
+      const nextIndex = prev < Cards.length - cardsPerPage ? prev + 1 : prev;
+      const page = Math.floor(nextIndex / cardsPerPage);
+      setCurrentPage(page);
+      return nextIndex;
+    });
+  };
+
+  const prev = () => {
+    setCurrentIndex((prev) => {
+      const nextIndex = prev > 0 ? prev - 1 : prev;
+      const page = Math.floor(nextIndex / cardsPerPage);
+      setCurrentPage(page);
+      return nextIndex;
+    });
+  };
+
 
   return (
-    <div className="w-full max-w-7xl mx-auto p-4">
-      <div className="flex justify-between mb-4">
-        <button onClick={prev} className="text-xl px-3">&#60;</button>
-        <button onClick={next} className="text-xl px-3">&#62;</button>
-      </div>
-      <div className="grid gap-6" style={{ gridTemplateColumns: `repeat(${cardsPerPage}, 1fr)` }}>
-        {visibleCards.map((card, index) => (
-          <div key={index} className="shadow rounded-lg overflow-hidden bg-white">
-            {card}
-          </div>
-        ))}
-      </div>
-
-      <div className="flex justify-center mt-4 gap-2">
-      {(() => {
-        const totalCards = Cards.length;
-        const CompletePage = Math.ceil(totalCards / cardsPerPage);
-
-        return Array.from({length: CompletePage }).map((_, i) => {
-          let targetIndex=i*cardsPerPage;
-
-          // Si c’est le dernier dot et la page est incomplète,
-          // on ajuste pour ne pas avoir une page vide
-          const last = totalCards - cardsPerPage;
-          if ((i === (CompletePage - 1)) && (targetIndex > last)) {
-            targetIndex = last;
-          }
-
-            return (
+    <div style={{ width: "100vw", overflowX: "hidden" }}>
+      <div ref={containerRef} className="w-full mx-auto p-4">
+        <div
+          className="relative select-none"
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseLeave={handleMouseUp}
+          onMouseUp={handleMouseUp}
+          style={{
+            overflow: "hidden",
+            cursor: isDragging.current ? "grabbing" : "grab",
+          }}
+        >
+          <div
+            className="flex transition-transform duration-300 ease-out"
+            style={{
+              transform: `translateX(${translateX}px)`,
+              gap: `${GAP}px`,
+              paddingLeft: `${GAP}px`,
+              paddingRight: `${GAP}px`,
+              width: "100%",
+            }}
+          >
+            {Cards.map((card, i) => (
               <div
                 key={i}
-                onClick={() => setCurrentIndex(targetIndex)}
-                className={`w-3 h-3 rounded-full cursor-pointer ${
-                  currentIndex === targetIndex ? "bg-blue-600" : "bg-gray-300"
-                }`}
-              />
-            );
-          });
-        })()}
+                className="bg-white rounded-lg shadow overflow-hidden"
+                style={{
+                  width: `${cardWidth}px`,
+                  flex: "0 0 auto",
+                  marginLeft: i === 0 ? `${GAP}px` : undefined,
+                  marginRight: i === Cards.length - 1 ? `${GAP}px` : undefined,
+                }}
+              >
+                {card}
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Dots */}
+        <div className="flex justify-center mt-4 gap-2">
+          {Array.from({ length: totalPages }).map((_, i) => (
+            <div
+              key={i}
+              onClick={() => {
+                setCurrentIndex(i * cardsPerPage);
+                setCurrentPage(i);              
+              }}
+              className={`w-3 h-3 rounded-full cursor-pointer ${
+                currentPage === i ? "bg-blue-600" : "bg-gray-300"
+              }`}
+            />
+          ))}
+        </div>
+
+        {/* Arrows */}
+        <div className="flex justify-center mt-2 gap-6">
+          <button
+            onClick={prev}
+            className="text-xl px-3"
+            aria-label="Previous"
+          >
+            &#60;
+          </button>
+          <button
+            onClick={next}
+            className="text-xl px-3"
+            aria-label="Next"
+          >
+            &#62;
+          </button>
+        </div>
       </div>
     </div>
   );
 };
 
 export default CardCaroussel;
-
-
-
