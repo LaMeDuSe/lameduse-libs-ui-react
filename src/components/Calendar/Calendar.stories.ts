@@ -27,13 +27,13 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    annee: 2025,
-    mois: 4,
+    year: 2025,
+    Month: 4,
     yesno: 'YES',
-    afficherDate: false,
-    forme: 'rond',
-    theme_couleur: 'dark',
-    traduction:'en',
+    vueDate: true,
+    shape: 'circle',
+    color_style: 'dark',
+    translation:'fr',
 
   },
 };
