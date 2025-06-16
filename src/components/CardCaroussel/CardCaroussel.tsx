@@ -23,7 +23,7 @@ export interface CardCarousselProps {
   onClick?: () => void;
 }
 
-const CardCaroussel = ({ Cards }: CardCarousselProps) => {
+const CardCaroussel = ({ Cards = [], onClick  }: CardCarousselProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [cardsPerPage, setCardsPerPage] = useState(3);
   const [currentIndex, setCurrentIndex] = useState(0); // position par carte
