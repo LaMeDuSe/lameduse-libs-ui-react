@@ -29,5 +29,12 @@ export const Primary: Story = {
   args: {
     annee: 2025,
     mois: 4,
+    yesno: 'YES',
+    afficherDate: false,
+    forme: 'rond',
+    theme_couleur: 'dark',
+    traduction:'en',
+
   },
 };
+
