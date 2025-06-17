@@ -3,8 +3,8 @@ import { render } from "@testing-library/react";
 
 import Title from "./Title";
 
-describe("Button", () => {
-  test("renders the Button component", () => {
+describe("Title", () => {
+  test("renders the Title component", () => {
     render(<Title label="Hello world!" type="primary" />);
   });
 });

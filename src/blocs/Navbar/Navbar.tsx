@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import NextLink from "next/link";
 import Image from "next/image";
-import Link from "../Link/Link";
+import Link from "../../components/Link";
 
 export interface NavbarProps {
     type?: "primary" | "secondary" | "tertiary" | "danger" | "white";
@@ -142,32 +142,32 @@ const Navbar = (props: NavbarProps) => {
         <div className="w-full bg-white grid grid-flow-col lg:grid-cols-3 grid-cols-2">
             {/* Desktop start Navbar */}
             <div className="justify-self-start hidden lg:flex flex-row items-center space-x-6 p-3 ml-6">
-                {props.NavItems.filter((v) => v.position == "left").map((item) => {
+                {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink config={item} wrapClassName={wrapClassName}/>;
+                            return <NavLink key={key} config={item} wrapClassName={wrapClassName}/>;
                         case "dropdown":
-                            return <NavItemDropdown config={item} wrapClassName={wrapClassName}/>;
+                            return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName}/>;
                         case "logo":
-                            return item.allowed_display.includes("desktop") && <NavItemLogo config={item} wrapClassName={wrapClassName} />;
+                            return item.allowed_display.includes("desktop") && <NavItemLogo key={key} config={item} wrapClassName={wrapClassName} />;
                         case "custom":
-                            return <NavItemCustom config={item} wrapClassName={wrapClassName} />;
+                            return <NavItemCustom key={key} config={item} wrapClassName={wrapClassName} />;
                     }
                 })
                 }
             </div>
             {/* Mobile start Navbar */}
             <div className="justify-self-start flex lg:hidden flex-row items-center space-x-6 p-3 ml-6">
-                {props.NavItems.filter((v) => v.position == "left").map((item) => {
+                {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink config={item} wrapClassName={wrapClassName} />;
+                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} />;
                         case "dropdown":
-                            return <NavItemDropdown config={item} wrapClassName={wrapClassName} />;
+                            return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName} />;
                         case "logo":
-                            return item.allowed_display.includes("mobile-outside") && <NavItemLogo config={item} wrapClassName={wrapClassName} />;
+                            return item.allowed_display.includes("mobile-outside") && <NavItemLogo key={key} config={item} wrapClassName={wrapClassName} />;
                         case "custom":
-                            return <NavItemCustom config={item} wrapClassName={wrapClassName} />;
+                            return <NavItemCustom key={key} config={item} wrapClassName={wrapClassName} />;
                     }
                 })
                 }
@@ -202,16 +202,16 @@ const Navbar = (props: NavbarProps) => {
                         </svg>
                     </div>
                     <ul className="flex flex-col items-center justify-between space-y-3 min-h-[250px]">
-                        {props.NavItems.map((item) => {
+                        {props.NavItems.map((item, key) => {
                             switch (item.type) {
                                 case "link":
-                                    return <NavLink config={item} wrapClassName={wrapClassName} />;
+                                    return <NavLink key={key} config={item} wrapClassName={wrapClassName} />;
                                 case "dropdown":
-                                    return <NavItemDropdown config={item} wrapClassName={wrapClassName} />;
+                                    return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName} />;
                                 case "logo":
-                                    return item.allowed_display.includes("mobile") && <NavItemLogo config={item} wrapClassName={wrapClassName} />;
+                                    return item.allowed_display.includes("mobile") && <NavItemLogo key={key} config={item} wrapClassName={wrapClassName} />;
                                 case "custom":
-                                    return <NavItemCustom config={item} wrapClassName={wrapClassName} />;
+                                    return <NavItemCustom key={key} config={item} wrapClassName={wrapClassName} />;
                             }
                         })
                         }
@@ -220,32 +220,32 @@ const Navbar = (props: NavbarProps) => {
             </section>
             {/* Desktop center Navbar */}
             <div className="justify-self-center hidden lg:flex flex-row items-center space-x-9">
-                {props.NavItems.filter((v) => v.position == "center").map((item) => {
+                {props.NavItems.filter((v) => v.position == "center").map((item, key) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink config={item} wrapClassName={wrapClassName} />;
+                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} />;
                         case "dropdown":
-                            return <NavItemDropdown config={item} wrapClassName={wrapClassName} />;
+                            return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName} />;
                         case "logo":
-                            return item.allowed_display.includes("desktop") && <NavItemLogo config={item} wrapClassName={wrapClassName} />;
+                            return item.allowed_display.includes("desktop") && <NavItemLogo key={key} config={item} wrapClassName={wrapClassName} />;
                         case "custom":
-                            return <NavItemCustom config={item} wrapClassName={wrapClassName} />;
+                            return <NavItemCustom key={key} config={item} wrapClassName={wrapClassName} />;
                     }
                 })
                 }
             </div>
             {/* Desktop end Navbar */}
             <div className="justify-self-end hidden lg:flex flex-row items-center space-x-9 pr-9">
-                {props.NavItems.filter((v) => v.position == "right").map((item) => {
+                {props.NavItems.filter((v) => v.position == "right").map((item, key) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink config={item} wrapClassName={wrapClassName} />;
+                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} />;
                         case "dropdown":
-                            return <NavItemDropdown config={item} wrapClassName={wrapClassName} />;
+                            return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName} />;
                         case "logo":
-                            return item.allowed_display.includes("desktop") && <NavItemLogo config={item} wrapClassName={wrapClassName} />;
+                            return item.allowed_display.includes("desktop") && <NavItemLogo key={key} config={item} wrapClassName={wrapClassName} />;
                         case "custom":
-                            return <NavItemCustom config={item} wrapClassName={wrapClassName} />;
+                            return <NavItemCustom key={key} config={item} wrapClassName={wrapClassName} />;
                     }
                 })
                 }

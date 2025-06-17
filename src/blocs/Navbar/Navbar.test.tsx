@@ -3,8 +3,8 @@ import { render } from "@testing-library/react";
 
 import Navbar from "./Navbar";
 
-describe("Button", () => {
-  test("renders the Button component", () => {
+describe("Navbar", () => {
+  test("renders the Navbar component", () => {
     render(<Navbar  type='primary' 
       NavItems={[
         {

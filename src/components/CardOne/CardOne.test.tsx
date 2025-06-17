@@ -3,8 +3,8 @@ import { render } from "@testing-library/react";
 
 import CardOne from "./CardOne";
 
-describe("Button", () => {
-  test("renders the Button component", () => {
+describe("CardOne", () => {
+  test("renders the CardOne component", () => {
     render(<CardOne
       type='primary'
       image='https://lamedusegroup.com/images/logo/Icon 2.png'

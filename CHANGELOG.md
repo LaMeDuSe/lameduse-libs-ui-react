@@ -1,5 +1,19 @@
 # LaMeDuSe Change Log
 
+# [2.2.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.1.0...v2.2.0) (2025-04-25)
+
+
+### Bug Fixes
+
+* registry endpoint ([2e745ca](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/2e745caff8a723cac6c1aa3cb8cc13f8c2195a3c))
+* tentative to fix workflow error login ([4c3a051](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4c3a05158e36be2ecc33a6bd5bb0863cbfa07643))
+
+
+### Features
+
+* added folders ([41bf27c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/41bf27c47e6cdada846d7c26da3dfcffa162537c))
+* added footer and navbar ([14ddc5d](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/14ddc5db13bc043fc36a36f21395d0bc5f7c2a99))
+
 # [2.1.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.0.1...v2.1.0) (2025-03-22)
 
 
