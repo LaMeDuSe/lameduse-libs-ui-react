@@ -1,3 +1,5 @@
+import { SlideStyle } from "./slide_style";
+
 type SlideLayout = {
   showTitle: boolean;
   showSubtitle: boolean;
@@ -6,7 +8,7 @@ type SlideLayout = {
 };
 
 
-export default function getSlideLayout(style: string): SlideLayout {
+export default function getSlideLayout(style: SlideStyle): SlideLayout {
   if (style ==='style1') {
     return {
       showTitle: true,
