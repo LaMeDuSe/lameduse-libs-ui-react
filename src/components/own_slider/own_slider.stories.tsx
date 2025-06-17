@@ -12,7 +12,7 @@ const slides: Slide[]= [
     image: 'https://dummyimage.com/600x400/002697/ffffff&text=Slide+1',
     buttonLabel: 'Découvrir',
     buttonUrl: '#',
-    style: 'style1'
+    style: 'default'
   },
   {
     id: 2,
@@ -21,7 +21,7 @@ const slides: Slide[]= [
     image:'https://dummyimage.com/600x400/ff4cff/fff&text=Hello',
     buttonLabel: 'Explorer',
     buttonUrl: '#',
-    style:'style2'
+    style:'style1'
   },
 ];
 
