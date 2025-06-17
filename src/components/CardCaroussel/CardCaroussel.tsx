@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useResizeObserver } from "./hooks/useResizeObserver";
-import { useResponsiveCardsPerPage } from "./hooks/useResponsiveCardsPerPage";
+import { useResizeObserver } from "../../hooks/useResizeObserver";
+import { useResponsiveCardsPerPage } from "../../hooks/useResponsiveCardsPerPage";
 
 const GAP = 24;
 
