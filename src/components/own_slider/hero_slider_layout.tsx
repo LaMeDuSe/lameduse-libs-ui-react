@@ -28,7 +28,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
     setCurrentIndex((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
-    const goToSlide =(index: number) => {
+  const goToSlide =(index: number) => {
     setCurrentIndex(index);
   };
 
@@ -40,6 +40,12 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
 
   const currentSlide = slides[currentIndex];
   const layout= getSlideLayout(currentSlide.style || 'default');
+
+  const alignmentMap = {
+    left:'items-start text-left',
+    center:'items-center text-center',
+    right:'items-end text-left',
+  };
 
 
   return (
@@ -58,25 +64,27 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
       alt={slides[currentIndex].title}
       className="w-full h-full object-cover"
     />
-    <div className="absolute inset-0 bg-black/40 flex flex-col items-center justify-center text-white text-center px-4 ${variantClasses}">
+    <div className={`absolute inset-0 bg-black/40 flex flex-col justify-center text-white px-4 ${alignmentMap[layout.align]}`}>
       {
         layout.showTitle && (
-        <h2 className={`text-4xl font-bold mb-4 text-${layout.align}`}>
+        <h2 className={`text-4xl`}>
         {currentSlide.title}
     </h2>
     )}
       {layout.showSubtitle && (
-        <p className={`text-lg mb-6 text-${layout.align}`}>
+        <p className={`text-base`}>
         {currentSlide.subtitle}
         </p>
     )}
       {layout.showButton && currentSlide.buttonLabel && currentSlide.buttonUrl && (
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2">
         <a
             href={currentSlide.buttonUrl}
-            className="bg-white text-black px-6 py-3 rounded-lg text-lg font-medium hover:bg-gray-200 transition"
+            className="mx-auto bg-white text-black px-6 py-3 rounded-lg text-lg font-medium hover:bg-gray-200 transition"
         >
             {currentSlide.buttonLabel}
         </a>
+        </div>
       )}
       </div>
       {/* Boutons Précédent / Suivant */}
