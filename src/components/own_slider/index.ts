@@ -1,4 +1,4 @@
-export {default} from "./slider"
+export {default} from "./hero_slider"
 
 
 
