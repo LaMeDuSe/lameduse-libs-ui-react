@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Input from './Input';
 import '@testing-library/jest-dom';
+import { act } from 'react-dom/test-utils';
 
 describe('Input Component', () => {
   beforeAll(() => {
@@ -32,7 +33,9 @@ describe('Input Component', () => {
     render(<Input label="Code" value="ABC123" copy />);
     const input = screen.getByDisplayValue('ABC123');
 
-    fireEvent.click(input);
+    await act(async () => {
+      fireEvent.click(input);
+    });
 
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith('ABC123');
   });
