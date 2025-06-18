@@ -111,7 +111,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
               index ===currentIndex ? 'bg-white' : 'bg-transparent'
             }`}
           />
-        ))};
+        ))}
       
     </div>
   </motion.div>
