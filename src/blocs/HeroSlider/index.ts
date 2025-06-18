@@ -1,5 +1,1 @@
-export {default} from "./hero_slider_layout"
-
-
-
-
+export {default} from "./HeroSlider"
