@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "@testing-library/react";
 
 import Template from "../../components/Template";
-import HeroSlider from "./hero_slider_layout";
+import HeroSlider from "./HeroSlider";
 
 describe("Template", () => {
   test("renders the Template component", () => {
