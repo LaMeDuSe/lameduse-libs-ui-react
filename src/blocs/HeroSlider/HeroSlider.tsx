@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { SlideLayout, SlideStyle, SlideStyles } from './hero_slide_style';
+import { SlideLayout, SlideStyle, SlideStyles } from './HeroSliderStyles';
 import Link from '../../components/Link';
 import { LinkProps } from '../../components/Link/Link';
 
@@ -15,7 +15,7 @@ export interface Slide {
   style?: SlideLayout | SlideStyle;
 }
 
-interface HeroSliderProps {
+export interface HeroSliderProps {
   slides: Slide[];
   autoPlay?: boolean;
   interval?: number;
