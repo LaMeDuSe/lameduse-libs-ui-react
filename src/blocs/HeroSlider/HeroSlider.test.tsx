@@ -8,16 +8,16 @@ describe("Template", () => {
   test("renders the Template component", () => {
     render(<HeroSlider
       slides={[
-          {
-    title: 'Slide 1',
-    subtitle: 'This is the second subtitle.',
-    image: 'https://dummyimage.com/600x400/ff4cff/fff&text=Hello',
-    buttons: [{
-      children: 'Explorer',
-      href: '#',
-    }],
-    style: 'right'
-  },
+        {
+          title: 'Slide 1',
+          subtitle: 'This is the second subtitle.',
+          image: 'https://dummyimage.com/600x400/ff4cff/fff&text=Hello',
+          buttons: [{
+            children: 'Explorer',
+            href: '#',
+          }],
+          style: 'right'
+        },
       ]} />);
   });
 });
