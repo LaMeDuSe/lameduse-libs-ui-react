@@ -2,7 +2,8 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import Input from './Input';
 import '@testing-library/jest-dom';
-import { act } from 'react-dom/test-utils';
+import { act } from 'react';
+
 
 describe('Input Component', () => {
   beforeAll(() => {
@@ -39,4 +40,6 @@ describe('Input Component', () => {
 
     expect(navigator.clipboard.writeText).toHaveBeenCalledWith('ABC123');
   });
+
+
 });
