@@ -26,7 +26,7 @@ const slides: Slide[]= [
 ];
 
 const meta: Meta<typeof HeroSlider>= {
-  title: 'Components/HeroSlider',
+  title: 'LaMeDuSe/Components/HeroSlider',
   component: HeroSlider,
   parameters: {
     layout:'fullscreen',
@@ -42,4 +42,4 @@ export const Default: Story= {
     slides,
     autoPlay:false,
   }
-};
+}
