@@ -22,6 +22,12 @@
   cursor: pointer;
 }
 
+.container-disabled {
+  background-color: #f3f4f6; 
+  border-color: #d1d5db;
+  cursor: not-allowed;
+}
+
 .input {
   flex: 1;
   background-color: transparent;
@@ -36,7 +42,9 @@
 }
 
 .input-disabled {
-  cursor: pointer;
+  background-color: #f3f4f6; 
+  color: #9ca3af;            
+  cursor: not-allowed;       
 }
 
 
