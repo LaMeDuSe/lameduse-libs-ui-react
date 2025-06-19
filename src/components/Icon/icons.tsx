@@ -17,9 +17,6 @@ export const LinkedInIcon = () => (
 
 
 export const DiscordIcon = () => (
-    /*les paths et le svg ont été extraits et modifiés sous licence MIT. 
-    Copyright (c) 2015-present Ionic (http://ionic.io/)
-    Voir LICENSE pour plus d'informations*/
   <svg
     role="img"
     xmlns="http://www.w3.org/2000/svg"
@@ -40,9 +37,6 @@ export const DiscordIcon = () => (
 );
 
 export const GitHubIcon= () => (
-    /*les paths et le svg ont été extraits et modifiés sous licence MIT. 
-    Copyright (c) 2015-present Ionic (http://ionic.io/)
-    Voir LICENSE pour plus d'informations*/
     <svg
         role="img"
         xmlns="http://www.w3.org/2000/svg"
@@ -62,9 +56,6 @@ export const GitHubIcon= () => (
 //status icons
 
 export const MailboxIcon=() => (
-    /*les paths et le svg ont été extraits sous licence MIT. 
-    Copyright (c) 2020-2024 Paweł Kuna
-    Voir LICENSE pour plus d'informations*/
     <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
@@ -79,18 +70,13 @@ export const MailboxIcon=() => (
 )
 
 export const CheckIcon=() => (
-  /*les paths et le svg ont été extraits sous licence MIT. 
-  Copyright (c) 2020 Afnizar Nur Ghifari
-  Voir LICENSE pour plus d'informations*/
-  <svg width="24px" height="24px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
-    <path fill="#000000" fill-rule="evenodd" d="M3 10a7 7 0 019.307-6.611 1 1 0 00.658-1.889 9 9 0 105.98 7.501 1 1 0 00-1.988.22A7 7 0 113 10zm14.75-5.338a1 1 0 00-1.5-1.324l-6.435 7.28-3.183-2.593a1 1 0 00-1.264 1.55l3.929 3.2a1 1 0 001.38-.113l7.072-8z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path fill="currentColor" fill-rule="evenodd" d="M4 12a8 8 0 0110.636-7.556 1 1 0 00.659-1.888A9.987 9.987 0 0012 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-.375-.02-.745-.061-1.11a1 1 0 00-1.988.22A8 8 0 114 12zm17.767-7.359a1 1 0 00-1.534-1.282l-7.707 9.22-3.873-3.337a1 1 0 00-1.306 1.516l4.643 4a1 1 0 001.42-.117l8.357-10z"/>
   </svg>
 )
 
 
 export const OutboxIcon=() => (
-  /*les paths et le svg ont été extraits sous licence CC0. 
-  Source: https://www.svgrepo.com/svg/232316/outbox-inbox */
   <svg height="24 px" width="24 px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 512 512" xmlSpace="preserve">
     <path fill="#2D527C;" d="M484.659,512H27.341c-8.419,0-15.244-6.826-15.244-15.244V298.615
@@ -116,18 +102,13 @@ export const OutboxIcon=() => (
 
 
 export const InboxIcon=() => (
-  /*les paths et le svg ont été extraits et modifiés sous licence MIT. 
-  Copyright (c) 2020 Afnizar Nur Ghifari
-  Voir LICENSE pour plus d'informations*/
-  <svg width="24 px" height="24 px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
-  <path fill="#000000" fill-rule="evenodd" d="M11 2a1 1 0 10-2 0v4.773l-2.836-2.52a1 1 0 10-1.328 1.494l4.5 4a1 1 0 001.328 0l4.5-4a1 1 0 00-1.328-1.494L11 6.773V2zM3.447 12a125.965 125.965 0 01-.35 4.99v.004a.013.013 0 00.005.006h13.796l.002-.002.003-.004v-.003a125.829 125.829 0 01-.35-4.991h-1.49a1 1 0 00-.829.44l-.81 1.201a3 3 0 01-2.487 1.322H9.063a3 3 0 01-2.487-1.322l-.81-1.2A1 1 0 004.937 12h-1.49zM18.5 10h-3.437a3 3 0 00-2.487 1.322l-.81 1.2a1 1 0 01-.829.441H9.063a1 1 0 01-.829-.44l-.81-1.201A3 3 0 004.937 10H1.5c0 2.032-.248 5.155-.395 6.815A2.008 2.008 0 003.103 19h13.794a2.008 2.008 0 001.998-2.185c-.147-1.66-.395-4.783-.395-6.815z"/>
-</svg>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path fill="currentColor" fill-rule="evenodd" d="M12 1a1 1 0 011 1v5.731l3.325-3.038a1 1 0 011.35 1.476l-5 4.57a1 1 0 01-1.35 0l-5-4.57a1 1 0 011.35-1.476L11 7.73V2a1 1 0 011-1zM3.5 12h2.937a3 3 0 012.487 1.322l1.06 1.57a1 1 0 00.829.441h2.374a1 1 0 00.829-.44l1.06-1.571A3 3 0 0117.563 12H20.5a1 1 0 011 1c0 2.271.24 5.218.387 6.802A2.01 2.01 0 0119.888 22H4.112a2.01 2.01 0 01-2-2.198c.148-1.584.388-4.53.388-6.802a1 1 0 011-1zm16.013 2c.053 2.17.256 4.615.383 5.987v.005a.015.015 0 01-.004.006.012.012 0 01-.002.002H4.11l-.002-.002a.016.016 0 01-.004-.005v-.006c.127-1.372.33-3.818.383-5.987h1.95a1 1 0 01.829.44l1.06 1.572a3 3 0 002.487 1.321h2.374a3 3 0 002.487-1.321l1.06-1.572a1 1 0 01.829-.44h1.95z"/>
+  </svg>
 )
 
 
 export const WarningIcon=() => (
-  /*les paths et le svg ont été extraits sous licence CC0. 
-  Source: https://www.svgrepo.com/svg/28256/warning-sign */
   <svg height="24 px" width="24 px" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" 
 	 viewBox="0 0 192.146 192.146" xmlSpace="preserve">
 <g>
@@ -148,21 +129,18 @@ export const WarningIcon=() => (
 
 export const CrossmarkIcon=() => (
   <svg version="1.1" height="24px" width="24px" id="Layer_2" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 512 512" enable-background="new 0 0 512 512" xmlSpace="preserve">
-<path fill="#FF473E" d="M330.443,256l136.765-136.765c14.058-14.058,14.058-36.85,0-50.908l-23.535-23.535
-	c-14.058-14.058-36.85-14.058-50.908,0L256,181.557L119.235,44.792c-14.058-14.058-36.85-14.058-50.908,0L44.792,68.327
-	c-14.058,14.058-14.058,36.85,0,50.908L181.557,256L44.792,392.765c-14.058,14.058-14.058,36.85,0,50.908l23.535,23.535
-	c14.058,14.058,36.85,14.058,50.908,0L256,330.443l136.765,136.765c14.058,14.058,36.85,14.058,50.908,0l23.535-23.535
-	c14.058-14.058,14.058-36.85,0-50.908L330.443,256z"/>
+	viewBox="0 0 512 512" enable-background="new 0 0 512 512" xmlSpace="preserve">
+    <path fill="#FF473E" d="M330.443,256l136.765-136.765c14.058-14.058,14.058-36.85,0-50.908l-23.535-23.535
+    c-14.058-14.058-36.85-14.058-50.908,0L256,181.557L119.235,44.792c-14.058-14.058-36.85-14.058-50.908,0L44.792,68.327
+    c-14.058,14.058-14.058,36.85,0,50.908L181.557,256L44.792,392.765c-14.058,14.058-14.058,36.85,0,50.908l23.535,23.535
+    c14.058,14.058,36.85,14.058,50.908,0L256,330.443l136.765,136.765c14.058,14.058,36.85,14.058,50.908,0l23.535-23.535
+    c14.058-14.058,14.058-36.85,0-50.908L330.443,256z"/>
 </svg>
 )
 
 export const BoxIcon=() => (
-  /*les paths et le svg ont été extraits et modifiés sous licence MIT. 
-  Copyright (c) 2020 Afnizar Nur Ghifari
-  Voir LICENSE pour plus d'informations*/
-  <svg width="24px" height="24px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="none">
-    <path fill="#000000" fill-rule="evenodd" d="M3.108 1a2.009 2.009 0 00-2 2.19C1.256 4.814 1.5 7.848 1.5 10c0 2.153-.245 5.187-.391 6.81A2.009 2.009 0 003.108 19h13.784a2.009 2.009 0 002-2.19c-.148-1.623-.392-4.657-.392-6.81 0-2.153.244-5.187.391-6.81A2.009 2.009 0 0016.892 1H3.108zM3.1 3.01v-.003c0-.001 0-.003.002-.005A.014.014 0 013.106 3h13.788l.003.002a.013.013 0 01.002.004v.005c-.048.53-.107 1.22-.165 1.989H3.266c-.058-.768-.117-1.46-.165-1.99zM3.4 7c.059 1.037.1 2.089.1 3 0 2.254-.253 5.37-.4 6.99v.003l.003.005a.013.013 0 00.003.002h13.788l.003-.002a.012.012 0 00.002-.005v-.004c-.146-1.62-.399-4.735-.399-6.989 0-.911.041-1.963.1-3H3.4zM7 12a1 1 0 011-1h4a1 1 0 110 2H8a1 1 0 01-1-1z"/>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+    <path fill="currentColor" fill-rule="evenodd" d="M20.77 4H3.228l-.001.002a.013.013 0 00-.003.004v.003c.06.748.143 1.815.217 2.991h17.117c.075-1.176.156-2.243.217-2.99v-.004A.014.014 0 0020.77 4zM3.971 9.727A23.196 23.196 0 013.724 9h16.552a23.08 23.08 0 01-.248.727l-.02.06c-.223.627-.508 1.431-.508 2.213 0 2.594.266 6.214.41 7.991v.005l-.002.002V20l-.002.001H4.094l-.002-.002a.011.011 0 01-.003-.003v-.004c.145-1.777.411-5.397.411-7.991 0-.782-.285-1.586-.507-2.213l-.021-.06zM3.23 2h17.538a2.008 2.008 0 012 2.171c-.076.935-.185 2.369-.27 3.885-.047.82-.334 1.63-.559 2.264l-.026.075c-.256.724-.414 1.21-.414 1.605 0 2.502.26 6.049.404 7.83a2.007 2.007 0 01-2 2.17H4.096a2.007 2.007 0 01-1.999-2.17c.145-1.781.404-5.327.404-7.83 0-.395-.158-.881-.414-1.605l-.026-.075c-.225-.634-.512-1.444-.558-2.264-.086-1.516-.194-2.95-.27-3.885A2.008 2.008 0 013.23 2zM9 13a1 1 0 100 2h6a1 1 0 100-2H9z"/>
   </svg>
 )
 
