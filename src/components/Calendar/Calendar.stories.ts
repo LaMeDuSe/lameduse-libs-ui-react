@@ -29,7 +29,6 @@ export const Primary: Story = {
   args: {
     year: 2025,
     Month: 4,
-    yesno: 'YES',
     vueDate: true,
     shape: 'circle',
     color_style: 'dark',

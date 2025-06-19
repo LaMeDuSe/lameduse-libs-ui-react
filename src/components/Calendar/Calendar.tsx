@@ -4,11 +4,30 @@ import { useState } from "react";
 import { useEffect } from "react";
 import "./Calendar.css"
 
-const day = ['Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa', 'Di'];
-const day_EN = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
+const day_FR : Tuple<string, 7> = ['Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa', 'Di'];
+const day_EN : Tuple<string, 7> = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
 
-const month = ['Janvier ', 'Février ', 'Mars ', 'Avril ', 'Mai ', 'Juin ', 'Juillet ', 'Aout ', 'Septembre ', 'Octobre ', 'Novembre ', 'Décembre '];
-const month_EN = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+const month_FR : Tuple<string, 12> = ['Janvier ', 'Février ', 'Mars ', 'Avril ', 'Mai ', 'Juin ', 'Juillet ', 'Aout ', 'Septembre ', 'Octobre ', 'Novembre ', 'Décembre '];
+const month_EN : Tuple<string, 12> = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+
+type Translation = {
+  day: Tuple<string, 7>;
+  month: Tuple<string, 12>;
+  back: string;
+}
+
+const defaultTranslation : {[key: string]: Translation}= {
+  fr: {
+    day: day_FR,
+    month: month_FR,
+    back: "Retour",
+  },
+  en: {
+    day: day_EN,
+    month: month_EN,
+    back: "Back",
+  },
+}
 
 const allYears = Array.from({ length: 200 }, (_, i) => 1900 + i);
 
@@ -20,14 +39,14 @@ export interface CalendarProps {
   vueDate?: boolean;
   shape?: "square" | "circle";
   color_style?: "dark" | "light";
-  translation?: "fr" | "en";
+  translation?: "fr" | "en" | Translation;
 }
 
 const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_style, translation }) => {
   const [date, setDate] = useState<string | null>(null);
   const [Month, setMonth] = useState(new Date().getMonth());
   const [year, setyear] = useState(new Date().getFullYear());
-  const [mode, setMode] = useState<"calendrier" | "year">("calendrier");
+  const [mode, setMode] = useState<"date_select" | "year_select">("date_select");
   const [selectedDay, setSelectedDay] = useState<number | null>(null);
   const [selectedDate, setSelectedDate] = useState<{
     day: number;
@@ -104,38 +123,15 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
     setyear(year - 1);
   };
 
-  const MonthCorrespondant = (c: number, translation: "fr" | "en"): string | undefined => {
-    if (c >= 1 && c <= 12) {
-      return transl_month[translation][c - 1];
-    }
-    return undefined;
-  };
-
-  const transl = translation ?? "fr";
-
   const back = () => {
     if (selectedDate) {
       setMonth(selectedDate.Month);
       setyear(selectedDate.year);
-      setMode("calendrier");
+      setMode("date_select");
     }
   };
 
-
-  const transl_day = {
-    fr: day,
-    en: day_EN,
-  }
-
-  const transl_month = {
-    fr: month,
-    en: month_EN,
-  }
-
-
-  const transl_back = {
-    fr: { back: "Retour", }, en: { back: "Back", },
-  };
+  const locale = typeof translation === "object" ? translation : defaultTranslation[translation || "fr"];
 
   useEffect(() => {
     setSelectedDay(null);
@@ -146,14 +142,14 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
   return (
     <div className={`global ${color_style === "dark" ? "dark" : color_style === "light" ? "light" : ""}`}>
 
-      {mode === "year" && (
+      {mode === "year_select" && (
         <div className="scroll_an">
           {allYears.map((a) => (
             <button
               key={a}
               onClick={() => {
                 setyear(a);
-                setMode("calendrier");
+                setMode("date_select");
               }}
             >
               {a}
@@ -163,18 +159,18 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
       )}
 
 
-      {/*######### seulement si mode calendrier est selectionné######*/}
-      {mode === "calendrier" && (
+      {/*######### Only if date view is applied ######*/}
+      {mode === "date_select" && (
         <>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
             <button onClick={yearpreviouse}>{"<<"}</button>
-            <button style={{ color: "rgb(110, 172, 172)", fontWeight: "bold" }} onClick={() => setMode("year")}>{year}</button>
+            <button style={{ color: "rgb(110, 172, 172)", fontWeight: "bold" }} onClick={() => setMode("year_select")}>{year}</button>
             <button onClick={yearnext}>{">>"}</button>
           </div>
 
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
             <button onClick={Monthprevious}>{"<"}</button>
-            <h2 style={{ color: "rgb(110, 172, 172)" }}>{MonthCorrespondant(Month + 1, transl)}</h2>
+            <h2 style={{ color: "rgb(110, 172, 172)" }}>{locale.month[Month - 1]}</h2>
             <button onClick={Monthnext}>{">"}</button>
           </div>
 
@@ -186,14 +182,14 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
 
           {!vueDate && (
             <div>
-              <button className="back" onClick={back}>{transl_back[transl].back}</button>
+              <button className="back" onClick={back}>{locale.back}</button>
             </div>
           )}
 
           <table style={{ border: "1px solid", borderCollapse: "separate", borderSpacing: 0, width: "100%", borderRadius: shape === "circle" ? "10px" : "0px", overflow: "hidden" }}>
             <thead>
               <tr>
-                {transl_day[transl].map((j) => (
+                {locale.day.map((j) => (
                   <th key={j}>{j}</th>
                 ))}
               </tr>
