@@ -106,13 +106,13 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
           {/* Previous / Next Button*/}
           <button
             onClick={goToPrev}
-            className="absolute bottom-0 sm:top-1/2 left-4 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/70"
+            className="absolute bottom-0 sm:bottom-auto sm:top-1/2 left-4 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/70"
           >
             <ChevronLeft size={28} />
           </button>
           <button
             onClick={goToNext}
-            className="absolute bottom-0 sm:top-1/2 right-4 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/70"
+            className="absolute bottom-0 sm:bottom-auto sm:top-1/2 right-4 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/70"
           >
             <ChevronRight size={28} />
           </button>
