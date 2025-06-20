@@ -44,12 +44,12 @@ export const Primary: Story = {
       {
         title: 'titre intéressant',
         content: 'test ceci est une phrase un peu longue pour voir ce que ça donne',
-        year: '2025'
+        year: '2024'
       },
       {
         title: 'titre intéressant',
         content: 'Une autre phrase pour tester le composant TimelineH',
-        year: '2024'
+        year: '2025'
       }
     ],
   },
