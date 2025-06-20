@@ -29,7 +29,6 @@ const defaultTranslation : {[key: string]: Translation}= {
   },
 }
 
-const allYears = Array.from({ length: 200 }, (_, i) => 1900 + i);
 
 
 export interface CalendarProps {
@@ -43,11 +42,11 @@ export interface CalendarProps {
 }
 
 const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_style, translation }) => {
-  const [date, setDate] = useState<string | null>(null);
+  const [, setDate] = useState<string | null>(null);
   const [Month, setMonth] = useState(new Date().getMonth());
   const [year, setyear] = useState(new Date().getFullYear());
   const [mode, setMode] = useState<"date_select" | "year_select">("date_select");
-  const [selectedDay, setSelectedDay] = useState<number | null>(null);
+  const [, setSelectedDay] = useState<number | null>(null);
   const [selectedDate, setSelectedDate] = useState<{
     day: number;
     Month: number;
@@ -55,18 +54,26 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
   } | null>(null);
 
 
-  const j1 = (new Date(year, Month, 1).getDay() + 6) % 7;
-  const nbr_j_ds_Month = new Date(year, Month + 1, 0).getDate();
-  const nbr_j_ds_Month_previous = new Date(year, Month, 0).getDate();
+  const first_day = (new Date(year, Month, 1).getDay() + 6) % 7;
+  const nbr_day_in_Month = new Date(year, Month + 1, 0).getDate();
+  const nbr_day_in_Month_previous = new Date(year, Month, 0).getDate();
+
+  const startYear=1900;
+  const endYear=2099;
+
+  const allYears = Array.from({ length: endYear-startYear +1 }, (_, i) => startYear + i);
 
   let week: (number | null)[] = [];
   let week_array: (number | null)[][] = [];
 
-  for (let i = j1 - 1; i >= 0; i--) {
-    week.push(nbr_j_ds_Month_previous - i);
+
+  /*Fills in the days of the previous month to the left of the first day of the current month*/
+  for (let i = first_day - 1; i >= 0; i--) {
+    week.push(nbr_day_in_Month_previous - i);
   }
 
-  for (let i = 1; i <= nbr_j_ds_Month; i++) {
+  /*Adds the days of the current month into the weeks' array*/
+  for (let i = 1; i <= nbr_day_in_Month; i++) {
     week.push(i);
     if (week.length === 7) {
       week_array.push(week);
@@ -74,16 +81,18 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
     }
   }
 
-  let j_next = 1;
+  /*Implementation of a week*/
+  let next_day = 1;
   while (week.length < 7) {
-    week.push(j_next++);
+    week.push(next_day++);
   }
   week_array.push(week);
 
+  /*Implementation of all weeks in the month*/
   while (week_array.length < 6) {
     let line: (number | null)[] = [];
     for (let i = 0; i < 7; i++) {
-      line.push(j_next++);
+      line.push(next_day++);
     }
     week_array.push(line);
   }
