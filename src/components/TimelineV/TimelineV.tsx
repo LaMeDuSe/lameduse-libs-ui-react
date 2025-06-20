@@ -1,6 +1,6 @@
 import React from "react";
 
-export type TimelineProps = {
+export type TimelineVProps = {
   elements: {
     title: string;
     content: string;
@@ -8,7 +8,7 @@ export type TimelineProps = {
   }[];
 };
 
-const Timeline = (props: TimelineProps) => {
+const TimelineV = (props: TimelineVProps) => {
   // default values
   props = { ...props }; // copy to avoid modifying the original object
 
@@ -41,4 +41,4 @@ const Timeline = (props: TimelineProps) => {
   );
 };
 
-export default Timeline;
+export default TimelineV;

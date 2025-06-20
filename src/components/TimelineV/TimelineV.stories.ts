@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
 
-import Timeline from './Timeline';
+import TimelineV from './TimelineV';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'LaMeDuSe/Components/Timeline',
-  component: Timeline,
+  title: 'LaMeDuSe/Components/TimelineV',
+  component: TimelineV,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered', // 'fullscreen' | 'padded' | 'centered'
@@ -21,18 +21,18 @@ const meta = {
   args: {
     elements: [
       {
-        title: '2025',
+        title: 'titre intéressant',
         content: 'test ceci est une phrase un peu longue pour voir ce que ça donne',
         year: '2025'
       },
       {
-        title: '2024',
-        content: 'Une autre phrase pour tester le composant Timeline',
+        title: 'titre intéressant',
+        content: 'Une autre phrase pour tester le composant TimelineV',
         year: '2024'
       }
     ],
   },
-} satisfies Meta<typeof Timeline>;
+} satisfies Meta<typeof TimelineV>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -48,7 +48,7 @@ export const Primary: Story = {
       },
       {
         title: 'titre intéressant',
-        content: 'Une autre phrase pour tester le composant Timeline',
+        content: 'Une autre phrase pour tester le composant TimelineV',
         year: '2024'
       }
     ],

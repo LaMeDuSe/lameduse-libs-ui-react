@@ -1,12 +1,12 @@
 import React from "react";
 import { render } from "@testing-library/react";
 
-import Timeline from "./Timeline";
+import TimelineV from "./TimelineV";
 
-describe("Timeline", () => {
+describe("TimelineV", () => {
   test("renders the Timeline component", () => {
     render(
-      <Timeline
+      <TimelineV
         elements={[
           {
             title: "titre intéressant",
@@ -16,7 +16,7 @@ describe("Timeline", () => {
           },
           {
             title: "titre intéressant",
-            content: "Une autre phrase pour tester le composant Timeline",
+            content: "Une autre phrase pour tester le composant TimelineV",
             year: "2024",
           },
         ]}
