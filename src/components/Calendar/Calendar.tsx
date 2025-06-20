@@ -131,7 +131,7 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
     }
   };
 
-  const locale = typeof translation === "object" ? translation : defaultTranslation[translation || "fr"];
+  const locale = typeof translation === "object" ? translation : defaultTranslation[translation || "en"];
 
   useEffect(() => {
     setSelectedDay(null);
