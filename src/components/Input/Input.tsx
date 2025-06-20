@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Input.css";
+import { ComponentsFieldsCopyOnly } from "./CopyInput";
+import Calendar from "../Calendar/Calendar";
 
 export interface InputProps {
   label?: string;
   value: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement> | string) => void;
   copy?: boolean;
   disabled?: boolean;
   className?: string;
@@ -20,68 +22,84 @@ const Input = ({
   type = "text",
   onChange,
 }: InputProps) => {
-  const [copied, setCopied] = useState(false);
-  const [localValue, setLocalValue] = useState(value); 
+  const [localValue, setLocalValue] = useState(value);
+  const [showCalendar, setShowCalendar] = useState(false);
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(value).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    });
-  };
+  const isDateType = type?.toLowerCase() === "date";
 
-  const wrapperClickHandler = (e: React.MouseEvent) => {
-    if (copy) {
-      e.stopPropagation();
-      handleCopy();
-    }
-  };
+  useEffect(() => {
+    setLocalValue(value);
+  }, [value]);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
-      onChange(e); 
+      onChange(e);
     } else {
-      setLocalValue(e.target.value); 
+      setLocalValue(e.target.value);
     }
   };
 
+  const handleDateSelect = (dateStr: string) => {
+    if (onChange) {
+      onChange(dateStr);
+    } else {
+      setLocalValue(dateStr);
+    }
+    setShowCalendar(false);
+  };
+
+  const effectiveValue = onChange ? value : localValue;
+
+  
+  const displayedValue =
+    isDateType && !/^\d{1,2}\/\d{1,2}\/\d{4}$/.test(effectiveValue)
+      ? ""
+      : effectiveValue;
+
   return (
     <div className={`wrapper ${className}`}>
-      {label && <label className="label">{label}</label>}
+      {label && !copy && <label className="label">{label}</label>}
 
-      <div
-        onClick={wrapperClickHandler}
-        className={`container ${disabled ? "container-disabled" : "container-enabled"} ${copy ? "copy-mode" : ""}`}
-      >
-        <input
-          type={type}
-          value={onChange ? value : localValue} 
-          onChange={handleChange}
-          disabled={copy ? false : disabled}
-          readOnly={copy}
-          className={`input ${(disabled || copy) ? "input-disabled" : ""}`}
-        />
-
-        {copy && (
-          <span
-            className={`icon ${copied ? "icon-success" : ""}`}
-            aria-label="Copy"
-            title={copied ? "Copié !" : "Copier"}
-          >
-            {copied ? (
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+      {copy ? (
+        <ComponentsFieldsCopyOnly data={effectiveValue} label={label} />
+      ) : (
+        <div className={`container ${disabled ? "container-disabled" : "container-enabled"}`}>
+          <input
+            type="text"
+            value={displayedValue}
+            onChange={handleChange}
+            disabled={disabled}
+            className={`input ${disabled ? "input-disabled" : ""}`}
+            placeholder={isDateType ? "jj/mm/aaaa" : ""}
+            readOnly={isDateType} // rend non éditable à la main pour type=date
+          />
+          {isDateType && !disabled && (
+            <span className="icon" onClick={() => setShowCalendar(!showCalendar)}>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                strokeWidth="1.5" stroke="currentColor" className="w-5 h-5">
+                <path strokeLinecap="round" strokeLinejoin="round"
+                  d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5m-9-6h.008v.008H12v-.008ZM12 15h.008v.008H12V15Zm0 2.25h.008v.008H12v-.008ZM9.75 15h.008v.008H9.75V15Zm0 2.25h.008v.008H9.75v-.008ZM7.5 15h.008v.008H7.5V15Zm0 2.25h.008v.008H7.5v-.008Zm6.75-4.5h.008v.008h-.008v-.008Zm0 2.25h.008v.008h-.008V15Zm0 2.25h.008v.008h-.008v-.008Zm2.25-4.5h.008v.008H16.5v-.008Zm0 2.25h.008v.008H16.5V15Z"
+                />
               </svg>
+            </span>
 
-            ) : (
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 17.25v3.375c0 .621-.504 1.125-1.125 1.125h-9.75a1.125 1.125 0 0 1-1.125-1.125V7.875c0-.621.504-1.125 1.125-1.125H6.75a9.06 9.06 0 0 1 1.5.124m7.5 10.376h3.375c.621 0 1.125-.504 1.125-1.125V11.25c0-4.46-3.243-8.161-7.5-8.876a9.06 9.06 0 0 0-1.5-.124H9.375c-.621 0-1.125.504-1.125 1.125v3.5m7.5 10.375H9.375a1.125 1.125 0 0 1-1.125-1.125v-9.25m12 6.625v-1.875a3.375 3.375 0 0 0-3.375-3.375h-1.5a1.125 1.125 0 0 1-1.125-1.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H9.75" />
-              </svg>
+          )}
+        </div>
+      )}
 
-            )}
-          </span>
-        )}
-      </div>
+      {isDateType && showCalendar && !disabled && (
+        <div className="calendar-wrapper">
+          <Calendar
+            year={new Date().getFullYear()}
+            Month={new Date().getMonth()}
+            onClick={(dateStr) => handleDateSelect(dateStr)}
+            vueDate
+            shape="square"
+            color_style="light"
+            translation="fr"
+          />
+        </div>
+      )}
     </div>
   );
 };
