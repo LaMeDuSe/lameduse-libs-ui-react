@@ -37,7 +37,7 @@ export interface CalendarProps {
   onClick?: (date: string) => void;
   vueDate?: boolean;
   shape?: "square" | "circle";
-  color_style?: "dark" | "light";
+  color_style?: "dark" | "light" | "other_dark" | "other_light";
   translation?: "fr" | "en" | Translation;
 }
 
@@ -149,7 +149,7 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
 
 
   return (
-    <div className={`global ${color_style === "dark" ? "dark" : color_style === "light" ? "light" : ""}`}>
+    <div className={`global ${color_style}`}>
 
       {mode === "year_select" && (
         <div className="scroll_an">
