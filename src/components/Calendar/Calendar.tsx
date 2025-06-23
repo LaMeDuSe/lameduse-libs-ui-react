@@ -173,18 +173,18 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
         <>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
             <button onClick={yearpreviouse}>{"<<"}</button>
-            <button style={{ color: "rgb(110, 172, 172)", fontWeight: "bold" }} onClick={() => setMode("year_select")}>{year}</button>
+            <button className="text-lameduse-secondary" onClick={() => setMode("year_select")}>{year}</button>
             <button onClick={yearnext}>{">>"}</button>
           </div>
 
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
             <button onClick={Monthprevious}>{"<"}</button>
-            <h2 style={{ color: "rgb(110, 172, 172)" }}>{locale.month[Month - 1]}</h2>
+            <h2 className="text-lameduse-secondary">{locale.month[Month - 1]}</h2>
             <button onClick={Monthnext}>{">"}</button>
           </div>
 
           {vueDate && selectedDate && (
-            <p style={{ color: "rgb(110, 172, 172)", fontWeight: "bold" }} onClick={back}>
+            <p className="text-lameduse-secondary" onClick={back}>
               {selectedDate.day}/{selectedDate.Month + 1}/{selectedDate.year}
             </p>
           )}
