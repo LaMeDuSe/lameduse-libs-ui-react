@@ -1,0 +1,59 @@
+.message{
+  max-width: 80%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  background-color: #f1f1f1;
+  font-size: 13px;
+}
+
+.message-mine {
+  @apply bg-lameduse-secondary;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.author-other{
+  align-self: flex-start;
+  font-size: 10px;
+}
+
+.author-mine{
+  font-size: 10px;
+  @apply text-lameduse-black;
+}
+
+.message-other {
+  @apply bg-lameduse-white;
+  align-self: flex-start;
+  margin-right: auto;
+  
+}
+
+.timestamp {
+  font-size: 10px;
+  @apply text-lameduse-black;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.message-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.author {
+  font-weight: bold;
+}
+
+
+.message-content {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}

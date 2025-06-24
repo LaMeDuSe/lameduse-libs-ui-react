@@ -1,0 +1,25 @@
+.chat{
+    @apply bg-lameduse-tertiary;
+}
+
+.chat-script{
+    border-color: 10px;
+    font-size:18px;
+    @apply text-lameduse-white;
+}
+
+.chat-script input{
+    @apply bg-lameduse-primary;
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.chat-script button{
+    @apply text-lameduse-white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    @apply bg-lameduse-primary;
+}
