@@ -43,3 +43,12 @@ export const Copy: Story = {
     copy: true,
   },
 };
+
+export const EmailAvecValidation: Story = {
+  args: {
+    label: 'Adresse email (avec validation)',
+    value: 'notanemail',
+    verificate: (val: string) =>
+      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val) ? null : 'Email invalide',
+  },
+};
