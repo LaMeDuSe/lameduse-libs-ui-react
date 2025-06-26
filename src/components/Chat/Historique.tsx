@@ -11,10 +11,12 @@ interface HistoriqueProps {
 }
 
 const Historique: React.FC<HistoriqueProps>=({messages})=>{
-    const bottomRef = useRef<HTMLDivElement>(null);
+    const bottomRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-        bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+      if (bottomRef.current instanceof HTMLElement) {
+        bottomRef.current.scrollIntoView({ behavior: "smooth" });
+    }
     }, [messages]);
     return (
         <div className="historique">
