@@ -20,3 +20,4 @@ export const LameduseUI = {
   ...components,
   ...blocs,
 };
+export default LameduseUI;
