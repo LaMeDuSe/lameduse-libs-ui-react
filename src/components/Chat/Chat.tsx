@@ -4,7 +4,7 @@ import { MessageProps } from "./Message";
 import { useState } from "react";
 import "./Chat.css";
 
-interface ChatProps {
+export interface ChatProps {
   messages: MessageProps[];
   script?: boolean;
 }
