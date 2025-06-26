@@ -14,9 +14,9 @@ const Historique: React.FC<HistoriqueProps>=({messages})=>{
     const bottomRef = useRef<HTMLDivElement | null>(null);
 
     useEffect(() => {
-      if (bottomRef.current instanceof HTMLElement) {
+      if (typeof bottomRef.current?.scrollIntoView === "function") {
         bottomRef.current.scrollIntoView({ behavior: "smooth" });
-    }
+      }
     }, [messages]);
     return (
         <div className="historique">
