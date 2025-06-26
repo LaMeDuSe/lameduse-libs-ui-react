@@ -64,21 +64,3 @@ const Table = ({ buttons, onSearch }: TableProps) => {
 
 export default Table;
 
-
-
-
-
-
-
-/*
-const Table=({ buttons, onSearch }: TableProps) => {
-  <tr><th><SearchBar props.onSearch> </th></tr>
-  if (props.buttons) {
-    const listButton= props.buttons;
-    const tableButton=listButton.map((button) =>
-      <tr><Link {...button}>{button.children}</Link></tr>);
-  }
-  
-
-}
-*/
