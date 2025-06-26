@@ -5,7 +5,6 @@ import Calendar from "./Calendar";
 
 describe("Calendar", () => {
   test("renders the Calendar component", () => {
-<<<<<<< Updated upstream
     render(<Calendar
       year={2025}
       Month={4}
@@ -14,8 +13,5 @@ describe("Calendar", () => {
       color_style='dark'
       translation='fr'
       />);
-=======
-    render(<Calendar annee={2025} mois={7} />);
->>>>>>> Stashed changes
   });
 });
