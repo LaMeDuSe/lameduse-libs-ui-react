@@ -37,7 +37,7 @@ export interface CalendarProps {
   onClick?: (date: string) => void;
   vueDate?: boolean;
   shape?: "square" | "circle";
-  color_style?: "dark" | "light" | "other_dark" | "other_light";
+  color_style?: "component_Calendar_dark" | "component_Calendar_light" | "component_Calendar_other_dark" | "component_Calendar_other_light";
   translation?: "fr" | "en" | Translation;
 }
 
@@ -149,10 +149,10 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
 
 
   return (
-    <div className={`global ${color_style}`}>
+    <div className={`component_Calendar_global ${color_style}`}>
 
       {mode === "year_select" && (
-        <div className="scroll_an">
+        <div className="component_Calendar_scroll_year">
           {allYears.map((a) => (
             <button
               key={a}
@@ -173,25 +173,25 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
         <>
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
             <button onClick={yearpreviouse}>{"<<"}</button>
-            <button className="text-lameduse-secondary" onClick={() => setMode("year_select")}>{year}</button>
+            <button className="text-lameduse-white" onClick={() => setMode("year_select")}>{year}</button>
             <button onClick={yearnext}>{">>"}</button>
           </div>
 
           <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
             <button onClick={Monthprevious}>{"<"}</button>
-            <h2 className="text-lameduse-secondary">{locale.month[Month - 1]}</h2>
+            <h2 className="text-lameduse-white">{locale.month[Month - 1]}</h2>
             <button onClick={Monthnext}>{">"}</button>
           </div>
 
           {vueDate && selectedDate && (
-            <p className="text-lameduse-secondary" onClick={back}>
+            <p className="text-lameduse-white" onClick={back}>
               {selectedDate.day}/{selectedDate.Month + 1}/{selectedDate.year}
             </p>
           )}
 
           {!vueDate && (
             <div>
-              <button className="back" onClick={back}>{locale.back}</button>
+              <button className="component_Calendar_back" onClick={back}>{locale.back}</button>
             </div>
           )}
 
@@ -245,15 +245,15 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
                             ? ""
                             : isOtherMonth
                               ? shape === "circle"
-                                ? "other-month-circle"
-                                : "other-month-square"
+                                ? "component_Calendar_other_month_circle"
+                                : "component_Calendar_other_month_square"
                               : isSelected
                                 ? shape === "circle"
-                                  ? "j_calendar_selected_circle"
-                                  : "j_calendar_selected"
+                                  ? "component_Calendar_d_calendar_selected_circle"
+                                  : "component_Calendar_d_calendar_selected"
                                 : shape === "circle"
-                                  ? "j_calendar td-rounded-hover"
-                                  : "j_calendar"
+                                  ? "component_Calendar_d_calendar component_Calendar_td_rounded_hover"
+                                  : "component_Calendar_d_calendar"
                         }
                       >
                         {j !== null ? j : ""}

@@ -1,47 +1,47 @@
-.dark{
+.component_Calendar_dark{
     @apply bg-lameduse-primary text-white;
 }
 
-.other_dark{
+.component_Calendar_other_dark{
     background-color: rgb(0, 0, 0);
     color: #a4a3a3;
 }
 
-.light{
+.component_Calendar_light{
     @apply bg-lameduse-tertiary text-white;
 }
 
-.other_light{
+.component_Calendar_other_light{
     background-color: rgba(208, 224, 239, 0.356);
     color:rgb(110, 172, 172);
 }
 
 
-.j_calendar{
+.component_Calendar_d_calendar{
     padding: 6px;
     text-align: center;
     cursor: pointer;
 }
 
-.j_calendar:hover{
+.component_Calendar_d_calendar:hover{
     background-color: rgba(27, 207, 220, 0.317);
     text-align: center;
 }
 
-.j_calendar_selected {
+.component_Calendar_d_calendar_selected {
   background-color: rgba(27, 207, 220, 0.669); /* couleur du jour sélectionné forme square*/
   color: white;
   text-align: center;
 }
 
-.td-rounded-hover:hover{
+.component_Calendar_td_rounded_hover:hover{
   border-radius: 10px;
   background-color: rgba(27, 159, 220, 0.669);
   text-align: center;
 }
 
 
-.j_calendar_selected_circle{
+.component_Calendar_d_calendar_selected_circle{
   background-color: rgba(27, 207, 220, 0.669); /* couleur du jour sélectionné forme circle*/
   color: white;
   text-align: center;
@@ -50,27 +50,27 @@
 }
 
 
-.other-month-square{
+.component_Calendar_other_month_square{
   color: #929292a4;
   text-align: center;
 }
 
-.other-month-circle{
+.component_Calendar_other_month_circle{
   color: #717171cb;
   text-align: center;
   border-radius: 10px;
 }
 
 
-.other-month-circle:hover{
+.component_Calendar_other_month_circle:hover{
  background-color: rgba(94, 95, 95, 0.237);   
 }
 
-.other-month-square:hover{
+.component_Calendar_other_month_square:hover{
  background-color:rgba(134, 134, 134, 0.237);   
 }
 
-.scroll_an {
+.component_Calendar_scroll_year {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
   gap: 10px;
@@ -79,7 +79,7 @@
   max-height: 250px;
 }
 
-.scroll_an button {
+.component_Calendar_scroll_year button {
   width: 100%;
   padding: 8px 0;
   text-align: center;
@@ -87,9 +87,10 @@
   font-size: 1rem;
 }
 
-.global {
+.component_Calendar_global {
   min-width: 250px;
-  max-width: 100%;
+  width: 100%;
+  max-width: none;
   min-height: 300px;
   max-height: 100vh;
   width: auto;
@@ -101,7 +102,7 @@
   gap: 10px;
 }
 
-.back{
+.component_Calendar_back{
   width: 250px;
   font-size: 12px;
   @apply text-lameduse-secondary;

@@ -31,7 +31,7 @@ export const Primary: Story = {
     Month: 4,
     vueDate: true,
     shape: 'circle',
-    color_style: 'dark',
+    color_style: 'component_Calendar_dark',
     translation:'fr',
   },
 };
