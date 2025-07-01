@@ -10,49 +10,52 @@
   font-size: 13px;
 }
 
-.message-mine {
-  @apply bg-lameduse-secondary;
+.component_Chat_message_mine {
+  @apply text-lameduse-white;
+  background: linear-gradient(to bottom left, theme('colors.lameduse-primary'), theme('colors.lameduse-secondary'));
   align-self: flex-end;
   margin-left: auto;
 }
 
-.author-other{
+.component_Chat_author_other{
   align-self: flex-start;
   font-size: 10px;
+  @apply text-lameduse-white;
 }
 
-.author-mine{
+.component_Chat_author_mine{
   font-size: 10px;
-  @apply text-lameduse-black;
+  @apply text-lameduse-white;
 }
 
-.message-other {
-  @apply bg-lameduse-white;
+.component_Chat_message_other {
+  @apply text-lameduse-white;
+  background: linear-gradient(to bottom left, theme('colors.lameduse-secondary'), theme('colors.lameduse-tertiary'));
   align-self: flex-start;
   margin-right: auto;
   
 }
 
-.timestamp {
+.component_Chat_timestamp {
   font-size: 10px;
-  @apply text-lameduse-black;
+  @apply text-lameduse-white;
   margin-top: 4px;
   text-align: right;
 }
 
-.message-header {
+.component_Chat_message_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 5px;
 }
 
-.author {
+.component_Chat_message_author {
   font-weight: bold;
 }
 
 
-.message-content {
+.component_Chat_message_content {
   white-space: normal;
   word-wrap: break-word;
   overflow-wrap: break-word;

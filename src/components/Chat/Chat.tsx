@@ -27,14 +27,15 @@ const Chat: React.FC<ChatProps>=({messages=[], script=false})=>{
   };
 
   return(
-    <div className="chat">
+    <div className="component_Chat">
       <Historique messages={localMessages}/>
 
       {script && (
-        <div className="chat-script">
+        <div className="component_Chat_script">
           <input
           type="text"
           placeholder="Entrer un message..."
+          className="placeholder-white"
           value={newMessage}
           onChange={(e)=> setNewMessage(e.target.value)}
           onKeyDown={(e)=> e.key === "Enter" && handleSend()}/>

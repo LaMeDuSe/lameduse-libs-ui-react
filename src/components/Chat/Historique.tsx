@@ -19,7 +19,7 @@ const Historique: React.FC<HistoriqueProps>=({messages})=>{
       }
     }, [messages]);
     return (
-        <div className="historique">
+        <div className="component_Chat_historique">
         {[...messages]
         .sort((a, b) => a.id - b.id)
         .map((msg) => (
