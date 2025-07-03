@@ -9,5 +9,4 @@ export { default as Icon } from "./Icon";
 export { default as Link } from "./Link";
 // Template is not exported as it is not a component
 export { default as Title } from "./Title";
-export { default as Calendar } from "./Calendar"
 export { default as Chat } from "./Chat"
