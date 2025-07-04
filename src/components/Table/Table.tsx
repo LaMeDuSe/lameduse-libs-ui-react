@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import {
-  createColumnHelper,
   flexRender,
   getCoreRowModel,
   useReactTable,
@@ -8,15 +7,6 @@ import {
 } from "@tanstack/react-table";
 
 
-
-//type Data= string | ButtonProps | File 
-
-/*interface TableProps {
-  data?: Data,
-  columns?: Data[],
-  onSearch?: (query: string) => void,
-}
-*/
 
 export type TableProps<T> = {
   data?: T[];
@@ -83,12 +73,12 @@ const Table = <T,>({ data, columns, onSearch }: TableProps<T>) => {
         ))}
       </thead>
       <tbody>
-        {table.getRowModel().rows.map((row) => (
-          <tr style={{border: '1px solid black'}} key={row.id}>
+        {table.getRowModel().rows.map((row, index) => (
+          <tr style={{border: '1px solid black', backgroundColor: index % 2 === 0 ? '#f2f2f2' : 'white'}} key={row.id}>
             {row.getVisibleCells().map((cell) => (
               <td style={{textAlign: 'center', padding: '10px' }} key={cell.id}>
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}
-              </td>
+              </td>          
             ))}
           </tr>
         ))}
