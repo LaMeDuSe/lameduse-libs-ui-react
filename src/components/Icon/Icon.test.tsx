@@ -37,4 +37,7 @@ describe("Icon", () => {
   test("renders the BOX icon", () => {
     render(<Icon icon="BOX" />);
   });
+    test("renders the IDENTITY CARD icon", () => {
+    render(<Icon icon="IDENTITY CARD" />);
+  });
 });
