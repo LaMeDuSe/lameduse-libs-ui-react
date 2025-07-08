@@ -4,6 +4,8 @@ import AliceCarousel from 'react-alice-carousel';
 import 'react-alice-carousel/lib/alice-carousel.css';
 import Image from 'next/image';
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { Title } from "../../components";
+import config from "../../defaults";
 
 const responsive = {
     0: {
@@ -37,22 +39,20 @@ function ShortText(text: string, maxLength: number) {
 
 /**
  * @prop {GhostContentAPIOptions} GhostContentAPIOptions - The options for the Ghost Content API
- * @prop {number} [CardHeight=550]- The height of the card in pixels
+ * @prop {number} [CardHeight=600]- The height of the card in pixels
  */
 export interface GhostPostProps {
     GhostContentAPIOptions: GhostContentAPIOptions
 
     CardHeight?: number
-
 }
 
 const GhostPost = (props: GhostPostProps) => {
-
     props = { ...props }; // copy to avoid modifying the original object
 
     props.CardHeight = props.CardHeight || 600; // default value
 
-    let height_class = `height: ${props.CardHeight}px;`;
+    const blocsclass = config.blocs.fullclass.result;
 
     const [posts, setposts] = useState<React.JSX.Element[]>([])
 
@@ -62,9 +62,9 @@ const GhostPost = (props: GhostPostProps) => {
         api.posts
         .browse({ limit: 20, include: ['tags', "authors"] })
         .then((posts) => {
-            posts.forEach((post) => {
-                console.log(post.title);
-            });
+            // posts.forEach((post) => {
+            //     console.log(post.title);
+            // });
             let elements = posts.map((post, id) =>
                 <div key={id}
                     style={
@@ -72,7 +72,7 @@ const GhostPost = (props: GhostPostProps) => {
                         height: props.CardHeight
                       }
                     } 
-                    className={`max-w-md mb-4 md:ml-16 rounded overflow-hidden shadow-lg select-none flex flex-col`}
+                    className={`max-w-md mb-4rounded overflow-hidden shadow-lg select-none flex flex-col`}
                   >
                     <Image width={448} height={250} className="w-full pointer-events-none h-[250px] object-cover" src={post.feature_image ?? "https://assets.lameduse.net/logo/lameduse_logo_grad.webp"} alt={post.feature_image_alt ?? "no image"} />
                     <div className="px-6 py-4">
@@ -103,11 +103,9 @@ const GhostPost = (props: GhostPostProps) => {
         });
     }, [api.posts])
     return (
-        <div>
-            <div className="flex flex-row items-center justify-center py-16">
-                <h1 className="text-4xl font-bold text-lameduse-primary">Blog</h1>
-            </div>
-            <div>
+        <div className={blocsclass}>
+            <Title label="Latest Posts" />
+            <div className="mt-5">
                 <AliceCarousel
                     responsive={responsive}
                     mouseTracking
