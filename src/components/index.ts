@@ -9,5 +9,5 @@ export { default as Icon } from "./Icon";
 export { default as Link } from "./Link";
 // Template is not exported as it is not a component
 export { default as Title } from "./Title";
-export { default as TestimonyComponent } from './TestimonyComponent';
+export { default as TestimonyComponent } from "./TestimonyComponent";
 
