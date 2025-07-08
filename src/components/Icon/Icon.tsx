@@ -1,10 +1,10 @@
 import React from "react";
-import { LinkedInIcon, TwitterIcon, DiscordIcon, GitHubIcon, MailboxIcon, CheckIcon, OutboxIcon, InboxIcon, WarningIcon, CrossmarkIcon, BoxIcon, IdentityCardIcon } from "./icons";
+import { LinkedInIcon, TwitterIcon, DiscordIcon, GitHubIcon, MailboxIcon, CheckIcon, OutboxIcon, InboxIcon, WarningIcon, CrossmarkIcon, BoxIcon, IdentityCardIcon, LameduseIcon } from "./icons";
 import NextLink from "next/link";
 
 
-export interface ButtonProps {
-  icon: "LINKEDIN" | "TWITTER" | "DISCORD" | "GITHUB" | "MAILBOX" | "CHECK" | "OUTBOX" | "INBOX" | "WARNING" | "CROSSMARK" | "BOX" | "IDENTITY CARD";
+export interface IconProps {
+  icon: keyof typeof IconMap; // restricts icon to keys of IconMap
   href?: string;
   size?: "small" | "medium" | "large";
   color?: "primary" | "secondary" | "tertiary" | "darkgrey";
@@ -24,9 +24,10 @@ const IconMap = {
   "CROSSMARK": CrossmarkIcon,
   "BOX": BoxIcon,
   "IDENTITY CARD": IdentityCardIcon,
+  "LAMEDUSE": LameduseIcon
 };
 
-const Icon = (props: ButtonProps) => {
+const Icon = (props: IconProps) => {
   // default values
   props = { ...props }; // copy to avoid modifying the original object
 
