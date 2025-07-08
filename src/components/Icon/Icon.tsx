@@ -1,10 +1,10 @@
 import React from "react";
-import { LinkedInIcon, TwitterIcon } from "./icons";
+import { LinkedInIcon, TwitterIcon, DiscordIcon, GitHubIcon, MailboxIcon, CheckIcon, OutboxIcon, InboxIcon, WarningIcon, CrossmarkIcon, BoxIcon, IdentityCardIcon, LameduseIcon } from "./icons";
 import NextLink from "next/link";
 
 
-export interface ButtonProps {
-  icon: "LINKEDIN" | "TWITTER";
+export interface IconProps {
+  icon: keyof typeof IconMap; // restricts icon to keys of IconMap
   href?: string;
   size?: "small" | "medium" | "large";
   color?: "primary" | "secondary" | "tertiary" | "darkgrey";
@@ -14,9 +14,20 @@ export interface ButtonProps {
 const IconMap = {
   "LINKEDIN": LinkedInIcon,
   "TWITTER": TwitterIcon,
+  "DISCORD": DiscordIcon,
+  "GITHUB": GitHubIcon,
+  "MAILBOX": MailboxIcon,
+  "CHECK": CheckIcon,
+  "OUTBOX": OutboxIcon,
+  "INBOX": InboxIcon,
+  "WARNING": WarningIcon,
+  "CROSSMARK": CrossmarkIcon,
+  "BOX": BoxIcon,
+  "IDENTITY CARD": IdentityCardIcon,
+  "LAMEDUSE": LameduseIcon
 };
 
-const Icon = (props: ButtonProps) => {
+const Icon = (props: IconProps) => {
   // default values
   props = { ...props }; // copy to avoid modifying the original object
 
