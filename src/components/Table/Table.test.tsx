@@ -98,25 +98,26 @@ describe("Table", () => {
       data={ data }
       columns= { columns } />);
   });
-  test("call of the search function by pressing on the magnifying glass button", () => {
+  test("call of the search function by pressing on the magnifying glass button", async() => {
     const Search = jest.fn();
     render(<Table data={ data } columns={ columns } onSearch={Search}/>)
     const input = screen.getByPlaceholderText("Search...");
-    fireEvent.change(input, {target: {value: 'test'}});
+    await userEvent.type(input, 'test');
     fireEvent.click(screen.getByRole('button', {name: "Recherche" }));
     expect(Search).toHaveBeenCalledTimes(1);
     expect(input).toHaveValue('test');
     expect(Search).toHaveBeenCalledWith('test');
   })
-  test("call of the search function by pressing on Enter", () =>{
+  test("call of the search function by pressing on Enter", async() =>{
     const Search=jest.fn();
     const { container } = render(<Table data={ data } columns={ columns } onSearch={Search}/>)
     const input = screen.getByPlaceholderText("Search...");
-    fireEvent.change(input, {target: {value: 'test'}});
+    await userEvent.type(input, 'test');
     fireEvent.keyDown(input, { key: 'Enter', code: 'Enter', keyCode: 13 });
     const form = container.querySelector('form');
     fireEvent.submit(form!);
     expect(Search).toHaveBeenCalledWith('test');
+    expect(input).toHaveValue('test');
     expect(Search).toHaveBeenCalledTimes(1);
   })
     test("search function not called by pressing on Enter when the search bar is empty", () =>{
@@ -139,20 +140,11 @@ describe("Table", () => {
     expect(input.value).toBe("");
     expect(Search).toHaveBeenCalledTimes(0);
   })
-    test("call of the search function by pressing on the magnifying glass button", () => {
-    const Search = jest.fn();
-    render(<Table data={ data } columns={ columns } onSearch={Search}/>)
-    const input = screen.getByPlaceholderText("Search...") as HTMLInputElement;
-    const value = input.value;
-    fireEvent.click(screen.getByRole('button', {name: "Recherche" }));
-    expect(input.value).toBe("");
-    expect(Search).toHaveBeenCalledTimes(0);
-  })
     test("delete characters from the search bar", async() => {
     const Search = jest.fn();
     render(<Table data={ data } columns={ columns } onSearch={Search}/>)
     const input = screen.getByPlaceholderText("Search...");
-    fireEvent.change(input, {target: {value: 'test'}});
+    await userEvent.type(input, 'test');
     await userEvent.type(input, '{backspace}');
     expect(input).toHaveValue('tes');
   })
