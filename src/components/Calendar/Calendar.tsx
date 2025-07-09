@@ -68,13 +68,13 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
 
 
   /*Fills in the days of the previous month to the left of the first day of the current month*/
-  for (let i = first_day - 1; i >= 0; i--) {
-    week.push(nbr_day_in_Month_previous - i);
+  for (let other_month_day = first_day - 1; other_month_day >= 0; other_month_day--) {
+    week.push(nbr_day_in_Month_previous - other_month_day);
   }
 
   /*Adds the days of the current month into the weeks' array*/
-  for (let i = 1; i <= nbr_day_in_Month; i++) {
-    week.push(i);
+  for (let index_day = 1; index_day <= nbr_day_in_Month; index_day++) {
+    week.push(index_day);
     if (week.length === 7) {
       week_array.push(week);
       week = [];
@@ -91,7 +91,7 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
   /*Implementation of all weeks in the month*/
   while (week_array.length < 6) {
     let line: (number | null)[] = [];
-    for (let i = 0; i < 7; i++) {
+    for (let nbr_day_in_week = 0; nbr_day_in_week < 7; nbr_day_in_week++) {
       line.push(next_day++);
     }
     week_array.push(line);
@@ -153,15 +153,15 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
 
       {mode === "year_select" && (
         <div className="component_Calendar_scroll_year">
-          {allYears.map((a) => (
+          {allYears.map((year) => (
             <button
-              key={a}
+              key={year}
               onClick={() => {
-                setyear(a);
+                setyear(year);
                 setMode("date_select");
               }}
             >
-              {a}
+              {year}
             </button>
           ))}
         </div>
@@ -198,50 +198,50 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
           <table style={{ border: "1px solid", borderCollapse: "separate", borderSpacing: 0, width: "100%", borderRadius: shape === "circle" ? "10px" : "0px", overflow: "hidden" }}>
             <thead>
               <tr>
-                {locale.day.map((j) => (
-                  <th key={j}>{j}</th>
+                {locale.day.map((DAY) => (
+                  <th key={DAY}>{DAY}</th>
                 ))}
               </tr>
             </thead>
             <tbody>
-              {week_array.map((s, i) => (
-                <tr key={i}>
-                  {s.map((j, idx) => {
+              {week_array.map((WEEK, line) => (
+                <tr key={line}>
+                  {WEEK.map((date_number_day, idx) => {
                     const isSelected =
-                      j !== null &&
+                      date_number_day !== null &&
                       selectedDate &&
-                      selectedDate.day === j &&
+                      selectedDate.day === date_number_day &&
                       selectedDate.Month === Month &&
                       selectedDate.year === year;
 
-                    const isOtherMonth = j !== null && (
-                      (i === 0 && j > 20) ||
-                      (i >= 4 && j < 15)
+                    const isOtherMonth = date_number_day !== null && (
+                      (line === 0 && date_number_day > 20) ||
+                      (line >= 4 && date_number_day < 15)
                     );
 
                     return (
                       <td
                         key={idx}
                         onClick={() => {
-                          if (j === null) return;
+                          if (date_number_day === null) return;
 
-                          const isPrevMonth = i === 0 && j > 20;
-                          const isNextMonth = i >= 4 && j < 15;
+                          const isPrevMonth = line === 0 && date_number_day > 20;
+                          const isNextMonth = line >= 4 && date_number_day < 15;
 
                           if (isPrevMonth) {
                             const prevMonth = Month === 0 ? 11 : Month - 1;
                             const prevyear = Month === 0 ? year - 1 : year;
-                            handleClick(j, prevMonth, prevyear);
+                            handleClick(date_number_day, prevMonth, prevyear);
                           } else if (isNextMonth) {
                             const nextMonth = Month === 11 ? 0 : Month + 1;
                             const nextyear = Month === 11 ? year + 1 : year;
-                            handleClick(j, nextMonth, nextyear);
+                            handleClick(date_number_day, nextMonth, nextyear);
                           } else {
-                            handleClick(j);
+                            handleClick(date_number_day);
                           }
                         }}
                         className={
-                          j === null
+                          date_number_day === null
                             ? ""
                             : isOtherMonth
                               ? shape === "circle"
@@ -256,7 +256,7 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
                                   : "component_Calendar_d_calendar"
                         }
                       >
-                        {j !== null ? j : ""}
+                        {date_number_day !== null ? date_number_day : ""}
                       </td>
 
                     );
