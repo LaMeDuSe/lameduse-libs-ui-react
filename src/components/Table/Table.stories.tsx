@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { TableProps } from './Table';
 import Table from './Table';
 import * as React from 'react';
 import Button from '../Button/Button'
@@ -10,8 +9,6 @@ import { ColumnDef } from "@tanstack/react-table";
 type Personne = { nom: string, prenom: string, age: number };
 
 type Icon= string;
-
-//type Line= ButtonProps | Personne;
 
 
 type Line = {
@@ -122,14 +119,14 @@ const columns = [
 
 
 
-const TableWithButtons = (props: React.ComponentProps<typeof Table<Line>>) => (
+const CustomTable = (props: React.ComponentProps<typeof Table<Line>>) => (
   <Table<Line> {...props} />
 );
 
 
 
 
-const meta: Meta<typeof TableWithButtons>= {
+const meta: Meta<typeof CustomTable>= {
   title: 'LaMeDuSe/Components/TableComponent',
   component: Table,
   parameters: {
@@ -139,7 +136,7 @@ const meta: Meta<typeof TableWithButtons>= {
 
 export default meta; 
 
-type Story = StoryObj<typeof TableWithButtons>;
+type Story = StoryObj<typeof CustomTable>;
 
 
 
