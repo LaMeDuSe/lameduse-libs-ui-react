@@ -24,25 +24,25 @@
 }
 
 .component_Calendar_d_calendar:hover{
-    @apply bg-lameduse-primary/10;
+    @apply bg-lameduse-secondary/25;
     text-align: center;
 }
 
 .component_Calendar_d_calendar_selected { /* couleur du jour sélectionné forme square*/
-  @apply bg-lameduse-primary text-lameduse-white;
+  @apply bg-lameduse-secondary text-lameduse-white;
   color: white;
   text-align: center;
 }
 
 .component_Calendar_td_rounded_hover:hover{
-  @apply bg-lameduse-primary/10;
+  @apply bg-lameduse-secondary/25;
   border-radius: 10px;
   text-align: center;
 }
 
 
 .component_Calendar_d_calendar_selected_circle{  /* couleur du jour sélectionné forme circle*/
-  @apply bg-lameduse-primary text-lameduse-white;
+  @apply bg-lameduse-secondary text-lameduse-white;
   color: white;
   text-align: center;
   border-radius: 10px;
@@ -62,7 +62,7 @@
 
 
 .component_Calendar_other_month_circle:hover{
- background-color: rgba(94, 95, 95, 0.237);   
+ background-color: rgba(101, 101, 101, 0.237);   
 }
 
 .component_Calendar_other_month_square:hover{
