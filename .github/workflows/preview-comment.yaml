@@ -39,16 +39,17 @@ jobs:
             });
 
             const previewUrl = `\n\n🚀 Preview available: https://pr-${prNumber}.lameduse-libs-ui-react.devel.lameduse.fr`;
+            const currentBody = pr.body ?? ""; // fallback to empty string
 
-            if (!pr.body.includes('🚀 Preview available')) {
-              const updatedBody = pr.body + previewUrl;
+            if (!currentBody.includes('🚀 Preview available')) {
+              const updatedBody = currentBody + previewUrl;
               await github.rest.pulls.update({
                 owner,
                 repo,
                 pull_number: prNumber,
                 body: updatedBody
               });
-              console.log("PR description updated with preview URL.");
+              console.log("✅ PR description updated with preview URL.");
             } else {
-              console.log("Preview URL already present.");
+              console.log("ℹ️ Preview URL already present.");
             }
