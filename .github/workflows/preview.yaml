@@ -1,0 +1,56 @@
+# .github/workflows/preview-comment.yml
+name: "PR Preview Commenter"
+
+on:
+  pull_request_target:
+    types: [labeled]
+  pull_request:
+    types: [labeled]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  comment-preview:
+    runs-on: ubuntu-latest
+    if: |
+      github.event.label.name == 'preview'
+    steps:
+      - name: Leave preview URL comment
+        uses: thollander/actions-comment-pull-request@v1
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          message: |
+            ✅ Preview available !
+            https://pr-${{ github.event.pull_request.number }}.lameduse-libs-ui-react.devel.lameduse.fr
+            Note: This may take a few minutes to be available.
+      - name: Append preview URL to PR description
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            const prNumber = context.payload.pull_request.number;
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const { data: pr } = await github.rest.pulls.get({
+              owner,
+              repo,
+              pull_number: prNumber
+            });
+
+            const previewUrl = `\n\n🚀 Preview available: https://pr-${prNumber}.lameduse-libs-ui-react.devel.lameduse.fr`;
+
+            if (!pr.body.includes('🚀 Preview available')) {
+              const updatedBody = pr.body + previewUrl;
+              await github.rest.pulls.update({
+                owner,
+                repo,
+                pull_number: prNumber,
+                body: updatedBody
+              });
+              console.log("PR description updated with preview URL.");
+            } else {
+              console.log("Preview URL already present.");
+            }
