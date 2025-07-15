@@ -1,4 +1,4 @@
-# .github/workflows/preview-comment.yml
+# .github/workflows/preview-comment.yaml
 name: "PR Preview Commenter"
 
 on:
@@ -20,7 +20,7 @@ jobs:
       - name: Leave preview URL comment
         uses: thollander/actions-comment-pull-request@v1
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.LAMEDUSE_TOKEN }}
           message: |
             ✅ Preview available !
             https://pr-${{ github.event.pull_request.number }}.lameduse-libs-ui-react.devel.lameduse.fr
