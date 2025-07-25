@@ -1,10 +1,10 @@
 import React from "react";
-import { LinkedInIcon, TwitterIcon, DiscordIcon, GitHubIcon, MailboxIcon, CheckIcon, OutboxIcon, InboxIcon, WarningIcon, CrossmarkIcon, BoxIcon, IdentityCardIcon } from "./icons";
+import { LinkedInIcon, TwitterIcon, DiscordIcon, GitHubIcon, MailboxIcon, CheckIcon, OutboxIcon, InboxIcon, WarningIcon, CrossmarkIcon, BoxIcon, IdentityCardIcon, LameduseIcon } from "./icons";
 import NextLink from "next/link";
 
 
 export interface ButtonProps {
-  icon: "LINKEDIN" | "TWITTER" | "DISCORD" | "GITHUB" | "MAILBOX" | "CHECK" | "OUTBOX" | "INBOX" | "WARNING" | "CROSSMARK" | "BOX" | "IDENTITY CARD";
+  icon: "LINKEDIN" | "TWITTER" | "DISCORD" | "GITHUB" | "MAILBOX" | "CHECK" | "OUTBOX" | "INBOX" | "WARNING" | "CROSSMARK" | "BOX" | "IDENTITY CARD" | "LAMEDUSE";
   href?: string;
   size?: "small" | "medium" | "large";
   color?: "primary" | "secondary" | "tertiary" | "darkgrey";
@@ -24,6 +24,7 @@ const IconMap = {
   "CROSSMARK": CrossmarkIcon,
   "BOX": BoxIcon,
   "IDENTITY CARD": IdentityCardIcon,
+  "LAMEDUSE": LameduseIcon,
 };
 
 const Icon = (props: ButtonProps) => {
@@ -52,7 +53,7 @@ const Icon = (props: ButtonProps) => {
   return (
     <div className={`${sizeClass} ${colorClass} text-nowrap`}>
       <NextLink href={props.href || "#"} onClick={props.onClick}>
-        <IconObj />
+        <IconObj/>
       </NextLink>
     </div>
   )
