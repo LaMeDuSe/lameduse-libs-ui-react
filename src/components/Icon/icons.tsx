@@ -51,18 +51,6 @@ export const GitHubIcon= () => (
 
 //status icons
 
-/*export const MailboxIcon=() => (
-    <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    focusable = "false"
-    >
-        <path d="M22 7.535v9.465a3 3 0 0 1 -2.824 2.995l-.176 .005h-14a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-9.465l9.445 6.297l.116 .066a1 1 0 0 0 .878 0l.116 -.066l9.445 -6.297z" />
-        <path d="M19 4c1.08 0 2.027 .57 2.555 1.427l-9.555 6.37l-9.555 -6.37a2.999 2.999 0 0 1 2.354 -1.42l.201 -.007h14z" />
-    </svg>
-)
-*/
 export const MailboxIcon=() => (
     <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -117,13 +105,6 @@ export const BoxIcon=() => (
 export const LameduseIcon= () => (
     <img src="https://assets.lameduse.net/logo/lameduse_logo_grad.webp" alt="Description de l'icône"></img>
   )
-
-
-/*export const IdentityCardIcon=() => (
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="4.8 3.9 15.5 16.2" strokeWidth="1.5" stroke="currentColor">
-      <path strokeLinecap="round" strokeLinejoin="round"  d="m 14.873109,9.1869192 h 2.767856 m -2.767856,2.8444528 h 2.767856 m -2.767856,2.844455 h 2.767856 M 7.1231098,19.142507 H 18.194537 a 1.6607141,2.1333403 0 0 0 1.660715,-2.13334 V 7.0535788 a 1.6607141,2.1333403 0 0 0 -1.660715,-2.13334 H 7.1231098 a 1.6607141,2.1333403 0 0 0 -1.6607142,2.13334 v 9.9555882 a 1.6607141,2.1333403 0 0 0 1.6607142,2.13334 z M 11.551681,9.5424755 a 1.3839287,1.7777838 0 1 1 -2.7678572,0 1.3839287,1.7777838 0 0 1 2.7678572,0 z m 0.955095,6.0074865 a 4.9607376,6.372524 0 0 1 -2.339761,0.748091 4.9607376,6.372524 0 0 1 -2.3382862,-0.748091 2.4918093,3.2009583 0 0 1 4.6780472,0 z" />
-  </svg>
-)*/
 
 
 
