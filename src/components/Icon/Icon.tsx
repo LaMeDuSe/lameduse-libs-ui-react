@@ -3,7 +3,7 @@ import { LinkedInIcon, TwitterIcon, DiscordIcon, GitHubIcon, MailboxIcon, CheckI
 import NextLink from "next/link";
 
 
-export interface ButtonProps {
+export interface IconProps {
   icon: "LINKEDIN" | "TWITTER" | "DISCORD" | "GITHUB" | "MAILBOX" | "CHECK" | "OUTBOX" | "INBOX" | "WARNING" | "CROSSMARK" | "BOX" | "IDENTITY CARD" | "LAMEDUSE";
   href?: string;
   size?: "small" | "medium" | "large";
@@ -24,10 +24,10 @@ const IconMap = {
   "CROSSMARK": CrossmarkIcon,
   "BOX": BoxIcon,
   "IDENTITY CARD": IdentityCardIcon,
-  "LAMEDUSE": LameduseIcon,
+  "LAMEDUSE": LameduseIcon
 };
 
-const Icon = (props: ButtonProps) => {
+const Icon = (props: IconProps) => {
   // default values
   props = { ...props }; // copy to avoid modifying the original object
 
