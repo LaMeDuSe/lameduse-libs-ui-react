@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { fn } from '@storybook/test';
-import { ButtonProps } from './Icon'
+import { IconProps } from './Icon';
 import React from 'react';
 import Icon from './Icon';
 
@@ -38,7 +38,7 @@ export const Secondary: Story = {
   },
 };*/
 
-export const TwoCustomButtons = (args: ButtonProps) => (
+export const TwoCustomButtons = (args: IconProps) => (
   <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
     <Icon {...args} icon="IDENTITY CARD"/>
     <Icon {...args} icon="LAMEDUSE"/>
