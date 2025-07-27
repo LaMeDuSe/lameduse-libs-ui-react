@@ -65,11 +65,11 @@ export const MailboxIcon=() => (
 
 export const CheckIcon=() => (
   <svg xmlns="http://www.w3.org/2000/svg" style={{textAlign: "center"}} fill="none" viewBox="0 0 21 21">
-    <path fill="currentColor" fillRule="evenodd" d="M3 10a7 7 0 019.307-6.611 1 1 0 00.658-1.889 9 9 0 105.98 7.501 1 1 0 00-1.988.22A7 7 0 113 10zm14.75-5.338a1 1 0 00-1.5-1.324l-6.435 7.28-3.183-2.593a1 1 0 00-1.264 1.55l3.929 3.2a1 1 0 001.38-.113l7.072-8z"/>
+    <path fill="currentColor" fillRule="evenodd" d="M4 12a8 8 0 0110.636-7.556 1 1 0 00.659-1.888A9.987 9.987 0 0012 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10c0-.375-.02-.745-.061-1.11a1 1 0 00-1.988.22A8 8 0 114 12zm17.767-7.359a1 1 0 00-1.534-1.282l-7.707 9.22-3.873-3.337a1 1 0 00-1.306 1.516l4.643 4a1 1 0 001.42-.117l8.357-10z"/>
   </svg>
 )
 
-//CC0
+
 export const OutboxIcon=() => (
 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
   <path fill="currentColor" fillRule="evenodd" d="M12 11a1 1 0 01-1-1V4.269L7.675 7.307a1 1 0 11-1.35-1.476l5-4.57a1 1 0 011.35 0l5 4.57a1 1 0 01-1.35 1.476L13 4.27V10a1 1 0 01-1 1zm-8.5 1h2.937a3 3 0 012.487 1.322l1.06 1.57a1 1 0 00.829.441h2.374a1 1 0 00.829-.44l1.06-1.571A3 3 0 0117.563 12H20.5a1 1 0 011 1c0 2.271.24 5.218.387 6.802A2.01 2.01 0 0119.888 22H4.112a2.01 2.01 0 01-2-2.198c.148-1.584.388-4.53.388-6.802a1 1 0 011-1zm16.013 2c.053 2.17.256 4.615.383 5.987v.005a.015.015 0 01-.004.006.012.012 0 01-.002.002H4.11l-.002-.002a.016.016 0 01-.004-.005v-.006c.127-1.372.33-3.818.383-5.987h1.95a1 1 0 01.829.44l1.06 1.572a3 3 0 002.487 1.321h2.374a3 3 0 002.487-1.321l1.06-1.572a1 1 0 01.829-.44h1.95z"/>
@@ -103,7 +103,7 @@ export const BoxIcon=() => (
 
 
 export const LameduseIcon= () => (
-    <img src="https://assets.lameduse.net/logo/lameduse_logo_grad.webp" alt="Description de l'icône"></img>
+    <img src="https://assets.lameduse.net/logo/lameduse_logo_grad.webp" alt="lameduse icon" width="24" height="24"></img>
   )
 
 
