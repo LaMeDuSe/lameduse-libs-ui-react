@@ -49,7 +49,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 
 
--The MailboxIcon component includes reused code covered by the MIT License.
+-The MailboxIcon component is based on original work by Paweł Kuna (2020–2024) covered by the MIT License.
 
 MIT License
 
@@ -149,7 +149,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-The WarningIcon includes reused code covered by the MIT License.
+
+-The WarningIcon includes reused code covered by the MIT License.
 
 MIT License
 
