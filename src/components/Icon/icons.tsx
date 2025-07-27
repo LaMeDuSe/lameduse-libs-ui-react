@@ -103,7 +103,7 @@ export const BoxIcon=() => (
 
 
 export const LameduseIcon= () => (
-    <img src="https://assets.lameduse.net/logo/lameduse_logo_grad.webp" alt="lameduse icon"></img>
+    <img src="https://assets.lameduse.net/logo/lameduse_logo_grad.webp" alt="lameduse icon" width="24" height="24"></img>
   )
 
 
