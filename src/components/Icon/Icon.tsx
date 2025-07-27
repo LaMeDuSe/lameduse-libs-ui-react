@@ -4,7 +4,7 @@ import NextLink from "next/link";
 
 
 export interface IconProps {
-  icon: "LINKEDIN" | "TWITTER" | "DISCORD" | "GITHUB" | "MAILBOX" | "CHECK" | "OUTBOX" | "INBOX" | "WARNING" | "CROSSMARK" | "BOX" | "IDENTITY CARD" | "LAMEDUSE";
+  icon: keyof typeof IconMap; // restricts icon to keys of IconMap
   href?: string;
   size?: "small" | "medium" | "large";
   color?: "primary" | "secondary" | "tertiary" | "darkgrey";
