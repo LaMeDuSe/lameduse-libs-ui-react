@@ -22,6 +22,7 @@ export const DiscordIcon = () => (
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
       focusable = "false"
+      style={{textAlign: "center"}}
     >
       <path
         fill = "currentColor"
@@ -57,9 +58,10 @@ export const MailboxIcon=() => (
     viewBox="5 5 15 15"
     fill="currentColor"
     focusable = "false"
+    style={{textAlign: "center"}}
     >
         <path d="m 18.643136,8.5980005 v 7.9431775 a 2.0399998,2.5176475 0 0 1 -1.920319,2.513452 l -0.11968,0.0042 H 7.0831372 A 2.0399998,2.5176475 0 0 1 5.0465375,16.688902 l -0.0034,-0.147703 V 8.5980005 l 6.4225975,5.2845425 0.07888,0.05539 a 0.67999998,0.83921584 0 0 0 0.597041,0 l 0.07889,-0.05539 z"/>
-        <path d="m 16.603137,5.6313726 c 0.7344,0 1.378361,0.478353 1.737399,1.197561 L 11.843138,12.174739 5.3457374,6.8289336 a 2.03932,2.5168083 0 0 1 1.60072,-1.1916864 l 0.1366798,-0.00589 z"/>
+        <path d="m 16.603137,5.6313726 c 0.7344,0 1.378361,0.478353 1.737399,1.197561 L 11.843138,12.174739 5.3457374,6.8289336 a 2.03932,2.5168083 0 0 1 1.60072,-1.1916864 l 0.1366798,-0.00589 z"/>*/
     </svg>
 )
 
@@ -85,14 +87,14 @@ export const InboxIcon=() => (
 
 
 export const WarningIcon=() => (
-  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <svg viewBox="0 0 24 24" style={{textAlign: "center"}} fill="none" xmlns="http://www.w3.org/2000/svg">
     <path fillRule="evenodd" clipRule="evenodd" d="M9.61617 3.6419C10.6736 1.80296 13.3268 1.80296 14.3841 3.6419L22.4271 17.6296C23.4813 19.463 22.1579 21.7504 20.0431 21.7504H3.95721C1.84242 21.7504 0.519055 19.463 1.57322 17.6296L9.61617 3.6419ZM12 8.25C12.4142 8.25 12.75 8.58579 12.75 9V13C12.75 13.4142 12.4142 13.75 12 13.75C11.5858 13.75 11.25 13.4142 11.25 13V9C11.25 8.58579 11.5858 8.25 12 8.25ZM12.5675 17.5008C12.8446 17.1929 12.8196 16.7187 12.5117 16.4416C12.2038 16.1645 11.7296 16.1894 11.4525 16.4973L11.4425 16.5084C11.1654 16.8163 11.1904 17.2905 11.4983 17.5676C11.8062 17.8447 12.2804 17.8197 12.5575 17.5119L12.5675 17.5008Z" fill="currentColor"/>
   </svg>
 )
 
 
 export const CrossmarkIcon=() => (
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="4 4 15 15"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16.87 7.13 12 12m-4.87 4.87L12 12m4.87 4.87L12 12M7.13 7.13 12 12"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" style={{textAlign: "center"}} viewBox="4 4 15 15"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M16.87 7.13 12 12m-4.87 4.87L12 12m4.87 4.87L12 12M7.13 7.13 12 12"/></svg>
 )
 
 export const BoxIcon=() => (
