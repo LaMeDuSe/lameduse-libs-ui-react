@@ -1,5 +1,52 @@
 # LaMeDuSe Change Log
 
+# [2.3.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.2.0...v2.3.0) (2025-08-09)
+
+
+### Bug Fixes
+
+* ajout de lucide-react ([509b390](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/509b3908e09f3672216b992a00b9ec39ac8625c5))
+* button position ([043c2e3](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/043c2e3d686de4355fc909abf6434bf9e6a9d779))
+* button position ([7fb1c26](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/7fb1c26afeff4954144cf1dcffeb4c2feaa59b9d))
+* changed icon in story ([eaa8572](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/eaa857233f7eb5f91fcfb015deed7ccc04715234))
+* **ci:** mise à jour de yarn.lock, corrige la licence ([46e1f61](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/46e1f613a1e61df2ca97d66262270c996e2f90f8))
+* correction des noms d’attributs non valides en JSX ([0d8f52a](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/0d8f52a2c8e2261e39fc821d9e4c22e5232326d6))
+* correction du chemin d’export vers hero_slider dans index.ts ([5b83d54](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5b83d5467c1d9ae2303401009c994533b8f20ce3))
+* fixed CTA issue with responsive ([04f8156](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/04f8156c8ecae5f606cd542dd427590a6f0963b6))
+* fixed export for LameduseIcon ([55b8002](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/55b80028143a513a560b6beab006a0754b84f512))
+* fixed issue with component key ([5b7fb98](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5b7fb984d910bd7f6b878c43f8414a60c56eb4d1))
+* height for ghostpost and space for CTA ([12d9c4c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/12d9c4c099766fa28b20db2621bdcdef0b36d748))
+
+
+### Features
+
+* added contact card ([6375d8c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6375d8c09f5958eeb6131be4e8643d3a2480bc86))
+* added contact card ([94488c0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/94488c08ea93efcaa746570ad163cb9b0560369f))
+* added heading ([bf96b7b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/bf96b7bf1c4f5c5b16870e75b6950fbc211599cc))
+* added icon + template ([a656d17](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a656d1750a2d61f9aca9a720005b5d08904fab4c))
+* added lib version ([df1f3e4](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/df1f3e4bfac65d81996eeabca1a46fb75a247bdb))
+* added support for custom config hooks and dd reworked ghostpost style ([a286b3d](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a286b3db8f7dc40431e9c019af2222a685d4cf6e))
+* added test in the pipeline ([d30a74c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d30a74c523f44f905b96fbe3c4b33c89e3f02eb7))
+* added working ghost blocs ([81478c7](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/81478c74bc7014bc69a19e744877f23fc1d757aa))
+* addeed ghostpost empty component + reorder the exports ([5bdb47a](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5bdb47aaac8b23ee3c8856a8152edec367ce1276))
+* ajout d'autres icônes ([a87fac8](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a87fac8fc2bbbe18f8e824809c73a7fbab695b3d))
+* ajout d'une icône et modification de deux autres (icons.tsx) ([9a062d7](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/9a062d7afe6019065d636c0b9a3dfce67bd22b64))
+* ajout de nouvelles icônes ([291a1a9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/291a1a9c6791defe70a963ae6e966911efa26d02))
+* ajout des animations dans hero_slider.tsx ([e800b9a](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/e800b9a533902502fe3a759aedaa1e3daa675678))
+* ajout des fichiers pour la tâche Slider ([97c44a0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/97c44a0c36d651bbbd4e5627ca17974e70dc1439))
+* ajout du champ style dans l'interface Slide du fichier hero_slider_type.ts ([7a25633](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/7a25633caf37bca3ad8e0632e9d06067ebb924f7))
+* ajout du décalage titre/sous-titre (hero_slider_layout.tsx) ([12728dc](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/12728dc0dbf537f30a1ece2a2ca7a0e2313c3113))
+* ajout du fichier get_slide_style.ts qui permet de créer un style de slide ([32f0c26](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/32f0c2606609d31d18d8b057fd2c68d65404dd33))
+* ajout du fichier hero_slider_type.ts et modification de own_slider.stories.tsx ([e368312](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/e36831289635dd73f4b4353118e6f95e8a7b93a3))
+* ajout du fichier hero_slider.tsx ([bba1608](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/bba1608456ccee64d79f8efcac38947d7cc81d9d))
+* ajout du fichier slide_style.ts pour le style des slides ([2cd02c1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/2cd02c1e3677fb209d92fd11efa1e25a19f5679c))
+* il s'agit d'un nouveau hero slider qui permet de choisir le style des slides ([c5077a1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/c5077a19eb11e81475112b71eae152f5d2372481))
+* modification de Icon.tsx pour l'ajout d'une icône ([b952ce3](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b952ce326f17fd510cbcde55cff0520bbb4591a2))
+* modification de own_slider.stories.tsx pour tester hero_slider_layout.tsx ([91621d3](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/91621d3807b421111b997696b398bd8c552deb46))
+* modification des fichiers index.ts  own_slider.stories.ts  slider.tsx ([416d254](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/416d254da68c7c79cbb60e1f2c981ef380ccbf92))
+* reworked component ([8344391](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8344391238bfcd90bee237cac9c1799e6e95ae3e))
+* updated component ([a05bdc9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a05bdc9ea36dbfe5b6786f9b094e2129f3ca6fc4))
+
 # [2.2.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.1.0...v2.2.0) (2025-04-25)
 
 
