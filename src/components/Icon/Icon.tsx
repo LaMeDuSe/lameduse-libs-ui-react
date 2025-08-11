@@ -53,7 +53,7 @@ const Icon = (props: IconProps) => {
   return (
     <div className={`${sizeClass} ${colorClass} text-nowrap`}>
       <NextLink href={props.href || "#"} onClick={props.onClick}>
-        <IconObj />
+        <IconObj/>
       </NextLink>
     </div>
   )
