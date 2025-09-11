@@ -1,0 +1,62 @@
+.message{
+  max-width: 80%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  background-color: #f1f1f1;
+  font-size: 13px;
+}
+
+.component_Chat_message_mine {
+  @apply text-lameduse-white;
+  background: linear-gradient(to bottom left, theme('colors.lameduse-primary'), theme('colors.lameduse-secondary'));
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.component_Chat_author_other{
+  align-self: flex-start;
+  font-size: 10px;
+  @apply text-lameduse-white;
+}
+
+.component_Chat_author_mine{
+  font-size: 10px;
+  @apply text-lameduse-white;
+}
+
+.component_Chat_message_other {
+  @apply text-lameduse-white;
+  background: linear-gradient(to bottom left, theme('colors.lameduse-secondary'), theme('colors.lameduse-tertiary'));
+  align-self: flex-start;
+  margin-right: auto;
+  
+}
+
+.component_Chat_timestamp {
+  font-size: 10px;
+  @apply text-lameduse-white;
+  margin-top: 4px;
+  text-align: right;
+}
+
+.component_Chat_message_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+.component_Chat_message_author {
+  font-weight: bold;
+}
+
+
+.component_Chat_message_content {
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}

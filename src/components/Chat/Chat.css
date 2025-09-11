@@ -1,0 +1,26 @@
+.component_Chat{
+    @apply bg-lameduse-white;
+}
+
+.component_Chat_script{
+    border-color: 10px;
+    font-size:18px;
+    @apply text-lameduse-white;
+}
+
+.component_Chat_script input{
+    background: linear-gradient(to bottom left, theme('colors.lameduse-primary'), theme('colors.lameduse-secondary'));
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.component_Chat_script button{
+    @apply text-lameduse-white;
+    background: linear-gradient(to bottom left, theme('colors.lameduse-primary'), theme('colors.lameduse-secondary'));
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    @apply bg-lameduse-primary;
+}

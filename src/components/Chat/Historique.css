@@ -1,0 +1,14 @@
+.component_Chat_historique{  
+  min-width: 100px;
+  max-width: 300px;
+  min-height: 150px;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  gap: 10px;
+}
