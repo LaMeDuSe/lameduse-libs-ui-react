@@ -44,7 +44,7 @@ const CardCaroussel = ({ Cards = [], onClick  }: CardCarousselProps) => {
 
   const cardWidth =
     cardsPerPage > 0
-      ? (containerWidth - GAP * (cardsPerPage - 1)) / cardsPerPage
+      ? (containerWidth - (GAP*cardsPerPage) * (cardsPerPage - 1)) / cardsPerPage
       : 300;
 
   const maxTranslateX = 0;
