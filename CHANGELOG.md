@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.3.2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.3.1...v2.3.2) (2025-12-17)
+
+
+### Bug Fixes
+
+* wrong fs include ([8a61ec1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8a61ec157fca97598c5d0f00857eb6463f432867))
+
 ## [2.3.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.3.0...v2.3.1) (2025-12-17)
 
 
