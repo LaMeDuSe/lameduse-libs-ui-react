@@ -30,6 +30,7 @@ export default [
       "postcss",
       "autoprefixer",
       "tailwindcss",
+      "@emotion/is-prop-valid",
     ],
     plugins: [
       resolve({
