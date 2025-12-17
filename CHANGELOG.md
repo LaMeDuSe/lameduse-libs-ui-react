@@ -1,5 +1,14 @@
 # LaMeDuSe Change Log
 
+## [2.3.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.3.0...v2.3.1) (2025-12-17)
+
+
+### Bug Fixes
+
+* export error of packages ([46fbac9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/46fbac91acb1f78c44b838f4b063ac58bf43580b))
+* package missing ([8ab127f](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8ab127fdf50b77333280a7c6e57dbc54a2493380))
+* yarn lock and versions ([8c7942d](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8c7942dece061d6cf0dd8816c60160b05b37cd74))
+
 # [2.3.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.2.0...v2.3.0) (2025-08-09)
 
 
