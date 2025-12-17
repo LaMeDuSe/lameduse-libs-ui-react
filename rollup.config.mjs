@@ -36,7 +36,7 @@ export default [
       resolve({
         ignoreGlobal: false,
         include: ['node_modules/**'],
-        skip: ['react', 'react-dom'],
+        skip: ['react', 'react-dom', 'fs'],
       }),
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
