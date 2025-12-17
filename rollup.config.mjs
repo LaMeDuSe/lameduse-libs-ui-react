@@ -21,6 +21,16 @@ export default [
         sourcemap: true,
       },
     ],
+    external: [
+      "react",
+      "react-dom",
+      "nextjs",
+      "next/image",
+      "next/link",
+      "postcss",
+      "autoprefixer",
+      "tailwindcss",
+    ],
     plugins: [
       resolve({
         ignoreGlobal: false,
