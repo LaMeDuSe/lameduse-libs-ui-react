@@ -54,9 +54,9 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
   } | null>(null);
 
 
-  const first_day = (new Date(year, Month, 1).getDay() + 6) % 7;
-  const nbr_day_in_Month = new Date(year, Month + 1, 0).getDate();
-  const nbr_day_in_Month_previous = new Date(year, Month, 0).getDate();
+  const first_day = (new Date(year, Month - 1, 1).getDay() + 6) % 7;
+  const nbr_day_in_Month = new Date(year, Month, 0).getDate();
+  const nbr_day_in_Month_previous = new Date(year, Month - 1, 0).getDate();
 
   const startYear=1900;
   const endYear=2099;
@@ -89,7 +89,7 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
   week_array.push(week);
 
   /*Implementation of all weeks in the month*/
-  while (week_array.length < 6) {
+  while (week_array.length < 5) {
     let line: (number | null)[] = [];
     for (let nbr_day_in_week = 0; nbr_day_in_week < 7; nbr_day_in_week++) {
       line.push(next_day++);
@@ -105,8 +105,8 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
   };
 
   const Monthnext = () => {
-    if (Month === 11) {
-      setMonth(0);
+    if (Month === 12) {
+      setMonth(1);
       setyear(year + 1);
     }
     else {
@@ -115,8 +115,8 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
   };
 
   const Monthprevious = () => {
-    if (Month === 0) {
-      setMonth(11);
+    if (Month === 1) {
+      setMonth(12);
       setyear(year - 1);
     }
     else {
@@ -185,7 +185,7 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
 
           {vueDate && selectedDate && (
             <p onClick={back}>
-              {selectedDate.day}/{selectedDate.Month + 1}/{selectedDate.year}
+              {selectedDate.day}/{selectedDate.Month}/{selectedDate.year}
             </p>
           )}
 
