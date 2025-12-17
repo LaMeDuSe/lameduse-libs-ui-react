@@ -4,7 +4,7 @@ export type TimelineHProps = {
   elements: {
     title: string;
     content: string;
-    year: string;
+    date: string;
   }[];
 };
 
@@ -25,7 +25,7 @@ const TimelineH = (props: TimelineHProps) => {
             {/* Contenu */}
             <div className="min-w-64 p-4 text-center">
               <h2 className="font-medium title-font text-black mb-1 text-xl">
-                {value.year}
+                {value.date}
               </h2>
               <h1 className="font-semibold title-font text-lameduse-black mb-1 text-2xl">
                 {value.title}
