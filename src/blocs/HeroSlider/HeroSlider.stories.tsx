@@ -16,7 +16,8 @@ const slides: Slide[] = [
       children: 'Explorer',
       href: '#',
     }],
-    style: 'default'
+    style: 'default',
+    imgClassName: 'blur-sm'
   },
   {
     title: 'Lorem ipsum !',
@@ -30,7 +31,8 @@ const slides: Slide[] = [
       children: 'Explorer',
       href: '#',
     }],
-    style: 'left'
+    style: 'left',
+    imgClassName: 'blur-md'
   },
   {
     title: 'Lorem ipsum !',
@@ -45,7 +47,8 @@ const slides: Slide[] = [
       href: '#',
       form: "none"
     }],
-    style: 'right'
+    style: 'right',
+    imgClassName: 'blur-xl'
   },
 ];
 
