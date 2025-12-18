@@ -229,12 +229,12 @@ const Calendar: React.FC<CalendarProps> = ({ onClick, vueDate, shape, color_styl
                           const isNextMonth = line >= 4 && date_number_day < 15;
 
                           if (isPrevMonth) {
-                            const prevMonth = Month === 0 ? 11 : Month - 1;
-                            const prevyear = Month === 0 ? year - 1 : year;
+                            const prevMonth = Month === 1 ? 12 : Month - 1;
+                            const prevyear = Month === 1 ? year - 1 : year;
                             handleClick(date_number_day, prevMonth, prevyear);
                           } else if (isNextMonth) {
-                            const nextMonth = Month === 11 ? 0 : Month + 1;
-                            const nextyear = Month === 11 ? year + 1 : year;
+                            const nextMonth = Month === 12 ? 1 : Month + 1;
+                            const nextyear = Month === 12 ? year + 1 : year;
                             handleClick(date_number_day, nextMonth, nextyear);
                           } else {
                             handleClick(date_number_day);
