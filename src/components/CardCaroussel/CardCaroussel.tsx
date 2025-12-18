@@ -12,10 +12,10 @@ type responsiveType = {
 
 const responsive: responsiveType = {
   0: { items: 1 },
-  500: { items: 2 },
+  450: { items: 2 },
   900: { items: 3 },
-  1400: { items: 4 },
-  1900: { items: 5 },
+  1350: { items: 4 },
+  1800: { items: 5 },
 };
 
 export interface CardCarousselProps {
@@ -44,7 +44,7 @@ const CardCaroussel = ({ Cards = [], onClick  }: CardCarousselProps) => {
 
   const cardWidth =
     cardsPerPage > 0
-      ? (containerWidth - (GAP*cardsPerPage) * (cardsPerPage - 1)) / cardsPerPage
+      ? (containerWidth - GAP * (cardsPerPage-1)) / cardsPerPage
       : 300;
 
   const maxTranslateX = 0;
@@ -102,8 +102,8 @@ const CardCaroussel = ({ Cards = [], onClick  }: CardCarousselProps) => {
 
 
   return (
-    <div style={{ width: "100vw", overflowX: "hidden" }}>
-      <div ref={containerRef} className="w-full mx-auto p-4">
+    <div style={{ width: "90vw", overflowX: "hidden" }}>
+      <div ref={containerRef} className="w-full mx-auto">
         <div
           className="relative select-none"
           onMouseDown={handleMouseDown}
@@ -120,7 +120,7 @@ const CardCaroussel = ({ Cards = [], onClick  }: CardCarousselProps) => {
             style={{
               transform: `translateX(${translateX}px)`,
               gap: `${GAP}px`,
-              paddingLeft: `${GAP}px`,
+              paddingLeft: `0px`,
               paddingRight: `${GAP}px`,
               width: "100%",
             }}
@@ -132,7 +132,7 @@ const CardCaroussel = ({ Cards = [], onClick  }: CardCarousselProps) => {
                 style={{
                   width: `${cardWidth}px`,
                   flex: "0 0 auto",
-                  marginLeft: i === 0 ? `${GAP}px` : undefined,
+                  marginLeft: "0px",
                   marginRight: i === Cards.length - 1 ? `${GAP}px` : undefined,
                 }}
               >
