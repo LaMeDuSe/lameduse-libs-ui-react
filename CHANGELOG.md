@@ -1,5 +1,19 @@
 # LaMeDuSe Change Log
 
+# [2.4.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.3.2...v2.4.0) (2025-12-19)
+
+
+### Bug Fixes
+
+* imgClassName ([baf63f8](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/baf63f8de0793e318b586a3d7d30fda7a8be121b))
+* imgClassName ([162de1b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/162de1bd26b6ad749d93b6b8324bc0db31252ab7))
+
+
+### Features
+
+* add possibility to use personnal style for image ([dca3c72](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/dca3c724e02e9dfe0e24b0e3dd19a81507b23201))
+* add the feat to the test file et storybook file ([61356f6](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/61356f62da0b7033d6867b9640630c2f836d00c6))
+
 ## [2.3.2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.3.1...v2.3.2) (2025-12-17)
 
 
