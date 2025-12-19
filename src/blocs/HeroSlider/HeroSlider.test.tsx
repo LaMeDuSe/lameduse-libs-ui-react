@@ -16,7 +16,8 @@ describe("Template", () => {
             children: 'Explorer',
             href: '#',
           }],
-          style: 'right'
+          style: 'right',
+          imgClassName: 'blur-sm'
         },
       ]} />);
   });
