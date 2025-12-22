@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.4.2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.1...v2.4.2) (2025-12-22)
+
+
+### Bug Fixes
+
+* position of chevron ([1459c07](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1459c07aa98493cb28114219b75162ec24ebce13))
+
 ## [2.4.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.0...v2.4.1) (2025-12-22)
 
 
