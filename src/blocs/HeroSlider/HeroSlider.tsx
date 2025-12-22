@@ -13,7 +13,6 @@ export interface Slide {
   image: string;
   buttons?: LinkProps[];
   style?: SlideLayout | SlideStyle;
-  imgClassName?: string;
 }
 
 export interface HeroSliderProps {
@@ -75,7 +74,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
           <img
             src={slides[currentIndex].image}
             alt={slides[currentIndex].title}
-            className={`w-full h-full object-cover ${currentSlide.imgClassName || ''}`}
+            className="w-full h-full object-cover"
           />
           <div className={`absolute inset-0 bg-black/40 flex flex-col justify-center text-white px-4 sm:px-20 ${alignmentMap[layout.align]}`}>
             {layout.showTitle && (
@@ -107,13 +106,13 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
           {/* Previous / Next Button*/}
           <button
             onClick={goToPrev}
-            className="absolute bottom-0  left-4 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/70"
+            className="absolute bottom-0 sm:bottom-auto sm:top-1/2 left-4 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/70"
           >
             <ChevronLeft size={28} />
           </button>
           <button
             onClick={goToNext}
-            className="absolute bottom-0  right-4 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/70"
+            className="absolute bottom-0 sm:bottom-auto sm:top-1/2 right-4 transform -translate-y-1/2 bg-black/40 text-white p-2 rounded-full hover:bg-black/70"
           >
             <ChevronRight size={28} />
           </button>
