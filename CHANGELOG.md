@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.4.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.0...v2.4.1) (2025-12-22)
+
+
+### Bug Fixes
+
+* size of < and > ([06d0f25](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/06d0f2556b7c9b863c86ab98d54eeb41768830e0))
+
 # [2.4.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.3.2...v2.4.0) (2025-12-19)
 
 
