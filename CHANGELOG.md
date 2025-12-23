@@ -1,5 +1,13 @@
 # LaMeDuSe Change Log
 
+## [2.4.5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.4...v2.4.5) (2025-12-23)
+
+
+### Bug Fixes
+
+* typings ([1efe746](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1efe74684708b08e455a560b9ef4e74ee78999a0))
+* updated typings ([1a0e8a1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1a0e8a1f00b5776edc82a7f1f88cd7c42611c4aa))
+
 ## [2.4.4](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.3...v2.4.4) (2025-12-23)
 
 
