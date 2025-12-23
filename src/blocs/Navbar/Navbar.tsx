@@ -9,23 +9,23 @@ export interface NavbarProps {
     NavItems: NavItemType[];
 }
 
-export interface NavItemBase {
+export interface INavItemBase {
     type: "link" | "dropdown" | "logo" | "custom";
     label: string; // Used as alt text for images
     position: "left" | "right" | "center";
 }
 
-export interface NavItemLink extends NavItemBase {
+export interface INavItemLink extends INavItemBase {
     type: "link";
     href: string;
 }
 
-export interface NavItemDropdown extends NavItemBase {
+export interface INavItemDropdown extends INavItemBase {
     type: "dropdown";
-    items: NavItemLink[];
+    items: INavItemLink[];
 }
 
-export interface NavItemLogo extends NavItemBase {
+export interface INavItemLogo extends INavItemBase {
     type: "logo";
     src: string;
     href?: string;
@@ -36,15 +36,15 @@ export interface NavItemLogo extends NavItemBase {
     width?: number;
 }
 
-export interface NavItemCustom extends NavItemBase {
+export interface INavItemCustom extends INavItemBase {
     type: "custom";
     component: React.FC;
 }
 
-export type NavItemType = NavItemLink | NavItemDropdown | NavItemLogo | NavItemCustom;
+export type NavItemType = INavItemLink | INavItemDropdown | INavItemLogo | INavItemCustom;
 
 export interface NavLinkProps {
-    config: NavItemLink;
+    config: INavItemLink;
     className?: string;
     wrapClassName?: string;
 }
@@ -58,7 +58,7 @@ const NavLink = (props: NavLinkProps) => {
 }
 
 export interface NavDropdownProps {
-    config: NavItemDropdown;
+    config: INavItemDropdown;
     className?: string;
     wrapClassName?: string;
 }
@@ -82,7 +82,7 @@ const NavItemDropdown = (props: NavDropdownProps) => {
 }
 
 export interface NavLogoProps {
-    config: NavItemLogo;
+    config: INavItemLogo;
     className?: string;
     wrapClassName?: string;
 }
@@ -100,7 +100,7 @@ const NavItemLogo = (props: NavLogoProps) => {
 }
 
 export interface NavCustomProps {
-    config: NavItemCustom;
+    config: INavItemCustom;
     wrapClassName?: string;
 }
 
