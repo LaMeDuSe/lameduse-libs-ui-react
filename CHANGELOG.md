@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.4.3](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.2...v2.4.3) (2025-12-23)
+
+
+### Bug Fixes
+
+* imgClassName ([4727fdb](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4727fdb9ce653bb7a2f25eece94ef2bf88fe7529))
+
 ## [2.4.2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.1...v2.4.2) (2025-12-22)
 
 
