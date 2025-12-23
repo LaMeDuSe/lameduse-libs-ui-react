@@ -40,13 +40,13 @@ const CardOne = (props: CardOneProps) => {
   }[props.border];
   let rounded = props.rounded ? "rounded-lg" : "";
   return (
-      <div className={`px-4 ${container_color_class} ${props.className} ${rounded} ${standard_class} ${border}`}>
+      <div className={`px-4 flex flex-col ${container_color_class} ${props.className} ${rounded} ${standard_class} ${border}`}>
         <div className="rounded-lg h-64 overflow-hidden">
           <Image height={500} width={500} alt="content" className="object-cover object-center h-full w-full" src={props.image} />
         </div>
         <h2 className="text-2xl font-medium text-gray-900 mt-6 mb-3">{props.title}</h2>
-        <p className="leading-relaxed text-base">{props.description}</p>
-        <div className=" w-fit flex mx-auto mt-6">
+        <p className="leading-relaxed text-base mb-6">{props.description}</p>
+        <div className=" w-fit flex mx-auto mt-auto">
           <Link href={props.link_url} type={"primary"} form="rounded" style="solid" size="medium" className="border-0 py-2 px-5 focus:outline-none">{props.link_text}</Link>
         </div>
       </div>
