@@ -28,7 +28,7 @@ const CardTwo = (props: CardTwoProps) => {
   return (
     <div>
       <NextLink href={props.link_url} target="_blank">
-        <div className="bg-gray-100 p-6 rounded-lg">
+        <div className="flex felx-col bg-gray-100 p-6 rounded-lg">
           <Image width={238} height={160} className="h-40 rounded w-full object-contain object-center mb-6" src={props.image} alt="content" />
           <h3 className={`tracking-widest text-xs font-medium title-font ${color_classname}`}>{props.label}</h3>
           <h2 className={`text-lg text-black font-bold title-font mb-4`}>{props.title}</h2>
