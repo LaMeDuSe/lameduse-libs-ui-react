@@ -1,5 +1,8 @@
 import React, { useContext } from "react";
-import NextLink from "next/link";
+import NextLinkImport from "next/link";
+
+// Handle ESM/CJS interop for Next.js components
+const NextLink = (NextLinkImport as any).default || NextLinkImport;
 
 
 

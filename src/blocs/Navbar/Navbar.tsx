@@ -1,9 +1,13 @@
 import React, { useContext, useState } from "react";
-import NextLink from "next/link";
-import Image from "next/image";
+import NextLinkImport from "next/link";
+import ImageImport from "next/image";
 import Link from "../../components/Link";
 
-export interface NavbarProps {
+// Handle ESM/CJS interop for Next.js components    
+const NextLink = (NextLinkImport as any).default || NextLinkImport;
+const Image = (ImageImport as any).default || ImageImport;
+
+export interface INavbarProps {
     type?: "primary" | "secondary" | "tertiary" | "danger" | "white";
     className?: string;
     NavItems: NavItemType[];
@@ -41,15 +45,15 @@ export interface INavItemCustom extends INavItemBase {
     component: React.FC;
 }
 
-export type NavItemType = INavItemLink | INavItemDropdown | INavItemLogo | INavItemCustom;
+export type INavItemType = INavItemLink | INavItemDropdown | INavItemLogo | INavItemCustom;
 
-export interface NavLinkProps {
+export interface INavLinkProps {
     config: INavItemLink;
     className?: string;
     wrapClassName?: string;
 }
 
-const NavLink = (props: NavLinkProps) => {
+const NavLink = (props: INavLinkProps) => {
     return (
         <div className={`${(props.wrapClassName || "")} ${props.className || ""}`}>
             <Link nowrap style="text" text_style="bold" size="medium" form="underline-hover" href={props.config.href}> {props.config.label}</Link>
@@ -57,13 +61,13 @@ const NavLink = (props: NavLinkProps) => {
     );
 }
 
-export interface NavDropdownProps {
+export interface INavDropdownProps {
     config: INavItemDropdown;
     className?: string;
     wrapClassName?: string;
 }
 
-const NavItemDropdown = (props: NavDropdownProps) => {
+const NavItemDropdown = (props: INavDropdownProps) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     return (
         <div className={`${(props.wrapClassName || "")}`}>
@@ -81,13 +85,13 @@ const NavItemDropdown = (props: NavDropdownProps) => {
     );
 }
 
-export interface NavLogoProps {
+export interface INavLogoProps {
     config: INavItemLogo;
     className?: string;
     wrapClassName?: string;
 }
 
-const NavItemLogo = (props: NavLogoProps) => {
+const NavItemLogo = (props: INavLogoProps) => {
     let height = props.config.height ?? 100;
     let width = props.config.width ?? 300;
     return (
@@ -99,7 +103,7 @@ const NavItemLogo = (props: NavLogoProps) => {
     );
 }
 
-export interface NavCustomProps {
+export interface INavCustomProps {
     config: INavItemCustom;
     wrapClassName?: string;
 }

@@ -1,7 +1,10 @@
 import React from "react";
-import Image from "next/image";
+import ImageImport from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "../Link/Link";
+
+// Handle ESM/CJS interop for Next.js components
+const Image = (ImageImport as any).default || ImageImport;
 
 
 export interface CardOneProps {

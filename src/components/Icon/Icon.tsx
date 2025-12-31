@@ -1,6 +1,9 @@
 import React from "react";
 import { LinkedInIcon, TwitterIcon, DiscordIcon, GitHubIcon, MailboxIcon, CheckIcon, OutboxIcon, InboxIcon, WarningIcon, CrossmarkIcon, BoxIcon, IdentityCardIcon, LameduseIcon } from "./icons";
-import NextLink from "next/link";
+import NextLinkImport from "next/link";
+
+// Handle ESM/CJS interop for Next.js components
+const NextLink = (NextLinkImport as any).default || NextLinkImport;
 
 
 export interface IconProps {
