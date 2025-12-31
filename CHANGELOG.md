@@ -1,5 +1,13 @@
 # LaMeDuSe Change Log
 
+## [2.4.7](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.6...v2.4.7) (2025-12-31)
+
+
+### Bug Fixes
+
+* all images imports ([b5ae6b5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b5ae6b50f43c8b5471d9b46a7de5b3af13a04f97))
+* navbar allowed_display ([3fbb5fd](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/3fbb5fd647af31ef4de9faab77833a8f9929b5df))
+
 ## [2.4.6](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.5...v2.4.6) (2025-12-31)
 
 
