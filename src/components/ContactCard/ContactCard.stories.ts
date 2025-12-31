@@ -1,5 +1,5 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/nextjs';
+import { fn } from 'storybook/test';
 
 import ContactCard from './ContactCard';
 import { AtSymbolIcon, CalendarDaysIcon, PhoneIcon } from '@heroicons/react/24/solid';
