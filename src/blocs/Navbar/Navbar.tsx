@@ -10,7 +10,7 @@ const Image = (ImageImport as any).default || ImageImport;
 export interface INavbarProps {
     type?: "primary" | "secondary" | "tertiary" | "danger" | "white";
     className?: string;
-    NavItems: NavItemType[];
+    NavItems: INavItemType[];
 }
 
 export interface INavItemBase {
@@ -108,7 +108,7 @@ export interface INavCustomProps {
     wrapClassName?: string;
 }
 
-const NavItemCustom = (props: NavCustomProps) => {
+const NavItemCustom = (props: INavCustomProps) => {
     return (
         <div className={`${(props.wrapClassName || "")}`}>
             <props.config.component />
@@ -116,7 +116,7 @@ const NavItemCustom = (props: NavCustomProps) => {
     );
 }
 
-const Navbar = (props: NavbarProps) => {
+const Navbar = (props: INavbarProps) => {
     // default values
     props = { ...props }; // copy to avoid modifying the original object
     props.type = props.type || "primary";
