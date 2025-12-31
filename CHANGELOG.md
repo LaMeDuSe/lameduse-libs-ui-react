@@ -1,5 +1,15 @@
 # LaMeDuSe Change Log
 
+## [2.4.6](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.5...v2.4.6) (2025-12-31)
+
+
+### Bug Fixes
+
+* add missing deps jsdom ([ffb310b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/ffb310bb028c5cd486b5eaec2f2281bd7dc9afe3))
+* export as interface that had the samename as component ([7f7b187](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/7f7b18751825b6232339d8892da2156fd90d713a))
+* lib run ([d7d0d0e](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d7d0d0e9c2bcd912290c89f85ac32add346edc0d))
+* tests ([10ff2ff](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/10ff2ffc049bf28cdcc20e5e350636af43649a23))
+
 ## [2.4.5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.4...v2.4.5) (2025-12-23)
 
 
