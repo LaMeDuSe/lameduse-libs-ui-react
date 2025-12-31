@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.4.8](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.7...v2.4.8) (2025-12-31)
+
+
+### Bug Fixes
+
+* navitem types ([e2e8a16](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/e2e8a16b68ce988c3c9ac5f959a59d71ce8d857e))
+
 ## [2.4.7](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.6...v2.4.7) (2025-12-31)
 
 

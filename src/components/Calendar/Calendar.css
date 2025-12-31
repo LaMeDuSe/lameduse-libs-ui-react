@@ -1,0 +1,109 @@
+.component_Calendar_dark{
+    @apply bg-lameduse-primary text-white;
+}
+
+.component_Calendar_other_dark{
+    background-color: rgb(0, 0, 0);
+    color: #a4a3a3;
+}
+
+.component_Calendar_light{
+    @apply bg-lameduse-white text-lameduse-primary;
+}
+
+.component_Calendar_other_light{
+    background-color: rgba(208, 224, 239, 0.356);
+    color:rgb(110, 172, 172);
+}
+
+
+.component_Calendar_d_calendar{
+    padding: 6px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.component_Calendar_d_calendar:hover{
+    @apply bg-lameduse-secondary/25;
+    text-align: center;
+}
+
+.component_Calendar_d_calendar_selected { /* couleur du jour sélectionné forme square*/
+  @apply bg-lameduse-secondary text-lameduse-white;
+  color: white;
+  text-align: center;
+}
+
+.component_Calendar_td_rounded_hover:hover{
+  @apply bg-lameduse-secondary/25;
+  border-radius: 10px;
+  text-align: center;
+}
+
+
+.component_Calendar_d_calendar_selected_circle{  /* couleur du jour sélectionné forme circle*/
+  @apply bg-lameduse-secondary text-lameduse-white;
+  color: white;
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+.component_Calendar_other_month_square{
+  color: #929292a4;
+  text-align: center;
+}
+
+.component_Calendar_other_month_circle{
+  color: #717171cb;
+  text-align: center;
+  border-radius: 10px;
+}
+
+
+.component_Calendar_other_month_circle:hover{
+ background-color: rgba(101, 101, 101, 0.237);   
+}
+
+.component_Calendar_other_month_square:hover{
+ background-color:rgba(134, 134, 134, 0.237);   
+}
+
+.component_Calendar_scroll_year {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(50px, 1fr));
+  gap: 10px;
+  overflow-y: auto;
+  padding: 10px;
+  max-height: 250px;
+}
+
+.component_Calendar_scroll_year button {
+  width: 100%;
+  padding: 8px 0;
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.component_Calendar_global {
+  min-width: 250px;
+  width: 100%;
+  max-width: none;
+  min-height: 300px;
+  max-height: 100vh;
+  width: auto;
+  height: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.component_Calendar_back{
+  width: 250px;
+  font-size: 12px;
+  @apply text-lameduse-secondary;
+}
+
