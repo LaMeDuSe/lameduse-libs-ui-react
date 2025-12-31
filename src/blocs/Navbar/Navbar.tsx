@@ -33,7 +33,7 @@ export interface INavItemLogo extends INavItemBase {
     type: "logo";
     src: string;
     href?: string;
-    allowed_display: ["mobile" | "mobile-outside" | "desktop"];
+    allowed_display: ("mobile" | "mobile-outside" | "desktop")[];
     // @default 100
     height?: number;
     // @default 300
