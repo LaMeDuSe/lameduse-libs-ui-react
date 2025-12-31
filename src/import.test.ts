@@ -3,6 +3,8 @@ import LameduseUI from ".";
 import * as components from "./components";
 import * as blocs from "./blocs";
 
+import { describe, it, expect } from 'vitest';
+
 describe("LameduseUI", () => {
   it("should export all components and blocs", () => {
     const componentKeys = Object.keys(components);

@@ -1,5 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react";
+import { describe, test } from 'vitest';
 
 import ContactCard from "./ContactCard";
 import { CalendarDaysIcon } from "@heroicons/react/24/solid";

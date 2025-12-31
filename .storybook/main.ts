@@ -17,10 +17,6 @@ const config: StorybookConfig = {
     // More on using the `framework` parameter: https://storybook.js.org/docs/react/configure/story-rendering
   },
 
-  features: {
-    viewportStoryGlobals: true,
-  },
-
   typescript: {
     reactDocgen: "react-docgen-typescript"
   }
