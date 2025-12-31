@@ -1,5 +1,4 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
-import { fn } from 'storybook/test';
 
 import Navbar from './Navbar';
 
@@ -230,6 +229,106 @@ export const Enddropdown: Story = {
             label: "Item 2",
             href: "#",
           },
+          {
+            type: "link",
+            position: "right",
+            label: "Item 3",
+            href: "#",
+          },
+        ]
+      },
+    ],
+  },
+};
+
+export const CustomProps: Story = {
+  
+  args: {
+    NavItems: [
+      {
+        type: "logo",
+        position: "left",
+        src: "https://lamedusegroup.com/images/logos/lameduse_logo_grad_text_primary_bg_white.webp",
+        allowed_display: ["desktop"],
+        label: "LaMeDuSe",
+        height: 100,
+        width: 300,
+      },
+      {
+        type: "logo",
+        position: "left",
+        src: "https://lamedusegroup.com/images/logos/lameduse_logo_grad.webp",
+        allowed_display: ["mobile-outside"],
+        label: "LaMeDuSe",
+        height: 75,
+        width: 75,
+      },
+      {
+        type: "logo",
+        position: "left",
+        src: "https://lamedusegroup.com/images/logos/lameduse_logo_grad.webp",
+        allowed_display: ["mobile"],
+        label: "LaMeDuSe",
+        height: 100,
+        width: 100,
+      },
+      {
+        type: "link",
+        position: "center",
+        label: "Home",
+        href: "#",
+      },
+      {
+        type: "link",
+        position: "center",
+        label: "About",
+        href: "#",
+      },
+      {
+        type: "dropdown",
+        position: "right",
+        label: "Dropdown",
+        items: [
+          {
+            type: "link",
+            position: "right",
+            label: "Item 1",
+            href: "#",
+          },
+          {
+            type: "link",
+            position: "right",
+            label: "Item 2",
+            href: "#",
+          },
+          {
+            type: "link",
+            position: "right",
+            label: "Item 3",
+            href: "#",
+          },
+        ]
+      },
+      {
+        type: "link",
+        position: "right",
+        label: "Login",
+        href: "#",
+        additionalProps: {
+          style: "outline",
+        },
+      },
+      {
+        type: "link",
+        position: "right",
+        label: "Sign Up",
+        href: "#",
+      },
+      {
+        type: "dropdown",
+        position: "right",
+        label: "end Dropdown",
+        items: [
           {
             type: "link",
             position: "right",

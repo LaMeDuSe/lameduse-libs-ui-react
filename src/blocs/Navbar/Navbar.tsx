@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import NextLinkImport from "next/link";
 import ImageImport from "next/image";
 import Link from "../../components/Link";
+import { LinkProps } from "../../components/Link/Link";
 
 // Handle ESM/CJS interop for Next.js components    
 const NextLink = (NextLinkImport as any).default || NextLinkImport;
@@ -22,6 +23,7 @@ export interface INavItemBase {
 export interface INavItemLink extends INavItemBase {
     type: "link";
     href: string;
+    additionalProps?: LinkProps;
 }
 
 export interface INavItemDropdown extends INavItemBase {
@@ -56,7 +58,7 @@ export interface INavLinkProps {
 const NavLink = (props: INavLinkProps) => {
     return (
         <div className={`${(props.wrapClassName || "")} ${props.className || ""}`}>
-            <Link nowrap style="text" text_style="bold" size="medium" form="underline-hover" href={props.config.href}> {props.config.label}</Link>
+            <Link nowrap style="text" text_style="bold" size="medium" form="underline-hover" href={props.config.href} {...props.config.additionalProps}> {props.config.label}</Link>
         </div>
     );
 }
@@ -165,7 +167,7 @@ const Navbar = (props: INavbarProps) => {
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} />;
+                            return <NavLink key={key} config={item} wrapClassName={wrapClassName}/>;
                         case "dropdown":
                             return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName} />;
                         case "logo":
