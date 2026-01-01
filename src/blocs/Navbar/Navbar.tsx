@@ -24,6 +24,7 @@ export interface INavItemLink extends INavItemBase {
     type: "link";
     href: string;
     additionalProps?: LinkProps;
+    additionalPropsMobile?: LinkProps;
 }
 
 export interface INavItemDropdown extends INavItemBase {
@@ -53,12 +54,13 @@ export interface INavLinkProps {
     config: INavItemLink;
     className?: string;
     wrapClassName?: string;
+    view: "desktop" | "mobile";
 }
 
 const NavLink = (props: INavLinkProps) => {
     return (
         <div className={`${(props.wrapClassName || "")} ${props.className || ""}`}>
-            <Link nowrap style="text" text_style="bold" size="medium" form="underline-hover" href={props.config.href} {...props.config.additionalProps}> {props.config.label}</Link>
+            <Link nowrap style="text" text_style="bold" size="medium" form="underline-hover" href={props.config.href} {...(props.view === "desktop" ? props.config.additionalProps : props.config.additionalPropsMobile)}> {props.config.label}</Link>
         </div>
     );
 }
@@ -78,7 +80,7 @@ const NavItemDropdown = (props: INavDropdownProps) => {
                 <ul className={(isDropdownOpen ? "block" : "hidden") + " absolute z-10 bg-white shadow-lameduse-primary rounded-lg shadow-sm"}>
                     <div className="p-4 space-y-2 justify-center items-center">
                         {props.config.items.map((item, index) => {
-                            return <NavLink key={index} config={item} className="p-2 w-full" />
+                            return <NavLink key={index} config={item} className="p-2 w-full" view="desktop" />
                         })}
                     </div>
                 </ul>
@@ -125,21 +127,6 @@ const Navbar = (props: INavbarProps) => {
     props.className = props.className || "";
 
     // classes
-    let text_color_class = {
-        "primary": "text-lameduse-primary",
-        "secondary": "text-lameduse-secondary",
-        "tertiary": "text-lameduse-tertiary",
-        "danger": "text-lameduse-red",
-        "white": "text-white"
-    }[props.type];
-    let bg_color_class = {
-        "primary": "bg-lameduse-primary",
-        "secondary": "bg-lameduse-secondary",
-        "tertiary": "bg-lameduse-tertiary",
-        "danger": "bg-lameduse-red",
-        "white": "bg-white"
-    }[props.type];
-
     let wrapClassName = "lg:px-0 p-2";
 
     // Is the navbar open
@@ -151,7 +138,7 @@ const Navbar = (props: INavbarProps) => {
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink key={key} config={item} wrapClassName={wrapClassName}/>;
+                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} view="desktop"/>;
                         case "dropdown":
                             return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName}/>;
                         case "logo":
@@ -167,7 +154,7 @@ const Navbar = (props: INavbarProps) => {
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink key={key} config={item} wrapClassName={wrapClassName}/>;
+                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} view="mobile"/>;
                         case "dropdown":
                             return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName} />;
                         case "logo":
@@ -211,7 +198,7 @@ const Navbar = (props: INavbarProps) => {
                         {props.NavItems.map((item, key) => {
                             switch (item.type) {
                                 case "link":
-                                    return <NavLink key={key} config={item} wrapClassName={wrapClassName} />;
+                                    return <NavLink key={key} config={item} wrapClassName={wrapClassName} view="mobile"/>;
                                 case "dropdown":
                                     return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName} />;
                                 case "logo":
@@ -229,7 +216,7 @@ const Navbar = (props: INavbarProps) => {
                 {props.NavItems.filter((v) => v.position == "center").map((item, key) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} />;
+                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} view="desktop" />;
                         case "dropdown":
                             return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName} />;
                         case "logo":
@@ -245,7 +232,7 @@ const Navbar = (props: INavbarProps) => {
                 {props.NavItems.filter((v) => v.position == "right").map((item, key) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} />;
+                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} view="desktop" />;
                         case "dropdown":
                             return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName} />;
                         case "logo":

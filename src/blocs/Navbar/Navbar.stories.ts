@@ -269,45 +269,34 @@ export const CustomProps: Story = {
         src: "https://lamedusegroup.com/images/logos/lameduse_logo_grad.webp",
         allowed_display: ["mobile"],
         label: "LaMeDuSe",
-        height: 100,
-        width: 100,
+        height: 75,
+        width: 75,
       },
       {
         type: "link",
         position: "center",
         label: "Home",
         href: "#",
+        additionalPropsMobile: {
+          style: "text",
+          form: "none",
+          size: "none",
+          text_style: "normal",
+          className: "border-b border-lameduse-primary my-8 text-[16px] uppercase",
+        },
       },
       {
         type: "link",
         position: "center",
-        label: "About",
+        label: "About Us",
         href: "#",
-      },
-      {
-        type: "dropdown",
-        position: "right",
-        label: "Dropdown",
-        items: [
-          {
-            type: "link",
-            position: "right",
-            label: "Item 1",
-            href: "#",
-          },
-          {
-            type: "link",
-            position: "right",
-            label: "Item 2",
-            href: "#",
-          },
-          {
-            type: "link",
-            position: "right",
-            label: "Item 3",
-            href: "#",
-          },
-        ]
+        additionalPropsMobile: {
+          style: "text",
+          form: "none",
+          size: "none",
+          text_style: "normal",
+          className: "border-b border-lameduse-primary my-8  text-[16px] uppercase",
+        },
       },
       {
         type: "link",
@@ -317,26 +306,27 @@ export const CustomProps: Story = {
         additionalProps: {
           style: "outline",
         },
+        additionalPropsMobile: {
+          style: "text",
+          form: "none",
+          size: "none",
+          text_style: "normal",
+          className: "border-b border-lameduse-primary my-8 text-[16px] uppercase",
+        },
       },
       {
         type: "link",
         position: "right",
         label: "Sign Up",
         href: "#",
-      },
-      {
-        type: "dropdown",
-        position: "right",
-        label: "end Dropdown",
-        items: [
-          {
-            type: "link",
-            position: "right",
-            label: "Item 3",
-            href: "#",
-          },
-        ]
-      },
+        additionalPropsMobile: {
+          style: "text",
+          form: "none",
+          size: "none",
+          text_style: "normal",
+          className: "border-b border-lameduse-primary my-8 text-[16px] uppercase",
+        },
+      }
     ],
   },
 };
