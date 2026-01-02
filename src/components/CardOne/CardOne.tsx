@@ -12,6 +12,10 @@ export interface CardOneProps {
   className?: string;
   onClick?: () => void;
   image: string | StaticImport;
+  imageHeight?: number;
+  imageWidth?: number;
+  imageClassName?: string;
+  imageAlt?: string;
   description: string;
   title: string;
   link_url: string;
@@ -33,10 +37,6 @@ const CardOne = (props: CardOneProps) => {
     "primary": "bg-white border-lameduse-primary",
   }[props.type]
 
-  let elements_colored = {
-    "primary": "bg-lameduse-primary hover:bg-lameduse-primary/90 text-white",
-  }[props.type]
-
   let border = {
     "normal": "border-2",
     "no-border": "",
@@ -44,8 +44,8 @@ const CardOne = (props: CardOneProps) => {
   let rounded = props.rounded ? "rounded-lg" : "";
   return (
       <div className={`px-4 ${container_color_class} ${props.className} ${rounded} ${standard_class} ${border}`}>
-        <div className="rounded-lg h-64 overflow-hidden">
-          <Image height={500} width={500} alt="content" className="object-cover object-center h-full w-full" src={props.image} />
+        <div className={`rounded-lg h-64 overflow-hidden`}>
+          <Image height={props.imageHeight ?? 500} width={props.imageWidth ?? 500} alt={props.imageAlt ?? "content"} className={`object-cover object-center h-full w-full ${props.imageClassName ?? ""}`} src={props.image} />
         </div>
         <h2 className="text-2xl font-medium text-gray-900 mt-6 mb-3">{props.title}</h2>
         <p className="leading-relaxed text-base">{props.description}</p>

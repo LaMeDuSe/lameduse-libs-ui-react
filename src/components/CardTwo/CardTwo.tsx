@@ -13,6 +13,10 @@ export interface CardTwoProps {
   className?: string;
   onClick?: () => void;
   image: string | StaticImport;
+  imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  imageClassName?: string;
   description: string;
   title: string;
   label: string
@@ -33,7 +37,7 @@ const CardTwo = (props: CardTwoProps) => {
     <div>
       <NextLink href={props.link_url} target="_blank">
         <div className="bg-gray-100 p-6 rounded-lg">
-          <Image width={238} height={160} className="h-40 rounded w-full object-contain object-center mb-6" src={props.image} alt="content" />
+          <Image width={props.imageWidth ?? 238} height={props.imageHeight ?? 160} className={`h-40 rounded w-full object-contain object-center mb-6 ${props.imageClassName ?? ""}`} src={props.image} alt={props.imageAlt ?? "content"} />
           <h3 className={`tracking-widest text-xs font-medium title-font ${color_classname}`}>{props.label}</h3>
           <h2 className={`text-lg text-black font-bold title-font mb-4`}>{props.title}</h2>
           <p className="leading-relaxed text-base">{props.description}</p>
