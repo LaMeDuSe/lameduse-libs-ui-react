@@ -9,7 +9,7 @@ export interface CardOneProps {
   className?: string;
   onClick?: () => void;
   image: string | StaticImport;
-  description: string;
+  description: any;
   title: string;
   link_url: string;
   link_text: string;
