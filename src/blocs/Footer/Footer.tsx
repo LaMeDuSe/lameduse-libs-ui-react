@@ -1,9 +1,13 @@
 import React from "react";
-import Image from "next/image";
+import ImageImport from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import NextLink from "next/link";
+import NextLinkImport from "next/link";
 import Link from "../../components/Link"
 import Icon from "../../components/Icon";
+
+// Handle ESM/CJS interop for Next.js components
+const Image = (ImageImport as any).default || ImageImport;
+const NextLink = (NextLinkImport as any).default || NextLinkImport;
 
 /*
 FIXME: Year is static should not be hardcoded

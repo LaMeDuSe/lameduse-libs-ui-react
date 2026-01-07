@@ -1,5 +1,59 @@
 # LaMeDuSe Change Log
 
+## [2.4.8](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.7...v2.4.8) (2025-12-31)
+
+
+### Bug Fixes
+
+* navitem types ([e2e8a16](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/e2e8a16b68ce988c3c9ac5f959a59d71ce8d857e))
+
+## [2.4.7](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.6...v2.4.7) (2025-12-31)
+
+
+### Bug Fixes
+
+* all images imports ([b5ae6b5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b5ae6b50f43c8b5471d9b46a7de5b3af13a04f97))
+* navbar allowed_display ([3fbb5fd](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/3fbb5fd647af31ef4de9faab77833a8f9929b5df))
+
+## [2.4.6](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.5...v2.4.6) (2025-12-31)
+
+
+### Bug Fixes
+
+* add missing deps jsdom ([ffb310b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/ffb310bb028c5cd486b5eaec2f2281bd7dc9afe3))
+* export as interface that had the samename as component ([7f7b187](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/7f7b18751825b6232339d8892da2156fd90d713a))
+* lib run ([d7d0d0e](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d7d0d0e9c2bcd912290c89f85ac32add346edc0d))
+* tests ([10ff2ff](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/10ff2ffc049bf28cdcc20e5e350636af43649a23))
+
+## [2.4.5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.4...v2.4.5) (2025-12-23)
+
+
+### Bug Fixes
+
+* typings ([1efe746](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1efe74684708b08e455a560b9ef4e74ee78999a0))
+* updated typings ([1a0e8a1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1a0e8a1f00b5776edc82a7f1f88cd7c42611c4aa))
+
+## [2.4.4](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.3...v2.4.4) (2025-12-23)
+
+
+### Bug Fixes
+
+* actually, the blur fonctionne ([90040ac](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/90040acd46684ece37feaef6a260cbd911bd1fae))
+
+## [2.4.3](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.2...v2.4.3) (2025-12-23)
+
+
+### Bug Fixes
+
+* imgClassName ([4727fdb](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4727fdb9ce653bb7a2f25eece94ef2bf88fe7529))
+
+## [2.4.2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.1...v2.4.2) (2025-12-22)
+
+
+### Bug Fixes
+
+* position of chevron ([1459c07](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1459c07aa98493cb28114219b75162ec24ebce13))
+
 ## [2.4.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.0...v2.4.1) (2025-12-22)
 
 

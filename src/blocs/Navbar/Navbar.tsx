@@ -1,69 +1,77 @@
 import React, { useContext, useState } from "react";
-import NextLink from "next/link";
-import Image from "next/image";
+import NextLinkImport from "next/link";
+import ImageImport from "next/image";
 import Link from "../../components/Link";
+import { LinkProps } from "../../components/Link/Link";
 
-export interface NavbarProps {
+// Handle ESM/CJS interop for Next.js components    
+const NextLink = (NextLinkImport as any).default || NextLinkImport;
+const Image = (ImageImport as any).default || ImageImport;
+
+export interface INavbarProps {
     type?: "primary" | "secondary" | "tertiary" | "danger" | "white";
     className?: string;
-    NavItems: NavItemType[];
+    NavItems: INavItemType[];
 }
 
-export interface NavItemBase {
+export interface INavItemBase {
     type: "link" | "dropdown" | "logo" | "custom";
     label: string; // Used as alt text for images
     position: "left" | "right" | "center";
 }
 
-export interface NavItemLink extends NavItemBase {
+export interface INavItemLink extends INavItemBase {
     type: "link";
     href: string;
+    additionalProps?: LinkProps;
+    additionalPropsMobile?: LinkProps;
 }
 
-export interface NavItemDropdown extends NavItemBase {
+export interface INavItemDropdown extends INavItemBase {
     type: "dropdown";
-    items: NavItemLink[];
+    items: INavItemLink[];
 }
 
-export interface NavItemLogo extends NavItemBase {
+export interface INavItemLogo extends INavItemBase {
     type: "logo";
     src: string;
     href?: string;
-    allowed_display: ["mobile" | "mobile-outside" | "desktop"];
+    allowed_display: ("mobile" | "mobile-outside" | "desktop")[];
     // @default 100
     height?: number;
     // @default 300
     width?: number;
 }
 
-export interface NavItemCustom extends NavItemBase {
+export interface INavItemCustom extends INavItemBase {
     type: "custom";
     component: React.FC;
 }
 
-export type NavItemType = NavItemLink | NavItemDropdown | NavItemLogo | NavItemCustom;
+export type INavItemType = INavItemLink | INavItemDropdown | INavItemLogo | INavItemCustom;
 
-export interface NavLinkProps {
-    config: NavItemLink;
+export interface INavLinkProps {
+    config: INavItemLink;
     className?: string;
     wrapClassName?: string;
+    view: "desktop" | "mobile";
 }
 
-const NavLink = (props: NavLinkProps) => {
+const NavLink = (props: INavLinkProps) => {
     return (
         <div className={`${(props.wrapClassName || "")} ${props.className || ""}`}>
-            <Link nowrap style="text" text_style="bold" size="medium" form="underline-hover" href={props.config.href}> {props.config.label}</Link>
+            <Link nowrap style="text" text_style="bold" size="medium" form="underline-hover" href={props.config.href} {...(props.view === "desktop" ? props.config.additionalProps : props.config.additionalPropsMobile)}> {props.config.label}</Link>
         </div>
     );
 }
 
-export interface NavDropdownProps {
-    config: NavItemDropdown;
+export interface INavDropdownProps {
+    config: INavItemDropdown;
     className?: string;
     wrapClassName?: string;
 }
 
-const NavItemDropdown = (props: NavDropdownProps) => {
+const NavItemDropdown = (props: INavDropdownProps) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     return (
         <div className={`${(props.wrapClassName || "")}`}>
@@ -72,7 +80,7 @@ const NavItemDropdown = (props: NavDropdownProps) => {
                 <ul className={(isDropdownOpen ? "block" : "hidden") + " absolute z-10 bg-white shadow-lameduse-primary rounded-lg shadow-sm"}>
                     <div className="p-4 space-y-2 justify-center items-center">
                         {props.config.items.map((item, index) => {
-                            return <NavLink key={index} config={item} className="p-2 w-full" />
+                            return <NavLink key={index} config={item} className="p-2 w-full" view="desktop" />
                         })}
                     </div>
                 </ul>
@@ -81,13 +89,13 @@ const NavItemDropdown = (props: NavDropdownProps) => {
     );
 }
 
-export interface NavLogoProps {
-    config: NavItemLogo;
+export interface INavLogoProps {
+    config: INavItemLogo;
     className?: string;
     wrapClassName?: string;
 }
 
-const NavItemLogo = (props: NavLogoProps) => {
+const NavItemLogo = (props: INavLogoProps) => {
     let height = props.config.height ?? 100;
     let width = props.config.width ?? 300;
     return (
@@ -99,12 +107,12 @@ const NavItemLogo = (props: NavLogoProps) => {
     );
 }
 
-export interface NavCustomProps {
-    config: NavItemCustom;
+export interface INavCustomProps {
+    config: INavItemCustom;
     wrapClassName?: string;
 }
 
-const NavItemCustom = (props: NavCustomProps) => {
+const NavItemCustom = (props: INavCustomProps) => {
     return (
         <div className={`${(props.wrapClassName || "")}`}>
             <props.config.component />
@@ -112,28 +120,13 @@ const NavItemCustom = (props: NavCustomProps) => {
     );
 }
 
-const Navbar = (props: NavbarProps) => {
+const Navbar = (props: INavbarProps) => {
     // default values
     props = { ...props }; // copy to avoid modifying the original object
     props.type = props.type || "primary";
     props.className = props.className || "";
 
     // classes
-    let text_color_class = {
-        "primary": "text-lameduse-primary",
-        "secondary": "text-lameduse-secondary",
-        "tertiary": "text-lameduse-tertiary",
-        "danger": "text-lameduse-red",
-        "white": "text-white"
-    }[props.type];
-    let bg_color_class = {
-        "primary": "bg-lameduse-primary",
-        "secondary": "bg-lameduse-secondary",
-        "tertiary": "bg-lameduse-tertiary",
-        "danger": "bg-lameduse-red",
-        "white": "bg-white"
-    }[props.type];
-
     let wrapClassName = "lg:px-0 p-2";
 
     // Is the navbar open
@@ -145,7 +138,7 @@ const Navbar = (props: NavbarProps) => {
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink key={key} config={item} wrapClassName={wrapClassName}/>;
+                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} view="desktop"/>;
                         case "dropdown":
                             return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName}/>;
                         case "logo":
@@ -161,7 +154,7 @@ const Navbar = (props: NavbarProps) => {
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} />;
+                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} view="mobile"/>;
                         case "dropdown":
                             return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName} />;
                         case "logo":
@@ -205,7 +198,7 @@ const Navbar = (props: NavbarProps) => {
                         {props.NavItems.map((item, key) => {
                             switch (item.type) {
                                 case "link":
-                                    return <NavLink key={key} config={item} wrapClassName={wrapClassName} />;
+                                    return <NavLink key={key} config={item} wrapClassName={wrapClassName} view="mobile"/>;
                                 case "dropdown":
                                     return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName} />;
                                 case "logo":
@@ -223,7 +216,7 @@ const Navbar = (props: NavbarProps) => {
                 {props.NavItems.filter((v) => v.position == "center").map((item, key) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} />;
+                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} view="desktop" />;
                         case "dropdown":
                             return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName} />;
                         case "logo":
@@ -239,7 +232,7 @@ const Navbar = (props: NavbarProps) => {
                 {props.NavItems.filter((v) => v.position == "right").map((item, key) => {
                     switch (item.type) {
                         case "link":
-                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} />;
+                            return <NavLink key={key} config={item} wrapClassName={wrapClassName} view="desktop" />;
                         case "dropdown":
                             return <NavItemDropdown key={key} config={item} wrapClassName={wrapClassName} />;
                         case "logo":

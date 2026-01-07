@@ -1,5 +1,8 @@
 import React, { useContext } from "react";
-import NextLink from "next/link";
+import NextLinkImport from "next/link";
+
+// Handle ESM/CJS interop for Next.js components
+const NextLink = (NextLinkImport as any).default || NextLinkImport;
 
 
 
@@ -8,7 +11,7 @@ export interface LinkProps {
   type?: "primary" | "secondary" | "tertiary" | "danger" | "white";
   style?: "solid" | "outline" | "text";
   form?: "rounded" | "pill" | "underline" | "underline-hover" | "none";
-  size?: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large" | "none";
   href?: string;
   nowrap?: boolean
   text_style?: "normal" | "bold";
@@ -70,6 +73,7 @@ const Link = (props: LinkProps) => {
     "small": "px-3 py-1 text-sm",
     "medium": "px-4 py-2 text-base",
     "large": "px-5 py-3 text-lg",
+    "none": "",
   }[props.size];
   let text_style_class = {
     "normal": "",

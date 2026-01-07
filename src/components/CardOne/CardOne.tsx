@@ -1,7 +1,10 @@
 import React from "react";
-import Image from "next/image";
+import ImageImport from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "../Link/Link";
+
+// Handle ESM/CJS interop for Next.js components
+const Image = (ImageImport as any).default || ImageImport;
 
 
 export interface CardOneProps {
@@ -9,7 +12,11 @@ export interface CardOneProps {
   className?: string;
   onClick?: () => void;
   image: string | StaticImport;
-  description: string;
+  imageClassName?: string;
+  imageHeight?: number;
+  imageWidth?: number;
+  imageAlt?: string;
+  description: string | React.ReactElement;
   title: string;
   link_url: string;
   link_text: string;
@@ -30,19 +37,15 @@ const CardOne = (props: CardOneProps) => {
     "primary": "bg-white border-lameduse-primary",
   }[props.type]
 
-  let elements_colored = {
-    "primary": "bg-lameduse-primary hover:bg-lameduse-primary/90 text-white",
-  }[props.type]
-
   let border = {
     "normal": "border-2",
     "no-border": "",
   }[props.border];
   let rounded = props.rounded ? "rounded-lg" : "";
   return (
-      <div className={`px-4 flex flex-col ${container_color_class} ${props.className} ${rounded} ${standard_class} ${border}`}>
-        <div className="rounded-lg h-64 overflow-hidden">
-          <Image height={500} width={500} alt="content" className="object-cover object-center h-full w-full" src={props.image} />
+      <div className={`px-4 ${container_color_class} ${props.className} ${rounded} ${standard_class} ${border}`}>
+        <div className={`rounded-lg h-64 overflow-hidden`}>
+          <Image height={props.imageHeight ?? 500} width={props.imageWidth ?? 500} alt={props.imageAlt ?? "content"} className={`object-cover object-center h-full w-full ${props.imageClassName ?? ""}`} src={props.image} />
         </div>
         <h2 className="text-2xl font-medium text-gray-900 mt-6 mb-3">{props.title}</h2>
         <p className="leading-relaxed text-base mb-6">{props.description}</p>

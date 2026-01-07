@@ -1,5 +1,5 @@
-import type { Preview } from "@storybook/react";
-import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import type { Preview } from "@storybook/nextjs";
+import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 
 import '../src/styles/main.css';
 
@@ -28,9 +28,12 @@ const preview: Preview = {
       },
     },
   },
+
   initialGlobals: {
     viewport: { value: 'ipad', isRotated: false },
   },
+
+  tags: ['autodocs']
 };
 
 export default preview;
