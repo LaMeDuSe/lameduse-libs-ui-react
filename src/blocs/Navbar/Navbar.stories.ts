@@ -1,5 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
-import { fn } from '@storybook/test';
+import type { Meta, StoryObj } from '@storybook/nextjs';
 
 import Navbar from './Navbar';
 
@@ -238,6 +237,96 @@ export const Enddropdown: Story = {
           },
         ]
       },
+    ],
+  },
+};
+
+export const CustomProps: Story = {
+  
+  args: {
+    NavItems: [
+      {
+        type: "logo",
+        position: "left",
+        src: "https://lamedusegroup.com/images/logos/lameduse_logo_grad_text_primary_bg_white.webp",
+        allowed_display: ["desktop"],
+        label: "LaMeDuSe",
+        height: 100,
+        width: 300,
+      },
+      {
+        type: "logo",
+        position: "left",
+        src: "https://lamedusegroup.com/images/logos/lameduse_logo_grad.webp",
+        allowed_display: ["mobile-outside"],
+        label: "LaMeDuSe",
+        height: 75,
+        width: 75,
+      },
+      {
+        type: "logo",
+        position: "left",
+        src: "https://lamedusegroup.com/images/logos/lameduse_logo_grad.webp",
+        allowed_display: ["mobile"],
+        label: "LaMeDuSe",
+        height: 75,
+        width: 75,
+      },
+      {
+        type: "link",
+        position: "center",
+        label: "Home",
+        href: "#",
+        additionalPropsMobile: {
+          style: "text",
+          form: "none",
+          size: "none",
+          text_style: "normal",
+          className: "border-b border-lameduse-primary my-8 text-[16px] uppercase",
+        },
+      },
+      {
+        type: "link",
+        position: "center",
+        label: "About Us",
+        href: "#",
+        additionalPropsMobile: {
+          style: "text",
+          form: "none",
+          size: "none",
+          text_style: "normal",
+          className: "border-b border-lameduse-primary my-8  text-[16px] uppercase",
+        },
+      },
+      {
+        type: "link",
+        position: "right",
+        label: "Login",
+        href: "#",
+        additionalProps: {
+          style: "outline",
+        },
+        additionalPropsMobile: {
+          style: "text",
+          form: "none",
+          size: "none",
+          text_style: "normal",
+          className: "border-b border-lameduse-primary my-8 text-[16px] uppercase",
+        },
+      },
+      {
+        type: "link",
+        position: "right",
+        label: "Sign Up",
+        href: "#",
+        additionalPropsMobile: {
+          style: "text",
+          form: "none",
+          size: "none",
+          text_style: "normal",
+          className: "border-b border-lameduse-primary my-8 text-[16px] uppercase",
+        },
+      }
     ],
   },
 };

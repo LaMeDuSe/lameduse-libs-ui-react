@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import { describe, it, expect } from 'vitest';
 import * as exportedModules from './index'; // Adjust path if needed
 
 const SRC_DIR = __dirname;

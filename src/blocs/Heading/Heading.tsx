@@ -1,6 +1,9 @@
 import React from "react";
-import NextImage from "next/image";
+import NextImageImport from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+
+// Handle ESM/CJS interop for Next.js components
+const NextImage = (NextImageImport as any).default || NextImageImport;
 
 export interface HeadingProps {
   title: string;

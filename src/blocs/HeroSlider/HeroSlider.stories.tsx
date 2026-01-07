@@ -1,6 +1,6 @@
 // HeroSlider.stories.tsx
 import React from 'react';
-import { Meta, StoryObj } from '@storybook/react';
+import { Meta, StoryObj } from '@storybook/nextjs';
 import HeroSlider, { Slide } from './HeroSlider';
 
 const slides: Slide[] = [
