@@ -12,7 +12,7 @@ export interface CardOneProps {
   className?: string;
   onClick?: () => void;
   image: string | StaticImport;
-  description: string;
+  description: string | React.ReactElement;
   title: string;
   link_url: string;
   link_text: string;
