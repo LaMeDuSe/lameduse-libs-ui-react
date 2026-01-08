@@ -48,9 +48,9 @@ const CardOne = (props: CardOneProps) => {
           <Image height={props.imageHeight ?? 500} width={props.imageWidth ?? 500} alt={props.imageAlt ?? "content"} className={`object-cover object-center h-full w-full ${props.imageClassName ?? ""}`} src={props.image} />
         </div>
         <h2 className="text-2xl font-medium text-gray-900 mt-6 mb-3">{props.title}</h2>
-        <p className="leading-relaxed text-base mb-6">{props.description}</p>
-        <div className=" w-fit flex mx-auto mt-auto">
-          <Link href={props.link_url} type={"primary"} form="rounded" style="solid" size="medium" className="flex mx-auto mt-6 w-fit border-0 focus:outline-none hover:bg-lameduse-primary/90">{props.link_text}</Link>
+        <p className="leading-relaxed text-base">{props.description}</p>
+        <div className="flex mx-auto mt-auto">
+          <Link href={props.link_url} type={"primary"} form="rounded" style="solid" size="medium" className="flex mx-auto mt-4 w-fit border-0 focus:outline-none hover:bg-lameduse-primary/90">{props.link_text}</Link>
         </div>
       </div>
   )
