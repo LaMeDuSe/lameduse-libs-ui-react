@@ -23,6 +23,7 @@ export interface FooterCompanyInfosProps {
   description?: string;
   address?: string;
   logo: StaticImport | string;
+  logo_link?: string;
   logo_size?: {
     width: number;
     height: number;
@@ -51,14 +52,14 @@ export interface FooterProps {
 const Footer = (props: FooterProps) => {
   // default values
   props = { ...props }; // copy to avoid modifying the original object
-
+  props.companyInfos.logo_link = props.companyInfos.logo_link || "/";
   props.companyInfos.logo_size = props.companyInfos.logo_size || { width: 192, height: 64 };
   return (
     <footer className="text-gray-600 body-font w-full">
       <div className="container px-5 py-24 mx-auto flex md:items-center lg:items-start md:flex-row md:flex-nowrap flex-wrap flex-col">
         <div className="w-64 flex-shrink-0 md:mx-0 mx-auto text-center md:text-left">
           <div className="justify-self-start flex flex-row items-center md:justify-start justify-center">
-            <NextLink className="shrink-0" href="/">
+            <NextLink className="shrink-0" href={props.companyInfos.logo_link}>
               <Image
                 src={props.companyInfos.logo}
                 className={`w-[${props.companyInfos.logo_size.width}px] h-[${props.companyInfos.logo_size.height}px]`}
