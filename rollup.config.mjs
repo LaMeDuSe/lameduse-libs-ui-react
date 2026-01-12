@@ -59,6 +59,7 @@ export default [
         postcss({
             extract: true,
             minimize: true,
+            plugins: [postcssDiscardEmpty()],
         }),
     ],
   },
