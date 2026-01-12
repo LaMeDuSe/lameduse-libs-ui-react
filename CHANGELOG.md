@@ -1,5 +1,54 @@
 # LaMeDuSe Change Log
 
+# [2.5.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.8...v2.5.0) (2026-01-11)
+
+
+### Bug Fixes
+
+* ajout de lucide-react ([cfdfdee](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/cfdfdeef3ba210a9297b88610639a4e19a1b4f89))
+* button position ([2e46f62](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/2e46f6297c8badc3763f4ad358761837b7a3fe6c))
+* button position ([61070a5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/61070a5548fe40da67d312836477f23b16f4aae8))
+* **ci:** mise à jour de yarn.lock, corrige la licence ([627e862](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/627e8628989fb264e7c3a5d4c74160bcba87b922))
+* correction du chemin d’export vers hero_slider dans index.ts ([f30165d](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/f30165d14a1c787ed8c120dfb3d4186208b47670))
+* correction of Calendar.tsx ([5aafcfa](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5aafcfae7218c17d0327e2ed922d2864a2092b4d))
+* ensure Calendar component is exported ([eefc28b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/eefc28b2cbfdfb35bf21a2d6c57f7d3901178397))
+* first fix for style ([8b24a6b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8b24a6b9a39d9d90250437dd25f6c9ec7f29b304))
+* fixed error on props copy ([ce99cc6](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/ce99cc6a208362c0fa81cebeb1b7568b70f360c1))
+* image size ([dfd80f3](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/dfd80f33598088257fbfe1c307dee01a24ac2b79))
+* selected date ([be1ceee](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/be1ceeec5ea7c8096cb6e2346fb2fbc26edc01e2))
+* working on translation ([5e90b53](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5e90b531d45dd8f466fadad66833e41228559249))
+
+
+### Features
+
+* add highlight style to cell ([edca84f](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/edca84ff72d53ae0f5d7859630074525592ce934))
+* added custom mobile style ([688a2c3](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/688a2c32d47725007a33fbd0545c44b4eecbbea0))
+* added custom style support for navlink ([b86d38a](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b86d38a3146ae10f03f4770e365333829a306e5a))
+* added lib version ([cb821c0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/cb821c0bc96ca05f7277aa3b5662886e26f16886))
+* added support for custom config hooks and dd reworked ghostpost style ([a0426ee](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a0426ee3ef0afc13e1464e7a6bcb38719b4db672))
+* added translation ([efafdc9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/efafdc92277e6b6a812e4c7d66c477ca12196683))
+* added tuple + translation increment ([fc32525](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/fc3252506214e357f70604a21ca148703f47ef22))
+* ajout des animations dans hero_slider.tsx ([d6bc9d9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d6bc9d97fef1a25da6844de9b98f8519836d2b62))
+* ajout des fichiers pour la tâche Slider ([a7ad6b0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a7ad6b02bee1833b24ce1fe489d09900e0f1ccd4))
+* ajout du champ style dans l'interface Slide du fichier hero_slider_type.ts ([8385402](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8385402da6c46125ea7d56dd7545967fe1ac09f6))
+* ajout du décalage titre/sous-titre (hero_slider_layout.tsx) ([92564c1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/92564c16bb9acc0dbc53af250405ac025baf425a))
+* ajout du fichier get_slide_style.ts qui permet de créer un style de slide ([88db0f0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/88db0f0b0c14afbb9847cd605d88b4c914f106e4))
+* ajout du fichier hero_slider_type.ts et modification de own_slider.stories.tsx ([82328fc](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/82328fc74d1ca7aaafe031024897ed220dd917f2))
+* ajout du fichier hero_slider.tsx ([90ff09b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/90ff09bf225164bd92025edbaeba2c5da960148a))
+* ajout du fichier slide_style.ts pour le style des slides ([85a260e](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/85a260ee7c893d89368d2d6f794664b803c61076))
+* calendar css styles ([14cee25](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/14cee2521791b866af804d5cc5c6c18b72c0c0d7))
+* correct Calendar component after rebase conflicts ([b5630ca](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b5630ca3617c0d5c2993054ad84a48d0a1522685))
+* first implementation of the calendar ([2be5cfc](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/2be5cfce86ecf1199e8c745104a8c7577f5b2ae8))
+* il s'agit d'un nouveau hero slider qui permet de choisir le style des slides ([27122bb](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/27122bba11d41a6d943b1ea4fcd0b0d636e89815))
+* implementation of Calendar.css and update of Calendar.tsx ([fb620ea](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/fb620ea76a048ca85bb23aac34ed5d9e69fac25a))
+* modification de own_slider.stories.tsx pour tester hero_slider_layout.tsx ([efc8e85](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/efc8e85551771b6988fd8ace7837cc1da0df27eb))
+* modification des fichiers index.ts  own_slider.stories.ts  slider.tsx ([bd26a70](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/bd26a7038ffe7ea0d6a75890f02a69bb9a2a6444))
+* register calendar files after conflictwip: temporary registration before pull ([d1dae5f](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d1dae5fea68084381e666bb954a27745bf6272b1))
+* reworked component ([14a7427](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/14a7427dc36b39f90d9ecd0382bed2922c05f671))
+* update Calendar.css ([fd54b9f](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/fd54b9fd888a53fa85f4cc8ab35c470b6bfd16d8))
+* update Calendar.stories.ts ([6cdb2f4](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6cdb2f414041e9ca65cecb5585d2cdf1461c0792))
+* update Calendar.tsx ([ca1058b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/ca1058b7368625e37e32f1edf31301a0faebee9b))
+
 ## [2.4.8](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.7...v2.4.8) (2025-12-31)
 
 
