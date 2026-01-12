@@ -5,6 +5,7 @@ import dts from "rollup-plugin-dts";
 import postcss from "rollup-plugin-postcss";
 import copy from "rollup-plugin-copy";
 import packageJson from "./package.json" with { type: "json" };
+import postcssDiscardEmpty from "postcss-discard-empty";
 
 export default [
   {
