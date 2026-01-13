@@ -1,5 +1,13 @@
 # LaMeDuSe Change Log
 
+## [2.5.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.5.0...v2.5.1) (2026-01-13)
+
+
+### Bug Fixes
+
+* postcss ([5f364b4](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5f364b46048edec9b6616cd189b7f62341ab7ea7))
+* rollup config ([b189e68](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b189e68f46eca0c6cdf8c3ed344c7cf4f3b985f8))
+
 # [2.5.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.4.8...v2.5.0) (2026-01-11)
 
 
