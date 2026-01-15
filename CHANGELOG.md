@@ -1,5 +1,22 @@
 # LaMeDuSe Change Log
 
+## [2.5.2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.5.1...v2.5.2) (2026-01-15)
+
+
+### Bug Fixes
+
+* allow react element ([1dc982b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1dc982b61167e1df01d2d1dd0a5189a70520b7f1))
+* className use ([edaf542](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/edaf542244503687462fae3bf24b4ca250e967f0))
+* image ([0dd4d62](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/0dd4d6269f268d6251ff7c0b8639762f4bf053ef))
+* merge to pull new feature and feature fix ([31f1a06](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/31f1a063792d87ee2f0a0441c55f8ad447064163))
+* postion of button ([384ceb3](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/384ceb36256c33de07d3d958ccc41187d6b7f96d))
+* size of gray bg ([aceaec5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/aceaec57cc81c32f57a632a314fc2cf4b9a33b2f))
+* type of description and title ([83a4291](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/83a4291357e5b69a2ef74959478307af1ca45903))
+* type of description from any to string ([5323bce](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5323bcee8cdce93aa93facb38a4ea3ed59991a79))
+* type of description from string to any ([5585db1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5585db1e0f7aab6539586d85cfb71537055d4273))
+* unify component dimensions ([f4985e9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/f4985e9b5d8edeb6dedae7a40ccdb08fd2904846))
+* wrong import for calendar in components.css ([e8ebfb3](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/e8ebfb3d34103176b349425fe13f8c5cc828af09))
+
 ## [2.5.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.5.0...v2.5.1) (2026-01-13)
 
 
