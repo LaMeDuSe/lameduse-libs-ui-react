@@ -34,9 +34,9 @@ const CardTwo = (props: CardTwoProps) => {
     "primary": "text-lameduse-primary",
   }[props.type]
   return (
-    <div>
-      <NextLink href={props.link_url} target="_blank">
-        <div className="bg-gray-100 p-6 rounded-lg">
+    <div className={`${props.className} h-full`}>
+      <NextLink href={props.link_url} target="_blank" className="block h-full">
+        <div className="bg-gray-100 p-6 rounded-lg h-full">
           <Image width={props.imageWidth ?? 238} height={props.imageHeight ?? 160} className={`h-40 rounded w-full object-contain object-center mb-6 ${props.imageClassName ?? ""}`} src={props.image} alt={props.imageAlt ?? "content"} />
           <h3 className={`tracking-widest text-xs font-medium title-font ${color_classname}`}>{props.label}</h3>
           <h2 className={`text-lg text-black font-bold title-font mb-4`}>{props.title}</h2>

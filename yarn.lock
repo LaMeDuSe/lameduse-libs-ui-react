@@ -1342,6 +1342,14 @@
     "@jridgewell/resolve-uri" "^3.1.0"
     "@jridgewell/sourcemap-codec" "^1.4.14"
 
+"@lameduse/lameduse-libs-ui-react@^2.4.4":
+  version "2.4.4"
+  resolved "https://npm.lameduse.fr/@lameduse/lameduse-libs-ui-react/-/lameduse-libs-ui-react-2.4.4.tgz#789c8b7f17adf224e58872a2700689a9543b7828"
+  integrity sha512-WZMBqYXyo5506nWtZsYAKfZxgtHm23JWV/rsHtkeq3nqBzEIIk7tpQPNSxTkG7kZyHkDNmUANYHMqryOdaaZAw==
+  dependencies:
+    framer-motion "^12.16.0"
+    lucide-react "^0.515.0"
+
 "@mdx-js/react@^3.0.0":
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/@mdx-js/react/-/react-3.1.1.tgz#24bda7fffceb2fe256f954482123cda1be5f5fef"
