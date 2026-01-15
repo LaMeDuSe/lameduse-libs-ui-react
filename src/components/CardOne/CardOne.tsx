@@ -2,7 +2,7 @@ import React from "react";
 import ImageImport from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "../Link/Link";
-import IconText, { IconTextProps } from "../IconText/icon_text";
+import IconText, { IconTextProps } from "../IconText/IconText";
 import { propagateServerField } from "next/dist/server/lib/render-server";
 import { keyframes } from "framer-motion";
 import { icons } from "lucide-react";
