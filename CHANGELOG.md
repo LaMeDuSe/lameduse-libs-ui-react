@@ -1,5 +1,20 @@
 # LaMeDuSe Change Log
 
+# [2.6.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.5.2...v2.6.0) (2026-01-15)
+
+
+### Bug Fixes
+
+* export IconText ([3f2f3e9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/3f2f3e9f50df5bf630f5d88e4df1eef1738b099b))
+* name of IconText files ([8e07f81](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8e07f810bac1f8783893ef9eb54e2405b8e1b90c))
+* stories + test + ajusting positioning ([b85dae9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b85dae9359753e8627b0c1dfbde4eacb0308bc82))
+* use IconText ([14ff9e2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/14ff9e2ce5531501a1279987d8a2cb08496439c7))
+
+
+### Features
+
+* add component icon with text ([6e59e4a](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6e59e4a79e9b0dcbeb5a3db398f85ab4c5bf68b4))
+
 ## [2.5.2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.5.1...v2.5.2) (2026-01-15)
 
 
