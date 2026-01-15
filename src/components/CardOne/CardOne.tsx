@@ -2,7 +2,7 @@ import React from "react";
 import ImageImport from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link from "../Link/Link";
-import Icon, { IconProps } from "../Icon/Icon";
+import IconText, { IconTextProps } from "../IconText/icon_text";
 import { propagateServerField } from "next/dist/server/lib/render-server";
 import { keyframes } from "framer-motion";
 import { icons } from "lucide-react";
@@ -26,7 +26,7 @@ export interface CardOneProps {
   link_text: string;
   border?: "normal" | "no-border";
   rounded?: boolean;
-  icons?: IconProps[]
+  icons?: IconTextProps[]
 }
 
 
@@ -57,7 +57,7 @@ const CardOne = (props: CardOneProps) => {
         <h2 className="text-2xl font-medium text-gray-900 mt-6 mb-3">{props.title}</h2>
         <p className="leading-relaxed text-base mb-6">{props.description}</p>
         {props.icons?.map((icon, index) => (
-            <Icon key={index} {...icon} />
+            <IconText key={index} {...icon} />
           ))}
         <div className=" w-fit flex mx-auto mt-auto">
           <Link href={props.link_url} type={"primary"} form="rounded" style="solid" size="medium" className="border-0 py-2 px-5 focus:outline-none">{props.link_text}</Link>
