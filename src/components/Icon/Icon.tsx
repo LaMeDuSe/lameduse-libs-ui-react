@@ -1,13 +1,13 @@
 import React from "react";
 import { LinkedInIcon, TwitterIcon, DiscordIcon, GitHubIcon, MailboxIcon, CheckIcon, OutboxIcon, InboxIcon, WarningIcon, CrossmarkIcon, BoxIcon, IdentityCardIcon, LameduseIcon } from "./icons";
 import NextLinkImport from "next/link";
-import { propagateServerField } from "next/dist/server/lib/render-server";
 
 // Handle ESM/CJS interop for Next.js components
 const NextLink = (NextLinkImport as any).default || NextLinkImport;
 
+
 export interface IconProps {
-  icon: string | React.ComponentType<any>; // Allows string (for mapped icons or URLs) or custom component
+  icon: keyof typeof IconMap; // restricts icon to keys of IconMap
   href?: string;
   size?: "small" | "medium" | "large";
   color?: "primary" | "secondary" | "tertiary" | "darkgrey";
@@ -39,19 +39,7 @@ const Icon = (props: IconProps) => {
   // default color
   props.color = props.color || "primary";
 
-  let IconObj: React.ComponentType<any>;
-  if (typeof props.icon === 'string') {
-    if (props.icon in IconMap) {
-      IconObj = IconMap[props.icon as keyof typeof IconMap];
-    } else {
-      // Assume it's a URL, render img
-      let url = props.icon;
-      IconObj = () => <img src={url} alt="" className="w-full h-full object-contain" />;
-    }
-  } else {
-    // Custom component
-    IconObj = props.icon;
-  }
+  const IconObj = IconMap[props.icon];
 
   const sizeClass = {
     "small": "w-6 h-6",
@@ -65,14 +53,13 @@ const Icon = (props: IconProps) => {
     "tertiary": "text-lameduse-tertiary/80 hover:text-lameduse-tertiary",
     "darkgrey": "text-gray-500/80 hover:text-gray-500",
   }[props.color];
-
   return (
     <div className={`${sizeClass} ${colorClass} text-nowrap`}>
       <NextLink href={props.href || "#"} onClick={props.onClick}>
         <IconObj />
       </NextLink>
     </div>
-  );
+  )
 };
 
 export default Icon;
