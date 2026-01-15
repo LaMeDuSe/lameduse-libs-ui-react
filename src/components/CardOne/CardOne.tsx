@@ -24,6 +24,8 @@ export interface CardOneProps {
   rounded?: boolean;
 }
 
+export
+
 const CardOne = (props: CardOneProps) => {
   // default values
   props = { ...props }; // copy to avoid modifying the original object
