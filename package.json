@@ -1,6 +1,6 @@
 {
   "name": "@lameduse/lameduse-libs-ui-react",
-  "version": "2.4.8",
+  "version": "2.5.1",
   "author": "LaMeDuSe",
   "description": "@LaMeDuSe frontend storybook",
   "scripts": {
@@ -74,6 +74,7 @@
   "dependencies": {
     "@lameduse/lameduse-libs-ui-react": "^2.4.4",
     "framer-motion": "^12.16.0",
-    "lucide-react": "^0.515.0"
+    "lucide-react": "^0.515.0",
+    "postcss-discard-empty": "^7.0.1"
   }
 }
