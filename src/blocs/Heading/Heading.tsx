@@ -6,8 +6,8 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 const NextImage = (NextImageImport as any).default || NextImageImport;
 
 export interface HeadingProps {
-  title: string;
-  description: string;
+  title: string | React.ReactElement;
+  description: string | React.ReactElement;
   image?: string | StaticImport;
   imagealt?: string;
   theme?: "gradient" | "primary" | "secondary" | "tertiary";
