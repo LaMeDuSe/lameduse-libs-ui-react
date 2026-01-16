@@ -21,7 +21,7 @@ const IconText = (props: IconTextProps) => {
     }[props.position];
 
     return (
-        <div className={`${position_class} items-end`}>
+        <div className={`${position_class}`}>
             <Icon {...props.icon} />
             <p className={`${props.className} px-2`}>{props.text ?? ""}</p>
         </div>
