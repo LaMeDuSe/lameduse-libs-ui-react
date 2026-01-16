@@ -11,6 +11,7 @@ export interface HeadingProps {
   image?: string | StaticImport;
   imagealt?: string;
   theme?: "gradient" | "primary" | "secondary" | "tertiary";
+  texteClassName?: string;
 }
 
 const Heading = (props: HeadingProps) => {
@@ -29,8 +30,8 @@ const Heading = (props: HeadingProps) => {
   return (
     <div className={`w-full relative ${color_class} h-[300px] flex flex-col items-center justify-center`}>
       {props.image && <NextImage src={props.image} alt={props.imagealt} height={300} width={2000} className="absolute w-full h-[300px] object-cover filter blur-sm brightness" />}
-      <h1 className="z-10 text-white text-center text-4xl mb-3">{props.title}</h1>
-      <p className="z-10 text-white lg:text-2xl w-1/2 text-center">{props.description}</p>
+      <h1 className={`${props.texteClassName} z-10 text-white text-center text-4xl mb-3`}>{props.title}</h1>
+      <p className={`${props.texteClassName} z-10 text-white lg:text-2xl w-1/2 text-center`}>{props.description}</p>
     </div>
   )
 };
