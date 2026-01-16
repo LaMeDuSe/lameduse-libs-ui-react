@@ -14,6 +14,7 @@ export interface HeadingProps {
   texteClassName?: string;
 }
 
+
 const Heading = (props: HeadingProps) => {
   // default values
   props = { ...props }; // copy to avoid modifying the original object
