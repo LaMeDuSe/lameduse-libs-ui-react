@@ -4,7 +4,7 @@ export interface FormGroupProps {
   question: string;
   questionClassName?: string;
   inputClassName?: string;
-}
+};
 
 const FormGroup = (props: FormGroupProps) => {
   const [value, setValue] = useState("");
