@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.6.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.6.0...v2.6.1) (2026-01-16)
+
+
+### Bug Fixes
+
+* readd removed lines ([793bbfb](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/793bbfbdf66b51c4144c5ab0540413ec598ab5aa))
+
 # [2.6.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.5.2...v2.6.0) (2026-01-15)
 
 
