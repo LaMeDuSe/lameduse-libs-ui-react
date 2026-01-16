@@ -1,12 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/nextjs';
 import { fn } from 'storybook/test';
 
-import Form from './Form';
+import CheckBoxForm, {CheckBoxAnswerProps } from './CheckBoxForm';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'LaMeDuSe/Components/Form',
-  component: Form,
+  title: 'LaMeDuSe/Components/CheckBoxForm',
+  component: CheckBoxForm,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered', // 'fullscreen' | 'padded' | 'centered'
@@ -18,46 +18,33 @@ const meta = {
   //   backgroundColor: { control: 'color' },
   // },
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-} satisfies Meta<typeof Form>;
+} satisfies Meta<typeof CheckBoxForm>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
+const checkbox: CheckBoxAnswerProps[] = [
+  {
+    answer:"1",
+    answerClassName:"text-bolt"
+  },
+  {
+    answer:"2"
+  }
+];
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    form:[
+    question:"Howmany times?",
+    questionClassName:"text-lameduse-primary",
+    answer:[
       {
-        question:"What is your name?",
-        questionClassName:"text-lameduse-primary"
+        answer:"1",
+        answerClassName:"text-bolt"
       },
       {
-        question:"What is your email?",
-        questionClassName:"text-lameduse-primary"
-      },
-      {
-        question:"What is your message?",
-        questionClassName:"text-lameduse-primary"
-      },
-      {
-        question:"Howmany times?",
-        questionClassName:"text-lameduse-primary",
-        answer:[{
-          answer:"1",
-          answerClassName:"text-bolt"
-        },
-        {
-          answer:"2"
-        },
-        {
-          answer:"3"
-        },
-        {
-          answer:"4"
-        }],
-        type: "checkbox",
-        maxSelect:3
+        answer:"2"
       }
     ]
-  }
+  },
 };

@@ -1,21 +1,22 @@
 import React from "react";
 import FormGroup, { FormGroupProps } from "../../components/FormGroup/FormGroup";
+import CheckBoxForm, { CheckBoxFormsProps } from "../../components/CheckBoxForm/CheckBoxForm";
 
 
 
 export interface FormProps {
-  form:FormGroupProps[]
+  form: (FormGroupProps | CheckBoxFormsProps)[];
 }
 
 const Form = (props: FormProps) => {
-  props = {...props}; 
-  
-
   return (
     <div className="w-full">
-      {props.form.map((form, index) => (
-        <FormGroup key={index} {...form} />
-      ))}
+      {props.form.map((item, index) => {
+        if ("answer" in item) {
+          return <CheckBoxForm key={index} {...item} />;
+        }
+        return <FormGroup key={index} {...item} />;
+      })}
     </div>
   )
 };

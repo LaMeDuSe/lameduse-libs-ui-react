@@ -12,3 +12,4 @@ export { default as Title } from "./Title";
 export { default as Calendar } from "./Calendar";
 export { default as IconText } from "./IconText";
 export { default as FormGroup } from "./FormGroup";
+export { default as CheckBoxForm } from "./CheckBoxForm"
