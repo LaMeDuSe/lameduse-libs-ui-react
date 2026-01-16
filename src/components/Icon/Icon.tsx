@@ -7,7 +7,7 @@ const NextLink = (NextLinkImport as any).default || NextLinkImport;
 
 
 export interface IconProps {
-  icon: keyof typeof IconMap; // restricts icon to keys of IconMap
+  icon: string | React.ComponentType<any>; // restricts icon to keys of IconMap
   href?: string;
   size?: "small" | "medium" | "large";
   color?: "primary" | "secondary" | "tertiary" | "darkgrey";
@@ -39,7 +39,17 @@ const Icon = (props: IconProps) => {
   // default color
   props.color = props.color || "primary";
 
-  const IconObj = IconMap[props.icon];
+  let IconObj: React.ComponentType<any>;
+  if (typeof props.icon === "string") {
+    if (props.icon in IconMap){
+      IconObj = IconMap[props.icon as keyof typeof IconMap];
+    } else {
+      let url = props.icon;
+      IconObj = () => <img src={url} alt="" className="w-full h-full object-contain"/>
+    }
+  } else {
+    IconObj = props.icon;
+  };
 
   const sizeClass = {
     "small": "w-6 h-6",
