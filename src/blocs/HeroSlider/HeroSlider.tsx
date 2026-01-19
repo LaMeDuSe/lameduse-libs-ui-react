@@ -77,9 +77,9 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
             alt={slides[currentIndex].title}
             className={`w-full h-full object-cover ${currentSlide.imgClassName || ''} `}
           />
-          <div className={`absolute inset-0 bg-black/40 flex flex-col justify-center text-white px-4 sm:px-20 ${alignmentMap[layout.align]}`}>
+          <div className={`absolute inset-0 bg-black/40 flex flex-col justify-start sm:justify-center text-white px-4 sm:px-20 ${alignmentMap[layout.align]}`}>
             {layout.showTitle && (
-              <h2 className={`text-5xl`}>
+              <h2 className={`mt-10 sm:mt-0 text-5xl`}>
                 {currentSlide.title}
               </h2>
             )}
@@ -88,7 +88,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
                 {currentSlide.subtitle}
               </p>
             )}
-            <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 gap-3 flex">
+            <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 gap-3 flex flex-wrap justify-center">
               {layout.showButton && currentSlide.buttons && currentSlide.buttons.map((button, index) => (
                 <Link
                   key={index}
