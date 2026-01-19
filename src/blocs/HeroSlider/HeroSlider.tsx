@@ -88,7 +88,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
             alt={slides[currentIndex].title}
             className={`w-full h-full object-cover ${currentSlide.imgClassName || ''} `}
           />
-          <div className={`absolute inset-0 bg-black/40 flex flex-col justify-start sm:justify-center text-white px-4 sm:px-20 ${alignmentMap[layout.align]}`}>
+          <div className={`absolute inset-0 bg-black/40 flex flex-col justify-start sm:justify-center text-white px-4 sm:px-20 ${alignmentMap[layout.align]} min-h-full`}>
             {layout.showTitle && (
               <h2 className={`mt-10 sm:mt-0 text-5xl`}>
                 {currentSlide.title}
