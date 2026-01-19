@@ -16,6 +16,17 @@ export interface Slide {
   imgClassName ?: string;
 }
 
+/**
+ * HeroSlider Component
+ * 
+ * A customizable hero slider/carousel component that displays slides with images, titles, subtitles, and buttons.
+ * Supports auto-play functionality and various slide layouts.
+ * 
+ * Props:
+ * @property {Slide[]} slides - An array of slide objects to be displayed in the slider.
+ * @property {boolean} [autoPlay=true] - Whether the slider should auto-play.
+ * @property {number} [interval=5000] - The interval (in milliseconds) between slide transitions when auto-playing.
+ */
 export interface HeroSliderProps {
   slides: Slide[];
   autoPlay?: boolean;
