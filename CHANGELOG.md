@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.8.2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.1...v2.8.2) (2026-01-19)
+
+
+### Bug Fixes
+
+* reduce quality to 75 to prevent custom nextjs ([51f42fc](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/51f42fcbe8b53cbf83820bf4710b44c660350582))
+
 ## [2.8.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.0...v2.8.1) (2026-01-19)
 
 
