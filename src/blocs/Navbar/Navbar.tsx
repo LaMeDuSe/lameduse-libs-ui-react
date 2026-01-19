@@ -41,7 +41,7 @@ export interface INavItemLogo extends INavItemBase {
     height?: number;
     // @default 300
     width?: number;
-    // @default 100
+    // @default 75
     quality?: number;
 }
 
@@ -103,7 +103,7 @@ const NavItemLogo = (props: INavLogoProps) => {
     return (
         <div className={`${(props.wrapClassName || "")}`}>
             <NextLink href={props.config.href ?? "#"}>
-                <Image src={props.config.src} alt={props.config.label} className={`w-[${width}px] h-[${height}px]`} height={height} width={width} quality={props.config.quality ?? 100} />
+                <Image src={props.config.src} alt={props.config.label} className={`w-[${width}px] h-[${height}px]`} height={height} width={width} quality={props.config.quality ?? 75} />
             </NextLink>
         </div>
     );
