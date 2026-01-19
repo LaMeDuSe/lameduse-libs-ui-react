@@ -1,5 +1,13 @@
 # LaMeDuSe Change Log
 
+## [2.8.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.0...v2.8.1) (2026-01-19)
+
+
+### Bug Fixes
+
+* justify center ([0af2dc5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/0af2dc5b726088596bd6a890112aef2dd5f1b02b))
+* responsive ([877231b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/877231ba5b56547f06c1a50e74df7ae05a5ae78d))
+
 # [2.8.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.7.0...v2.8.0) (2026-01-19)
 
 
