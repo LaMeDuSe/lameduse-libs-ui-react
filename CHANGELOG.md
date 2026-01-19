@@ -1,5 +1,17 @@
 # LaMeDuSe Change Log
 
+# [2.7.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.6.1...v2.7.0) (2026-01-19)
+
+
+### Bug Fixes
+
+* responsive in heroslider ([c9702a5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/c9702a5c938a30fd8269597ffe4f2a54108e5072))
+
+
+### Features
+
+* added none theme to heading ([8868256](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8868256b7d40d21d5e385bacfbc91f521f130b0d))
+
 ## [2.6.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.6.0...v2.6.1) (2026-01-16)
 
 
