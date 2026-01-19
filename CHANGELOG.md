@@ -1,5 +1,18 @@
 # LaMeDuSe Change Log
 
+# [2.8.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.7.0...v2.8.0) (2026-01-19)
+
+
+### Bug Fixes
+
+* ignore zone.identifier ([c30916e](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/c30916e52d2e143bf1d6347004b03b9eb943cba3))
+* zone idf ([f6a5731](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/f6a573120c3cc96c179544020a5835a98e70ff3c))
+
+
+### Features
+
+* added quality support ([c001265](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/c001265571ecc5f7d547a79f97cf3ffd3f4a3702))
+
 # [2.7.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.6.1...v2.7.0) (2026-01-19)
 
 
