@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.8.3](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.2...v2.8.3) (2026-01-20)
+
+
+### Bug Fixes
+
+* quality ([fd1ea47](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/fd1ea47e486d86a5be7dd7a1e05f8a0f7b9f5784))
+
 ## [2.8.2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.1...v2.8.2) (2026-01-19)
 
 
