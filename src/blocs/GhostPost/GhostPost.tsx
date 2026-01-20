@@ -101,7 +101,7 @@ const GhostPost = (props: GhostPostProps) => {
         .catch((err) => {
             console.error(err);
         });
-    }, [api.posts])
+    }, [props.GhostContentAPIOptions])
     return (
         <div className={blocsclass}>
             <Title label="Latest Posts" />
