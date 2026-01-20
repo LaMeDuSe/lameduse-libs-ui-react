@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.8.6](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.5...v2.8.6) (2026-01-20)
+
+
+### Bug Fixes
+
+* ghostpost loop ([7399d29](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/7399d297bfdcba95a94a2d3667fab07c3ae366c7))
+
 ## [2.8.5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.4...v2.8.5) (2026-01-20)
 
 
