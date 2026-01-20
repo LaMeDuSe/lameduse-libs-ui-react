@@ -64,15 +64,22 @@
     "react-dom": ">=18.0.0",
     "tailwindcss": ">=3.0.0"
   },
-  "main": "dist/bundle.cjs.js",
-  "module": "dist/bundle.esm.js",
+  "main": "./dist/bundle.cjs.js",
+  "module": "./dist/bundle.esm.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/bundle.cjs.js",
+      "import": "./dist/bundle.esm.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./styles.css": "./dist/bundle.esm.css"
+  },
   "files": [
     "dist"
   ],
-  "types": "dist/index.d.ts",
   "packageManager": "yarn@1.22.0",
   "dependencies": {
-    "@lameduse/lameduse-libs-ui-react": "^2.4.4",
     "framer-motion": "^12.16.0",
     "lucide-react": "^0.515.0",
     "postcss-discard-empty": "^7.0.1"
