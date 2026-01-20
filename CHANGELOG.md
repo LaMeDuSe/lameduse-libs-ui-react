@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.8.5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.4...v2.8.5) (2026-01-20)
+
+
+### Bug Fixes
+
+* style export ([b59f97c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b59f97c77daea405b5b0523a8387d9acca1ef62d))
+
 ## [2.8.4](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.3...v2.8.4) (2026-01-20)
 
 
