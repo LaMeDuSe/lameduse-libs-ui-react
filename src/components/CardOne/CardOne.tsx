@@ -53,7 +53,7 @@ const CardOne = (props: CardOneProps) => {
   return (
       <div className={`px-4 ${container_color_class} ${props.className} ${rounded} ${standard_class} ${border}`}>
         <div className={`rounded-lg h-64 overflow-hidden`}>
-          <Image height={props.imageHeight ?? 500} width={props.imageWidth ?? 500} alt={props.imageAlt ?? "content"} className={`object-cover object-center h-full w-full ${props.imageClassName ?? ""}`} src={props.image} quality={props.imageQuality ?? 100} />
+          <Image height={props.imageHeight ?? 500} width={props.imageWidth ?? 500} alt={props.imageAlt ?? "content"} className={`object-cover object-center h-full w-full ${props.imageClassName ?? ""}`} src={props.image} quality={props.imageQuality ?? 75} />
         </div>
         <h2 className="text-2xl font-medium text-gray-900 mt-6 mb-3">{props.title}</h2>
         <p className="leading-relaxed text-base mb-6">{props.description}</p>
