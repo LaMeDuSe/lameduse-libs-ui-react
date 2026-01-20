@@ -73,7 +73,7 @@
       "import": "./dist/bundle.esm.js",
       "types": "./dist/index.d.ts"
     },
-    "./styles.css": "./dist/bundle.esm.css"
+    "./styles.css": "./dist/styles/index.css"
   },
   "files": [
     "dist"
