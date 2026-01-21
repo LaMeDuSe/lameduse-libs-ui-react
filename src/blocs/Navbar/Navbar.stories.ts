@@ -81,7 +81,7 @@ export const Primary: Story = {
       },
       {
         type: "dropdown",
-        position: "right",
+        position: "center",
         label: "Dropdown",
         items: [
           {
@@ -102,7 +102,8 @@ export const Primary: Story = {
             label: "Item 3",
             href: "#",
           },
-        ]
+        ],
+      imgSrc:"https://cdn-icons-png.flaticon.com/512/2909/2909294.png"
       },
       {
         type: "link",

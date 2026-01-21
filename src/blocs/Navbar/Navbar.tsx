@@ -30,6 +30,7 @@ export interface INavItemLink extends INavItemBase {
 export interface INavItemDropdown extends INavItemBase {
     type: "dropdown";
     items: INavItemLink[];
+    imgSrc: string
 }
 
 export interface INavItemLogo extends INavItemBase {
@@ -76,8 +77,11 @@ export interface INavDropdownProps {
 const NavItemDropdown = (props: INavDropdownProps) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
     return (
-        <div className={`${(props.wrapClassName || "")}`}>
-            <Link style="text" text_style="bold" size="medium" form="underline-hover" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>{props.config.label}</Link>
+        <div className={`${(props.wrapClassName || "")} `}>
+            <div className="flex flex-row items-center cursor-pointer" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+                <Link style="text" text_style="bold" size="medium" form="underline-hover">{props.config.label}</Link>
+                <img src={props.config.imgSrc} alt="" className={(isDropdownOpen ? "rotate-180 duration-300 ease-in-out" : "rotate-0 duration-300 ease-in-out") + " w-5 h-5 -ml-1"}/>
+            </div>
             <div className="relative center">
                 <ul className={(isDropdownOpen ? "block" : "hidden") + " absolute z-10 bg-white shadow-lameduse-primary rounded-lg shadow-sm"}>
                     <div className="p-4 space-y-2 justify-center items-center">
@@ -230,7 +234,7 @@ const Navbar = (props: INavbarProps) => {
                 }
             </div>
             {/* Desktop end Navbar */}
-            <div className="justify-self-end hidden lg:flex flex-row items-center mx-auto pr-9">
+            <div className="justify-self-end hidden lg:flex flex-row items-center ml-auto pr-9">
                 {props.NavItems.filter((v) => v.position == "right").map((item, key) => {
                     switch (item.type) {
                         case "link":
