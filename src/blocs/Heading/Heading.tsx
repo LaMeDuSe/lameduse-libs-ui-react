@@ -10,7 +10,7 @@ export interface HeadingProps {
   description: string | React.ReactElement;
   image?: string | StaticImport;
   imagealt?: string;
-  theme?: "gradient" | "primary" | "secondary" | "tertiary";
+  theme?: "gradient" | "primary" | "secondary" | "tertiary" | "none";
   texteClassName?: string;
 }
 
@@ -26,6 +26,7 @@ const Heading = (props: HeadingProps) => {
     "primary": "bg-lameduse-primary",
     "secondary": "bg-lameduse-secondary",
     "tertiary": "bg-lameduse-tertiary",
+    "none": ""
   }[props.theme || "gradient"];
 
   return (

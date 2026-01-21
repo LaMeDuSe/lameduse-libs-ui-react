@@ -1,5 +1,73 @@
 # LaMeDuSe Change Log
 
+## [2.8.6](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.5...v2.8.6) (2026-01-20)
+
+
+### Bug Fixes
+
+* ghostpost loop ([7399d29](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/7399d297bfdcba95a94a2d3667fab07c3ae366c7))
+
+## [2.8.5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.4...v2.8.5) (2026-01-20)
+
+
+### Bug Fixes
+
+* style export ([b59f97c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b59f97c77daea405b5b0523a8387d9acca1ef62d))
+
+## [2.8.4](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.3...v2.8.4) (2026-01-20)
+
+
+### Bug Fixes
+
+* exports ([521e0e9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/521e0e930ba941ede7a33b64a1c2e260ef27e70f))
+
+## [2.8.3](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.2...v2.8.3) (2026-01-20)
+
+
+### Bug Fixes
+
+* quality ([fd1ea47](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/fd1ea47e486d86a5be7dd7a1e05f8a0f7b9f5784))
+
+## [2.8.2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.1...v2.8.2) (2026-01-19)
+
+
+### Bug Fixes
+
+* reduce quality to 75 to prevent custom nextjs ([51f42fc](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/51f42fcbe8b53cbf83820bf4710b44c660350582))
+
+## [2.8.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.0...v2.8.1) (2026-01-19)
+
+
+### Bug Fixes
+
+* justify center ([0af2dc5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/0af2dc5b726088596bd6a890112aef2dd5f1b02b))
+* responsive ([877231b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/877231ba5b56547f06c1a50e74df7ae05a5ae78d))
+
+# [2.8.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.7.0...v2.8.0) (2026-01-19)
+
+
+### Bug Fixes
+
+* ignore zone.identifier ([c30916e](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/c30916e52d2e143bf1d6347004b03b9eb943cba3))
+* zone idf ([f6a5731](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/f6a573120c3cc96c179544020a5835a98e70ff3c))
+
+
+### Features
+
+* added quality support ([c001265](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/c001265571ecc5f7d547a79f97cf3ffd3f4a3702))
+
+# [2.7.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.6.1...v2.7.0) (2026-01-19)
+
+
+### Bug Fixes
+
+* responsive in heroslider ([c9702a5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/c9702a5c938a30fd8269597ffe4f2a54108e5072))
+
+
+### Features
+
+* added none theme to heading ([8868256](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8868256b7d40d21d5e385bacfbc91f521f130b0d))
+
 ## [2.6.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.6.0...v2.6.1) (2026-01-16)
 
 
