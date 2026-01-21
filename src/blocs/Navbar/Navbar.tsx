@@ -80,10 +80,10 @@ const NavItemDropdown = (props: INavDropdownProps) => {
         <div className={`${(props.wrapClassName || "")} `}>
             <div className="flex flex-row items-center cursor-pointer" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
                 <Link style="text" text_style="bold" size="medium" form="underline-hover">{props.config.label}</Link>
-                <img src={props.config.imgSrc} alt="" className={(isDropdownOpen ? "rotate-180 duration-300 ease-in-out" : "rotate-0 duration-300 ease-in-out") + " w-5 h-5 -ml-1"}/>
+                <img src={props.config.imgSrc} alt="" className={(isDropdownOpen ? "rotate-180 duration-300 ease-in-out" : "rotate-0 duration-300 ease-in-out") + " w-5 h-5 -pl-1"}/>
             </div>
             <div className="relative center">
-                <ul className={(isDropdownOpen ? "block" : "hidden") + " absolute z-10 bg-white shadow-lameduse-primary rounded-lg shadow-sm"}>
+                <ul className={(isDropdownOpen ? "block" : "hidden") + " absolute z-20 bg-white shadow-lameduse-primary rounded-lg shadow-sm"}>
                     <div className="p-4 space-y-2 justify-center items-center">
                         {props.config.items.map((item, index) => {
                             return <NavLink key={index} config={item} className="p-2 w-full" view="desktop" />
@@ -140,7 +140,7 @@ const Navbar = (props: INavbarProps) => {
     return (
         <div className="w-full bg-white grid grid-flow-col lg:grid-cols-3 grid-cols-2">
             {/* Desktop start Navbar */}
-            <div className="justify-self-start hidden lg:flex flex-row items-center p-3 ml-6">
+            <div className="justify-self-start hidden lg:flex flex-row items-center mr-auto p-3 ml-6">
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
