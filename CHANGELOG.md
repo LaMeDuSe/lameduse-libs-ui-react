@@ -1,5 +1,22 @@
 # LaMeDuSe Change Log
 
+# [2.9.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.6...v2.9.0) (2026-01-21)
+
+
+### Bug Fixes
+
+* margin auto for components in navbar ([d1b855b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d1b855b1c3b69acf9347a30ff4ca5a484e4efe7d))
+* margin auto for components in navbar ([8a73655](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8a73655f3ac095048769329f208c3d6de6a51a11))
+* stories ([b217d62](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b217d626c51a80acac800dadc963f61e7021f05c))
+
+
+### Features
+
+* add component FormGroup and bloc Form ([0b94e57](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/0b94e57118a1f48ac56cc01ea420770a3a635ac8))
+* add component FormGroup and bloc Form ([592bfae](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/592bfae8d3a7a9bee2e657318d54ac38fabdc145))
+* checkbox ([7478fdc](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/7478fdce1d1c130ebf992accf139dc6245817d74))
+* checkbox ([6f17552](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6f17552a98faecb684d8ecbf003339f050054ee2))
+
 ## [2.8.6](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.5...v2.8.6) (2026-01-20)
 
 
