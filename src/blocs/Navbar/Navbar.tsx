@@ -138,9 +138,9 @@ const Navbar = (props: INavbarProps) => {
     // Is the navbar open
     const [isNavOpen, setIsNavOpen] = useState(false);
     return (
-        <div className="w-full bg-white grid grid-flow-col lg:grid-cols-3 grid-cols-2">
+        <div className="w-full bg-white grid grid-flow-col lg:grid-cols-6 grid-cols-4">
             {/* Desktop start Navbar */}
-            <div className="justify-self-start hidden lg:flex flex-row items-center mr-auto p-3 ml-6">
+            <div className="justify-self-start hidden lg:flex flex-row items-center mr-auto p-3 ml-6 col-span-1">
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
@@ -156,7 +156,7 @@ const Navbar = (props: INavbarProps) => {
                 }
             </div>
             {/* Mobile start Navbar */}
-            <div className="justify-self-start flex lg:hidden flex-row items-center space-x-6 p-3 ml-6">
+            <div className="justify-self-start flex lg:hidden flex-row items-center space-x-6 p-3 ml-6 col-span-2">
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
@@ -218,7 +218,7 @@ const Navbar = (props: INavbarProps) => {
                 </div>
             </section>
             {/* Desktop center Navbar */}
-            <div className="justify-self-center hidden lg:flex flex-row items-center mx-auto">
+            <div className="justify-self-center hidden lg:flex flex-row items-center mx-auto col-span-4">
                 {props.NavItems.filter((v) => v.position == "center").map((item, key) => {
                     switch (item.type) {
                         case "link":
@@ -234,7 +234,7 @@ const Navbar = (props: INavbarProps) => {
                 }
             </div>
             {/* Desktop end Navbar */}
-            <div className="justify-self-end hidden lg:flex flex-row items-center ml-auto pr-9">
+            <div className="justify-self-end hidden lg:flex flex-row items-center ml-auto pr-9 col-span-1">
                 {props.NavItems.filter((v) => v.position == "right").map((item, key) => {
                     switch (item.type) {
                         case "link":
