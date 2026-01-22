@@ -199,7 +199,8 @@ export const Enddropdown: Story = {
             label: "Item 3",
             href: "#",
           },
-        ]
+        ],
+        imgSrc:"https://cdn-icons-png.flaticon.com/512/2909/2909294.png"
       },
       {
         type: "link",
@@ -236,7 +237,8 @@ export const Enddropdown: Story = {
             label: "Item 3",
             href: "#",
           },
-        ]
+        ],
+        imgSrc:"https://cdn-icons-png.flaticon.com/512/2909/2909294.png"
       },
     ],
   },
