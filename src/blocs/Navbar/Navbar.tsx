@@ -138,7 +138,7 @@ const Navbar = (props: INavbarProps) => {
     // Is the navbar open
     const [isNavOpen, setIsNavOpen] = useState(false);
     return (
-        <div className="w-full bg-white grid grid-flow-col lg:grid-cols-6 grid-cols-2">
+        <div className="w-full bg-white grid grid-flow-col lg:grid-cols-6 grid-cols-4">
             {/* Desktop start Navbar */}
             <div className="justify-self-start hidden lg:flex flex-row items-center mr-auto p-3 ml-6 col-span-1">
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
@@ -172,7 +172,7 @@ const Navbar = (props: INavbarProps) => {
                 }
             </div>
             {/* Mobile menu Navbar */}
-            <section className="flex lg:hidden p-3 ml-auto justify-center items-center mr-6">
+            <section className="flex lg:hidden p-3 ml-auto justify-center items-center mr-6 col-span-2">
                 <div
                     className="space-y-2"
                     onClick={() => setIsNavOpen((prev) => !prev)}
