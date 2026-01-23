@@ -1,5 +1,25 @@
 # LaMeDuSe Change Log
 
+# [2.10.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.9.0...v2.10.0) (2026-01-23)
+
+
+### Bug Fixes
+
+* center of items ([6e4d348](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6e4d348a75c710d3dc0d9cb73180a7cda854f41e))
+* dropdown menu z-axes ([6aae9b6](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6aae9b6e740b1e6eed98bae6b6b282565bb8d280))
+* fix logo-size and space ([0d84a19](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/0d84a1961fad340f463ffef5f0c53875b88fa293))
+* img at midle ([a1a5a37](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a1a5a376e4b0ee8daf9a3c4dae1da94a488e19f0))
+* margin auto for components in navbar ([b1777d7](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b1777d753a1fc5208d538a18ec9969e01ed23eec))
+* margin auto for components in navbar ([85558de](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/85558dea94131b8ebf9f0a4f33b85d2b904417da))
+* responsive ([4c63eb0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4c63eb0e77bfa09ba29dee2b54f4be9cc0a732e4))
+* responsive ([c003c0f](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/c003c0f91d3239bb5aacf048b1e1b0484560bee9))
+
+
+### Features
+
+* add open-transition on NavBar ([99b1720](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/99b17205fd7700fe5cb38b89a854b0d8cdb3e3d5))
+* close dropdown when click ([1854aaf](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1854aaf2b0182d3b92274c6bc042c0e693a42772))
+
 # [2.9.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.6...v2.9.0) (2026-01-21)
 
 
