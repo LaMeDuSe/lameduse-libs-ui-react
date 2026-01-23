@@ -127,119 +127,111 @@ export const Enddropdown: Story = {
     NavItems: [
       {
         type: "logo",
-        position: "left",
-        src: "https://lamedusegroup.com/images/logos/lameduse_logo_grad_text_primary_bg_white.webp",
-        allowed_display: ["desktop"],
         label: "LaMeDuSe",
-        height: 100,
-        width: 300,
-      },
-      {
-        type: "logo",
         position: "left",
-        src: "https://lamedusegroup.com/images/logos/lameduse_logo_grad.webp",
-        allowed_display: ["mobile-outside"],
-        label: "LaMeDuSe",
-        height: 75,
-        width: 75,
-      },
-      {
-        type: "logo",
-        position: "left",
-        src: "https://lamedusegroup.com/images/logos/lameduse_logo_grad.webp",
+        src: "https://assets.lameduse.net/logo/lameduse_cloud_logo_grad_text_primary_bg_white.svg",
+        href: "/",
         allowed_display: ["mobile"],
-        label: "LaMeDuSe",
         height: 100,
-        width: 100,
-      },
-      {
+        width: 300
+    },
+    {
+        type: "logo",
+        label: "LaMeDuSe",
+        position: "left",
+        src: "https://assets.lameduse.net/logo/lameduse_logo_grad.svg",
+        href: "/",
+        allowed_display: ["mobile-outside"],
+        height: 100,
+        width: 100
+    },
+    {
+        type: "logo",
+        label: "LaMeDuSe",
+        position: "left",
+        src: "https://assets.lameduse.net/logo/lameduse_cloud_logo_grad_text_primary_bg_white.svg",
+        href: "/",
+        allowed_display: ["desktop"],
+        height: 100,
+        width: 300
+    },
+    {
         type: "link",
-        position: "center",
-        label: "Home",
-        href: "#",
-      },
-      {
-        type: "link",
-        position: "center",
-        label: "About",
-        href: "#",
-      },
-      {
-        type: "link",
-        position: "center",
-        label: "Services",
-        href: "#",
-      },
-      {
-        type: "link",
-        position: "center",
-        label: "Contact",
-        href: "#",
-      },
-      {
+        label: "home",
+        href: "/",
+        position: "center"
+
+    },
+    {
         type: "dropdown",
-        position: "right",
-        label: "Dropdown",
+        label: "Hébergement",
         items: [
-          {
-            type: "link",
-            position: "right",
-            label: "Item 1",
-            href: "#",
-          },
-          {
-            type: "link",
-            position: "right",
-            label: "Item 2",
-            href: "#",
-          },
-          {
-            type: "link",
-            position: "right",
-            label: "Item 3",
-            href: "#",
-          },
+            {
+              type: "link",
+              position: "right",
+              label: "VPS",
+              href: "/",
+            },
+            {
+              type: "link",
+              position: "right",
+              label:"serveur dédié",
+              href: "/",
+            },
+            {
+              type: "link",
+              position: "right",
+              label: "Kubernetes",
+              href: "/",
+            },
+        ],
+        imgSrc:"https://cdn-icons-png.flaticon.com/512/2909/2909294.png",
+        position: "center"
+    },
+    {
+        type: "dropdown",
+        label: "Infogérence",
+        position: "center",
+        items: [
+            {
+              type: "link",
+              position: "right",
+              label: "infogerance",
+              href: "/",
+            },
+            {
+              type: "link",
+              position: "right",
+              label: "Maintien en conditions opérationel",
+              href: "/",
+            },
+            {
+              type: "link",
+              position: "right",
+              label: "remplacement de matériel",
+              href: "/",
+            },
         ],
         imgSrc:"https://cdn-icons-png.flaticon.com/512/2909/2909294.png"
-      },
-      {
+    },
+    {
         type: "link",
-        position: "right",
-        label: "Login",
-        href: "#",
-      },
-      {
+        label: "A propos",
+        href: "/",
+        position: "center"
+    },
+    {
         type: "link",
-        position: "right",
-        label: "Sign Up",
-        href: "#",
-      },
-      {
-        type: "dropdown",
-        position: "right",
-        label: "end Dropdown",
-        items: [
-          {
-            type: "link",
-            position: "right",
-            label: "Item 1",
-            href: "#",
-          },
-          {
-            type: "link",
-            position: "right",
-            label: "Item 2",
-            href: "#",
-          },
-          {
-            type: "link",
-            position: "right",
-            label: "Item 3",
-            href: "#",
-          },
-        ],
-        imgSrc:"https://cdn-icons-png.flaticon.com/512/2909/2909294.png"
-      },
+        label: "contactez nous",
+        href: "/",
+        position: "center"
+    },
+    {
+      type: "link",
+      label: "contact_us",
+      href: "/",
+      position: "right" 
+    }
     ],
   },
 };

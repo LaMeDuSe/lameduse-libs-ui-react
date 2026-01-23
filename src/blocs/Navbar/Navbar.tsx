@@ -151,7 +151,7 @@ const Navbar = (props: INavbarProps) => {
     // Is the navbar open
     const [isNavOpen, setIsNavOpen] = useState(false);
     return (
-        <div className="w-full bg-white grid grid-flow-col lg:grid-cols-6 grid-cols-4">
+        <div className="w-full bg-white grid grid-flow-col lg:grid-cols-4 grid-cols-4">
             {/* Desktop start Navbar */}
             <div className="justify-self-start hidden lg:flex flex-row items-center mr-auto p-3 ml-6 col-span-1">
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
@@ -231,7 +231,7 @@ const Navbar = (props: INavbarProps) => {
                 </div>
             </section>
             {/* Desktop center Navbar */}
-            <div className="justify-self-center hidden lg:flex flex-row items-center mx-auto col-span-4">
+            <div className="justify-self-center hidden lg:flex flex-row items-center mx-auto col-span-2">
                 {props.NavItems.filter((v) => v.position == "center").map((item, key) => {
                     switch (item.type) {
                         case "link":
