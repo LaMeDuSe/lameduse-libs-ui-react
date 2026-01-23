@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import NextLinkImport from "next/link";
 import ImageImport from "next/image";
 import Link from "../../components/Link";
@@ -76,8 +76,21 @@ export interface INavDropdownProps {
 
 const NavItemDropdown = (props: INavDropdownProps) => {
     const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        function handleClickOutside(event: MouseEvent) {
+            if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
+                setIsDropdownOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [wrapperRef]);
     return (
-        <div className={`${(props.wrapClassName || "")} `}>
+        <div className={`${(props.wrapClassName || "")} `} ref={wrapperRef}>
             <div className="flex flex-row items-center cursor-pointer" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
                 <Link style="text" text_style="bold" size="medium" form="underline-hover">{props.config.label}</Link>
                 <img src={props.config.imgSrc} alt="" className={(isDropdownOpen ? "rotate-180 duration-300 ease-in-out" : "rotate-0 duration-300 ease-in-out") + " w-5 h-5 "}/>
