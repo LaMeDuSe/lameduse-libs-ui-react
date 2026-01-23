@@ -61,11 +61,12 @@ const CardOne = (props: CardOneProps) => {
           {props.icons?.map((icon, index) => (
               <IconText key={index} {...icon} />
             ))}
-          <div className=" w-fit flex mx-auto mt-4">
-            <Link href={props.link_url} type={"primary"} form="rounded" style="solid" size="medium" className="border-0 py-2 px-5 focus:outline-none">{props.link_text}</Link>
-          </div>
+          {(props.link_url && props.link_text !== "") && (
+            <div className=" w-fit flex mx-auto mt-4">
+              <Link href={props.link_url} type={"primary"} form="rounded" style="solid" size="medium" className="border-0 py-2 px-5 focus:outline-none">{props.link_text}</Link>
+            </div>
+          )}
         </div>
-
       </div>
   )
 };
