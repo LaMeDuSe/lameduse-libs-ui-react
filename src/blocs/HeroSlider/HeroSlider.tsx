@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { SlideLayout, SlideStyle, SlideStyles } from './HeroSliderStyles';
 import Link from '../../components/Link';
 import { LinkProps } from '../../components/Link/Link';
+import { propagateServerField } from 'next/dist/server/lib/render-server';
 
 
 
@@ -11,6 +12,7 @@ export interface Slide {
   title?: string;
   subtitle?: string;
   image: string;
+  textClassName?: string;
   buttons?: LinkProps[];
   style?: SlideLayout | SlideStyle;
   imgClassName ?: string;
@@ -109,12 +111,12 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
           
           <div className={`absolute top-0 left-0 w-full ${baseHeightClass} flex flex-col sm:justify-center text-white px-4 sm:px-20 ${alignmentMap[layout.align]} z-30`}>
             {layout.showTitle && (
-                <h2 className={`mt-10 sm:mt-0 text-5xl`}>
+                <h2 className={`mt-10 sm:mt-0 text-5xl ${currentSlide.textClassName}`}>
                     {currentSlide.title}
                 </h2>
             )}
             {layout.showSubtitle && (
-                <p className={`text-xl`}>
+                <p className={`text-xl ${currentSlide.textClassName}`}>
                     {currentSlide.subtitle}
                 </p>
             )}
