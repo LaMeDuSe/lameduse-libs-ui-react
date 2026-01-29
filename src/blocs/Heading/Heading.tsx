@@ -25,8 +25,9 @@ const Heading = (props: HeadingProps) => {
   props.enableAnimation = props.enableAnimation || false,
   props.imagealt = props.imagealt || "heading image";
   const baseHeightClass = "h-[300px]";
-
+  const baseHeightPixel= 300;
   const dripExtraHeightClass = props.enableShapeDivider ? "h-[420px]" : baseHeightClass;
+  const dripExtraHeightPixel = props.enableShapeDivider ? 420 : baseHeightPixel;
 
   const liquidAnimation = {
     y: [0, 10, 0],
@@ -44,13 +45,13 @@ const Heading = (props: HeadingProps) => {
     "secondary": "bg-lameduse-secondary",
     "tertiary": "bg-lameduse-tertiary",
     "none": ""
-  }[props.theme || "gradient"];
+  }[props.theme || (props.image ? "none" : "gradient")];
 
   return (
-    <div className={`w-full relative ${color_class} ${dripExtraHeightClass} flex flex-col items-center justify-center`}>
-      {props.image && <NextImage src={props.image} alt={props.imagealt} height={300} width={2000} className="absolute w-full h-[300px] object-cover filter blur-sm brightness" />}
-      <h1 className={`${props.texteClassName} z-10 text-center text-4xl mb-3`}>{props.title}</h1>
-      <p className={`${props.texteClassName} z-10 lg:text-2xl w-1/2 text-center`}>{props.description}</p>
+    <div className={`w-full relative ${color_class} ${dripExtraHeightClass} flex flex-col items-center justify-center `}>
+      {props.image && <NextImage src={props.image} alt={props.imagealt} height={dripExtraHeightPixel} width={2000} className={`absolute w-full object-cover filter blur-sm brightness ${dripExtraHeightClass}`} />}
+      <h1 className={`${props.texteClassName} z-10 text-center text-4xl mb-3 ${props.enableShapeDivider ? "-translate-y-[60px]" : ""}`}>{props.title}</h1>
+      <p className={`${props.texteClassName} z-10 lg:text-2xl w-1/2 text-center ${props.enableShapeDivider ? "-translate-y-[60px]" : ""}`}>{props.description}</p>
       {props.enableShapeDivider && (
               <motion.div className="absolute bottom-0 left-0 w-full leading-[0] z-20 pointer-events-none" animate={props.enableAnimation ? liquidAnimation : {}}>
                   <svg
