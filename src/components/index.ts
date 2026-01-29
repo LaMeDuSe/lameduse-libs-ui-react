@@ -8,6 +8,8 @@ export { default as ContactCard } from "./ContactCard";
 export { default as Icon } from "./Icon";
 export { default as Link } from "./Link";
 // Template is not exported as it is not a component
+export { default as TimelineH } from "./TimelineH/TimelineH";
+export { default as TimelineV } from "./TimelineV/TimelineV";
 export { default as Title } from "./Title";
 export { default as Calendar } from "./Calendar";
 export { default as IconText } from "./IconText";
