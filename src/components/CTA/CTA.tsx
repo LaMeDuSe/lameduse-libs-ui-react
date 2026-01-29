@@ -15,7 +15,7 @@ const CTA = (props: CTAProps) => {
 
   let classes = "m-3";
   return (
-    <div className="text-center w-full flex flex-col sm:flex-row justify-center sm:space-x-4 px-4 sm:px-0 space-y-4 sm:space-y-0">
+    <div className="text-center w-fit mx-auto sm:w-full flex flex-col sm:flex-row justify-center sm:space-x-4 px-4 sm:px-0 space-y-4 sm:space-y-0">
       <Link {...props.first} />
       <Link {...props.second} />
     </div>
