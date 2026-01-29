@@ -247,7 +247,7 @@ const Navbar = (props: INavbarProps) => {
                 }
             </div>
             {/* Desktop end Navbar */}
-            <div className="justify-self-end hidden lg:flex flex-row flex-row-reverse items-center ml-auto pr-9 col-span-1">
+            <div className="justify-self-end hidden lg:flex flex-row-reverse items-center pr-9 col-span-1">
                 {props.NavItems.filter((v) => v.position == "right").map((item, key) => {
                     switch (item.type) {
                         case "link":
