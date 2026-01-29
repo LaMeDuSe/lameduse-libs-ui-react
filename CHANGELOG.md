@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.12.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.12.0...v2.12.1) (2026-01-29)
+
+
+### Bug Fixes
+
+* waves animation ([5c3116d](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5c3116de627a911824cf9849b7bab1ea53019718))
+
 # [2.12.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.11.0...v2.12.0) (2026-01-29)
 
 
