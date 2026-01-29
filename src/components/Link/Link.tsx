@@ -72,7 +72,7 @@ const Link = (props: LinkProps) => {
   let size_class = {
     "small": "px-3 py-1 text-sm",
     "medium": "px-4 py-2 text-base",
-    "large": "px-5 py-3 text-lg",
+    "large": "px-8 sm:px-5 py-3 text-lg",
     "none": "",
   }[props.size];
   let text_style_class = {
