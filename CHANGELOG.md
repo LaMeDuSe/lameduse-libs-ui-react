@@ -1,5 +1,26 @@
 # LaMeDuSe Change Log
 
+# [2.13.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.12.1...v2.13.0) (2026-01-29)
+
+
+### Bug Fixes
+
+* added contenttype ([93ca455](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/93ca455f8db4f69300cda795c33429215d11803b))
+* correct position of button ([e3f71dc](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/e3f71dc3f6797158a309033441c148125eeb0277))
+* correct position of button ([6dbf070](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6dbf0709de6d02ef04f011942a792f5cf87a8b3f))
+* correct sizing for small windows ([150f307](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/150f3077c45188ef72a735043b5ba1d650fb8e00))
+* end navbar direction ([92f4b86](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/92f4b864dfae41ef12675cadd28607e9f28ed29e))
+* exported timelineH and V ([3839352](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/383935256c572ac1ff4faad07c6e5c7674a440b4))
+* missing changes from previous commit ([09d96c9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/09d96c9034cb8fd5617364666ff44f9358776a47))
+* rename 'year' in 'date' ([4696137](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4696137774bd68a7c2b593e5bfedfaf40501f0e2))
+
+
+### Features
+
+* add timeline ([8f3b9ae](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8f3b9ae05d62bb35a98e94d3d736b3d6177ba985))
+* add TimelineH ([612e223](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/612e2232ba365d041ce39579c1dc470df7b44014))
+* content is now above the line for TimelineH ([a9818a9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a9818a9967d915ebc0acc852bfdd25cd268b163d))
+
 ## [2.12.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.12.0...v2.12.1) (2026-01-29)
 
 

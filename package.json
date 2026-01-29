@@ -1,6 +1,6 @@
 {
   "name": "@lameduse/lameduse-libs-ui-react",
-  "version": "2.12.1",
+  "version": "2.13.0",
   "author": "LaMeDuSe",
   "description": "@LaMeDuSe frontend storybook",
   "scripts": {
