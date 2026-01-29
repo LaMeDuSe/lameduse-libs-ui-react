@@ -1,5 +1,18 @@
 # LaMeDuSe Change Log
 
+# [2.11.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.10.0...v2.11.0) (2026-01-29)
+
+
+### Bug Fixes
+
+* style to text ([baa4fc9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/baa4fc9b9ccdb76f6951c78c0488b855061c01a6))
+* transition effect ([072aa19](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/072aa194722b160951c58e8e506e8f5efdf9ee09))
+
+
+### Features
+
+* add wave under heroslider" ([23e1e09](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/23e1e099ad0e5870b41f8d905b665d47e46534cd))
+
 # [2.10.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.9.0...v2.10.0) (2026-01-23)
 
 
