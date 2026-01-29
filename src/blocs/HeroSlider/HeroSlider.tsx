@@ -16,7 +16,7 @@ export interface Slide {
   buttons?: LinkProps[];
   style?: SlideLayout | SlideStyle;
   imgClassName ?: string;
-  
+  bg ?: string;
 }
 
 /**
@@ -36,6 +36,7 @@ export interface HeroSliderProps {
   interval?: number;
   enableShapeDivider?: boolean;
   enableAnimation?: boolean;
+  bg?: string;
 }
 
 const HeroSlider: React.FC<HeroSliderProps> = ({
@@ -44,6 +45,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
   interval = 5000,
   enableShapeDivider = false, 
   enableAnimation = false,
+  bg = "bg-black"
 }) => {
   const baseHeightClass = "h-[500px]";
 
@@ -93,7 +95,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
   };
 
   return (
-    <div className={`relative w-full ${dripExtraHeightClass} overflow-hidden bg-black z-0 transition-all duration-300`}>
+    <div className={`relative w-full ${dripExtraHeightClass} overflow-hidden ${bg} z-0 transition-all duration-300`}>
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
