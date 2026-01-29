@@ -1,5 +1,17 @@
 # LaMeDuSe Change Log
 
+# [2.12.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.11.0...v2.12.0) (2026-01-29)
+
+
+### Bug Fixes
+
+* bg ([7d7112e](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/7d7112e95f0b75a57542a7ebccf5d28a3b17b011))
+
+
+### Features
+
+* add waves under heading bloc ([315fb6c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/315fb6c3d2294853809449ec419d4787f74ba148))
+
 # [2.11.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.10.0...v2.11.0) (2026-01-29)
 
 
