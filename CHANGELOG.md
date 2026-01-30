@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+# [2.14.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.13.1...v2.14.0) (2026-01-30)
+
+
+### Features
+
+* new version ([f0a3c54](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/f0a3c54d3323b30aa0f9dd7e96f56d13038f8fa9))
+
 ## [2.13.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.13.0...v2.13.1) (2026-01-30)
 
 
