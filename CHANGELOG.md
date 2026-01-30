@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.13.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.13.0...v2.13.1) (2026-01-30)
+
+
+### Bug Fixes
+
+* animation of heroslider ([7e4c950](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/7e4c950169e91610db3398c0f962ac3af0abcebf))
+
 # [2.13.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.12.1...v2.13.0) (2026-01-29)
 
 
