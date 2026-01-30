@@ -78,6 +78,7 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
       : currentSlide.style
     : SlideStyles.default;
 
+
   const alignmentMap = {
     left: 'items-start text-left',
     center: 'items-center text-center',
@@ -99,11 +100,11 @@ const HeroSlider: React.FC<HeroSliderProps> = ({
       <AnimatePresence mode="wait">
         <motion.div
           key={currentIndex}
-          initial={{ scaleX: 0.8, opacity: 0 }}
-          animate={{ scaleX: 1, opacity: 1 }}
-          exit={{ scaleX: 0.8, opacity: 0 }}
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          exit={{ scale: 0.8, opacity: 0 }}
           transition={{ duration: 0.5, ease: 'easeInOut' }}
-          className="absolute inset-0 z-10"
+          className="absolute inset-0 z-10 overflow-hidden"
         >
           <img
             src={slides[currentIndex].image}
