@@ -37,6 +37,7 @@ const Heading = (props: HeadingProps) => {
         duration: 4, 
         repeat: Infinity,
         ease: "easeInOut" as const
+        
     }
   };
 
