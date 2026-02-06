@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+# [2.16.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.15.0...v2.16.0) (2026-02-06)
+
+
+### Features
+
+* use a dynamic map ([3615614](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/3615614f2a9ce3d5469579ab492cba11669cac2f))
+
 # [2.15.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.14.0...v2.15.0) (2026-02-06)
 
 
