@@ -1,5 +1,20 @@
 # LaMeDuSe Change Log
 
+# [2.15.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.14.0...v2.15.0) (2026-02-06)
+
+
+### Bug Fixes
+
+* add map to import.test.ts ([433e51b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/433e51b62d43fea752e9a7554468dafba2611931))
+* delete personal test api key ([37abea9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/37abea99d7decced6b695249c682d45c7e1e5919))
+* update src/blocs/Heading/Heading.tsx ([1f130c9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1f130c994c69d68e56ea11b776b15190ee969169))
+* update src/components/Map/Map.test.tsx ([a346add](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a346add61fa11ac54a2d602eb6e21e821033e5cd))
+
+
+### Features
+
+* add Map components ([0de95b7](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/0de95b754f09858e8576299a6f52ed6f89d92037))
+
 # [2.14.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.13.1...v2.14.0) (2026-01-30)
 
 
