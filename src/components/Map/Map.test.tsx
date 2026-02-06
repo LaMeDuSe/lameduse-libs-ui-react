@@ -15,7 +15,7 @@ describe("Map", () => {
     
     const iframe = container.querySelector('iframe');
     expect(iframe).not.toBeNull();
-    expect(iframe?.src).toContain('q=48.866667,2.333333');
+    expect(iframe?.src).toContain(`q=${encodeURIComponent("48.866667,2.333333")}`);
   });
 
   test("renders the map component with a q parameter", () => {
@@ -29,6 +29,6 @@ describe("Map", () => {
     
     const iframe = container.querySelector('iframe');
     expect(iframe).not.toBeNull();
-    expect(iframe?.src).toContain(`q=${placeQuery}`);
+    expect(iframe?.src).toContain(`q=${encodeURIComponent(placeQuery)}`);
   });
 });
