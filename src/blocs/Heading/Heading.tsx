@@ -21,8 +21,8 @@ export interface HeadingProps {
 const Heading = (props: HeadingProps) => {
   // default values
   props = { ...props }; // copy to avoid modifying the original object
+  props.texteClassName = props.texteClassName || "text-white";
   props.enableShapeDivider = props.enableShapeDivider ||false, 
-  props.texteClassName = props.texteClassName || "text-white",
   props.enableAnimation = props.enableAnimation || false,
   props.imagealt = props.imagealt || "heading image";
   const baseHeightClass = "h-[300px]";
