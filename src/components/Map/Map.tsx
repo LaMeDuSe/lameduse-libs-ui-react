@@ -7,7 +7,7 @@ export interface MapProps {
   /**
    * The name of the place 
    */
-  q?: string
+  q?: string;
   /**
    * The latitude for the center of the map.
    */
