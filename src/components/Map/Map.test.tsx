@@ -22,8 +22,6 @@ describe("Map", () => {
     const placeQuery = "Eiffel Tower, Paris, France";
     const { container } = render(
       <Map
-        lat={0} // lat/lng are still required by the interface
-        lng={0}
         q={placeQuery}
         apiKey={"YOUR_API_KEY"}
       />
