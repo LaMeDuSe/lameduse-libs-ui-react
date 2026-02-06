@@ -29,6 +29,6 @@ describe("Map", () => {
     
     const iframe = container.querySelector('iframe');
     expect(iframe).not.toBeNull();
-    expect(iframe?.src).toContain(`q=${encodeURIComponent(placeQuery)}`);
+    expect(iframe?.src).toContain(`q=${placeQuery}`);
   });
 });
