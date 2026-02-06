@@ -28,7 +28,7 @@ export const Primary: Story = {
   args: {
     lat:48.86369323730469,
     lng:2.3345255851745605,
-    apiKey:"AIzaSyAayxBSitDjmfu-iR41ZfvUwV7aRf-PHSk",
+    apiKey:"YOUR_GOOGLE_API_KEY",
     zoom:16,
     width:800,
     height:400,
