@@ -32,6 +32,7 @@ export const Primary: Story = {
     zoom:16,
     width:800,
     height:400,
+    q:"LaMeDuSe, Montpellier"
   },
 };
 
