@@ -1,54 +1,74 @@
 import React from 'react';
-import Image from 'next/image';
 
-// 1. Définition des types pour les props
-export interface StaticMapProps {
+/**
+ * Props for the Map component.
+ */
+export interface MapProps {
+  /**
+   * The latitude for the center of the map.
+   */
   lat: number;
+  /**
+   * The longitude for the center of the map.
+   */
   lng: number;
+  /**
+   * The zoom level of the map.
+   */
   zoom?: number;
-  width?: number;
-  height?: number;
-  alt?: string;
-  mapType?: "roadmap" | "satellite" | "terrain" | "hybrid";
+  /**
+   * The width of the map in pixels.
+   */
+  width?: string | number;
+  /**
+   * The height of the map in pixels.
+   */
+  height?: string | number;
+  /**
+   * Your Google Maps API key.
+   */
   apiKey: string;
+  /**
+   * Additional CSS class names to apply to the container.
+   */
+  className?: string;
 }
 
-const StaticMap = (props: StaticMapProps) => {
-  // On crée une copie locale pour appliquer les valeurs par défaut
-  props = { ...props };
-  props.zoom = props.zoom || 14;
-  props.width = props.width || 600;
-  props.height = props.height || 400;
-  props.alt = props.alt || "Carte de localisation";
-  props.mapType = props.mapType || 'roadmap';
+/**
+ * A component to display an embedded Google Map.
+ */
+const Map = ({
+  lat,
+  lng,
+  zoom = 14,
+  width = '100%',
+  height = 450,
+  apiKey,
+  className = '',
+}: MapProps) => {
+  if (!apiKey) {
+    return <div style={{ width, height, backgroundColor: '#e0e0e0' }}>API Key is missing.</div>;
+  }
 
-  const params = new URLSearchParams({
-    center: `${props.lat},${props.lng}`,
-    zoom: props.zoom.toString(),
-    size: `${props.width}x${props.height}`,
-    maptype: props.mapType,
-    key: props.apiKey,
-    markers: `color:red|${props.lat},${props.lng}`
-  });
-
-  const mapUrl = `https://maps.googleapis.com/maps/api/staticmap?${params.toString()}`;
+  const embedUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${lat},${lng}&zoom=${zoom}`;
 
   return (
-    // Ici, on utilise props.width et props.height
-    <div 
-      className="relative overflow-hidden rounded-lg" 
-      style={{ width: props.width, height: props.height }}
+    <div
+      className={`relative overflow-hidden rounded-lg ${className}`}
+      style={{ width, height }}
     >
-      <Image 
-        src={mapUrl}
-        alt={props.alt} // Ajout de props. ici aussi
-        width={props.width} // Et ici
-        height={props.height} // Et là
-        unoptimized 
-        className="object-cover"
-      />
+      <iframe
+        title="Google Map"
+        width="100%"
+        height="100%"
+        loading="lazy"
+        allowFullScreen
+        referrerPolicy="no-referrer-when-downgrade"
+        src={embedUrl}
+        style={{ border: 0 }}
+      ></iframe>
     </div>
   );
 };
 
-export default StaticMap;
+export default Map;
