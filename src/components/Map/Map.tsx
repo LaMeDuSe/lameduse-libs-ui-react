@@ -5,13 +5,17 @@ import React from 'react';
  */
 export interface MapProps {
   /**
+   * The name of the place 
+   */
+  q?: string
+  /**
    * The latitude for the center of the map.
    */
-  lat: number;
+  lat?: number;
   /**
    * The longitude for the center of the map.
    */
-  lng: number;
+  lng?: number;
   /**
    * The zoom level of the map.
    */
@@ -38,6 +42,7 @@ export interface MapProps {
  * A component to display an embedded Google Map.
  */
 const Map = ({
+  q,
   lat,
   lng,
   zoom = 14,
@@ -49,8 +54,12 @@ const Map = ({
   if (!apiKey) {
     return <div style={{ width, height, backgroundColor: '#e0e0e0' }}>API Key is missing.</div>;
   }
+  if (!(lat && lng)&& !q){
+    return <div style={{ width, height, backgroundColor: '#e0e0e0' }}>Location is missing.</div>;
+  }
 
-  const embedUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${lat},${lng}&zoom=${zoom}`;
+  const locationQuery = q || `${lat},${lng}`;
+  const embedUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${locationQuery}&zoom=${zoom}`;
 
   return (
     <div
