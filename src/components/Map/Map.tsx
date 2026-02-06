@@ -59,7 +59,8 @@ const Map = ({
   }
 
   const locationQuery = q || `${lat},${lng}`;
-  const embedUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${locationQuery}&zoom=${zoom}`;
+  const encodedLocationQuery = encodeURIComponent(locationQuery);
+  const embedUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=${encodedLocationQuery}&zoom=${zoom}`;
 
   return (
     <div
