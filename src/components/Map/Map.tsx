@@ -54,7 +54,7 @@ const Map = ({
   if (!apiKey) {
     return <div style={{ width, height, backgroundColor: '#e0e0e0' }}>API Key is missing.</div>;
   }
-  if (!(lat && lng)&& !q){
+  if (!(lat && lng) && !q) {
     return <div style={{ width, height, backgroundColor: '#e0e0e0' }}>Location is missing.</div>;
   }
 
