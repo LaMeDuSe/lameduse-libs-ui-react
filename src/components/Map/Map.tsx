@@ -17,11 +17,13 @@ export interface MapProps {
    */
   zoom?: number;
   /**
-   * The width of the map in pixels.
+   * The width of the map. Accepts any valid CSS dimension string (e.g. '100%', '400px', '2rem')
+   * or a number, which will be treated as pixels.
    */
   width?: string | number;
   /**
-   * The height of the map in pixels.
+   * The height of the map. Accepts any valid CSS dimension string (e.g. '100%', '400px', '2rem')
+   * or a number, which will be treated as pixels.
    */
   height?: string | number;
   /**
