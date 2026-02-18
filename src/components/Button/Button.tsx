@@ -10,6 +10,8 @@ export interface ButtonProps {
   color_class?: string;
   className?: string;
   onClick?: () => void;
+  image?: string;
+  imgClassName?:string;
 }
 
 const Button = (props: ButtonProps) => {
@@ -20,6 +22,8 @@ const Button = (props: ButtonProps) => {
   props.form = props.form || "rounded";
   props.size = props.size || "medium";
   props.className = props.className || "";
+  props.imgClassName = props.imgClassName || "";
+
 
   // classes
   let color_class = props.color_class || {
@@ -58,17 +62,20 @@ const Button = (props: ButtonProps) => {
     "large": "px-5 py-3 text-lg",
   }[props.size];
   return (
-    <button
-      className={`
-        ${color_class}
-        ${form_class}
-        ${size_class}
-        ${props.className}
-      `}
-      onClick={props.onClick}
-    >
-      {props.label}
-    </button>
+    <div>
+      <button
+        className={`
+          ${color_class}
+          ${form_class}
+          ${size_class}
+          ${props.className}
+        `}
+        onClick={props.onClick}
+      >
+        {props.image && <img src={props.image} alt={props.label} className={props.imgClassName}/>}
+        {props.label}
+      </button>
+    </div>
   )
 };
 
