@@ -1,5 +1,23 @@
 # LaMeDuSe Change Log
 
+# [2.18.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.17.0...v2.18.0) (2026-02-18)
+
+
+### Bug Fixes
+
+* ghostpost centered ([de6bf18](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/de6bf18718bf0d9a255bf8d87111fed2115e6404))
+
+
+### Features
+
+* add new style on checkbox ([201e2dd](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/201e2ddd8da86173953b745801f71136bb2fa3e7))
+* add new style on checkbox ([f9bc59c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/f9bc59cd69444551dd363d235a0dbac4baf7b382))
+* add new style on forms ([4ecd2a8](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4ecd2a8d1c2fbfd459895289c0af80fa1149d3c8))
+* add new type of toggle button ([45560ac](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/45560ac0254c0112dfd1aef40d537052262c4881))
+* add possibility to use image in a button ([d561696](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d5616964241adfc61238f8743a6b0d5b1878519a))
+* add toggleButton On/Off ([5dac080](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5dac080eaaa8c6a401bf0d0f2913f1c1f2354251))
+* dropdown open when hover ([42a4468](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/42a44681092efead5f1b1a305b1abdb41e60c5c9))
+
 # [2.17.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.16.0...v2.17.0) (2026-02-18)
 
 
