@@ -65,7 +65,7 @@ const CheckBoxForm = (props: CheckBoxFormsProps) => {
         const isChecked = values.includes(item.answer);
         const isDisabled = inputType !== "radio" && props.maxSelect !== undefined && values.length >= props.maxSelect && !isChecked;
         return (
-        <label key={index} className={`flex items-center justify-center px-4 py-2 my-2 gap-2 rounded-[50px] transition-all duration-200 ${isDisabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"} ${isChecked ? `${colors_class} text-white shadow-sm` : "bg-[#f0f0f0] text-gray-700 hover:bg-gray-200"}`}>
+        <label key={index} className={`flex items-center justify-center px-4 py-2 my-2 gap-2 rounded-[40px] transition-all duration-300 ${isDisabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"} ${isChecked ? `${colors_class} text-white shadow-sm` : "bg-[#f0f0f0] text-gray-700 hover:bg-gray-200"}`}>
           <input
             type={inputType}
             value={item.answer}
