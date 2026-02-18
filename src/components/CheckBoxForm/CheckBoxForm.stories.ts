@@ -29,7 +29,7 @@ const checkbox: CheckBoxAnswerProps[] = [
     answerClassName:"text-bolt"
   },
   {
-    answer:"2"
+    answer:"Longue phrase"
   }
 ];
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
@@ -43,7 +43,7 @@ export const Primary: Story = {
         answerClassName:"text-bolt"
       },
       {
-        answer:"2"
+        answer:"Longue Phrase"
       }
     ]
   },

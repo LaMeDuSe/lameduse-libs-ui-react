@@ -9,6 +9,8 @@ export interface CheckBoxFormsProps {
   maxSelect?: number;
   cols?: number;
   style?: "row" | "col";
+  colors?: "primary" | "secondary" | "tertiary" | "gradient1" | "gradient2" | "gradient3" | "gradient4";
+  colors_class?: string;
 };
 
 export interface CheckBoxAnswerProps {
@@ -17,10 +19,23 @@ export interface CheckBoxAnswerProps {
 };
 
 const CheckBoxForm = (props: CheckBoxFormsProps) => {
+  props = {...props}; // copy to avoid modifying the original object
   const [values, setValues] = useState<string[]>([]);
   const inputType = props.type || "checkbox";
   const cols = props.cols || 1;
   const styles = props.style || "row";
+  props.colors = props.colors || "primary";
+  
+  let colors_class = props.colors_class || {
+    "primary": "bg-lameduse-primary",
+    "secondary": "bg-lameduse-secondary",
+    "tertiary": "bg-lameduse-tertiary",
+    "gradient1": "bg-gradient-to-r from-lameduse-primary to-lameduse-secondary",
+    "gradient2": "bg-gradient-to-r from-lameduse-secondary to-lameduse-tertiary",
+    "gradient3": "bg-gradient-to-r from-lameduse-tertiary to-lameduse-primary",
+    "gradient4": "bg-gradient-to-r from-lameduse-secondary via-lameduse-tertiary to-lameduse-primary",
+  }[props.colors];
+
   let divStyle: string = "";
   if (styles === "col") {
     divStyle = `col-span-${cols} gap-2 `;
@@ -47,28 +62,18 @@ const CheckBoxForm = (props: CheckBoxFormsProps) => {
       <div className="w-full"></div>
       <div className={`${divStyle} `}>
       {props.answer.map((item, index) => {
-        const isDisabled = inputType !== "radio" && props.maxSelect !== undefined && values.length >= props.maxSelect && !values.includes(item.answer);
+        const isChecked = values.includes(item.answer);
+        const isDisabled = inputType !== "radio" && props.maxSelect !== undefined && values.length >= props.maxSelect && !isChecked;
         return (
-        <label key={index} className={`flex items-center gap-2 ${isDisabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"}`}>
-          <div className="relative flex items-center">
-            <input
-              type={inputType}
-              value={item.answer}
-              checked={values.includes(item.answer)}
-              onChange={handleChange}
-              disabled={isDisabled}
-              className={`peer h-5 w-5 appearance-none border border-gray-300 transition-all checked:border-blue-500 checked:bg-blue-500 hover:shadow-md ${inputType === "radio" ? "rounded-full" : "rounded"} ${isDisabled ? "cursor-not-allowed" : "cursor-pointer"}`}
-            />
-            <span className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none opacity-0 peer-checked:opacity-100 text-white">
-              {inputType === "radio" ? (
-                <div className="h-2 w-2 rounded-full bg-white" />
-              ) : (
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5" viewBox="0 0 20 20" fill="currentColor" stroke="currentColor" strokeWidth="1">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"></path>
-                </svg>
-              )}
-            </span>
-          </div>
+        <label key={index} className={`flex items-center justify-center px-4 py-2 my-2 gap-2 rounded-[50px] transition-all duration-200 ${isDisabled ? "cursor-not-allowed opacity-50" : "cursor-pointer"} ${isChecked ? `${colors_class} text-white shadow-sm` : "bg-[#f0f0f0] text-gray-700 hover:bg-gray-200"}`}>
+          <input
+            type={inputType}
+            value={item.answer}
+            checked={isChecked}
+            onChange={handleChange}
+            disabled={isDisabled}
+            className="sr-only"
+          />
           <span className={item.answerClassName}>{item.answer}</span>
         </label>)
       })}
