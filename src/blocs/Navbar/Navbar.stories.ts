@@ -2,6 +2,10 @@ import type { Meta, StoryObj } from '@storybook/nextjs';
 
 import Navbar from './Navbar';
 
+// @ts-ignore
+import chevronImport from './chevron.png';
+const chevron = chevronImport as { src: string };
+
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'LaMeDuSe/Blocs/Navbar',
@@ -103,7 +107,7 @@ export const Primary: Story = {
             href: "#",
           },
         ],
-      imgSrc:"https://cdn-icons-png.flaticon.com/512/2909/2909294.png"
+      imgSrc: chevron.src
       },
       {
         type: "link",
@@ -325,4 +329,3 @@ export const CustomProps: Story = {
     ],
   },
 };
-
