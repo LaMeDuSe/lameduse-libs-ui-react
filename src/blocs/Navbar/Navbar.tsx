@@ -75,28 +75,22 @@ export interface INavDropdownProps {
 }
 
 const NavItemDropdown = (props: INavDropdownProps) => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isDropdownHover, setIsDropdownHover] = useState(false);
     const wrapperRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        function handleClickOutside(event: MouseEvent) {
-            if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
-                setIsDropdownOpen(false);
-            }
-        }
-        document.addEventListener("mousedown", handleClickOutside);
-        return () => {
-            document.removeEventListener("mousedown", handleClickOutside);
-        };
-    }, [wrapperRef]);
     return (
-        <div className={`${(props.wrapClassName || "")} `} ref={wrapperRef}>
-            <div className="flex flex-row items-center cursor-pointer" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+        <div 
+            className={`${(props.wrapClassName || "")} `} 
+            ref={wrapperRef}
+            onMouseEnter={() => setIsDropdownHover(true)}
+            onMouseLeave={() => setIsDropdownHover(false)}
+        >
+            <div className="flex flex-row items-center cursor-pointer" onClick={() => setIsDropdownHover(!isDropdownHover)}>
                 <Link style="text" text_style="bold" size="medium" form="underline-hover">{props.config.label}</Link>
-                <img src={props.config.imgSrc} alt="" className={(isDropdownOpen ? "rotate-180 duration-300 ease-in-out" : "rotate-0 duration-300 ease-in-out") + " w-5 h-5 "}/>
+                <img src={props.config.imgSrc} alt="" className={(isDropdownHover ? "rotate-180 duration-300 ease-in-out" : "rotate-0 duration-300 ease-in-out") + " -translate-x-2 w-5 h-5"}/>
             </div>
             <div className="relative center">
-                <ul className={(isDropdownOpen ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0") + " absolute z-20 bg-white shadow-lameduse-primary rounded-lg shadow-sm transition-all duration-300 ease-in-out origin-top"}>
+                <ul className={(isDropdownHover ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0") + " absolute z-20 bg-white shadow-lameduse-primary rounded-lg shadow-sm transition-all duration-300 ease-in-out origin-top"}>
                     <div className="p-4 space-y-2 justify-center items-center">
                         {props.config.items.map((item, index) => {
                             return <NavLink key={index} config={item} className="p-2 w-full" view="desktop" />
