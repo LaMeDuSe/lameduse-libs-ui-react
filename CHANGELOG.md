@@ -1,5 +1,21 @@
 # LaMeDuSe Change Log
 
+# [2.17.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.16.0...v2.17.0) (2026-02-18)
+
+
+### Bug Fixes
+
+* fix src/components/Map/Map.test.tsx ([d2a95ab](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d2a95abd1e8fba720d27d1928feb6c695e290732))
+* fix test for the map ([f32803b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/f32803bc8cc45d1a2ba86a212dc32c246cb5aa41))
+* fix test for the map ([1b5419d](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1b5419dbe62835daac5c080853d2a3d5136b4fe3))
+* update src/components/Map/Map.tsx ([227da48](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/227da48d02c06c3aa8247b782df8196d222eb916))
+* update src/components/Map/Map.tsx ([29d4a64](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/29d4a64b5645355068240c509f386ce1003dd2f3))
+
+
+### Features
+
+* use a dynamic map ([8349211](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/83492113a5a3a61a6dab88c122870a7c1f0d9f7d))
+
 # [2.16.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.15.0...v2.16.0) (2026-02-06)
 
 
