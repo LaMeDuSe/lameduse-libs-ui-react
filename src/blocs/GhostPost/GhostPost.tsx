@@ -72,7 +72,7 @@ const GhostPost = (props: GhostPostProps) => {
                         height: props.CardHeight
                       }
                     } 
-                    className={`max-w-md mb-4rounded overflow-hidden shadow-lg select-none flex flex-col`}
+                    className={`max-w-md mx-auto mb-4 rounded overflow-hidden shadow-lg select-none flex flex-col`}
                   >
                     <Image width={448} height={250} className="w-full pointer-events-none h-[250px] object-cover" src={post.feature_image ?? "https://assets.lameduse.net/logo/lameduse_logo_grad.webp"} alt={post.feature_image_alt ?? "no image"} />
                     <div className="px-6 py-4">
