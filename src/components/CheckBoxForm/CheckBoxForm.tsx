@@ -7,6 +7,8 @@ export interface CheckBoxFormsProps {
   answer: CheckBoxAnswerProps[]
   type?: "checkbox" | "radio";
   maxSelect?: number;
+  cols?: number;
+  style?: "row" | "col";
 };
 
 export interface CheckBoxAnswerProps {
@@ -17,7 +19,14 @@ export interface CheckBoxAnswerProps {
 const CheckBoxForm = (props: CheckBoxFormsProps) => {
   const [values, setValues] = useState<string[]>([]);
   const inputType = props.type || "checkbox";
-
+  const cols = props.cols || 1;
+  const styles = props.style || "row";
+  let divStyle: string = "";
+  if (styles === "col") {
+    divStyle = `col-span-${cols} gap-2 `;
+  } else {
+    divStyle = `flex flex-wrap col-span-${cols} gap-5`;
+  }
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { checked, value } = event.target;
     if (inputType === "radio") {
@@ -33,8 +42,10 @@ const CheckBoxForm = (props: CheckBoxFormsProps) => {
   };
 
   return (
-    <div className="flex flex-col gap-2 p-2.5">
-      <p className={props.questionClassName}>{props.question}</p>
+    <div className={`grid grid-cols-${cols} gap-2 p-2.5`}>
+      <p className={`${props.questionClassName} col-span-${cols}`}>{props.question}</p>
+      <div className="w-full"></div>
+      <div className={`${divStyle} `}>
       {props.answer.map((item, index) => {
         const isDisabled = inputType !== "radio" && props.maxSelect !== undefined && values.length >= props.maxSelect && !values.includes(item.answer);
         return (
@@ -61,6 +72,7 @@ const CheckBoxForm = (props: CheckBoxFormsProps) => {
           <span className={item.answerClassName}>{item.answer}</span>
         </label>)
       })}
+      </div>
     </div>
   );
 }
