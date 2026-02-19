@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 
 export interface ButtonProps {
@@ -12,9 +12,14 @@ export interface ButtonProps {
   onClick?: () => void;
   image?: string;
   imgClassName?:string;
+  hover?: "scaleUp" | "nothing" | "scaleDown" | "color";
+  hover_class?: string;
+  clicked?: "bump" | "jump" | "none";
+  clicked_class?: string;
 }
 
 const Button = (props: ButtonProps) => {
+  const [animationPhase, setAnimationPhase] = useState(0);
   // default values
   props = {...props}; // copy to avoid modifying the original object
   props.type = props.type || "primary";
@@ -23,9 +28,65 @@ const Button = (props: ButtonProps) => {
   props.size = props.size || "medium";
   props.className = props.className || "";
   props.imgClassName = props.imgClassName || "";
+  props.hover = props.hover || "nothing";
+  props.clicked = props.clicked || "none";
 
+  const handleClick = () => {
+    if (props.clicked === "jump") {
+      setAnimationPhase(1);
+      setTimeout(() => {
+        setAnimationPhase(2);
+        setTimeout(() => setAnimationPhase(0), 150);
+      }, 150);
+    } else if (props.clicked !== "none") {
+      setAnimationPhase(1);
+      setTimeout(() => setAnimationPhase(0), 150);
+    }
+    if (props.onClick) props.onClick();
+  };
 
   // classes
+  let clicked_class = props.clicked_class || {
+    "bump" : `transition-transform duration-75 ${animationPhase === 1 ? "scale-95" : ""}`,
+    "jump" : `transition-transform duration-200 ${
+      animationPhase === 1 ? "-translate-y-2 scale-x-90 scale-y-110" : 
+      animationPhase === 2 ? "translate-y-1 scale-y-90 scale-x-110" : ""
+    }`,
+    "none" : "",
+  }[props.clicked]
+
+  let hover_class = props.hover_class || {
+    "scaleUp": "transition duration-200 hover:ease-in-out hover:scale-110",
+    "nothing" : "",
+    "scaleDown": "transition duration-200 hover:ease-in-out hover:scale-90",
+    "color": {
+      "primary": {
+        "solid" : "transition duration-100 hover:bg-opacity-80",
+        "outline" : "transition duration-100 hover:border-opacity-70 hover:text-opacity-70"
+      },
+      "secondary": {
+        "solid" : "transition duration-100 hover:bg-opacity-80",
+        "outline" : "transition duration-100 hover:border-opacity-70 hover:text-opacity-70"
+      },
+      "tertiary": {
+        "solid" : "transition duration-100 hover:bg-opacity-80",
+        "outline" : "transition duration-100 hover:border-opacity-70 hover:text-opacity-70",
+      },
+      "danger": {
+        "solid" : "transition duration-100 hover:bg-red-600",
+        "outline" : "transition duration-100 hover:border-red-600 hover:text-red-600",
+      },
+      "white": {
+        "solid" : "transition duration-100 hover:bg-gray-100",
+        "outline" : "transition duration-100 hover:border-gray-300",
+      },
+      "gradient": {
+        "solid" : "transition duration-100 hover:opacity-80",
+        "outline" : "transition duration-100 hover:opacity-80",
+      }
+    }[props.type][props.style]
+  }[props.hover] 
+
   let color_class = props.color_class || {
     "primary": {
       "solid": "bg-lameduse-primary text-white",
@@ -48,8 +109,8 @@ const Button = (props: ButtonProps) => {
       "outline": "text-white border border-white",
     },
     "gradient": {
-      "solid": "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-lameduse-primary to-lameduse-secondary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lameduse-secondary",
-      "outline": "inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-gradient-to-r from-lameduse-secondary to-lameduse-tertiary hover:opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lameduse-tertiary",
+      "solid": "text-white bg-gradient-to-r from-lameduse-primary to-lameduse-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lameduse-secondary",
+      "outline": "text-white bg-gradient-to-r from-lameduse-secondary to-lameduse-tertiary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lameduse-tertiary",
     },
   }[props.type][props.style];
   let form_class = {
@@ -68,9 +129,11 @@ const Button = (props: ButtonProps) => {
           ${color_class}
           ${form_class}
           ${size_class}
-          ${props.className}
+          ${props.className} 
+          ${hover_class}
+          ${clicked_class}
         `}
-        onClick={props.onClick}
+        onClick={handleClick}
       >
         {props.image && <img src={props.image} alt={props.label} className={props.imgClassName}/>}
         {props.label}
