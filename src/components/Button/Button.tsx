@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 export interface ButtonProps {
   label: string;
-  type?: "primary" | "secondary" | "tertiary" | "danger" | "white" | "gradient";
+  type?: "primary" | "secondary" | "tertiary" | "danger" | "white" | "gradient1" | "gradient2";
   style?: "solid" | "outline";
   form?: "rounded" | "pill";
   size?: "small" | "medium" | "large";
@@ -80,7 +80,11 @@ const Button = (props: ButtonProps) => {
         "solid" : "transition duration-100 hover:bg-gray-100",
         "outline" : "transition duration-100 hover:border-gray-300",
       },
-      "gradient": {
+      "gradient1": {
+        "solid" : "transition duration-100 hover:opacity-80",
+        "outline" : "transition duration-100 hover:opacity-80",
+      },
+      "gradient2": {
         "solid" : "transition duration-100 hover:opacity-80",
         "outline" : "transition duration-100 hover:opacity-80",
       }
@@ -108,10 +112,14 @@ const Button = (props: ButtonProps) => {
       "solid": "bg-white text-lameduse-primary",
       "outline": "text-white border border-white",
     },
-    "gradient": {
+    "gradient1": {
       "solid": "text-white bg-gradient-to-r from-lameduse-primary to-lameduse-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lameduse-secondary",
-      "outline": "text-white bg-gradient-to-r from-lameduse-secondary to-lameduse-tertiary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lameduse-tertiary",
+      "outline": "text-white bg-gradient-to-r from-lameduse-primary to-lameduse-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lameduse-secondary",
     },
+    "gradient2": {
+      "solid" : "text-white bg-gradient-to-r from-lameduse-secondary to-lameduse-tertiary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lameduse-tertiary",
+      "outline" : "text-white bg-gradient-to-r from-lameduse-secondary to-lameduse-tertiary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-lameduse-tertiary"
+    }
   }[props.type][props.style];
   let form_class = {
     "rounded": "rounded-md",

@@ -2,8 +2,7 @@ import React, { useState } from "react";
 
 
 export interface ToggleButtonProps {
-  labelOn: string;
-  labelOff: string;
+  children?: React.ReactNode | ((isToggled: boolean) => React.ReactNode);
   isToggled?: boolean;
   onToggle?: (toggled: boolean) => void;
   variant?: "switch" | "block";
@@ -18,8 +17,6 @@ export interface ToggleButtonProps {
 
 const ToggleButton = (props: ToggleButtonProps) => {
   const {
-    labelOn,
-    labelOff,
     isToggled: controlledToggled,
     onToggle,
     variant = "switch",
@@ -125,7 +122,7 @@ const ToggleButton = (props: ToggleButtonProps) => {
           ${className}
         `}
       >
-        {isToggled ? labelOn : labelOff}
+        {typeof props.children === "function" ? props.children(isToggled) : props.children}
       </button>
     );
   }
@@ -158,7 +155,7 @@ const ToggleButton = (props: ToggleButtonProps) => {
       </span>
       {/* Label */}
       <span className={`font-medium text-gray-900 ${currentSwitchSize.text}`}>
-        {isToggled ? labelOn : labelOff}
+        {typeof props.children === "function" ? props.children(isToggled) : props.children}
       </span>
     </button>
   );
