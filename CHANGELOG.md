@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+# [2.19.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.18.0...v2.19.0) (2026-02-19)
+
+
+### Features
+
+* effect on button ([3651ad6](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/3651ad683d35a84df70216d9363d6a76acf79960))
+
 # [2.18.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.17.0...v2.18.0) (2026-02-18)
 
 
