@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+# [2.20.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.19.0...v2.20.0) (2026-02-19)
+
+
+### Features
+
+* tooglebutton use children ([183b709](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/183b709ad0d009deeb03a12c09b37b8aa784dd6d))
+
 # [2.19.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.18.0...v2.19.0) (2026-02-19)
 
 
