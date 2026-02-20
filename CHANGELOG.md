@@ -1,5 +1,17 @@
 # LaMeDuSe Change Log
 
+# [2.22.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.21.0...v2.22.0) (2026-02-20)
+
+
+### Bug Fixes
+
+* correct cardOne test and stories ([d280ecd](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d280ecdd8d5aa44b9685bf6448e7d3cee3b07f94))
+
+
+### Features
+
+* cardOne use Link with LinkProps ([327e373](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/327e373ab88675abd00a206129cb3ab1e9558981))
+
 # [2.21.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.20.0...v2.21.0) (2026-02-20)
 
 
