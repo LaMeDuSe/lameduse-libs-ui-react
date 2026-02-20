@@ -21,7 +21,7 @@ export interface CardOneProps {
   imageQuality?: number;
   description: string | React.ReactElement;
   title: string;
-  link: LinkProps;
+  link?: LinkProps;
   border?: "normal" | "no-border";
   rounded?: boolean;
   icons?: IconTextProps[]
