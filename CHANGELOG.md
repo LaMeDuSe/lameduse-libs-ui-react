@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+# [2.21.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.20.0...v2.21.0) (2026-02-20)
+
+
+### Features
+
+* add button class on link ([53b282e](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/53b282e8c2c3ab9f86423a1a9bd789d508e7ca54))
+
 # [2.20.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.19.0...v2.20.0) (2026-02-19)
 
 
