@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+## [2.22.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.22.0...v2.22.1) (2026-02-20)
+
+
+### Bug Fixes
+
+* delete bg-gray ([0458de9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/0458de94a8dcf80ea4016c4c9792a8ebc349df58))
+
 # [2.22.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.21.0...v2.22.0) (2026-02-20)
 
 
