@@ -1,11 +1,9 @@
 import React from "react";
 import ImageImport from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Link from "../Link/Link";
+import Link, {LinkProps}from "../Link/Link";
 import IconText, { IconTextProps } from "../IconText/IconText";
-import { propagateServerField } from "next/dist/server/lib/render-server";
-import { keyframes } from "framer-motion";
-import { icons } from "lucide-react";
+
 
 // Handle ESM/CJS interop for Next.js components
 const Image = (ImageImport as any).default || ImageImport;
@@ -23,8 +21,7 @@ export interface CardOneProps {
   imageQuality?: number;
   description: string | React.ReactElement;
   title: string;
-  link_url: string;
-  link_text: string;
+  link?: LinkProps;
   border?: "normal" | "no-border";
   rounded?: boolean;
   icons?: IconTextProps[]
@@ -61,9 +58,9 @@ const CardOne = (props: CardOneProps) => {
           {props.icons?.map((icon, index) => (
               <IconText key={index} {...icon} />
             ))}
-          {(props.link_url && props.link_text !== "") && (
+          {(props.link) && (
             <div className=" w-fit flex mx-auto mt-4">
-              <Link href={props.link_url} type={"primary"} form="rounded" style="solid" size="medium" className="border-0 py-2 px-5 focus:outline-none">{props.link_text}</Link>
+              <Link {...props.link} />
             </div>
           )}
         </div>
