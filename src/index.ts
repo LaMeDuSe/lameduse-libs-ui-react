@@ -2,6 +2,8 @@ export * from './components';
 
 import * as components from './components';
 import * as blocs from './blocs';
+import * as images from './images';
+import { Images } from 'lucide-react';
 
 // This does nothing for build output, but it does ensure that there is no overlap between the keys of the components and blocs objects.
 // This is a TypeScript feature called "type widening" that allows us to ensure that the keys of the components and blocs objects do not overlap.
@@ -9,8 +11,9 @@ import * as blocs from './blocs';
 // This is a way to ensure that we don't accidentally overwrite a component with a bloc or vice versa.
 type ComponentKeys = keyof typeof components;
 type BlocKeys = keyof typeof blocs;
+type ImagesKeys = keyof typeof images;
 
-type ConflictingKeys = ComponentKeys & BlocKeys;
+type ConflictingKeys = ComponentKeys & BlocKeys & ImagesKeys;
 
 type EnsureNoConflicts<T extends never> = T;
 type _ErrorIfConflicts = EnsureNoConflicts<ConflictingKeys>;
@@ -19,5 +22,6 @@ type _ErrorIfConflicts = EnsureNoConflicts<ConflictingKeys>;
 const LameduseUI = {
   ...components,
   ...blocs,
+  ...images,
 };
 export default LameduseUI;
