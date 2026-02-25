@@ -7,6 +7,7 @@ export { default as CardTwo } from "./CardTwo";
 export { default as ContactCard } from "./ContactCard";
 export { default as Icon } from "./Icon";
 export { default as Link } from "./Link";
+export { default as TeamCard } from "./TeamCard";
 // Template is not exported as it is not a component
 export { default as TimelineH } from "./TimelineH/TimelineH";
 export { default as TimelineV } from "./TimelineV/TimelineV";
