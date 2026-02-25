@@ -1,25 +1,25 @@
-import fs from 'fs';
-import path from 'path';
-
 /**
- * This file dynamically exports all image files found in the current directory.
- * It filters for common image extensions and excludes index files.
+ * This file dynamically creates an object containing all images from this directory.
+ * It uses Webpack's `require.context` to achieve this at build time, making
+ * it possible to import all images with a single statement.
+ * It excludes itself ('index.ts').
  */
 
-const currentDir = __dirname;
-const imageExtensions = ['.png', '.jpg', '.jpeg', '.gif', '.svg', '.webp'];
+interface ImageMap {
+  [key: string]: any;
+}
 
-const files = fs.readdirSync(currentDir);
+function importAll(r: any): ImageMap {
+  const images: ImageMap = {};
+  r.keys().forEach((item: string) => {
+    // remove './' and file extension from the key
+    const key = item.replace('./', '').replace(/\.(png|jpe?g|gif|svg|webp)$/, '');
+    images[key] = r(item);
+  });
+  return images;
+}
 
-files.forEach((file) => {
-  const ext = path.extname(file).toLowerCase();
-  const name = path.basename(file, ext);
+// The 'require.context' function is a special feature from Webpack.
+const images = importAll((require as any).context('./', false, /\.(png|jpe?g|gif|svg|webp)$/));
 
-  // Skip index files and non-image files
-  if (name !== 'index' && imageExtensions.includes(ext)) {
-    // Export using the filename as the alias
-    // Note: In a standard ESM environment, dynamic exports like this 
-    // usually require a build step or a specific loader.
-    module.exports[name] = require(`./${file}`);
-  }
-});
+export default images;
