@@ -20,6 +20,15 @@ function importAll(r: any): ImageMap {
 }
 
 // The 'require.context' function is a special feature from Webpack.
-const images = importAll((require as any).context('./', false, /\.(png|jpe?g|gif|svg|webp)$/));
+let context: any;
+try {
+  context = (require as any).context('./', false, /\.(png|jpe?g|gif|svg|webp)$/);
+} catch (error) {
+  // Fallback for environments where require.context is not available (e.g. tests)
+  context = () => null;
+  context.keys = () => [];
+}
+
+const images = importAll(context);
 
 export default images;
