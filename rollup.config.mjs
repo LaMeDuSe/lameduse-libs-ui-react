@@ -54,9 +54,7 @@ export default [
       }),
       url({
         include: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.webp'],
-        limit: 0,
-        fileName: '[name][extname]',
-        destDir: 'dist/images',
+        limit: 50 * 1024 * 1024, // 50MB : Force l'inlining en Base64 pour tout fichier < 50MB
       })
     ],
   },
