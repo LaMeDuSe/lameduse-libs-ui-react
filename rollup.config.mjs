@@ -55,7 +55,7 @@ export default [
       url({
         include: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.webp'],
         limit: 0,
-        fileName: '[name].[extname]',
+        fileName: '[name][extname]',
         destDir: 'dist/images',
       })
     ],
