@@ -4,7 +4,8 @@
   "author": "LaMeDuSe",
   "description": "@LaMeDuSe frontend storybook",
   "scripts": {
-    "build-lib": "yarn run test && yarn run rollup",
+    "build-lib": "yarn run test && yarn run generate-images && yarn run rollup",
+    "generate-images": "node scripts/generate-image-index.js",
     "rollup": "rollup -c",
     "test": "vitest run",
     "test:watch": "vitest watch",
@@ -80,7 +81,6 @@
   ],
   "packageManager": "yarn@1.22.0",
   "dependencies": {
-    "@rollup/plugin-url": "^8.0.2",
     "framer-motion": "^12.16.0",
     "lucide-react": "^0.515.0",
     "postcss-discard-empty": "^7.0.1"
