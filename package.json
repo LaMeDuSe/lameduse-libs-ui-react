@@ -11,7 +11,8 @@
     "test:watch": "vitest watch",
     "test:coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006 --loglevel verbose",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "postinstall": "node scripts/postinstall.mjs"
   },
   "license": "Copyright LaMeDuSe",
   "devDependencies": {
@@ -78,7 +79,8 @@
     "./styles.css": "./dist/styles/index.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "scripts"
   ],
   "packageManager": "yarn@1.22.0",
   "dependencies": {
