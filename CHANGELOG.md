@@ -1,5 +1,12 @@
 # LaMeDuSe Change Log
 
+# [2.24.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.23.0...v2.24.0) (2026-02-26)
+
+
+### Features
+
+* rename image for more explicit name ([6cee3f1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6cee3f14a2926e44cfc03e734b3f112eda98651d))
+
 # [2.23.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.22.1...v2.23.0) (2026-02-26)
 
 
