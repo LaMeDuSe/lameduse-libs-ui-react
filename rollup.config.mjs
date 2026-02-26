@@ -54,7 +54,13 @@ export default [
       }),
       url({
         include: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.webp'],
-        limit: 50 * 1024 * 1024, // 50MB : Force l'inlining en Base64 pour tout fichier < 50MB
+        // On ne veut PAS inclure les images en base64 dans le bundle JS.
+        // On met une limite à 0 pour que les images soient copiées dans `dist` plutôt qu'inlinées.
+        limit: 0,
+        emitFiles: true, // S'assure que les fichiers sont émis.
+        fileName: '[name][extname]', // Conserve le nom de fichier original.
+        destDir: 'dist/images', // Copie toutes les images dans `dist/images`.
+        publicPath: '/images/', // Le chemin qui sera utilisé dans le code (ex: `import img from './foo.png'` -> `const img = '/images/foo.png'`)
       })
     ],
   },
