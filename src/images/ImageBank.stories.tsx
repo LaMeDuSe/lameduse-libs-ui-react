@@ -13,10 +13,10 @@ function ImageBank() {
     f.toLowerCase().includes(search.toLowerCase())
   );
 
-  const getKey = (filename: string) => filename.replace(/\.(png|jpe?g|svg|webp)$/, "");
+  const getKey = (filename: string) => filename;
 
   const handleCopy = (filename: string) => {
-    const code = `LameduseUI.images['${getKey(filename)}']`;
+    const code = `/images/lib/${getKey(filename)}`;
     navigator.clipboard.writeText(code);
     setCopied(filename);
     setTimeout(() => setCopied(null), 1500);
@@ -103,7 +103,7 @@ function ImageBank() {
                 marginTop: "4px",
               }}
             >
-              LameduseUI.images['{getKey(filename)}']
+              /images/lib/{getKey(filename)}
             </div>
           </div>
         ))}

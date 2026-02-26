@@ -4,13 +4,15 @@
   "author": "LaMeDuSe",
   "description": "@LaMeDuSe frontend storybook",
   "scripts": {
-    "build-lib": "yarn run test && yarn run rollup",
+    "build-lib": "yarn run test && yarn run generate-images && yarn run rollup",
+    "generate-images": "node scripts/generate-image-index.js",
     "rollup": "rollup -c",
     "test": "vitest run",
     "test:watch": "vitest watch",
     "test:coverage": "vitest run --coverage",
     "storybook": "storybook dev -p 6006 --loglevel verbose",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "postinstall": "node scripts/postinstall.mjs"
   },
   "license": "Copyright LaMeDuSe",
   "devDependencies": {
@@ -20,6 +22,7 @@
     "@rollup/plugin-commonjs": "^28.0.0",
     "@rollup/plugin-node-resolve": "^15.3.0",
     "@rollup/plugin-typescript": "^12.1.0",
+    "@rollup/plugin-url": "^8.0.2",
     "@storybook/addon-docs": "^10.1.11",
     "@storybook/addon-links": "^10.1.11",
     "@storybook/addon-themes": "^10.1.11",
@@ -76,7 +79,8 @@
     "./styles.css": "./dist/styles/index.css"
   },
   "files": [
-    "dist"
+    "dist",
+    "scripts"
   ],
   "packageManager": "yarn@1.22.0",
   "dependencies": {
