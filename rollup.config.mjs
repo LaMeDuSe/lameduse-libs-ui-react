@@ -6,7 +6,6 @@ import postcss from "rollup-plugin-postcss";
 import copy from "rollup-plugin-copy";
 import packageJson from "./package.json" with { type: "json" };
 import postcssDiscardEmpty from "postcss-discard-empty";
-import url from '@rollup/plugin-url';
 
 export default [
   {
@@ -44,22 +43,18 @@ export default [
       typescript({ tsconfig: "./tsconfig.json" }),
       copy({
         targets: [
-            // Need to copy the files over for usage
             { src: "src/assets/fonts", dest: "dist/assets" },
+            { src: "src/images/*.png", dest: "dist/images" },
+            { src: "src/images/*.jpg", dest: "dist/images" },
+            { src: "src/images/*.jpeg", dest: "dist/images" },
+            { src: "src/images/*.svg", dest: "dist/images" },
+            { src: "src/images/*.webp", dest: "dist/images" },
         ],
       }),
       postcss({
         extract: true, 
         minimize: true,
       }),
-      url({
-        include: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.webp'],
-        // Inliner toutes les images en base64 dans le bundle JS.
-        // C'est la méthode la plus fiable pour une librairie consommée par Next.js,
-        // car le consommateur n'a pas besoin de servir les fichiers statiques.
-        limit: Infinity,
-        emitFiles: false,
-      })
     ],
   },
   {
