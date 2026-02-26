@@ -9,6 +9,7 @@ describe("LameduseUI", () => {
   it("should export all components and blocs", () => {
     const componentKeys = Object.keys(components);
     const blocKeys = Object.keys(blocs);
+    
 
     // Check if all components are exported
     componentKeys.forEach((key) => {
