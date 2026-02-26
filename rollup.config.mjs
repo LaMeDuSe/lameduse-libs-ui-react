@@ -6,6 +6,7 @@ import postcss from "rollup-plugin-postcss";
 import copy from "rollup-plugin-copy";
 import packageJson from "./package.json" with { type: "json" };
 import postcssDiscardEmpty from "postcss-discard-empty";
+import url from '@rollup/plugin-url';
 
 export default [
   {
@@ -51,6 +52,12 @@ export default [
         extract: true, 
         minimize: true,
       }),
+      url({
+        include: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.webp'],
+        limit: 0,
+        fileName: '[name].[extname]',
+        destDir: 'dist/images',
+      })
     ],
   },
   {
