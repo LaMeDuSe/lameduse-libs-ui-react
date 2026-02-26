@@ -54,13 +54,11 @@ export default [
       }),
       url({
         include: ['**/*.png', '**/*.jpg', '**/*.jpeg', '**/*.svg', '**/*.webp'],
-        // On ne veut PAS inclure les images en base64 dans le bundle JS.
-        // On met une limite à 0 pour que les images soient copiées dans `dist` plutôt qu'inlinées.
-        limit: 0,
-        emitFiles: true, // S'assure que les fichiers sont émis.
-        fileName: '[name][extname]', // Conserve le nom de fichier original.
-        destDir: 'dist/images', // Copie toutes les images dans `dist/images`.
-        publicPath: '/images/', // Le chemin qui sera utilisé dans le code (ex: `import img from './foo.png'` -> `const img = '/images/foo.png'`)
+        // Inliner toutes les images en base64 dans le bundle JS.
+        // C'est la méthode la plus fiable pour une librairie consommée par Next.js,
+        // car le consommateur n'a pas besoin de servir les fichiers statiques.
+        limit: Infinity,
+        emitFiles: false,
       })
     ],
   },
