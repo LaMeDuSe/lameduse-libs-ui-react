@@ -13,9 +13,11 @@ function ImageBank() {
     f.toLowerCase().includes(search.toLowerCase())
   );
 
+  const getKey = (filename: string) => filename.replace(/\.(png|jpe?g|svg|webp)$/, "");
+
   const handleCopy = (filename: string) => {
-    const path = `/images/${filename}`;
-    navigator.clipboard.writeText(path);
+    const code = `LameduseUI.images['${getKey(filename)}']`;
+    navigator.clipboard.writeText(code);
     setCopied(filename);
     setTimeout(() => setCopied(null), 1500);
   };
@@ -39,7 +41,7 @@ function ImageBank() {
       />
       <p style={{ color: "#64748b", marginBottom: "16px" }}>
         {filtered.length} image{filtered.length > 1 ? "s" : ""} — Cliquez pour
-        copier le chemin
+        copier le code d'import
       </p>
       <div
         style={{
@@ -101,7 +103,7 @@ function ImageBank() {
                 marginTop: "4px",
               }}
             >
-              /images/{filename}
+              LameduseUI.images['{getKey(filename)}']
             </div>
           </div>
         ))}

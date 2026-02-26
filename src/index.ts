@@ -18,8 +18,9 @@ type EnsureNoConflicts<T extends never> = T;
 type _ErrorIfConflicts = EnsureNoConflicts<ConflictingKeys>;
 // End of TypeScript feature
 
-const LameduseUI = {
+const LameduseUI: Record<string, any> = {
   ...components,
-  ...blocs
+  ...blocs,
+  images
 };
 export default LameduseUI;
