@@ -1,5 +1,25 @@
 # LaMeDuSe Change Log
 
+## [2.24.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.24.0...v2.24.1) (2026-02-27)
+
+
+### Bug Fixes
+
+* import error ([4c67892](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4c678921a7796b2b13e0e34e7fba12da9e951302))
+* import error ([99f3825](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/99f38251fcad5d936274e3b1d987c14545fa0b47))
+* import error ([dd981fb](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/dd981fb1554ccf9c0cff6d344a3100692d4859ba))
+* import error ([5a4ab56](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5a4ab5622cbc0e749ea143e6af30f7cdcb4b3ddf))
+* import error ([ee95cc0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/ee95cc09f611bed3156ffde33cd62313222cc062))
+* import error ([5ca86a2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5ca86a251719c8d34a9dab8f22a98689a81e37a0))
+* import error ([ac3960f](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/ac3960f45b7fb8e65425612275e8823aa84bbbec))
+* import error ([f322150](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/f3221506c84d1c0c278f6bd099f2f7ea51ef6308))
+* import error ([8a435dc](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8a435dc23c46d35d1e1504b72d20f954f086bafa))
+* import error ([1d2f059](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1d2f059d5463d98361912a123ab8e2f98bcd2399))
+* import error ([aeb5e01](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/aeb5e01c6c497eb72f04fd548f69b6f8abe1d551))
+* import error ([bd4486c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/bd4486c36abbded7fbfaf1072bb949ec658abbeb))
+* import error ([8cf5a93](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8cf5a932a9f780d46f3be165dcd26cee1a1a8a62))
+* import error ([40233f9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/40233f9661c00fd9f2040ba2f3947a028ab017a1))
+
 # [2.24.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.23.0...v2.24.0) (2026-02-26)
 
 
