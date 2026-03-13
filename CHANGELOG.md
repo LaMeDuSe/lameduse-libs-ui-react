@@ -1,5 +1,17 @@
 # LaMeDuSe Change Log
 
+# [2.25.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.24.1...v2.25.0) (2026-03-13)
+
+
+### Bug Fixes
+
+* ghostpost label position ([efd291c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/efd291cf7c0a884da319d17ab8ba5a88f66fe853))
+
+
+### Features
+
+* add pictures ([6fce26c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6fce26cf1b0a69f80594a9ad65f54f6ae7eeb1bb))
+
 ## [2.24.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.24.0...v2.24.1) (2026-02-27)
 
 
