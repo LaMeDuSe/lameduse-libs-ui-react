@@ -27,8 +27,8 @@ const Heading = (props: HeadingProps) => {
   props.imagealt = props.imagealt || "heading image";
   const baseHeightClass = "h-[300px]";
   const baseHeightPixel= 300;
-  const dripExtraHeightClass = props.enableShapeDivider ? "h-[420px]" : baseHeightClass;
-  const dripExtraHeightPixel = props.enableShapeDivider ? 420 : baseHeightPixel;
+  const dripExtraHeightClass = props.enableShapeDivider ? "h-[410px]" : baseHeightClass;
+  const dripExtraHeightPixel = props.enableShapeDivider ? 30 : baseHeightPixel;
 
   const liquidAnimation = {
     y: [0, 10, 0],
@@ -50,12 +50,12 @@ const Heading = (props: HeadingProps) => {
   }[props.theme || (props.image ? "none" : "gradient")];
 
   return (
-    <div className={`w-full relative ${color_class} ${dripExtraHeightClass} flex flex-col items-center justify-center `}>
-      {props.image && <NextImage src={props.image} alt={props.imagealt} height={dripExtraHeightPixel} width={2000} className={`absolute w-full object-cover filter blur-sm brightness ${dripExtraHeightClass}`} />}
-      <h1 className={`${props.texteClassName} z-10 text-center text-4xl mb-3 ${props.enableShapeDivider ? "-translate-y-[60px]" : ""}`}>{props.title}</h1>
-      <p className={`${props.texteClassName} z-10 lg:text-2xl w-1/2 text-center ${props.enableShapeDivider ? "-translate-y-[60px]" : ""}`}>{props.description}</p>
+    <div className={`w-full relative ${color_class} ${dripExtraHeightClass ? "h-[440px]" : baseHeightClass} flex flex-col items-center justify-center `}>
+      {props.image && <NextImage src={props.image} alt={props.imagealt} height={dripExtraHeightPixel} width={2000} className={`absolute top-0 w-full object-cover filter blur-sm brightness ${dripExtraHeightClass}`} />}
+      <h1 className={`${props.texteClassName} z-10 text-center text-4xl mb-3 ${props.enableShapeDivider ? "-translate-y-[40px]" : ""}`}>{props.title}</h1>
+      <p className={`${props.texteClassName} z-10 lg:text-2xl w-1/2 text-center ${props.enableShapeDivider ? "-translate-y-[40px]" : ""}`}>{props.description}</p>
       {props.enableShapeDivider && (
-        <motion.div className="absolute -bottom-3 left-0 w-full leading-[0] z-20 pointer-events-none" animate={props.enableAnimation ? liquidAnimation : {}}>
+        <motion.div className="absolute bottom-[20px] left-0 w-full leading-[0] z-20 pointer-events-none overflow-hidden" animate={props.enableAnimation ? liquidAnimation : {}}>
             <svg
                 className="relative block w-[calc(100%+1.3px)] h-[120px] md:h-[150px]"
                 data-name="Layer 1"
