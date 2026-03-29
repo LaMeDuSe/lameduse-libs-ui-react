@@ -1,6 +1,7 @@
 // NOTE : Keep the order of the exports same as the order of the components in the folder
 
 export { default as Button } from "./Button";
+export { default as EuropeMap } from "./EuropeMap";
 export { default as Calendar } from "./Calendar";
 export { default as CardOne } from "./CardOne";
 export { default as CardTwo } from "./CardTwo";
