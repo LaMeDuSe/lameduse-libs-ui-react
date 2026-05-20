@@ -1,9 +1,10 @@
 import React from "react";
+import { LameduseColor, lameduseOutlineColorClasses, lameduseSolidColorClasses } from "../../theme";
 
 
 export interface ButtonProps {
   label: string;
-  type?: "primary" | "secondary" | "tertiary" | "danger" | "white";
+  type?: LameduseColor;
   style?: "solid" | "outline";
   form?: "rounded" | "pill";
   size?: "small" | "medium" | "large";
@@ -23,27 +24,9 @@ const Button = (props: ButtonProps) => {
 
   // classes
   let color_class = props.color_class || {
-    "primary": {
-      "solid": "bg-lameduse-primary text-white",
-      "outline": "text-lameduse-primary border border-lameduse-primary",
-    },
-    "secondary": {
-      "solid": "bg-lameduse-secondary text-white",
-      "outline": "text-lameduse-secondary border border-lameduse-secondary",
-    },
-    "tertiary": {
-      "solid": "bg-lameduse-tertiary text-white",
-      "outline": "text-lameduse-tertiary border border-lameduse-tertiary",
-    },
-    "danger": {
-      "solid": "bg-lameduse-red text-white",
-      "outline": "text-lameduse-red border border-lameduse-red",
-    },
-    "white": {
-      "solid": "bg-white text-lameduse-primary",
-      "outline": "text-white border border-white",
-    },
-  }[props.type][props.style];
+    "solid": lameduseSolidColorClasses[props.type],
+    "outline": lameduseOutlineColorClasses[props.type],
+  }[props.style];
   let form_class = {
     "rounded": "rounded-md",
     "pill": "rounded-full",

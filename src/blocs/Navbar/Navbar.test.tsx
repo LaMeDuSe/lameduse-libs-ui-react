@@ -1,6 +1,6 @@
 import React from "react";
-import { render } from "@testing-library/react";
-import { describe, test } from 'vitest';
+import { render, screen } from "@testing-library/react";
+import { describe, expect, test } from 'vitest';
 
 import Navbar from "./Navbar";
 
@@ -97,5 +97,23 @@ describe("Navbar", () => {
           href: "#",
         },
       ]} />);
+  });
+
+  test("keeps long link labels on one line", () => {
+    const longLabel = "This is a very long navbar item label";
+
+    render(<Navbar
+      type='primary'
+      NavItems={[
+        {
+          type: "link",
+          position: "center",
+          label: longLabel,
+          href: "#",
+        },
+      ]}
+    />);
+
+    expect(screen.getAllByText(longLabel).some((link) => link.className.includes("truncate"))).toBe(true);
   });
 });

@@ -1,5 +1,6 @@
 import React, { useContext } from "react";
 import NextLinkImport from "next/link";
+import { LameduseColor, lameduseOutlineColorClasses, lameduseSolidColorClasses, lameduseTextColorClasses } from "../../theme";
 
 // Handle ESM/CJS interop for Next.js components
 const NextLink = (NextLinkImport as any).default || NextLinkImport;
@@ -8,7 +9,7 @@ const NextLink = (NextLinkImport as any).default || NextLinkImport;
 
 export interface LinkProps {
   children?: React.ReactNode;
-  type?: "primary" | "secondary" | "tertiary" | "danger" | "white";
+  type?: LameduseColor;
   style?: "solid" | "outline" | "text";
   form?: "rounded" | "pill" | "underline" | "underline-hover" | "none";
   size?: "small" | "medium" | "large" | "none";
@@ -36,32 +37,10 @@ const Link = (props: LinkProps) => {
 
   // classes
   let color_class = props.color_class || {
-    "primary": {
-      "solid": "bg-lameduse-primary text-white",
-      "outline": "text-lameduse-primary border border-lameduse-primary",
-      "text": "text-lameduse-primary",
-    },
-    "secondary": {
-      "solid": "bg-lameduse-secondary text-white",
-      "outline": "text-lameduse-secondary border border-lameduse-secondary",
-      "text": "text-lameduse-secondary",
-    },
-    "tertiary": {
-      "solid": "bg-lameduse-tertiary text-white",
-      "outline": "text-lameduse-tertiary border border-lameduse-tertiary",
-      "text": "text-lameduse-tertiary",
-    },
-    "danger": {
-      "solid": "bg-lameduse-red text-white",
-      "outline": "text-lameduse-red border border-lameduse-red",
-      "text": "text-lameduse-red",
-    },
-    "white": {
-      "solid": "bg-white text-lameduse-primary",
-      "outline": "text-white border border-white",
-      "text": "text-white",
-    },
-  }[props.type][props.style];
+    "solid": lameduseSolidColorClasses[props.type],
+    "outline": lameduseOutlineColorClasses[props.type],
+    "text": lameduseTextColorClasses[props.type],
+  }[props.style];
   let form_class = {
     "rounded": "rounded-md",
     "pill": "rounded-full",
@@ -86,7 +65,7 @@ const Link = (props: LinkProps) => {
         ${form_class}
         ${size_class}
         ${text_style_class}
-        ${props.nowrap ? "whitespace-nowrap" : ""}
+        ${props.nowrap ? "inline-block min-w-0 max-w-full truncate align-bottom" : ""}
         ${props.className}
       `}
       onClick={props.onClick}

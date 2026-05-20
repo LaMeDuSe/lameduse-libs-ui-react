@@ -46,6 +46,26 @@
         @apply  hover:text-gray-800 hover:underline;
     }
     .gradiant-lameduse {
-        @apply bg-gradient-to-tr to-lameduse-secondary from-lameduse-tertiary
+        @apply bg-gradient-to-tr from-lameduse-secondary to-lameduse-tertiary;
+    }
+    .gradiant-lameduse-1 {
+        @apply bg-gradient-to-tr from-lameduse-primary to-lameduse-secondary;
+    }
+    .gradiant-lameduse-2 {
+        @apply bg-gradient-to-tr from-lameduse-secondary to-lameduse-tertiary;
+    }
+    .text-gradiant-lameduse-1 {
+        @apply bg-gradient-to-tr from-lameduse-primary to-lameduse-secondary bg-clip-text text-transparent;
+    }
+    .text-gradiant-lameduse-2 {
+        @apply bg-gradient-to-tr from-lameduse-secondary to-lameduse-tertiary bg-clip-text text-transparent;
+    }
+    .lameduse-icon-gradient svg:not([aria-hidden="true"])[fill]:not([fill="none"]),
+    .lameduse-icon-gradient svg:not([aria-hidden="true"]) [fill]:not([fill="none"]) {
+        fill: var(--lameduse-icon-paint);
+    }
+    .lameduse-icon-gradient svg:not([aria-hidden="true"])[stroke]:not([stroke="none"]),
+    .lameduse-icon-gradient svg:not([aria-hidden="true"]) [stroke]:not([stroke="none"]) {
+        stroke: var(--lameduse-icon-paint);
     }
 }

@@ -45,3 +45,17 @@ export const Tertiary: Story = {
     children: 'Link',
   },
 };
+
+export const GradiantOne: Story = {
+  args: {
+    type: 'gradiant-1',
+    children: 'Link',
+  },
+};
+
+export const GradiantTwo: Story = {
+  args: {
+    type: 'gradiant-2',
+    children: 'Link',
+  },
+};

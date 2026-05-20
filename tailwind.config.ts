@@ -10,6 +10,8 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'lameduse-gradiant-1': 'linear-gradient(to top right, #1B1464, #0080E2)',
+        'lameduse-gradiant-2': 'linear-gradient(to top right, #0080E2, #01B4B6)',
       },
       colors: {
         "lameduse-primary": "#1B1464",

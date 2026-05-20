@@ -1,6 +1,7 @@
 import React from "react";
 import NextImageImport from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { LameduseHeadingTheme, lameduseBackgroundColorClasses } from "../../theme";
 
 // Handle ESM/CJS interop for Next.js components
 const NextImage = (NextImageImport as any).default || NextImageImport;
@@ -10,7 +11,7 @@ export interface HeadingProps {
   description: string | React.ReactElement;
   image?: string | StaticImport;
   imagealt?: string;
-  theme?: "gradient" | "primary" | "secondary" | "tertiary" | "none";
+  theme?: LameduseHeadingTheme;
   texteClassName?: string;
 }
 
@@ -21,13 +22,7 @@ const Heading = (props: HeadingProps) => {
 
   props.imagealt = props.imagealt || "heading image";
 
-  let color_class = {
-    "gradient": "gradiant-lameduse",
-    "primary": "bg-lameduse-primary",
-    "secondary": "bg-lameduse-secondary",
-    "tertiary": "bg-lameduse-tertiary",
-    "none": ""
-  }[props.theme || "gradient"];
+  let color_class = lameduseBackgroundColorClasses[props.theme || "gradient"];
 
   return (
     <div className={`w-full relative ${color_class} h-[300px] flex flex-col items-center justify-center`}>

@@ -45,3 +45,17 @@ export const Tertiary: Story = {
     label: 'Button',
   },
 };
+
+export const GradiantOne: Story = {
+  args: {
+    type: 'gradiant-1',
+    label: 'Button',
+  },
+};
+
+export const GradiantTwo: Story = {
+  args: {
+    type: 'gradiant-2',
+    label: 'Button',
+  },
+};

@@ -46,6 +46,20 @@ export const Tertiary: Story = {
   },
 };
 
+export const GradiantOne: Story = {
+  args: {
+    type: 'gradiant-1',
+    label: 'Gradiant 1',
+  },
+};
+
+export const GradiantTwo: Story = {
+  args: {
+    type: 'gradiant-2',
+    label: 'Gradiant 2',
+  },
+};
+
 export const Danger: Story = {
   args: {
     type: 'danger',

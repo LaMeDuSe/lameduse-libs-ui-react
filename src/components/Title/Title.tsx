@@ -1,9 +1,10 @@
 import React from "react";
+import { LameduseColor, lameduseBackgroundColorClasses, lameduseTextColorClasses } from "../../theme";
 
 
 export interface TitleProps {
   label: string;
-  type?: "primary" | "secondary" | "tertiary" | "danger" | "white";
+  type?: LameduseColor;
   className?: string;
   onClick?: () => void;
 }
@@ -15,20 +16,8 @@ const Title = (props: TitleProps) => {
   props.className = props.className || "";
 
   // classes
-  let text_color_class = {
-    "primary": "text-lameduse-primary",
-    "secondary": "text-lameduse-secondary",
-    "tertiary": "text-lameduse-tertiary",
-    "danger": "text-lameduse-red",
-    "white": "text-white"
-  }[props.type];
-  let bg_color_class = {
-    "primary": "bg-lameduse-primary",
-    "secondary": "bg-lameduse-secondary",
-    "tertiary": "bg-lameduse-tertiary",
-    "danger": "bg-lameduse-red",
-    "white": "bg-white"
-  }[props.type];
+  let text_color_class = lameduseTextColorClasses[props.type];
+  let bg_color_class = props.type === "danger" ? "bg-lameduse-red" : props.type === "white" ? "bg-white" : lameduseBackgroundColorClasses[props.type];
   return (
     <div className={`w-full ${props.className}`}>
         <h1 className={`sm:text-3xl text-2xl font-medium title-font mb-2 ${text_color_class}`}>{props.label}</h1>

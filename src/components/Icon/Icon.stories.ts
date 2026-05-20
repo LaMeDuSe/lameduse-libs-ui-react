@@ -31,3 +31,17 @@ export const Primary: Story = {
   },
 };
 
+export const GradiantOne: Story = {
+  args: {
+    icon: "IDENTITY CARD",
+    color: "gradiant-1",
+  },
+};
+
+export const GradiantTwo: Story = {
+  args: {
+    icon: "IDENTITY CARD",
+    color: "gradiant-2",
+  },
+};
+

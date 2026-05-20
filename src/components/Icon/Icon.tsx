@@ -1,6 +1,7 @@
 import React from "react";
 import { LinkedInIcon, TwitterIcon, DiscordIcon, GitHubIcon, MailboxIcon, CheckIcon, OutboxIcon, InboxIcon, WarningIcon, CrossmarkIcon, BoxIcon, IdentityCardIcon, LameduseIcon } from "./icons";
 import NextLinkImport from "next/link";
+import { LameduseIconColor, isLameduseGradientColor, lameduseGradientStops, lameduseIconColorClasses } from "../../theme";
 
 // Handle ESM/CJS interop for Next.js components
 const NextLink = (NextLinkImport as any).default || NextLinkImport;
@@ -10,7 +11,7 @@ export interface IconProps {
   icon: string | React.ComponentType<any>; // restricts icon to keys of IconMap
   href?: string;
   size?: "small" | "medium" | "large";
-  color?: "primary" | "secondary" | "tertiary" | "darkgrey";
+  color?: LameduseIconColor;
   onClick?: () => void;
 }
 
@@ -57,14 +58,26 @@ const Icon = (props: IconProps) => {
     "large": "w-10 h-10",
   }[props.size];
 
-  const colorClass = {
-    "primary": "text-lameduse-primary/80 hover:text-lameduse-primary",
-    "secondary": "text-lameduse-secondary/80 hover:text-lameduse-secondary",
-    "tertiary": "text-lameduse-tertiary/80 hover:text-lameduse-tertiary",
-    "darkgrey": "text-gray-500/80 hover:text-gray-500",
-  }[props.color];
+  const colorClass = lameduseIconColorClasses[props.color];
+
+  const gradientId = React.useId().replace(/:/g, "");
+  const gradientStops = isLameduseGradientColor(props.color) ? lameduseGradientStops[props.color] : undefined;
+  const iconStyle = gradientStops ? ({
+    "--lameduse-icon-paint": `url(#${gradientId})`,
+  } as React.CSSProperties) : undefined;
+
   return (
-    <div className={`${sizeClass} ${colorClass} text-nowrap`}>
+    <div className={`${sizeClass} ${colorClass} text-nowrap`} style={iconStyle}>
+      {gradientStops && (
+        <svg aria-hidden="true" focusable="false" width="0" height="0" className="absolute h-0 w-0 overflow-hidden">
+          <defs>
+            <linearGradient id={gradientId} x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor={gradientStops.from} />
+              <stop offset="100%" stopColor={gradientStops.to} />
+            </linearGradient>
+          </defs>
+        </svg>
+      )}
       <NextLink href={props.href || "#"} onClick={props.onClick}>
         <IconObj />
       </NextLink>

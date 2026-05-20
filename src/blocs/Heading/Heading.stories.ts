@@ -38,3 +38,19 @@ export const Primary: Story = {
     imagealt: "LaMeDuSe Group Logo",
   },
 };
+
+export const GradiantOne: Story = {
+  args: {
+    theme: 'gradiant-1',
+    title: 'hello world !',
+    description: 'This is a basic description',
+  },
+};
+
+export const GradiantTwo: Story = {
+  args: {
+    theme: 'gradiant-2',
+    title: 'hello world !',
+    description: 'This is a basic description',
+  },
+};
