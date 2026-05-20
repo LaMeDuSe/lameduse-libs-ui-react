@@ -72,7 +72,7 @@ const GhostPost = (props: GhostPostProps) => {
                         height: props.CardHeight
                       }
                     } 
-                    className={`max-w-md mb-4rounded overflow-hidden shadow-lg select-none flex flex-col`}
+                    className={`max-w-md mx-auto mb-4 rounded overflow-hidden shadow-lg select-none flex flex-col`}
                   >
                     <Image width={448} height={250} className="w-full pointer-events-none h-[250px] object-cover" src={post.feature_image ?? "https://assets.lameduse.net/logo/lameduse_logo_grad.webp"} alt={post.feature_image_alt ?? "no image"} />
                     <div className="px-6 py-4">
@@ -104,7 +104,10 @@ const GhostPost = (props: GhostPostProps) => {
     }, [props.GhostContentAPIOptions])
     return (
         <div className={blocsclass}>
-            <Title label="Latest Posts" />
+            <div className="container px-5 py-4 mx-auto items-center">
+                <h2 className="sm:text-3xl text-2xl font-medium title-font mb-2 text-lameduse-primary">Latest Posts</h2>
+                <div className="mt-2 h-1 w-20 bg-lameduse-primary rounded"></div>
+            </div>
             <div className="mt-5">
                 <AliceCarousel
                     responsive={responsive}

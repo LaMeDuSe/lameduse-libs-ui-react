@@ -1,5 +1,244 @@
 # LaMeDuSe Change Log
 
+# [2.25.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.24.1...v2.25.0) (2026-03-13)
+
+
+### Bug Fixes
+
+* ghostpost label position ([efd291c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/efd291cf7c0a884da319d17ab8ba5a88f66fe853))
+
+
+### Features
+
+* add pictures ([6fce26c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6fce26cf1b0a69f80594a9ad65f54f6ae7eeb1bb))
+
+## [2.24.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.24.0...v2.24.1) (2026-02-27)
+
+
+### Bug Fixes
+
+* import error ([4c67892](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4c678921a7796b2b13e0e34e7fba12da9e951302))
+* import error ([99f3825](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/99f38251fcad5d936274e3b1d987c14545fa0b47))
+* import error ([dd981fb](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/dd981fb1554ccf9c0cff6d344a3100692d4859ba))
+* import error ([5a4ab56](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5a4ab5622cbc0e749ea143e6af30f7cdcb4b3ddf))
+* import error ([ee95cc0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/ee95cc09f611bed3156ffde33cd62313222cc062))
+* import error ([5ca86a2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5ca86a251719c8d34a9dab8f22a98689a81e37a0))
+* import error ([ac3960f](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/ac3960f45b7fb8e65425612275e8823aa84bbbec))
+* import error ([f322150](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/f3221506c84d1c0c278f6bd099f2f7ea51ef6308))
+* import error ([8a435dc](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8a435dc23c46d35d1e1504b72d20f954f086bafa))
+* import error ([1d2f059](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1d2f059d5463d98361912a123ab8e2f98bcd2399))
+* import error ([aeb5e01](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/aeb5e01c6c497eb72f04fd548f69b6f8abe1d551))
+* import error ([bd4486c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/bd4486c36abbded7fbfaf1072bb949ec658abbeb))
+* import error ([8cf5a93](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8cf5a932a9f780d46f3be165dcd26cee1a1a8a62))
+* import error ([40233f9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/40233f9661c00fd9f2040ba2f3947a028ab017a1))
+
+# [2.24.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.23.0...v2.24.0) (2026-02-26)
+
+
+### Features
+
+* rename image for more explicit name ([6cee3f1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6cee3f14a2926e44cfc03e734b3f112eda98651d))
+
+# [2.23.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.22.1...v2.23.0) (2026-02-26)
+
+
+### Bug Fixes
+
+* import error ([ca47ed6](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/ca47ed6671d599901cee51d27f465ca8e6753f62))
+* import error ([933db69](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/933db69cbec88ae0ff4f1b3da4cf54f767e03909))
+
+
+### Features
+
+* add bank of image ([9f004a2](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/9f004a23598635c35f1d8ae5d3849e038285616d))
+* add bank of image ([895343d](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/895343dd59da915e15bec171fffeb7e4f808238f))
+* add bank of image ([4fd8052](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4fd8052dc0dc29cc940bbc0212312c2b6fe730a5))
+* add bank of image ([6b8627f](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6b8627f49cf2e09813fa8d90116f8c957c61911e))
+* add bank of image ([cd70fe3](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/cd70fe3f94334f7ef418cf9065cc272fda3c44fd))
+
+## [2.22.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.22.0...v2.22.1) (2026-02-20)
+
+
+### Bug Fixes
+
+* delete bg-gray ([0458de9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/0458de94a8dcf80ea4016c4c9792a8ebc349df58))
+
+# [2.22.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.21.0...v2.22.0) (2026-02-20)
+
+
+### Bug Fixes
+
+* correct cardOne test and stories ([d280ecd](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d280ecdd8d5aa44b9685bf6448e7d3cee3b07f94))
+
+
+### Features
+
+* cardOne use Link with LinkProps ([327e373](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/327e373ab88675abd00a206129cb3ab1e9558981))
+
+# [2.21.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.20.0...v2.21.0) (2026-02-20)
+
+
+### Features
+
+* add button class on link ([53b282e](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/53b282e8c2c3ab9f86423a1a9bd789d508e7ca54))
+
+# [2.20.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.19.0...v2.20.0) (2026-02-19)
+
+
+### Features
+
+* tooglebutton use children ([183b709](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/183b709ad0d009deeb03a12c09b37b8aa784dd6d))
+
+# [2.19.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.18.0...v2.19.0) (2026-02-19)
+
+
+### Features
+
+* effect on button ([3651ad6](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/3651ad683d35a84df70216d9363d6a76acf79960))
+
+# [2.18.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.17.0...v2.18.0) (2026-02-18)
+
+
+### Bug Fixes
+
+* ghostpost centered ([de6bf18](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/de6bf18718bf0d9a255bf8d87111fed2115e6404))
+
+
+### Features
+
+* add new style on checkbox ([201e2dd](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/201e2ddd8da86173953b745801f71136bb2fa3e7))
+* add new style on checkbox ([f9bc59c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/f9bc59cd69444551dd363d235a0dbac4baf7b382))
+* add new style on forms ([4ecd2a8](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4ecd2a8d1c2fbfd459895289c0af80fa1149d3c8))
+* add new type of toggle button ([45560ac](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/45560ac0254c0112dfd1aef40d537052262c4881))
+* add possibility to use image in a button ([d561696](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d5616964241adfc61238f8743a6b0d5b1878519a))
+* add toggleButton On/Off ([5dac080](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5dac080eaaa8c6a401bf0d0f2913f1c1f2354251))
+* dropdown open when hover ([42a4468](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/42a44681092efead5f1b1a305b1abdb41e60c5c9))
+
+# [2.17.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.16.0...v2.17.0) (2026-02-18)
+
+
+### Bug Fixes
+
+* fix src/components/Map/Map.test.tsx ([d2a95ab](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d2a95abd1e8fba720d27d1928feb6c695e290732))
+* fix test for the map ([f32803b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/f32803bc8cc45d1a2ba86a212dc32c246cb5aa41))
+* fix test for the map ([1b5419d](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1b5419dbe62835daac5c080853d2a3d5136b4fe3))
+* update src/components/Map/Map.tsx ([227da48](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/227da48d02c06c3aa8247b782df8196d222eb916))
+* update src/components/Map/Map.tsx ([29d4a64](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/29d4a64b5645355068240c509f386ce1003dd2f3))
+
+
+### Features
+
+* use a dynamic map ([8349211](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/83492113a5a3a61a6dab88c122870a7c1f0d9f7d))
+
+# [2.16.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.15.0...v2.16.0) (2026-02-06)
+
+
+### Features
+
+* use a dynamic map ([3615614](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/3615614f2a9ce3d5469579ab492cba11669cac2f))
+
+# [2.15.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.14.0...v2.15.0) (2026-02-06)
+
+
+### Bug Fixes
+
+* add map to import.test.ts ([433e51b](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/433e51b62d43fea752e9a7554468dafba2611931))
+* delete personal test api key ([37abea9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/37abea99d7decced6b695249c682d45c7e1e5919))
+* update src/blocs/Heading/Heading.tsx ([1f130c9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1f130c994c69d68e56ea11b776b15190ee969169))
+* update src/components/Map/Map.test.tsx ([a346add](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a346add61fa11ac54a2d602eb6e21e821033e5cd))
+
+
+### Features
+
+* add Map components ([0de95b7](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/0de95b754f09858e8576299a6f52ed6f89d92037))
+
+# [2.14.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.13.1...v2.14.0) (2026-01-30)
+
+
+### Features
+
+* new version ([f0a3c54](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/f0a3c54d3323b30aa0f9dd7e96f56d13038f8fa9))
+
+## [2.13.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.13.0...v2.13.1) (2026-01-30)
+
+
+### Bug Fixes
+
+* animation of heroslider ([7e4c950](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/7e4c950169e91610db3398c0f962ac3af0abcebf))
+
+# [2.13.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.12.1...v2.13.0) (2026-01-29)
+
+
+### Bug Fixes
+
+* added contenttype ([93ca455](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/93ca455f8db4f69300cda795c33429215d11803b))
+* correct position of button ([e3f71dc](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/e3f71dc3f6797158a309033441c148125eeb0277))
+* correct position of button ([6dbf070](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6dbf0709de6d02ef04f011942a792f5cf87a8b3f))
+* correct sizing for small windows ([150f307](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/150f3077c45188ef72a735043b5ba1d650fb8e00))
+* end navbar direction ([92f4b86](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/92f4b864dfae41ef12675cadd28607e9f28ed29e))
+* exported timelineH and V ([3839352](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/383935256c572ac1ff4faad07c6e5c7674a440b4))
+* missing changes from previous commit ([09d96c9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/09d96c9034cb8fd5617364666ff44f9358776a47))
+* rename 'year' in 'date' ([4696137](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4696137774bd68a7c2b593e5bfedfaf40501f0e2))
+
+
+### Features
+
+* add timeline ([8f3b9ae](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/8f3b9ae05d62bb35a98e94d3d736b3d6177ba985))
+* add TimelineH ([612e223](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/612e2232ba365d041ce39579c1dc470df7b44014))
+* content is now above the line for TimelineH ([a9818a9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a9818a9967d915ebc0acc852bfdd25cd268b163d))
+
+## [2.12.1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.12.0...v2.12.1) (2026-01-29)
+
+
+### Bug Fixes
+
+* waves animation ([5c3116d](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/5c3116de627a911824cf9849b7bab1ea53019718))
+
+# [2.12.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.11.0...v2.12.0) (2026-01-29)
+
+
+### Bug Fixes
+
+* bg ([7d7112e](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/7d7112e95f0b75a57542a7ebccf5d28a3b17b011))
+
+
+### Features
+
+* add waves under heading bloc ([315fb6c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/315fb6c3d2294853809449ec419d4787f74ba148))
+
+# [2.11.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.10.0...v2.11.0) (2026-01-29)
+
+
+### Bug Fixes
+
+* style to text ([baa4fc9](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/baa4fc9b9ccdb76f6951c78c0488b855061c01a6))
+* transition effect ([072aa19](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/072aa194722b160951c58e8e506e8f5efdf9ee09))
+
+
+### Features
+
+* add wave under heroslider" ([23e1e09](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/23e1e099ad0e5870b41f8d905b665d47e46534cd))
+
+# [2.10.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.9.0...v2.10.0) (2026-01-23)
+
+
+### Bug Fixes
+
+* center of items ([6e4d348](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6e4d348a75c710d3dc0d9cb73180a7cda854f41e))
+* dropdown menu z-axes ([6aae9b6](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/6aae9b6e740b1e6eed98bae6b6b282565bb8d280))
+* fix logo-size and space ([0d84a19](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/0d84a1961fad340f463ffef5f0c53875b88fa293))
+* img at midle ([a1a5a37](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a1a5a376e4b0ee8daf9a3c4dae1da94a488e19f0))
+* margin auto for components in navbar ([b1777d7](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/b1777d753a1fc5208d538a18ec9969e01ed23eec))
+* margin auto for components in navbar ([85558de](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/85558dea94131b8ebf9f0a4f33b85d2b904417da))
+* responsive ([4c63eb0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4c63eb0e77bfa09ba29dee2b54f4be9cc0a732e4))
+* responsive ([c003c0f](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/c003c0f91d3239bb5aacf048b1e1b0484560bee9))
+
+
+### Features
+
+* add open-transition on NavBar ([99b1720](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/99b17205fd7700fe5cb38b89a854b0d8cdb3e3d5))
+* close dropdown when click ([1854aaf](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1854aaf2b0182d3b92274c6bc042c0e693a42772))
+
 # [2.9.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.8.6...v2.9.0) (2026-01-21)
 
 

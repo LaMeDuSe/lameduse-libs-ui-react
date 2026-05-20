@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect, useRef } from "react";
 import NextLinkImport from "next/link";
 import ImageImport from "next/image";
 import Link from "../../components/Link";
@@ -88,15 +88,22 @@ export interface INavDropdownProps {
 }
 
 const NavItemDropdown = (props: INavDropdownProps) => {
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+    const [isDropdownHover, setIsDropdownHover] = useState(false);
+    const wrapperRef = useRef<HTMLDivElement>(null);
+
     return (
-        <div className={`min-w-0 max-w-full ${(props.wrapClassName || "")} `}>
-            <div className="flex flex-row items-center cursor-pointer min-w-0 max-w-full" onClick={() => setIsDropdownOpen(!isDropdownOpen)}>
+        <div
+            className={`min-w-0 max-w-full ${(props.wrapClassName || "")} `}
+            ref={wrapperRef}
+            onMouseEnter={() => setIsDropdownHover(true)}
+            onMouseLeave={() => setIsDropdownHover(false)}
+        >
+            <div className="flex flex-row items-center cursor-pointer min-w-0 max-w-full" onClick={() => setIsDropdownHover(!isDropdownHover)}>
                 <Link nowrap style="text" text_style="bold" size="medium" form="underline-hover" className="block min-w-0 max-w-full truncate">{props.config.label}</Link>
-                <img src={props.config.imgSrc} alt="" className={(isDropdownOpen ? "rotate-180 duration-300 ease-in-out" : "rotate-0 duration-300 ease-in-out") + " w-5 h-5 -ml-1 flex-shrink-0"}/>
+                <img src={props.config.imgSrc} alt="" className={(isDropdownHover ? "rotate-180 duration-300 ease-in-out" : "rotate-0 duration-300 ease-in-out") + " -translate-x-2 w-5 h-5 flex-shrink-0"}/>
             </div>
             <div className="relative center">
-                <ul className={(isDropdownOpen ? "block" : "hidden") + " absolute z-10 bg-white shadow-lameduse-primary rounded-lg shadow-sm"}>
+                <ul className={(isDropdownHover ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0") + " absolute z-20 bg-white shadow-lameduse-primary rounded-lg shadow-sm transition-all duration-300 ease-in-out origin-top"}>
                     <div className="p-4 space-y-2 justify-center items-center">
                         {props.config.items.map((item, index) => {
                             return <NavLink key={index} config={item} className="p-2 w-full" view="desktop" />
@@ -151,9 +158,9 @@ const Navbar = (props: INavbarProps) => {
     // Is the navbar open
     const [isNavOpen, setIsNavOpen] = useState(false);
     return (
-        <div className="w-full bg-white grid grid-flow-col lg:grid-cols-3 grid-cols-2 min-w-0">
+        <div className="w-full bg-white grid grid-flow-col lg:grid-cols-4 grid-cols-4 min-w-0">
             {/* Desktop start Navbar */}
-            <div className="justify-self-start hidden lg:flex flex-row items-center p-3 ml-6 min-w-0 max-w-full overflow-hidden">
+            <div className="justify-self-start hidden lg:flex flex-row items-center mr-auto p-3 ml-6 col-span-1 min-w-0 max-w-full overflow-hidden">
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
@@ -169,7 +176,7 @@ const Navbar = (props: INavbarProps) => {
                 }
             </div>
             {/* Mobile start Navbar */}
-            <div className="justify-self-start flex lg:hidden flex-row items-center space-x-6 p-3 ml-6 min-w-0 max-w-full overflow-hidden">
+            <div className="justify-self-start flex lg:hidden flex-row items-center space-x-6 p-3 ml-6 col-span-2 min-w-0 max-w-full overflow-hidden">
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
@@ -185,7 +192,7 @@ const Navbar = (props: INavbarProps) => {
                 }
             </div>
             {/* Mobile menu Navbar */}
-            <section className="flex lg:hidden p-3 ml-auto justify-center items-center mr-6">
+            <section className="flex lg:hidden p-3 ml-auto justify-center items-center mr-6 col-span-2">
                 <div
                     className="space-y-2"
                     onClick={() => setIsNavOpen((prev) => !prev)}
@@ -231,7 +238,7 @@ const Navbar = (props: INavbarProps) => {
                 </div>
             </section>
             {/* Desktop center Navbar */}
-            <div className="justify-self-center hidden lg:flex flex-row items-center mx-auto min-w-0 max-w-full overflow-hidden">
+            <div className="justify-self-center hidden lg:flex flex-row items-center mx-auto col-span-2 min-w-0 max-w-full overflow-hidden">
                 {props.NavItems.filter((v) => v.position == "center").map((item, key) => {
                     switch (item.type) {
                         case "link":
@@ -247,7 +254,7 @@ const Navbar = (props: INavbarProps) => {
                 }
             </div>
             {/* Desktop end Navbar */}
-            <div className="justify-self-end hidden lg:flex flex-row items-center ml-auto pr-9 min-w-0 max-w-full overflow-hidden">
+            <div className="justify-self-end hidden lg:flex flex-row-reverse items-center pr-9 col-span-1 min-w-0 max-w-full overflow-hidden">
                 {props.NavItems.filter((v) => v.position == "right").map((item, key) => {
                     switch (item.type) {
                         case "link":

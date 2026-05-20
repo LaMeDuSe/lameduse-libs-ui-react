@@ -31,8 +31,16 @@ export const Primary: Story = {
     image: 'https://lamedusegroup.com/images/code_2.png',
     description: 'This is a description',
     title: 'This is a title',
-    link_url: '/',
-    link_text: 'Link',
+    link: {
+      children: 'See more',
+      type: 'gradient2',
+      style: 'solid',
+      form: 'rounded',
+      size: 'medium',
+      href: '#',
+      hover: 'scaleUp',
+      clicked: 'jump'
+    }
   },
 };
 
@@ -42,8 +50,16 @@ export const NoBorder: Story = {
     image: 'https://lamedusegroup.com/images/code_2.png',
     description: 'This is a description',
     title: 'This is a title',
-    link_url: '/',
-    link_text: 'Link',
+    link: {
+      children: 'See more',
+      type: 'gradient2',
+      style: 'solid',
+      form: 'rounded',
+      size: 'medium',
+      href: '#',
+      hover: 'scaleUp',
+      clicked: 'jump'
+    },
     border: 'no-border',
   },
 };

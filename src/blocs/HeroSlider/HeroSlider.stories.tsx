@@ -68,5 +68,6 @@ export const Default: Story = {
   args: {
     slides,
     autoPlay: false,
+    enableShapeDivider: true,
   }
 }

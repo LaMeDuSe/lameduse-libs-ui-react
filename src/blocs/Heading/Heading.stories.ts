@@ -36,6 +36,8 @@ export const Primary: Story = {
     description: 'This is a basic description',
     image : "https://picsum.photos/2000/300",
     imagealt: "LaMeDuSe Group Logo",
+    enableShapeDivider: true,
+    enableAnimation: true
   },
 };
 

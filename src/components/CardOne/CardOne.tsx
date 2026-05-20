@@ -1,11 +1,9 @@
 import React from "react";
 import ImageImport from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
-import Link from "../Link/Link";
+import Link, {LinkProps}from "../Link/Link";
 import IconText, { IconTextProps } from "../IconText/IconText";
-import { propagateServerField } from "next/dist/server/lib/render-server";
-import { keyframes } from "framer-motion";
-import { icons } from "lucide-react";
+
 
 // Handle ESM/CJS interop for Next.js components
 const Image = (ImageImport as any).default || ImageImport;
@@ -23,8 +21,7 @@ export interface CardOneProps {
   imageQuality?: number;
   description: string | React.ReactElement;
   title: string;
-  link_url: string;
-  link_text: string;
+  link?: LinkProps;
   border?: "normal" | "no-border";
   rounded?: boolean;
   icons?: IconTextProps[]
@@ -52,7 +49,7 @@ const CardOne = (props: CardOneProps) => {
   let rounded = props.rounded ? "rounded-lg" : "";
   return (
       <div className={`px-4 ${container_color_class} ${props.className} ${rounded} ${standard_class} ${border}`}>
-        <div className={`rounded-lg h-64 overflow-hidden`}>
+        <div className={`rounded-lg h-64 overflow-hidden flex justify-center items-center`}>
           <Image height={props.imageHeight ?? 500} width={props.imageWidth ?? 500} alt={props.imageAlt ?? "content"} className={`object-cover object-center h-full w-full ${props.imageClassName ?? ""}`} src={props.image} quality={props.imageQuality ?? 75} />
         </div>
         <h2 className="text-2xl font-medium text-gray-900 mt-6 mb-3">{props.title}</h2>
@@ -61,11 +58,12 @@ const CardOne = (props: CardOneProps) => {
           {props.icons?.map((icon, index) => (
               <IconText key={index} {...icon} />
             ))}
-          <div className=" w-fit flex mx-auto mt-4">
-            <Link href={props.link_url} type={"primary"} form="rounded" style="solid" size="medium" className="border-0 py-2 px-5 focus:outline-none">{props.link_text}</Link>
-          </div>
+          {(props.link) && (
+            <div className=" w-fit flex mx-auto mt-4">
+              <Link {...props.link} />
+            </div>
+          )}
         </div>
-
       </div>
   )
 };
