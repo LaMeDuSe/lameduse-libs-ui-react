@@ -158,9 +158,9 @@ const Navbar = (props: INavbarProps) => {
     // Is the navbar open
     const [isNavOpen, setIsNavOpen] = useState(false);
     return (
-        <div className="w-full bg-white grid grid-flow-col lg:grid-cols-4 grid-cols-4 min-w-0">
+        <div className="w-full bg-white flex flex-row items-center justify-between min-w-0 relative">
             {/* Desktop start Navbar */}
-            <div className="justify-self-start hidden lg:flex flex-row items-center mr-auto p-3 ml-6 col-span-1 min-w-0 max-w-full overflow-hidden">
+            <div className="hidden lg:flex flex-row items-center p-3 ml-6 min-w-0 flex-1 justify-start overflow-visible">
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
@@ -176,7 +176,7 @@ const Navbar = (props: INavbarProps) => {
                 }
             </div>
             {/* Mobile start Navbar */}
-            <div className="justify-self-start flex lg:hidden flex-row items-center space-x-6 p-3 ml-6 col-span-2 min-w-0 max-w-full overflow-hidden">
+            <div className="flex lg:hidden flex-row items-center space-x-6 p-3 ml-6 min-w-0 flex-1 justify-start overflow-visible">
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
@@ -192,9 +192,9 @@ const Navbar = (props: INavbarProps) => {
                 }
             </div>
             {/* Mobile menu Navbar */}
-            <section className="flex lg:hidden p-3 ml-auto justify-center items-center mr-6 col-span-2">
+            <section className="flex lg:hidden p-3 ml-auto justify-end flex-1 items-center mr-6">
                 <div
-                    className="space-y-2"
+                    className="space-y-2 cursor-pointer"
                     onClick={() => setIsNavOpen((prev) => !prev)}
                 >
                     <span className="block h-0.5 w-8 bg-lameduse-primary"></span>
@@ -238,7 +238,7 @@ const Navbar = (props: INavbarProps) => {
                 </div>
             </section>
             {/* Desktop center Navbar */}
-            <div className="justify-self-center hidden lg:flex flex-row items-center mx-auto col-span-2 min-w-0 max-w-full overflow-hidden">
+            <div className="hidden lg:flex flex-row items-center justify-center min-w-[max-content] mx-4 overflow-visible shrink-0">
                 {props.NavItems.filter((v) => v.position == "center").map((item, key) => {
                     switch (item.type) {
                         case "link":
@@ -254,7 +254,7 @@ const Navbar = (props: INavbarProps) => {
                 }
             </div>
             {/* Desktop end Navbar */}
-            <div className="justify-self-end hidden lg:flex flex-row-reverse items-center pr-9 col-span-1 min-w-0 max-w-full overflow-hidden">
+            <div className="hidden lg:flex flex-row-reverse items-center pr-9 min-w-0 flex-1 justify-start overflow-visible">
                 {props.NavItems.filter((v) => v.position == "right").map((item, key) => {
                     switch (item.type) {
                         case "link":
