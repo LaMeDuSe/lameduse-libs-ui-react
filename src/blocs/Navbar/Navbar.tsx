@@ -160,7 +160,7 @@ const Navbar = (props: INavbarProps) => {
     return (
         <div className="w-full bg-white flex flex-row items-center justify-between min-w-0 relative">
             {/* Desktop start Navbar */}
-            <div className="hidden lg:flex flex-row items-center p-3 ml-6 min-w-0 flex-1 justify-start overflow-hidden">
+            <div className="hidden lg:flex flex-row items-center p-3 ml-6 min-w-0 flex-1 justify-start overflow-visible">
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
@@ -176,7 +176,7 @@ const Navbar = (props: INavbarProps) => {
                 }
             </div>
             {/* Mobile start Navbar */}
-            <div className="flex lg:hidden flex-row items-center space-x-6 p-3 ml-6 min-w-0 flex-1 justify-start overflow-hidden">
+            <div className="flex lg:hidden flex-row items-center space-x-6 p-3 ml-6 min-w-0 flex-1 justify-start overflow-visible">
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
                     switch (item.type) {
                         case "link":
@@ -254,7 +254,7 @@ const Navbar = (props: INavbarProps) => {
                 }
             </div>
             {/* Desktop end Navbar */}
-            <div className="hidden lg:flex flex-row-reverse items-center pr-9 min-w-0 flex-1 justify-start overflow-hidden">
+            <div className="hidden lg:flex flex-row-reverse items-center pr-9 min-w-0 flex-1 justify-start overflow-visible">
                 {props.NavItems.filter((v) => v.position == "right").map((item, key) => {
                     switch (item.type) {
                         case "link":
