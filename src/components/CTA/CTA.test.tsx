@@ -30,4 +30,8 @@ describe("CTA", () => {
   test("renders the CTA component", () => {
     render(<CTA {...params} />);
   });
+  test("renders the CTA component with technology variant", () => {
+    const { unmount } = render(<CTA variant="technology" title="Tech Title" description="Tech Desc" {...params} />);
+    unmount();
+  });
 });
