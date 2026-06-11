@@ -80,3 +80,27 @@ export const Secondary: Story = {
     },
   }
 };
+
+export const Technology: Story = {
+  args: {
+    variant: 'technology',
+    title: 'Build the Future of Your Tech',
+    description: 'Experience our high-performance component library and modern interactive designs crafted to elevate your projects.',
+    first: {
+      children: 'Get Started',
+      type: 'white',
+      style: 'solid',
+      form: 'pill',
+      size: 'large',
+      href: '#'
+    },
+    second: {
+      children: 'Contact Support',
+      type: 'white',
+      style: 'outline',
+      form: 'pill',
+      size: 'large',
+      href: '#'
+    },
+  }
+};

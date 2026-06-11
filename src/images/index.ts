@@ -6,6 +6,8 @@ import _3DIsometricGreyServerBladeStorageIcon from './3D-Isometric-Grey-Server-B
 import AbstractBlueTechCircuitryBackgroundBanner from './Abstract-Blue-Tech-Circuitry-Background-Banner.png';
 import AbstractDigitalNetworkBackground from './Abstract-Digital-Network-Background.png';
 import AbstractDigitalNetworkNodeConnectionBackground from './Abstract-Digital-Network-Node-Connection-Background.png';
+import AdLayoutEntrepreneurialFreedomEnglishText from './Ad-Layout-Entrepreneurial-Freedom-English-Text.png';
+import AdLayoutEntrepreneurialFreedomFrenchText from './Ad-Layout-Entrepreneurial-Freedom-French-Text.png';
 import ArrowUpCircleUIIcon from './Arrow-Up-Circle-UI-Icon.png';
 import ArtificialIntelligenceAINeuralProcessorCube from './Artificial-Intelligence-AI-Neural-Processor-Cube.png';
 import ArtisticJellyfishDomeBrandingIdentityLogo from './Artistic-Jellyfish-Dome-Branding-Identity-Logo.png';
@@ -23,10 +25,16 @@ import ECommerceMarketplaceStorefrontBusinessIcon from './E-commerce-Marketplace
 import ElegantGoldNavyFluidPattern from './Elegant-Gold-Navy-Fluid-Pattern.png';
 import ElegantGoldSteamingCoffeeCupLogo from './Elegant-Gold-Steaming-Coffee-Cup-Logo.png';
 import GlobalOnlineShoppingECommerceWorldConcept from './Global-Online-Shopping-E-commerce-World-Concept.png';
+import GradientActionPlanStrategyRoadmapIcon from './Gradient-Action-Plan-Strategy-Roadmap-Icon.png';
 import GradientBrandStrategyCreativeConceptIcon from './Gradient-Brand-Strategy-Creative-Concept-Icon.png';
+import GradientBusinessGrowthSuccessPerformanceIcon from './Gradient-Business-Growth-Success-Performance-Icon.png';
+import GradientCollaborativeMeetingTeamworkIcon from './Gradient-Collaborative-Meeting-Teamwork-Icon.png';
 import GradientCustomConfigurationGearPencilIcon from './Gradient-Custom-Configuration-Gear-Pencil-Icon.png';
+import GradientCyberSecurityShieldProtectionIcon from './Gradient-Cyber-Security-Shield-Protection-Icon.png';
+import GradientEfficiencyProcessOptimizationPerformanceIcon from './Gradient-Efficiency-Process-Optimization-Performance-Icon.png';
 import GradientExpertiseShieldGrowthServiceIcon from './Gradient-Expertise-Shield-Growth-Service-Icon.png';
 import GradientFastReactivityPerformanceStopwatchIcon from './Gradient-Fast-Reactivity-Performance-Stopwatch-Icon.png';
+import GradientGlobalSatelliteNetworkConnectivityIcon from './Gradient-Global-Satellite-Network-Connectivity-Icon.png';
 import GradientMarketAnalysisFinancialDataIcon from './Gradient-Market-Analysis-Financial-Data-Icon.png';
 import GradientProductDesignSketchPencilIcon from './Gradient-Product-Design-Sketch-Pencil-Icon.png';
 import GradientProductDevelopmentIdeaOptimizationIcon from './Gradient-Product-Development-Idea-Optimization-Icon.png';
@@ -43,6 +51,11 @@ import HighTechCloudCircuitBinaryData from './High-Tech-Cloud-Circuit-Binary-Dat
 import HighTechWebDevelopmentShowcaseCollage from './High-Tech-Web-Development-Showcase-Collage.png';
 import ITProfessionalTechnicianServerHardwareReplacement from './IT-Professional-Technician-Server-Hardware-Replacement.png';
 import KubernetesK8sContainerOrchestrationLogo from './Kubernetes-K8s-Container-Orchestration-Logo.png';
+import LogoAnthropic from './Logo-Anthropic.png';
+import LogoGemini from './Logo-Gemini.png';
+import LogoLighOn from './Logo-LighOn.png';
+import LogoMistralIA from './Logo-Mistral-IA.png';
+import LogoOpenAI from './Logo-OpenAI.png';
 import LuxuryWirelessConnectionWiFiSymbolLogo from './Luxury-Wireless-Connection-WiFi-Symbol-Logo.png';
 import MiniatureEngineerITManagementServerFarm from './Miniature-Engineer-IT-Management-Server-Farm.png';
 import MobileAppSocialChatEngagementIcon from './Mobile-App-Social-Chat-Engagement-Icon.png';
@@ -51,9 +64,15 @@ import MultiDeviceWebStorefrontInnovateCreateBanner from './Multi-Device-Web-Sto
 import PremiumBakeryPastrySnackAssortmentLogo from './Premium-Bakery-Pastry-Snack-Assortment-Logo.png';
 import ProfessionalDataCenterServerRackEnclosureView from './Professional-Data-Center-Server-Rack-Enclosure-View.png';
 import ProfessionalServerRoomInfrastructureCabling from './Professional-Server-Room-Infrastructure-Cabling.png';
+import RealisticDaytimeIAAuditDataAnalysisParisView from './Realistic-Daytime-IA-Audit-Data-Analysis-Paris-View.png';
+import RealisticHighTechOperationsCenterAIDashboard from './Realistic-High-Tech-Operations-Center-AI-Dashboard.png';
+import RealisticNighttimeExecutiveBoardroomMeetingWithCityView from './Realistic-Nighttime-Executive-Boardroom-Meeting-with-City-View.png';
+import RealisticRegulatedServicesTeamMeetingNotaryLawyerAccountant from './Realistic-Regulated-Services-Team-Meeting-Notary-Lawyer-Accountant.png';
 import RearViewServerChassisDenseBlueCablingNetwork from './Rear-View-Server-Chassis-Dense-Blue-Cabling-Network.jpg';
 import ServerNetworkDatabaseRackFlatIcon from './Server-Network-Database-Rack-Flat-Icon.png';
 import ServerRacksBinaryDataStreamVisualization from './Server-Racks-Binary-Data-Stream-Visualization.png';
+import SplitPanelCompositionEntrepreneurialMountainViewAndArchitectureStudio from './Split-Panel-Composition-Entrepreneurial-Mountain-View-and-Architecture-Studio.png';
+import StylizedBusinessmanDigitalScalesOfJustice from './Stylized-Businessman-Digital-Scales-of-Justice.png';
 import VPSCloudServerHostingFlatIcon from './VPS-Cloud-Server-Hosting-Flat-Icon.png';
 import WebBrowserPortfolioGalleryInterfaceFlatIcon from './Web-Browser-Portfolio-Gallery-Interface-Flat-Icon.png';
 import WomanTechnicianDataCenterLightTrailsBanner from './Woman-Technician-Data-Center-Light-Trails-Banner.png';
@@ -64,6 +83,8 @@ const images: { [key: string]: any } = {
   'Abstract-Blue-Tech-Circuitry-Background-Banner': AbstractBlueTechCircuitryBackgroundBanner,
   'Abstract-Digital-Network-Background': AbstractDigitalNetworkBackground,
   'Abstract-Digital-Network-Node-Connection-Background': AbstractDigitalNetworkNodeConnectionBackground,
+  'Ad-Layout-Entrepreneurial-Freedom-English-Text': AdLayoutEntrepreneurialFreedomEnglishText,
+  'Ad-Layout-Entrepreneurial-Freedom-French-Text': AdLayoutEntrepreneurialFreedomFrenchText,
   'Arrow-Up-Circle-UI-Icon': ArrowUpCircleUIIcon,
   'Artificial-Intelligence-AI-Neural-Processor-Cube': ArtificialIntelligenceAINeuralProcessorCube,
   'Artistic-Jellyfish-Dome-Branding-Identity-Logo': ArtisticJellyfishDomeBrandingIdentityLogo,
@@ -81,10 +102,16 @@ const images: { [key: string]: any } = {
   'Elegant-Gold-Navy-Fluid-Pattern': ElegantGoldNavyFluidPattern,
   'Elegant-Gold-Steaming-Coffee-Cup-Logo': ElegantGoldSteamingCoffeeCupLogo,
   'Global-Online-Shopping-E-commerce-World-Concept': GlobalOnlineShoppingECommerceWorldConcept,
+  'Gradient-Action-Plan-Strategy-Roadmap-Icon': GradientActionPlanStrategyRoadmapIcon,
   'Gradient-Brand-Strategy-Creative-Concept-Icon': GradientBrandStrategyCreativeConceptIcon,
+  'Gradient-Business-Growth-Success-Performance-Icon': GradientBusinessGrowthSuccessPerformanceIcon,
+  'Gradient-Collaborative-Meeting-Teamwork-Icon': GradientCollaborativeMeetingTeamworkIcon,
   'Gradient-Custom-Configuration-Gear-Pencil-Icon': GradientCustomConfigurationGearPencilIcon,
+  'Gradient-Cyber-Security-Shield-Protection-Icon': GradientCyberSecurityShieldProtectionIcon,
+  'Gradient-Efficiency-Process-Optimization-Performance-Icon': GradientEfficiencyProcessOptimizationPerformanceIcon,
   'Gradient-Expertise-Shield-Growth-Service-Icon': GradientExpertiseShieldGrowthServiceIcon,
   'Gradient-Fast-Reactivity-Performance-Stopwatch-Icon': GradientFastReactivityPerformanceStopwatchIcon,
+  'Gradient-Global-Satellite-Network-Connectivity-Icon': GradientGlobalSatelliteNetworkConnectivityIcon,
   'Gradient-Market-Analysis-Financial-Data-Icon': GradientMarketAnalysisFinancialDataIcon,
   'Gradient-Product-Design-Sketch-Pencil-Icon': GradientProductDesignSketchPencilIcon,
   'Gradient-Product-Development-Idea-Optimization-Icon': GradientProductDevelopmentIdeaOptimizationIcon,
@@ -101,6 +128,11 @@ const images: { [key: string]: any } = {
   'High-Tech-Web-Development-Showcase-Collage': HighTechWebDevelopmentShowcaseCollage,
   'IT-Professional-Technician-Server-Hardware-Replacement': ITProfessionalTechnicianServerHardwareReplacement,
   'Kubernetes-K8s-Container-Orchestration-Logo': KubernetesK8sContainerOrchestrationLogo,
+  'Logo-Anthropic': LogoAnthropic,
+  'Logo-Gemini': LogoGemini,
+  'Logo-LighOn': LogoLighOn,
+  'Logo-Mistral-IA': LogoMistralIA,
+  'Logo-OpenAI': LogoOpenAI,
   'Luxury-Wireless-Connection-WiFi-Symbol-Logo': LuxuryWirelessConnectionWiFiSymbolLogo,
   'Miniature-Engineer-IT-Management-Server-Farm': MiniatureEngineerITManagementServerFarm,
   'Mobile-App-Social-Chat-Engagement-Icon': MobileAppSocialChatEngagementIcon,
@@ -109,9 +141,15 @@ const images: { [key: string]: any } = {
   'Premium-Bakery-Pastry-Snack-Assortment-Logo': PremiumBakeryPastrySnackAssortmentLogo,
   'Professional-Data-Center-Server-Rack-Enclosure-View': ProfessionalDataCenterServerRackEnclosureView,
   'Professional-Server-Room-Infrastructure-Cabling': ProfessionalServerRoomInfrastructureCabling,
+  'Realistic-Daytime-IA-Audit-Data-Analysis-Paris-View': RealisticDaytimeIAAuditDataAnalysisParisView,
+  'Realistic-High-Tech-Operations-Center-AI-Dashboard': RealisticHighTechOperationsCenterAIDashboard,
+  'Realistic-Nighttime-Executive-Boardroom-Meeting-with-City-View': RealisticNighttimeExecutiveBoardroomMeetingWithCityView,
+  'Realistic-Regulated-Services-Team-Meeting-Notary-Lawyer-Accountant': RealisticRegulatedServicesTeamMeetingNotaryLawyerAccountant,
   'Rear-View-Server-Chassis-Dense-Blue-Cabling-Network': RearViewServerChassisDenseBlueCablingNetwork,
   'Server-Network-Database-Rack-Flat-Icon': ServerNetworkDatabaseRackFlatIcon,
   'Server-Racks-Binary-Data-Stream-Visualization': ServerRacksBinaryDataStreamVisualization,
+  'Split-Panel-Composition-Entrepreneurial-Mountain-View-and-Architecture-Studio': SplitPanelCompositionEntrepreneurialMountainViewAndArchitectureStudio,
+  'Stylized-Businessman-Digital-Scales-of-Justice': StylizedBusinessmanDigitalScalesOfJustice,
   'VPS-Cloud-Server-Hosting-Flat-Icon': VPSCloudServerHostingFlatIcon,
   'Web-Browser-Portfolio-Gallery-Interface-Flat-Icon': WebBrowserPortfolioGalleryInterfaceFlatIcon,
   'Woman-Technician-Data-Center-Light-Trails-Banner': WomanTechnicianDataCenterLightTrailsBanner,

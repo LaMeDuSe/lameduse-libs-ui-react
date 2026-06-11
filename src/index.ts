@@ -1,7 +1,9 @@
 export * from './components';
+export { useMagnetic } from './hooks/useMagnetic';
 
 import * as components from './components';
 import * as blocs from './blocs';
+import { useMagnetic } from './hooks/useMagnetic';
 import images from './images';
 import { Images } from 'lucide-react';
 
@@ -21,6 +23,7 @@ type _ErrorIfConflicts = EnsureNoConflicts<ConflictingKeys>;
 const LameduseUI: Record<string, any> = {
   ...components,
   ...blocs,
+  useMagnetic,
   images
 };
 export default LameduseUI;
