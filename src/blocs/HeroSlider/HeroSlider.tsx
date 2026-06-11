@@ -66,13 +66,19 @@ const SlideInteractiveBg: React.FC<SlideInteractiveBgProps> = ({
     mouseRef.current = mouse;
   }, [mouse]);
 
-  // Helper to convert hex/rgb/rgba to custom opacity rgba
+  // Helper to convert hex/rgb/rgba to custom opacity rgba (ReDoS-safe)
   const getRgba = (colorStr: string, opacity: number) => {
     if (colorStr.startsWith("rgba")) {
-      return colorStr.replace(/[\d.]+\)$/, `${opacity})`);
+      const lastComma = colorStr.lastIndexOf(",");
+      if (lastComma !== -1) {
+        return colorStr.substring(0, lastComma + 1) + ` ${opacity})`;
+      }
     }
     if (colorStr.startsWith("rgb")) {
-      return colorStr.replace(/\)$/, `, ${opacity})`).replace("rgb", "rgba");
+      if (colorStr.endsWith(")")) {
+        const base = colorStr.substring(0, colorStr.length - 1);
+        return `${base.replace("rgb", "rgba")}, ${opacity})`;
+      }
     }
     if (colorStr.startsWith("#")) {
       const hex = colorStr.replace("#", "");
