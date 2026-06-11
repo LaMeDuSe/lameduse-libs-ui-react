@@ -1,5 +1,22 @@
 # LaMeDuSe Change Log
 
+# [2.26.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.25.0...v2.26.0) (2026-06-11)
+
+
+### Bug Fixes
+
+* cta hook problems ([6861893](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/686189337c635033ed888e10140ac4d3e9bdd958))
+* dropdown position ([d33d8b1](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d33d8b12c795f8e44bb48585100af9e58e07d0d1))
+* overflow on language selector ([2305e08](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/2305e0891888e61326de2c41114c6e71c3a7242a))
+* resolve markdown lint errors in README headings ([629c958](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/629c958ff6b8e587e5c8b7c804965e5b9bf8c81c))
+* shapeDiver position ([7cd1648](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/7cd16480f008b5e41b40b6f6fbc5084075acee46))
+
+
+### Features
+
+* add interactive bg on heroslider + add CTA bloc version ([a617098](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/a617098c0c98014f70860aa548ea27a2c51516e1))
+* edited library ([7ed106e](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/7ed106e8f50ad06fa0df384f08987074f3c7dda2))
+
 # [2.25.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.24.1...v2.25.0) (2026-03-13)
 
 
