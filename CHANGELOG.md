@@ -1,5 +1,17 @@
 # LaMeDuSe Change Log
 
+# [2.27.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.26.0...v2.27.0) (2026-06-11)
+
+
+### Bug Fixes
+
+* shapeDivider superposition ([1e162ec](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1e162ec098f49d739f2f755f5151493831b543bb))
+
+
+### Features
+
+* heading add animation ([d6b2495](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/d6b249543969d977c3d0466ffb6fb26f16e097fc))
+
 # [2.26.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.25.0...v2.26.0) (2026-06-11)
 
 
