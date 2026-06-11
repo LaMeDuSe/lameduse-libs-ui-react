@@ -8,4 +8,8 @@ describe("Heading", () => {
   test("renders the Heading component", () => {
     render(<Heading title="hello world !" description="This is a basic description"/>);
   });
+
+  test("renders the Heading component with plexus background effect", () => {
+    render(<Heading title="hello world !" description="This is a basic description" bgEffect="plexus"/>);
+  });
 });

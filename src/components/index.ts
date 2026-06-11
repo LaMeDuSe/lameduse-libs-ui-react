@@ -17,3 +17,4 @@ export { default as TimelineH } from "./TimelineH/TimelineH";
 export { default as TimelineV } from "./TimelineV/TimelineV";
 export { default as Title } from "./Title";
 export { default as ToggleButton } from "./ToggleButton";
+export { default as InteractiveBg } from "./InteractiveBg";
