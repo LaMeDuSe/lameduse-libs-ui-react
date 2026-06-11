@@ -21,8 +21,6 @@ const meta = {
   args: { 
     title: 'hello world !',
     description: 'This is a basic description',
-    image : "https://picsum.photos/2000/300",
-    imagealt: "LaMeDuSe Group Logo",
    },
 } satisfies Meta<typeof Heading>;
 
@@ -54,5 +52,30 @@ export const GradiantTwo: Story = {
     theme: 'gradiant-2',
     title: 'hello world !',
     description: 'This is a basic description',
+  },
+};
+
+export const InteractiveBgPlexus: Story = {
+  args: {
+    title: 'Interactive Plexus Heading',
+    description: 'Hover your mouse over this heading to see the plexus particle effect follow your cursor.',
+    bgEffect: 'plexus',
+    gradientBg: 'bg-gradient-to-tr from-slate-950 via-indigo-950 to-slate-950',
+    bgEffectColor: 'rgba(0, 128, 226, 0.85)',
+    enableShapeDivider: true,
+    enableAnimation: true
+  },
+};
+
+export const InteractiveBgConstellation: Story = {
+  args: {
+    title: 'Interactive Constellation Heading',
+    description: 'Move your cursor to trace connection lines and activate the holograph reticle.',
+    bgEffect: 'constellation',
+    gradientBg: 'bg-gradient-to-tr from-slate-950 via-purple-950 to-slate-950',
+    bgEffectColor: 'rgba(139, 92, 246, 0.85)',
+    bgEffectColorSecondary: 'rgba(236, 72, 153, 0.85)',
+    enableShapeDivider: true,
+    enableAnimation: true
   },
 };

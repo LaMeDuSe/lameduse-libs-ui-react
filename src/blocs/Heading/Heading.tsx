@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 import NextImageImport from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import { LameduseHeadingTheme, lameduseBackgroundColorClasses } from "../../theme";
 import { motion } from 'framer-motion';
+import InteractiveBg from "../../components/InteractiveBg";
 
 // Handle ESM/CJS interop for Next.js components
 const NextImage = (NextImageImport as any).default || NextImageImport;
@@ -16,6 +17,15 @@ export interface HeadingProps {
   texteClassName?: string;
   enableShapeDivider?: boolean;
   enableAnimation?: boolean;
+  
+  /** Animated background gradient classes (Tailwind CSS) */
+  gradientBg?: string;
+  /** Interactive canvas/DOM background effect type to render instead of image */
+  bgEffect?: 'none' | 'plexus' | 'repulsion' | 'magnetic-glow' | 'constellation' | 'grid-warp';
+  /** Primary CSS color for particles or glow bubbles */
+  bgEffectColor?: string;
+  /** Secondary CSS color for glow bubbles or constellation target points */
+  bgEffectColorSecondary?: string;
 }
 
 
@@ -26,11 +36,34 @@ const Heading = (props: HeadingProps) => {
   props.enableShapeDivider = props.enableShapeDivider || false;
   props.enableAnimation = props.enableAnimation || false;
   props.imagealt = props.imagealt || "heading image";
+  props.bgEffect = props.bgEffect || 'none';
   const baseHeightClass = "h-[300px]";
   const baseHeightPixel = 300;
   const dripExtraHeightClass = props.enableShapeDivider ? "h-[410px]" : baseHeightClass;
   const dripExtraHeightPixel = props.enableShapeDivider ? 410 : baseHeightPixel;
   const containerHeightClass = props.enableShapeDivider ? "h-[440px]" : baseHeightClass;
+
+  const [mouse, setMouse] = useState({ x: 0, y: 0, active: false });
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    const container = containerRef.current;
+    if (!container) return;
+    const rect = container.getBoundingClientRect();
+    setMouse({
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
+      active: true
+    });
+  };
+
+  const handleMouseLeave = () => {
+    setMouse((prev) => ({ ...prev, active: false }));
+  };
+
+  const handleMouseEnter = () => {
+    setMouse((prev) => ({ ...prev, active: true }));
+  };
 
   const liquidAnimation = {
     y: [0, 10, 0],
@@ -46,12 +79,35 @@ const Heading = (props: HeadingProps) => {
   let color_class = lameduseBackgroundColorClasses[props.theme || (props.image ? "none" : "gradient")];
 
   return (
-    <div className={`w-full relative ${color_class} ${containerHeightClass} flex flex-col items-center justify-center `}>
-      {props.image && <NextImage src={props.image} alt={props.imagealt} height={dripExtraHeightPixel} width={2000} className={`absolute top-0 w-full object-cover filter blur-sm brightness ${dripExtraHeightClass}`} />}
+    <div 
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={`w-full relative ${color_class} ${containerHeightClass} flex flex-col items-center justify-center overflow-hidden `}
+    >
+      {props.image ? (
+        <NextImage src={props.image} alt={props.imagealt} height={dripExtraHeightPixel} width={2000} className={`absolute top-0 w-full object-cover filter blur-sm brightness ${dripExtraHeightClass}`} />
+      ) : (
+        props.bgEffect && props.bgEffect !== 'none' && (
+          <InteractiveBg
+            effect={props.bgEffect}
+            gradientBg={props.gradientBg}
+            color={props.bgEffectColor}
+            colorSecondary={props.bgEffectColorSecondary}
+            mouse={mouse}
+          />
+        )
+      )}
+      
       <h1 className={`${props.texteClassName} z-10 text-center text-4xl mb-3 ${props.enableShapeDivider ? "-translate-y-[40px]" : ""}`}>{props.title}</h1>
       <p className={`${props.texteClassName} z-10 lg:text-2xl w-1/2 text-center ${props.enableShapeDivider ? "-translate-y-[40px]" : ""}`}>{props.description}</p>
       {props.enableShapeDivider && (
-        <motion.div className="absolute bottom-[20px] left-0 w-full leading-[0] z-20 pointer-events-none overflow-hidden" animate={props.enableAnimation ? liquidAnimation : {}}>
+        <motion.div 
+          className="absolute bottom-0 left-0 w-full leading-[0] z-20 pointer-events-none overflow-hidden" 
+          animate={props.enableAnimation ? liquidAnimation : {}}
+          style={{ transformOrigin: 'bottom' }}
+        >
             <svg
                 className="relative block w-[calc(100%+1.3px)] h-[120px] md:h-[150px]"
                 data-name="Layer 1"
