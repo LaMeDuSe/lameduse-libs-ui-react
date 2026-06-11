@@ -1,4 +1,5 @@
 export * from './components';
+export * from './blocs';
 export { useMagnetic } from './hooks/useMagnetic';
 
 import * as components from './components';

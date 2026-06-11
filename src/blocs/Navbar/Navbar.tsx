@@ -158,7 +158,7 @@ const Navbar = (props: INavbarProps) => {
     // Is the navbar open
     const [isNavOpen, setIsNavOpen] = useState(false);
     return (
-        <div className="w-full bg-white flex flex-row items-center justify-between min-w-0 relative">
+        <div className="w-full bg-white flex flex-row items-center justify-between min-w-0 relative z-50">
             {/* Desktop start Navbar */}
             <div className="hidden lg:flex flex-row items-center p-3 ml-6 min-w-0 flex-1 justify-start overflow-visible">
                 {props.NavItems.filter((v) => v.position == "left").map((item, key) => {
