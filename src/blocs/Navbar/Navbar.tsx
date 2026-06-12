@@ -103,7 +103,7 @@ const NavItemDropdown = (props: INavDropdownProps) => {
                 <img src={props.config.imgSrc} alt="" className={(isDropdownHover ? "rotate-180 duration-300 ease-in-out" : "rotate-0 duration-300 ease-in-out") + " -translate-x-2 w-5 h-5 flex-shrink-0"}/>
             </div>
             <div className="relative">
-                <ul className={(isDropdownHover ? "scale-y-100 opacity-100" : "scale-y-0 opacity-0") + " absolute left-1/2 -translate-x-1/2 z-20 bg-white shadow-lameduse-primary rounded-lg shadow-sm transition-all duration-300 ease-in-out origin-top w-max max-w-[calc(100vw-2rem)] overflow-hidden"}>
+                <ul className={(isDropdownHover ? "scale-y-100 opacity-100 z-[51]" : "scale-y-0 opacity-0") + " absolute left-1/2 -translate-x-1/2 z-20 bg-white shadow-lameduse-primary rounded-lg shadow-sm transition-all duration-300 ease-in-out origin-top w-max max-w-[calc(100vw-2rem)] overflow-hidden"}>
                     <div className="p-4 space-y-2 flex flex-col min-w-0 max-w-full">
                         {props.config.items.map((item, index) => {
                             return <NavLink key={index} config={item} className="p-2 w-full" view="desktop" />
