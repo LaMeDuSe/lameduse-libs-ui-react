@@ -3,7 +3,7 @@ import ImageImport from "next/image";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Link, { LinkProps } from "../Link/Link";
 import IconText, { IconTextProps } from "../IconText/IconText";
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useSpring } from "framer-motion";
 
 // Handle ESM/CJS interop for Next.js components
 const Image = (ImageImport as any).default || ImageImport;
@@ -39,15 +39,24 @@ const blobPaths = [
   "M135,85 C145,105 155,130 140,145 C125,160 85,165 65,150 C45,135 40,110 45,85 C50,60 75,50 100,50 C125,50 125,65 135,85 Z"
 ];
 
-const BlobBg = ({ isVisible, isHovered, mousePos, color, colorSecondary, bgColor }: { isVisible: boolean; isHovered: boolean; mousePos: { x: number; y: number }; color?: string; colorSecondary?: string; bgColor?: string }) => {
+interface BlobBgProps {
+  isVisible: boolean;
+  isHovered: boolean;
+  springX: any;
+  springY: any;
+  color?: string;
+  colorSecondary?: string;
+  bgColor?: string;
+}
+
+const BlobBg = ({ isVisible, springX, springY, color, colorSecondary, bgColor }: BlobBgProps) => {
   return (
     <div className="w-full h-full absolute inset-0 flex items-center justify-center overflow-hidden" style={{ backgroundColor: bgColor || "#0f172a" }}>
       <motion.div
-        animate={{
-          x: isHovered ? mousePos.x * 25 : 0,
-          y: isHovered ? mousePos.y * 25 : 0,
+        style={{
+          x: springX,
+          y: springY,
         }}
-        transition={{ type: "spring", damping: 15 }}
         className="relative w-full h-full flex items-center justify-center"
       >
         <svg viewBox="0 0 200 200" className="w-44 h-44 drop-shadow-[0_10px_15px_rgba(0,0,0,0.3)]">
@@ -76,7 +85,15 @@ const BlobBg = ({ isVisible, isHovered, mousePos, color, colorSecondary, bgColor
 };
 
 // 2. Particles Component
-const ParticlesBg = ({ isVisible, isHovered, mousePos, color, bgColor }: { isVisible: boolean; isHovered: boolean; mousePos: { x: number; y: number }; color?: string; bgColor?: string }) => {
+interface CanvasBgProps {
+  isVisible: boolean;
+  isHovered: boolean;
+  mousePosRef: React.RefObject<{ x: number; y: number }>;
+  color?: string;
+  bgColor?: string;
+}
+
+const ParticlesBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: CanvasBgProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -124,8 +141,10 @@ const ParticlesBg = ({ isVisible, isHovered, mousePos, color, bgColor }: { isVis
       ctx.fillStyle = bgColor || "#09090b";
       ctx.fillRect(0, 0, width, height);
 
-      const targetX = (mousePos.x + 0.5) * width;
-      const targetY = (mousePos.y + 0.5) * height;
+      // Read real-time mouse coordinate from stable ref to avoid component re-renders
+      const currentMouse = mousePosRef.current || { x: 0, y: 0 };
+      const targetX = (currentMouse.x + 0.5) * width;
+      const targetY = (currentMouse.y + 0.5) * height;
 
       particles.forEach((p) => {
         if (isHovered) {
@@ -170,13 +189,13 @@ const ParticlesBg = ({ isVisible, isHovered, mousePos, color, bgColor }: { isVis
       cancelAnimationFrame(animationFrameId);
       resizeObserver.disconnect();
     };
-  }, [isVisible, isHovered, mousePos, color, bgColor]);
+  }, [isVisible, isHovered, color, bgColor]); // mousePosRef is omitted to prevent canvas reset on cursor move
 
   return <canvas ref={canvasRef} className="w-full h-full absolute inset-0" />;
 };
 
 // 3. NeonGrid Component
-const NeonGridBg = ({ isVisible, isHovered, mousePos, color, bgColor }: { isVisible: boolean; isHovered: boolean; mousePos: { x: number; y: number }; color?: string; bgColor?: string }) => {
+const NeonGridBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: CanvasBgProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -205,8 +224,9 @@ const NeonGridBg = ({ isVisible, isHovered, mousePos, color, bgColor }: { isVisi
       ctx.fillStyle = bgColor || "#020617";
       ctx.fillRect(0, 0, width, height);
 
-      const targetX = (mousePos.x + 0.5) * width;
-      const targetY = (mousePos.y + 0.5) * height;
+      const currentMouse = mousePosRef.current || { x: 0, y: 0 };
+      const targetX = (currentMouse.x + 0.5) * width;
+      const targetY = (currentMouse.y + 0.5) * height;
 
       ctx.strokeStyle = color ? `${color}22` : "rgba(99, 102, 241, 0.15)";
       ctx.lineWidth = 1;
@@ -287,13 +307,13 @@ const NeonGridBg = ({ isVisible, isHovered, mousePos, color, bgColor }: { isVisi
       cancelAnimationFrame(animationFrameId);
       resizeObserver.disconnect();
     };
-  }, [isVisible, isHovered, mousePos, color, bgColor]);
+  }, [isVisible, isHovered, color, bgColor]);
 
   return <canvas ref={canvasRef} className="w-full h-full absolute inset-0" />;
 };
 
 // 4. Ripple Component
-const RippleBg = ({ isVisible, isHovered, mousePos, color, bgColor }: { isVisible: boolean; isHovered: boolean; mousePos: { x: number; y: number }; color?: string; bgColor?: string }) => {
+const RippleBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: CanvasBgProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const lastMousePos = useRef({ x: 0, y: 0 });
   const ripplesRef = useRef<Array<{ x: number; y: number; r: number; alpha: number }>>([]);
@@ -322,8 +342,9 @@ const RippleBg = ({ isVisible, isHovered, mousePos, color, bgColor }: { isVisibl
       ctx.fillStyle = bgColor || "#0f172a";
       ctx.fillRect(0, 0, width, height);
 
-      const targetX = (mousePos.x + 0.5) * width;
-      const targetY = (mousePos.y + 0.5) * height;
+      const currentMouse = mousePosRef.current || { x: 0, y: 0 };
+      const targetX = (currentMouse.x + 0.5) * width;
+      const targetY = (currentMouse.y + 0.5) * height;
 
       if (isHovered) {
         const dx = targetX - lastMousePos.current.x;
@@ -371,7 +392,7 @@ const RippleBg = ({ isVisible, isHovered, mousePos, color, bgColor }: { isVisibl
       cancelAnimationFrame(animationFrameId);
       resizeObserver.disconnect();
     };
-  }, [isVisible, isHovered, mousePos, color, bgColor]);
+  }, [isVisible, isHovered, color, bgColor]);
 
   return <canvas ref={canvasRef} className="w-full h-full absolute inset-0" />;
 };
@@ -475,9 +496,15 @@ const CardOne = (props: CardOneProps) => {
   props.className = props.className ?? "";
 
   const [isHovered, setIsHovered] = useState(false);
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const mousePosRef = useRef({ x: 0, y: 0 });
   const [isVisible, setIsVisible] = useState(false);
   const cardRef = useRef<HTMLDivElement>(null);
+
+  // Motion values to animate BlobBg without triggering React component re-renders
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const springX = useSpring(x, { damping: 15 });
+  const springY = useSpring(y, { damping: 15 });
 
   useEffect(() => {
     if (typeof window === "undefined" || !("IntersectionObserver" in window)) {
@@ -499,9 +526,15 @@ const CardOne = (props: CardOneProps) => {
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const rect = cardRef.current.getBoundingClientRect();
-    const x = (e.clientX - rect.left) / rect.width - 0.5;
-    const y = (e.clientY - rect.top) / rect.height - 0.5;
-    setMousePos({ x, y });
+    const mx = (e.clientX - rect.left) / rect.width - 0.5;
+    const my = (e.clientY - rect.top) / rect.height - 0.5;
+    
+    // Update ref for canvas animations
+    mousePosRef.current = { x: mx, y: my };
+    
+    // Update motion values for Blob animation
+    x.set(mx * 25);
+    y.set(my * 25);
   };
 
   let standard_class = "p-6 flex flex-col";
@@ -521,7 +554,9 @@ const CardOne = (props: CardOneProps) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => {
         setIsHovered(false);
-        setMousePos({ x: 0, y: 0 });
+        mousePosRef.current = { x: 0, y: 0 };
+        x.set(0);
+        y.set(0);
       }}
       onMouseMove={handleMouseMove}
       onClick={props.onClick}
@@ -534,7 +569,8 @@ const CardOne = (props: CardOneProps) => {
               <BlobBg
                 isVisible={isVisible}
                 isHovered={isHovered}
-                mousePos={mousePos}
+                springX={springX}
+                springY={springY}
                 color={props.interactiveColor}
                 colorSecondary={props.interactiveColorSecondary}
                 bgColor={props.interactiveBgColor}
@@ -544,7 +580,7 @@ const CardOne = (props: CardOneProps) => {
               <ParticlesBg
                 isVisible={isVisible}
                 isHovered={isHovered}
-                mousePos={mousePos}
+                mousePosRef={mousePosRef}
                 color={props.interactiveColor}
                 bgColor={props.interactiveBgColor}
               />
@@ -553,7 +589,7 @@ const CardOne = (props: CardOneProps) => {
               <NeonGridBg
                 isVisible={isVisible}
                 isHovered={isHovered}
-                mousePos={mousePos}
+                mousePosRef={mousePosRef}
                 color={props.interactiveColor}
                 bgColor={props.interactiveBgColor}
               />
@@ -562,7 +598,7 @@ const CardOne = (props: CardOneProps) => {
               <RippleBg
                 isVisible={isVisible}
                 isHovered={isHovered}
-                mousePos={mousePos}
+                mousePosRef={mousePosRef}
                 color={props.interactiveColor}
                 bgColor={props.interactiveBgColor}
               />
