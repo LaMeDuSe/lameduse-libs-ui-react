@@ -25,8 +25,8 @@ export interface CardOneProps {
   rounded?: boolean;
   icons?: IconTextProps[];
   
-  // New props for interactive animations
-  interactiveEffect?: "blob" | "particles" | "neon-grid" | "ripple" | "glitch";
+  // New props for interactive animations (ripple removed)
+  interactiveEffect?: "blob" | "particles" | "neon-grid" | "glitch";
   interactiveBgColor?: string;
   interactiveColor?: string;
   interactiveColorSecondary?: string;
@@ -46,7 +46,6 @@ const BlobBg = ({ isVisible, isHovered, springX, springY, color, colorSecondary,
   useEffect(() => {
     if (!isVisible) return;
     const interval = setInterval(() => {
-      // Gentle floating ambient drift for the second blob
       setAmbientOffset({
         x: Math.sin(Date.now() / 1500) * 35,
         y: Math.cos(Date.now() / 1200) * 20
@@ -57,7 +56,6 @@ const BlobBg = ({ isVisible, isHovered, springX, springY, color, colorSecondary,
 
   return (
     <div className="w-full h-full absolute inset-0 flex items-center justify-center overflow-hidden" style={{ backgroundColor: bgColor || "#0f172a" }}>
-      {/* Declarative SVG filter for gooey/liquid blending */}
       <svg className="absolute w-0 h-0">
         <defs>
           <filter id={filterId.current}>
@@ -79,7 +77,6 @@ const BlobBg = ({ isVisible, isHovered, springX, springY, color, colorSecondary,
             </linearGradient>
           </defs>
 
-          {/* 1. Main Blob (Static Center Morphing) */}
           <motion.path
             d="M200,150 C240,150 260,170 260,200 C260,230 235,260 200,260 C165,260 140,230 140,200 C140,170 160,150 200,150 Z"
             animate={isVisible ? {
@@ -98,7 +95,6 @@ const BlobBg = ({ isVisible, isHovered, springX, springY, color, colorSecondary,
             fill="url(#blobGrad)"
           />
 
-          {/* 2. Secondary Blob (Drifts, splits, and merges automatically) */}
           <motion.path
             d="M200,175 C215,175 225,185 225,200 C225,215 215,225 200,225 C185,225 175,215 175,200 C175,185 185,175 200,175 Z"
             animate={isVisible ? {
@@ -120,7 +116,6 @@ const BlobBg = ({ isVisible, isHovered, springX, springY, color, colorSecondary,
           />
         </svg>
 
-        {/* 3. Mouse-Controlled Blob (Pulls away / merges gooey-style) */}
         <motion.div
           style={{
             x: springX,
@@ -148,16 +143,16 @@ const BlobBg = ({ isVisible, isHovered, springX, springY, color, colorSecondary,
   );
 };
 
-// 2. Particles Component (Attracted to mouse, galaxy orbits, smooth transition)
+// 2. Particles Component (Uses isHoveredRef to avoid effect resets on mouse enter/exit)
 interface CanvasBgProps {
   isVisible: boolean;
-  isHovered: boolean;
+  isHoveredRef: React.RefObject<boolean>;
   mousePosRef: React.RefObject<{ x: number; y: number }>;
   color?: string;
   bgColor?: string;
 }
 
-const ParticlesBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: CanvasBgProps) => {
+const ParticlesBg = ({ isVisible, isHoveredRef, mousePosRef, color, bgColor }: CanvasBgProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -199,7 +194,6 @@ const ParticlesBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: Canv
       });
     }
 
-    // interpolation factor to transition smoothly between hover attraction and ambient galaxy orbit
     let hoverFactor = 0;
 
     const draw = () => {
@@ -208,11 +202,12 @@ const ParticlesBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: Canv
       ctx.fillStyle = bgColor || "#09090b";
       ctx.fillRect(0, 0, width, height);
 
+      // Read hover state directly from ref inside the loop so we don't restart useEffect
+      const isHovered = isHoveredRef.current;
       const currentMouse = mousePosRef.current || { x: 0, y: 0 };
       const targetX = (currentMouse.x + 0.5) * width;
       const targetY = (currentMouse.y + 0.5) * height;
 
-      // Smooth easing of hover factor to prevent any abrupt snapping/resets on mouse leave
       if (isHovered) {
         hoverFactor += (1 - hoverFactor) * 0.1;
       } else {
@@ -222,7 +217,6 @@ const ParticlesBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: Canv
       const ambientFactor = 1 - hoverFactor;
 
       particles.forEach((p) => {
-        // 1. Mouse attraction component (scaled by hoverFactor)
         if (hoverFactor > 0.01) {
           const dx = targetX - p.x;
           const dy = targetY - p.y;
@@ -233,7 +227,6 @@ const ParticlesBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: Canv
           }
         }
 
-        // 2. Ambient galaxy orbit component (scaled by 1 - hoverFactor)
         if (ambientFactor > 0.01) {
           const cx = width / 2;
           const cy = height / 2;
@@ -241,16 +234,13 @@ const ParticlesBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: Canv
           const dy = p.y - cy;
           const dist = Math.sqrt(dx * dx + dy * dy) || 1;
           
-          // Gravitational pull to center
           p.vx -= (dx / dist) * 0.015 * ambientFactor;
           p.vy -= (dy / dist) * 0.015 * ambientFactor;
           
-          // Tangential rotational speed
           p.vx += (-dy / dist) * 0.025 * ambientFactor;
           p.vy += (dx / dist) * 0.025 * ambientFactor;
         }
 
-        // Apply friction/drag
         p.vx *= 0.98;
         p.vy *= 0.98;
 
@@ -287,13 +277,13 @@ const ParticlesBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: Canv
       cancelAnimationFrame(animationFrameId);
       resizeObserver.disconnect();
     };
-  }, [isVisible, isHovered, color, bgColor]);
+  }, [isVisible, color, bgColor]); // Removed isHovered from dependencies to prevent restarts
 
   return <canvas ref={canvasRef} className="w-full h-full absolute inset-0" />;
 };
 
-// 3. NeonGrid Component (Mouse warp, ambient sinus waves scanning, smooth decay)
-const NeonGridBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: CanvasBgProps) => {
+// 3. NeonGrid Component (Uses isHoveredRef to avoid resets on mouse enter/exit)
+const NeonGridBg = ({ isVisible, isHoveredRef, mousePosRef, color, bgColor }: CanvasBgProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {
@@ -315,7 +305,7 @@ const NeonGridBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: Canva
     resizeObserver.observe(canvas);
 
     const gridSize = 25;
-    let warpFactor = 0; // smooth interpolation of warp force
+    let warpFactor = 0;
 
     const draw = () => {
       if (!isVisible) return;
@@ -323,11 +313,11 @@ const NeonGridBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: Canva
       ctx.fillStyle = bgColor || "#020617";
       ctx.fillRect(0, 0, width, height);
 
+      const isHovered = isHoveredRef.current;
       const currentMouse = mousePosRef.current || { x: 0, y: 0 };
       const targetX = (currentMouse.x + 0.5) * width;
       const targetY = (currentMouse.y + 0.5) * height;
 
-      // Smooth warp transition factor
       if (isHovered) {
         warpFactor += (1 - warpFactor) * 0.1;
       } else {
@@ -345,7 +335,6 @@ const NeonGridBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: Canva
         for (let x = 0; x <= width; x += 10) {
           let drawY = y;
           
-          // Warp calculation
           const dx = x - targetX;
           const dy = y - targetY;
           const dist = Math.sqrt(dx * dx + dy * dy);
@@ -354,7 +343,6 @@ const NeonGridBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: Canva
             drawY += dy * force * 0.28 * warpFactor;
           }
           
-          // Ambient wave scan calculation
           const wave = Math.sin(x * 0.012 + time) * Math.cos(y * 0.008 + time * 0.5);
           drawY += wave * 7 * (1 - warpFactor);
           
@@ -423,112 +411,12 @@ const NeonGridBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: Canva
       cancelAnimationFrame(animationFrameId);
       resizeObserver.disconnect();
     };
-  }, [isVisible, isHovered, color, bgColor]);
+  }, [isVisible, color, bgColor]); // Removed isHovered from dependencies to prevent restarts
 
   return <canvas ref={canvasRef} className="w-full h-full absolute inset-0" />;
 };
 
-// 4. Ripple Component (Zen water ripples, throttled & calm, ambient rain drops)
-const RippleBg = ({ isVisible, isHovered, mousePosRef, color, bgColor }: CanvasBgProps) => {
-  const canvasRef = useRef<HTMLCanvasElement>(null);
-  const lastMousePos = useRef({ x: 0, y: 0 });
-  const ripplesRef = useRef<Array<{ x: number; y: number; r: number; alpha: number }>>([]);
-  const lastRippleTime = useRef(0);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
-
-    let animationFrameId: number;
-    let width = (canvas.width = canvas.offsetWidth || 300);
-    let height = (canvas.height = canvas.offsetHeight || 250);
-
-    const resizeObserver = new ResizeObserver((entries) => {
-      for (let entry of entries) {
-        width = canvas.width = entry.contentRect.width;
-        height = canvas.height = entry.contentRect.height;
-      }
-    });
-    resizeObserver.observe(canvas);
-
-    const draw = () => {
-      if (!isVisible) return;
-
-      ctx.fillStyle = bgColor || "#0f172a";
-      ctx.fillRect(0, 0, width, height);
-
-      const currentMouse = mousePosRef.current || { x: 0, y: 0 };
-      const targetX = (currentMouse.x + 0.5) * width;
-      const targetY = (currentMouse.y + 0.5) * height;
-
-      if (isHovered) {
-        const dx = targetX - lastMousePos.current.x;
-        const dy = targetY - lastMousePos.current.y;
-        const dist = Math.sqrt(dx * dx + dy * dy);
-        const now = Date.now();
-        
-        // Calm & controlled ripple spawn: cooldown check + distance threshold
-        if (dist > 15 && now - lastRippleTime.current > 250 && ripplesRef.current.length < 8) {
-          ripplesRef.current.push({
-            x: targetX,
-            y: targetY,
-            r: 2,
-            alpha: 0.45 // Soft initial alpha
-          });
-          lastMousePos.current = { x: targetX, y: targetY };
-          lastRippleTime.current = now;
-        }
-      } else {
-        // Gentle ambient rain drops (very slow and Zen)
-        if (Math.random() < 0.008 && ripplesRef.current.length < 5) {
-          ripplesRef.current.push({
-            x: Math.random() * width,
-            y: Math.random() * height,
-            r: 2,
-            alpha: 0.35
-          });
-        }
-      }
-
-      ripplesRef.current.forEach((r) => {
-        r.r += 0.8; // Very slow and gentle expansion rate
-        r.alpha -= 0.006; // Slow and smooth fade-out
-
-        ctx.strokeStyle = color || "#06b6d4";
-        ctx.lineWidth = 1.5; // Thin and elegant stroke width
-        ctx.globalAlpha = r.alpha;
-        ctx.shadowBlur = 6;
-        ctx.shadowColor = color || "#06b6d4";
-
-        ctx.beginPath();
-        ctx.arc(r.x, r.y, r.r, 0, Math.PI * 2);
-        ctx.stroke();
-
-        ctx.shadowBlur = 0;
-        ctx.globalAlpha = 1.0;
-      });
-
-      ripplesRef.current = ripplesRef.current.filter((r) => r.alpha > 0);
-
-      animationFrameId = requestAnimationFrame(draw);
-    };
-
-    if (isVisible) {
-      draw();
-    }
-
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-      resizeObserver.disconnect();
-    };
-  }, [isVisible, isHovered, color, bgColor]);
-
-  return <canvas ref={canvasRef} className="w-full h-full absolute inset-0" />;
-};
-
-// 5. Glitch Component (RGB Split, blocky digital scanlines, text alerts)
+// 4. Glitch Component (RGB Split, blocky digital scanlines, text alerts)
 const GlitchBg = ({ isVisible, isHovered, color, colorSecondary, bgColor }: { isVisible: boolean; isHovered: boolean; color?: string; colorSecondary?: string; bgColor?: string }) => {
   const [glitchState, setGlitchState] = useState({ 
     rOffset: { x: 0, y: 0 }, 
@@ -547,7 +435,6 @@ const GlitchBg = ({ isVisible, isHovered, color, colorSecondary, bgColor }: { is
     const glitchTexts = ["SYS_OVERFLOW", "ERR_SYS_0x9F", "GLITCH_DETECTED", "HOLO_FAIL", "SYNC_LOST", "BUFFER_OVERRUN"];
 
     const interval = setInterval(() => {
-      // High frequency glitches on hover, rare glitches on ambient mode
       const isGlitching = Math.random() < (isHovered ? 0.40 : 0.08);
       
       if (isGlitching) {
@@ -693,7 +580,12 @@ const CardOne = (props: CardOneProps) => {
   props.className = props.className ?? "";
 
   const [isHovered, setIsHovered] = useState(false);
+  
+  // Stable refs to store hover and mouse coordinates in real-time.
+  // This prevents React state updates from forcing re-renders, solving the canvas flash/reset bug.
+  const isHoveredRef = useRef(false);
   const mousePosRef = useRef({ x: 0, y: 0 });
+  
   const [isVisible, setIsVisible] = useState(false);
   
   const cardRef = useRef<HTMLDivElement>(null);
@@ -724,13 +616,12 @@ const CardOne = (props: CardOneProps) => {
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!headerRef.current) return;
-    // Calculate coordinates relative to the h-64 header container itself to prevent scaling offsets
     const rect = headerRef.current.getBoundingClientRect();
     const mx = (e.clientX - rect.left) / rect.width - 0.5;
     const my = (e.clientY - rect.top) / rect.height - 0.5;
     
     mousePosRef.current = { x: mx, y: my };
-    x.set(mx * 300); // map to parent boundary coordinates (-150px to 150px)
+    x.set(mx * 300);
     y.set(my * 250);
   };
 
@@ -751,17 +642,15 @@ const CardOne = (props: CardOneProps) => {
       onClick={props.onClick}
       className={`px-4 ${container_color_class} ${props.className} ${rounded} ${standard_class} ${border} transition-all duration-300 hover:shadow-lg`}
     >
-      {/* 
-        Mouse tracking is attached here to the header wrapper to calculate coordinates 
-        precisely relative to the canvas aspect ratio instead of the entire card height.
-      */}
       <div 
         ref={headerRef}
-        onMouseEnter={() => setIsHovered(true)}
+        onMouseEnter={() => {
+          isHoveredRef.current = true;
+          setIsHovered(true);
+        }}
         onMouseLeave={() => {
+          isHoveredRef.current = false;
           setIsHovered(false);
-          // Do NOT reset mousePosRef.current instantly to prevent sudden snaps.
-          // The hoverFactor and warpFactor inside the canvas loops handle smooth decay!
           x.set(0);
           y.set(0);
         }}
@@ -784,7 +673,7 @@ const CardOne = (props: CardOneProps) => {
             {props.interactiveEffect === "particles" && (
               <ParticlesBg
                 isVisible={isVisible}
-                isHovered={isHovered}
+                isHoveredRef={isHoveredRef}
                 mousePosRef={mousePosRef}
                 color={props.interactiveColor}
                 bgColor={props.interactiveBgColor}
@@ -793,16 +682,7 @@ const CardOne = (props: CardOneProps) => {
             {props.interactiveEffect === "neon-grid" && (
               <NeonGridBg
                 isVisible={isVisible}
-                isHovered={isHovered}
-                mousePosRef={mousePosRef}
-                color={props.interactiveColor}
-                bgColor={props.interactiveBgColor}
-              />
-            )}
-            {props.interactiveEffect === "ripple" && (
-              <RippleBg
-                isVisible={isVisible}
-                isHovered={isHovered}
+                isHoveredRef={isHoveredRef}
                 mousePosRef={mousePosRef}
                 color={props.interactiveColor}
                 bgColor={props.interactiveBgColor}

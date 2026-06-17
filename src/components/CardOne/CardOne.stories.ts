@@ -121,26 +121,6 @@ export const NeonGridEffect: Story = {
     }
   },
 };
-
-export const RippleEffect: Story = {
-  args: {
-    type: 'primary',
-    description: 'Generates glowing neon concentric ripple waves on hover.',
-    title: 'Concentric Ripples',
-    interactiveEffect: 'ripple',
-    interactiveBgColor: '#090514',
-    interactiveColor: '#ec4899',
-    link: {
-      children: 'Interactive',
-      type: 'gradient2',
-      style: 'solid',
-      form: 'rounded',
-      size: 'medium',
-      href: '#',
-    }
-  },
-};
-
 export const GlitchEffect: Story = {
   args: {
     type: 'primary',
