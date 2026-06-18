@@ -1,5 +1,21 @@
 # LaMeDuSe Change Log
 
+# [2.28.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.27.0...v2.28.0) (2026-06-18)
+
+
+### Bug Fixes
+
+* center align and truncate navbar dropdown items ([39b3a0c](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/39b3a0c9747a8023fe76425ae7abc59de9ff7626))
+* dropdown menu ([4358d3e](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/4358d3ef50296a5fbea438a5d1fc5d840abd246e))
+* make ripples calmer and prevent abrupt animation resets on mouse exit ([1baccd8](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/1baccd8fc8ddc568a25704a929379111c5abaaee))
+* remove ripples animation and flash on hover enter/leave ([fa24ced](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/fa24cedf25859cb2fa557e1a729680ac599b9b47))
+* resolve flickering and resets during mouse move ([bd85cfb](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/bd85cfbbb962e86a0723b41d90e8cc546a90092c))
+
+
+### Features
+
+* add interactive animations to CardOne with visibility detection ([e85fed5](https://github.com/LaMeDuSe/lameduse-libs-ui-react/commit/e85fed5ef5f2cda4193ddd74173b438d9d127c80))
+
 # [2.27.0](https://github.com/LaMeDuSe/lameduse-libs-ui-react/compare/v2.26.0...v2.27.0) (2026-06-11)
 
 
