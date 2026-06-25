@@ -1,0 +1,71 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  background-color: #f9f9f9;
+  padding: 1rem;
+}
+
+/* Style de ligne */
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Demi largeur */
+.form-field.half-width {
+  flex: 1 1 calc(50% - 0.5rem);
+  min-width: 200px;
+}
+
+/* Pleine largeur */
+.form-field.full-width {
+  flex: 1 1 100%;
+}
+
+/* Label */
+.form-field label {
+  font-weight: 400;
+  color: #333;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Input général */
+.input input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 2px solid #a8b0c0;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #1d194d; /* bleu foncé */
+  background-color: #f5f6f8;
+  transition: border-color 0.2s ease;
+}
+
+.input input:focus {
+  border-color: #2265d4;
+  outline: none;
+}
+
+/* Icône de copie */
+.input .copy-icon {
+  color: #007bff;
+  margin-left: 0.5rem;
+  cursor: pointer;
+}
+
+/* Icônes en bas */
+.form-icons {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.form-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
